@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "source": "human_curated_fallback",
+  "term_count": 16,
+  "terms": [
+    {
+      "term": "bouwaanduiding",
+      "definition": "Een aanduiding op de verbeelding die nadere regels stelt aan de bouwwijze of de toelaatbare bouwwerken binnen een bestemming.",
+      "definition_en": "A label on the verbeelding that imposes further rules on building method or permitted structures within a zoning category.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "bouwhoogte",
+      "definition": "De maximale hoogte van een bouwwerk, gemeten vanaf het peil tot het hoogste punt van het bouwwerk.",
+      "definition_en": "Maximum height of a building, measured from grade level to the highest point of the structure.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "bouwlaag",
+      "definition": "Een doorlopend gedeelte van een gebouw, begrensd door op gelijke of nagenoeg gelijke hoogte liggende vloeren.",
+      "definition_en": "A continuous part of a building, bounded by floors at equal or nearly equal heights.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "bouwvlak",
+      "definition": "Een geometrisch bepaald vlak waarbinnen gebouwen mogen worden opgericht.",
+      "definition_en": "A geometrically defined area within which buildings may be erected.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "bvo",
+      "definition": "Bruto vloeroppervlakte. De totale oppervlakte van alle bouwlagen, gemeten op vloerniveau langs de buitenomtrek van de gevels.",
+      "definition_en": "Gross floor area. Total area of all floors, measured at floor level along the outer perimeter of the facades.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "dove gevel",
+      "definition": "Een gevel zonder te openen delen, waardoor geluidsbelasting op die gevel buiten beschouwing kan blijven bij de toetsing aan de Wet geluidhinder.",
+      "definition_en": "A facade without operable openings, so that noise exposure on that facade can be disregarded when testing against the Noise Nuisance Act.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "dubbelbestemming",
+      "definition": "Een bestemming die over een andere (enkel)bestemming heen ligt en aanvullende beperkingen of voorschriften aan dat gebied toevoegt.",
+      "definition_en": "A zoning that overlays another (single) zoning and adds further restrictions or requirements to that area.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "fsi",
+      "definition": "Floor Space Index. Verhouding tussen de totale bruto vloeroppervlakte en het kaveloppervlak. Bepaalt de bebouwingsdichtheid van een kavel.",
+      "definition_en": "Ratio of total gross floor area to plot area. Determines plot density.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "functieaanduiding",
+      "definition": "Een aanduiding op de verbeelding die binnen een bestemming nadere regels over toegestaan gebruik specificeert.",
+      "definition_en": "A label on the verbeelding that, within a zoning category, specifies further rules about permitted use.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "geluidzone",
+      "definition": "Een gebied rondom een geluidsbron waarbinnen aanvullende regels gelden ten aanzien van geluidsbelasting en toegestane functies.",
+      "definition_en": "Area surrounding a noise source within which additional rules apply regarding noise exposure and permitted functions.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "goothoogte",
+      "definition": "De hoogte van een bouwwerk, gemeten vanaf peil tot bovenkant goot, boeibord of daarmee gelijk te stellen constructiedeel.",
+      "definition_en": "Building height measured from grade to the top of the gutter, fascia, or equivalent structural element.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "maatschappelijke voorziening",
+      "definition": "Een voorziening voor maatschappelijke functies zoals onderwijs, gezondheidszorg, religie, sport, cultuur of overheidsdienstverlening.",
+      "definition_en": "Facility for public-good functions such as education, healthcare, religion, sports, culture, or government services.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "nokhoogte",
+      "definition": "De maximale hoogte van een schuin dak, gemeten vanaf peil tot het hoogste punt van het dak (de nok).",
+      "definition_en": "Maximum height of a pitched roof, measured from grade to the ridge.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "peil",
+      "definition": "Het niveau dat als referentiepunt geldt voor hoogtematen, doorgaans de hoogte van de aangrenzende openbare ruimte ter plaatse van de hoofdtoegang.",
+      "definition_en": "Reference level for height measurements, typically the elevation of the adjacent public space at the main entrance.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "plint",
+      "definition": "De onderste bouwlaag van een gebouw, gelegen direct boven peil. In stedelijke contexten vaak bedoeld voor publieksgerichte functies.",
+      "definition_en": "The ground floor of a building, directly above grade level. In urban contexts often intended for public-facing functions.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "voorgevelrooilijn",
+      "definition": "De denkbeeldige lijn die langs de voorzijde van een bouwperceel loopt en waaraan de voorgevel van een gebouw moet worden gebouwd of niet voorbij mag worden gebouwd.",
+      "definition_en": "Imaginary line along the front of a building plot, to which a building's front facade must be built or which it must not exceed.",
+      "source": "human_curated",
+      "source_url": null,
+      "seen_in_projects": [],
+      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    }
+  ]
+}

@@ -50,7 +50,7 @@ from .schemas import (
 
 _PROMPTS_DIR = Path(__file__).resolve().parent / "prompts"
 _GLOSSARY_PATH = settings.archive_dir / "glossary.json"
-
+_CHECKPOINT_DIR = Path("data/outputs/checkpoints")
 
 # =====================================================================
 # Aggregated extraction result + dual-pass output schemas
@@ -253,6 +253,31 @@ def _read_image_bytes(image_path: Path) -> bytes:
     return Path(image_path).read_bytes()
 
 
+def _checkpoint_path(document_filename: str, page_number: int) -> Path:
+    """Return the checkpoint file path for a given page."""
+    safe_name = document_filename.replace("/", "_").replace(" ", "_")
+    return _CHECKPOINT_DIR / f"{safe_name}_p{page_number}.json"
+
+
+def _load_checkpoint(document_filename: str, page_number: int) -> PageExtraction | None:
+    """Return a cached PageExtraction if one exists on disk, else None."""
+    path = _checkpoint_path(document_filename, page_number)
+    if path.exists():
+        try:
+            return PageExtraction.model_validate_json(path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            logger.warning(f"Corrupt checkpoint for {document_filename} p{page_number}, ignoring: {exc}")
+            path.unlink(missing_ok=True)
+    return None
+
+
+def _save_checkpoint(entry: PageExtraction) -> None:
+    """Persist a PageExtraction to disk so re-runs can skip it."""
+    _CHECKPOINT_DIR.mkdir(parents=True, exist_ok=True)
+    path = _checkpoint_path(entry.document_filename, entry.page_number)
+    path.write_text(entry.model_dump_json(), encoding="utf-8")
+
+
 async def extract_page(
     image_path: Path,
     text: str,
@@ -286,26 +311,52 @@ async def _extract_one_page_safe(
     page: PreprocessedPage,
     agent: Agent,
 ) -> PageExtraction | tuple[str, int, str]:
-    """Run extraction and surface failures rather than raising."""
-    try:
-        partial = await extract_page(
-            page.image_path,
-            page.text,
-            {
-                "document_filename": doc.filename,
-                "page_number": page.page_number,
-                "document_type": doc.document_type,
-            },
-            agent=agent,
-        )
-    except Exception as exc:
-        logger.warning(f"Extraction failed for {doc.filename} p{page.page_number}: {exc}")
-        return (doc.filename, page.page_number, str(exc))
-    return PageExtraction(
-        document_filename=doc.filename,
-        page_number=page.page_number,
-        partial=partial,
-    )
+    """Run extraction and surface failures rather than raising.
+
+    Checks the on-disk checkpoint cache first so re-runs skip pages
+    that already completed. Retries up to 5 times with exponential
+    backoff on 429 rate-limit errors.
+    """
+    # --- Checkpoint cache hit ---
+    cached = _load_checkpoint(doc.filename, page.page_number)
+    if cached is not None:
+        logger.info(f"Checkpoint hit: {doc.filename} p{page.page_number}, skipping API call")
+        return cached
+
+    # --- API call with retry ---
+    max_retries = 5
+    for attempt in range(max_retries):
+        try:
+            partial = await extract_page(
+                page.image_path,
+                page.text,
+                {
+                    "document_filename": doc.filename,
+                    "page_number": page.page_number,
+                    "document_type": doc.document_type,
+                },
+                agent=agent,
+            )
+            entry = PageExtraction(
+                document_filename=doc.filename,
+                page_number=page.page_number,
+                partial=partial,
+            )
+            _save_checkpoint(entry)
+            return entry
+
+        except Exception as exc:
+            is_rate_limit = "429" in str(exc) or "rate_limit" in str(exc).lower()
+            if is_rate_limit and attempt < max_retries - 1:
+                wait = 60 * (attempt + 1)  # 60s, 120s, 180s, 240s, 300s
+                logger.warning(
+                    f"Rate limit on {doc.filename} p{page.page_number}, "
+                    f"retrying in {wait}s (attempt {attempt + 1}/{max_retries})"
+                )
+                await asyncio.sleep(wait)
+            else:
+                logger.warning(f"Extraction failed for {doc.filename} p{page.page_number}: {exc}")
+                return (doc.filename, page.page_number, str(exc))
 
 
 def merge_partials(per_page: list[PageExtraction]) -> ExtractionResult:
@@ -349,7 +400,7 @@ def merge_partials(per_page: list[PageExtraction]) -> ExtractionResult:
 async def extract_project(
     preprocessed: ProjectPreprocessed,
     agent: Agent | None = None,
-    max_concurrency: int = 4,
+    max_concurrency: int = 1,
     skip_document_types: tuple[str, ...] = ("kaveltekening",),
 ) -> ExtractionResult:
     """Run extract_page over every page of every document.
@@ -357,6 +408,10 @@ async def extract_project(
     Kaveltekening pages are skipped by default because the dedicated
     geometry stage parses their vector content; the multimodal pass
     would mostly duplicate that work and burn budget.
+
+    max_concurrency defaults to 1 to stay within Anthropic's 30,000
+    input tokens per minute rate limit. Increase only if you have a
+    higher tier or are processing very short pages.
     """
     agent = agent or build_extraction_agent()
     semaphore = asyncio.Semaphore(max_concurrency)
@@ -386,6 +441,86 @@ async def extract_project(
 
     merged = merge_partials(successes)
     merged.pages_with_extraction_errors = failures
+    return merged
+
+
+# =====================================================================
+# Retry of pages that errored on a prior extraction run
+# =====================================================================
+
+
+async def retry_failed_pages(
+    framework_path: Path,
+    preprocessed: ProjectPreprocessed,
+    agent: Agent | None = None,
+    delay_seconds: float = 5.0,
+) -> ExtractionResult:
+    """Retry only the pages listed in ``pages_with_extraction_errors``.
+
+    Loads the saved ExtractionResult at ``framework_path``, re-runs the
+    extraction agent on each errored (document, page) pair with a small
+    fixed delay between requests to avoid re-hitting an overloaded API,
+    merges any new successes into the existing per-page list, and writes
+    the updated framework back to the same path. Pages that fail again
+    are kept in ``pages_with_extraction_errors``; they are not retried
+    further. The checkpoint cache is bypassed (failed pages have no
+    checkpoint by design).
+    """
+    existing = ExtractionResult.model_validate_json(
+        framework_path.read_text(encoding="utf-8")
+    )
+    errors = list(existing.pages_with_extraction_errors)
+    if not errors:
+        logger.info(f"No pages_with_extraction_errors in {framework_path}, nothing to retry")
+        return existing
+
+    error_keys = {(filename, page_number) for filename, page_number, _ in errors}
+    page_index: dict[tuple[str, int], tuple[PreprocessedDocument, PreprocessedPage]] = {}
+    for doc in preprocessed.documents:
+        for page in doc.pages:
+            page_index[(doc.filename, page.page_number)] = (doc, page)
+
+    missing = error_keys - page_index.keys()
+    if missing:
+        logger.warning(
+            f"{len(missing)} errored page(s) not found in preprocessed input, skipping: {sorted(missing)}"
+        )
+
+    agent = agent or build_extraction_agent()
+
+    new_successes: list[PageExtraction] = []
+    still_failed: list[tuple[str, int, str]] = []
+    total = len(error_keys & page_index.keys())
+    logger.info(f"Retrying {total} previously errored page(s)")
+
+    for i, (filename, page_number, _prev_err) in enumerate(errors, start=1):
+        key = (filename, page_number)
+        if key not in page_index:
+            still_failed.append((filename, page_number, "page missing from preprocessed input"))
+            continue
+        doc, page = page_index[key]
+
+        if i > 1:
+            await asyncio.sleep(delay_seconds)
+
+        logger.info(f"[{i}/{total}] Retrying {filename} p{page_number}")
+        result = await _extract_one_page_safe(doc, page, agent)
+        if isinstance(result, PageExtraction):
+            new_successes.append(result)
+            logger.info(f"[{i}/{total}] Success: {filename} p{page_number}")
+        else:
+            still_failed.append(result)
+            logger.warning(f"[{i}/{total}] Still failing: {filename} p{page_number}: {result[2]}")
+
+    all_pages = list(existing.per_page) + new_successes
+    merged = merge_partials(all_pages)
+    merged.pages_with_extraction_errors = still_failed
+
+    framework_path.write_text(merged.model_dump_json(indent=2), encoding="utf-8")
+    logger.info(
+        f"Retry complete: {len(new_successes)} recovered, {len(still_failed)} still failing. "
+        f"Wrote {framework_path}"
+    )
     return merged
 
 

@@ -51,6 +51,24 @@ Start with one of these depending on what you want:
 
 This is a prototype, not a production tool. The output is never authoritative until a human marks a project as `reviewed`. See `docs/architecture.md` section "The Scenario 1 defence" for what this guarantees and what it does not.
 
+## Known issues
+
+**macOS + Python 3.12 + pymupdf segfault under pytest.** Pytest's
+import-rewriting machinery triggers a SIGSEGV when pymupdf's SWIG
+C extension is first loaded during test collection on this Python
+version. Worked around by `scripts/test.sh`, which pre-imports
+pymupdf before invoking pytest. Run tests via that script rather
+than `pytest` directly:
+
+    ./scripts/test.sh           # all tests
+    ./scripts/test.sh -v        # verbose
+    ./scripts/test.sh -k schema # filter by name
+
+A production build would pin pymupdf to a version with stable
+macOS wheels under Python 3.12, or evaluate `pypdfium2` as an
+alternative rendering backend.
+
 ## Licence
 
 Proprietary. Internal use only.
+

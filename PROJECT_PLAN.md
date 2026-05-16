@@ -483,3 +483,11 @@ Implementation outline:
 - Exported to `data/outputs/<project>/massings/` as COMPAS JSON and OBJ
 
 What this is not: a finished design, a buildable proposal, or a recommendation. It is a visual sanity check that says "yes, the structured inputs we extracted do compose into a coherent 3D form following the rules we identified." If they do not, that is the strongest possible signal that something in the extraction or schema is wrong, and the massing failure becomes diagnostic information.
+
+---
+
+## 16. Input-data adjustments log
+
+Small, traceable edits to the read-only `data/inputs/` corpus. Each entry records what changed and why so the corpus stays honest about its provenance.
+
+- **2026-05-16:** Renamed `data/inputs/draka/Drakaterrein-A2_2022-04-26 versie 2.pdf` to `Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf`. The preprocessing step uses a generic filename heuristic (`regels` / `toelichting` / `kaveltekening` / `verbeelding` / `plankaart`) to set `PreprocessedDocument.document_type`. The original filename carried no such hint, so the file was renamed rather than hardcoding "drakaterrein" as a kaveltekening marker (which would violate the CLAUDE.md no-municipality-names rule). The authoritative classification still comes from the LLM via `SourceDocument.document_type`; the filename hint is only a routing convenience.

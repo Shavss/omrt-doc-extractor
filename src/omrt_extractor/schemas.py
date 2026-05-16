@@ -33,6 +33,7 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 from enum import StrEnum
+from pathlib import Path
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -1187,3 +1188,74 @@ class PartialFrameworkExtraction(BaseModel):
         default=None,
         description="Buurt name if it appears on this page.",
     )
+
+
+# =====================================================================
+# Preprocessing output (Stage 1)
+# Per-page image and text pairs feeding the multimodal extractor.
+# =====================================================================
+
+
+class PreprocessedPage(BaseModel):
+    """One page rendered to a PNG and its text-layer extraction.
+
+    Both artifacts feed the multimodal LLM in Stage 2. The image carries
+    visual structure (tables, drawings, layout) that text extraction
+    drops; the text carries glyphs that the model would otherwise have
+    to OCR from the image.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    page_number: int = Field(
+        ge=1,
+        description="1-indexed page number as seen by a human reader.",
+    )
+    image_path: Path = Field(
+        description=(
+            "Absolute path to the rendered PNG. Lives under the project "
+            "cache directory so reruns skip re-rendering."
+        ),
+    )
+    text: str = Field(
+        description=(
+            "Text layer extracted by pymupdf. May be empty for scanned "
+            "pages with no OCR; downstream code falls back to the image."
+        ),
+    )
+
+
+class PreprocessedDocument(BaseModel):
+    """All preprocessed pages for one PDF in the project packet."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    filename: str = Field(description="The PDF filename as received.")
+    pdf_path: Path = Field(description="Absolute path to the source PDF.")
+    document_type: Literal["regels", "toelichting", "kaveltekening", "other"] = Field(
+        description=(
+            "Coarse classification inferred from filename hints. Used only "
+            "to route preprocessing artifacts and to give the multimodal "
+            "extractor a soft prior. The authoritative document_type lives "
+            "on SourceDocument and is set by the LLM from content; this "
+            "field must not be trusted for legal or extraction decisions."
+        ),
+    )
+    pages: list[PreprocessedPage] = Field(
+        default_factory=list,
+        description="Per-page preprocessed artifacts in page order.",
+    )
+
+
+class ProjectPreprocessed(BaseModel):
+    """Stage 1 output: every PDF in the input directory, page by page."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    input_dir: Path = Field(description="The packet directory that was processed.")
+    cache_dir: Path = Field(description="Where rendered images are stored.")
+    documents: list[PreprocessedDocument] = Field(
+        default_factory=list,
+        description="One entry per PDF discovered in the input directory.",
+    )
+

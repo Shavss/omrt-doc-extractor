@@ -260,93 +260,701 @@ def build_massing_inputs(framework: ParametricFramework) -> dict[str, Any]:
 
 def _format_value(value: Any, unit: str) -> str:
     if isinstance(value, list | tuple) and len(value) == 2:
-        return f"{value[0]}–{value[1]} {unit}"
+        return f"{value[0]:g}–{value[1]:g} {unit}".replace(" ", " ", 1)
     if isinstance(value, float) and not math.isnan(value):
         return f"{value:g} {unit}"
     return f"{value} {unit}"
 
 
-def render_summary(framework: ParametricFramework) -> str:
+def _load_json(path: Path) -> Any | None:
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        logger.warning("Could not load {}: {}", path, exc)
+        return None
+
+
+def _constraint_line(c: Any, indent: str = "- ") -> list[str]:
+    flag = " ❗" if c.confidence.score < CONFIDENCE_REVIEW_THRESHOLD else ""
+    line = (
+        f"{indent}**{c.name}** (`{c.id}`): {_format_value(c.value, c.unit)}"
+        f" — confidence {c.confidence.score:.2f}{flag}"
+    )
+    out = [line]
+    if c.applies_to:
+        out.append(f"  - applies to: {', '.join(c.applies_to)}")
+    if c.condition:
+        out.append(f"  - condition: {c.condition}")
+    if c.provenance.document:
+        out.append(
+            f"  - source: {c.provenance.document} p.{c.provenance.page}"
+        )
+    return out
+
+
+def _bbox_dims(coords: list[list[float]]) -> tuple[float, float] | None:
+    if not coords:
+        return None
+    xs = [pt[0] for pt in coords]
+    ys = [pt[1] for pt in coords]
+    return max(xs) - min(xs), max(ys) - min(ys)
+
+
+def render_summary(
+    framework: ParametricFramework,
+    *,
+    extraction_raw: dict[str, Any] | None = None,
+    reconciliation_report: list[dict[str, Any]] | None = None,
+    parsed_geometry: dict[str, Any] | None = None,
+    sanity_report: list[dict[str, Any]] | None = None,
+) -> str:
+    """Render the Grasshopper-engineer handoff document.
+
+    Pulls from framework plus optional sidecar artifacts so the summary can
+    cite raw extraction counts, reconciliation actions, and the source
+    kaveltekening's scale and plot dimensions. All sidecars are optional;
+    missing data degrades the relevant sections, not the whole document.
+    """
     fw = framework
     lines: list[str] = []
-    lines.append(f"# {fw.metadata.project_name}")
+
+    # --------------------------------------------------------------
+    # Header
+    # --------------------------------------------------------------
+    lines.append(f"# Project: {fw.metadata.project_name}")
     lines.append("")
-    lines.append(f"> **{_banner_for(fw.metadata.verification_status)}**")
-    lines.append("")
-    lines.append(f"- Verification status: `{fw.metadata.verification_status.value}`")
-    lines.append(f"- Tool version: `{fw.metadata.tool_version}`")
-    lines.append(f"- Plan ID: `{fw.metadata.location.plan_id or 'none'}`")
+    lines.append(f"**Status:** {_banner_for(fw.metadata.verification_status)}")
+
+    plan_id = fw.metadata.location.plan_id
+    if plan_id:
+        cv_states = {
+            (c.cross_validation.agreement if c.cross_validation else None)
+            for c in fw.constraints.numerical
+        }
+        if "agreement" in cv_states or "disagreement" in cv_states:
+            cv_note = "cross-validated against IMRO API"
+        elif "unverifiable" in cv_states or "not_attempted" in cv_states:
+            cv_note = "IMRO API cross-validation unavailable — see Data sources"
+        else:
+            cv_note = "no cross-validation attempted"
+        lines.append(f"**Plan ID:** {plan_id} ({cv_note})")
     lines.append(
-        f"- Municipality: {fw.metadata.location.municipality}, "
-        f"neighbourhood: {fw.metadata.location.neighbourhood or 'unspecified'}"
+        f"**Generated:** {datetime.now(UTC).isoformat(timespec='seconds')}"
+    )
+    municipality = fw.metadata.location.municipality
+    neighbourhood = fw.metadata.location.neighbourhood
+    loc = municipality + (f", {neighbourhood}" if neighbourhood else "")
+    lines.append(f"**Location:** {loc}")
+    lines.append("")
+
+    # --------------------------------------------------------------
+    # How to consume
+    # --------------------------------------------------------------
+    geom_count = len(fw.constraints.geometric)
+    massing_count = len(fw.massings)
+    lines.append("## How to consume this output")
+    lines.append("")
+    lines.append(
+        "1. `framework.json` — the structured design inputs. Top-level fields:\n"
+        "   `metadata`, `objective`, `constraints` (numerical, geometric, narrative),\n"
+        "   `variables`, `kpis`, `programme`, `geo_context`, `massings`.\n"
+        "   The JSON wraps the validated `ParametricFramework` with a small\n"
+        "   `header` block carrying the prototype banner, generation timestamp,\n"
+        "   tool version, and source-document checksums."
+    )
+    lines.append(
+        f"2. `geometry/*.compas` — {geom_count} polygons (plot, bouwvlakken,\n"
+        "   constraint zones) as COMPAS-JSON Polygon blocks in the native\n"
+        "   CRS (EPSG:28992 RD New). Load in Grasshopper via the\n"
+        "   compas_ghpython component or via `compas_rhino.draw_mesh` /\n"
+        "   `MeshArtist`. See https://compas.dev for documentation."
+    )
+    lines.append(
+        f"3. `massings/*.compas.json` — {massing_count} example massings\n"
+        "   (max envelope, compliant with setbacks). Illustrative only;\n"
+        "   not design recommendations. `.obj` sidecars are exported for\n"
+        "   quick preview."
+    )
+    lines.append(
+        "4. `massing_inputs.json` — slim envelope-driver subset of\n"
+        "   `framework.json` (heights, setbacks, footprints, BVO limits,\n"
+        "   use-mix only) plus the geometric polygons. Use this when you\n"
+        "   only need the envelope-binding rules and want to skip the audit\n"
+        "   tail (noise, sustainability, etc.)."
+    )
+    lines.append(
+        "5. `summary.md` (this file) — start here. Then read `framework.json`."
+    )
+    lines.append("")
+    lines.append(
+        "Every value in `framework.json` carries `provenance` (document, page,\n"
+        "verbatim Dutch `quoted_text`) and `confidence` (score 0.0–1.0, with\n"
+        f"{CONFIDENCE_REVIEW_THRESHOLD:.2f} as the review threshold). Click\n"
+        "through to provenance for any ambiguous value."
     )
     lines.append("")
 
+    # --------------------------------------------------------------
+    # Programme intent (qualitative)
+    # --------------------------------------------------------------
+    lines.append("## Programme intent (from toelichting)")
+    lines.append("")
+    passages: list[str] = []
+    if extraction_raw:
+        raw_passages = extraction_raw.get("urban_intent_passages") or []
+        passages = [p.strip() for p in raw_passages if p and p.strip()]
+    if not passages and fw.objective.urban_intent:
+        passages = [fw.objective.urban_intent]
+    for passage in passages[:3]:
+        lines.append(f"> {passage}")
+        lines.append("")
+    statement = (fw.objective.statement or "").strip()
+    if statement and not statement.lower().startswith("inferred design goal"):
+        lines.append(f"**Distilled objective:** {statement}")
+        lines.append("")
+
+    # --------------------------------------------------------------
+    # Programme proposal (inferred)
+    # --------------------------------------------------------------
+    p = fw.programme
+    lines.append("## Programme proposal (from inference, see programme.json)")
+    lines.append("")
+    gfa_range = (
+        f" ({p.target_total_gfa_m2_range[0]:,.0f}–"
+        f"{p.target_total_gfa_m2_range[1]:,.0f} m²)"
+        if p.target_total_gfa_m2_range
+        else ""
+    )
+    lines.append(
+        f"- **Target total GFA:** {p.target_total_gfa_m2:,.0f} m²{gfa_range}"
+    )
+
+    use_split_fields = [
+        ("residential", p.use_split.residential_m2),
+        ("productive", p.use_split.productive_m2),
+        ("office", p.use_split.office_m2),
+        ("retail/horeca", p.use_split.retail_horeca_m2),
+        ("cultural", p.use_split.cultural_m2),
+        ("social", p.use_split.social_m2),
+        ("other", p.use_split.other_m2),
+    ]
+    split_total = sum(v for _, v in use_split_fields) or 1.0
+    nonzero = [(label, v) for label, v in use_split_fields if v > 0]
+    parts = " | ".join(
+        f"{label} {v:,.0f} m² ({v / split_total * 100:.0f}%)"
+        for label, v in nonzero
+    )
+    lines.append(f"- **Use split:** {parts}")
+
+    if p.target_dwelling_count is not None:
+        dw_range = (
+            f" ({p.total_dwelling_count_range[0]}–"
+            f"{p.total_dwelling_count_range[1]})"
+            if p.total_dwelling_count_range
+            else ""
+        )
+        lines.append(
+            f"- **Dwelling count target:** {p.target_dwelling_count}{dw_range}"
+        )
+    if p.parking_demand is not None:
+        lines.append(f"- **Parking demand:** {p.parking_demand:g} spaces")
+
+    if p.unit_mix:
+        from collections import defaultdict
+
+        by_tenure: dict[str, float] = defaultdict(float)
+        for slice_ in p.unit_mix:
+            by_tenure[slice_.tenure] += slice_.fraction_of_total_dwellings
+        tenure_parts = " | ".join(
+            f"{t} {f * 100:.0f}%" for t, f in sorted(by_tenure.items())
+        )
+        lines.append(f"- **Tenure split:** {tenure_parts}")
+        lines.append("- **Unit mix:**")
+        for slice_ in p.unit_mix:
+            cnt = (
+                f" ({slice_.target_count_range[0]}–"
+                f"{slice_.target_count_range[1]} dwellings)"
+                if slice_.target_count_range
+                else ""
+            )
+            sz = (
+                f", {slice_.target_size_m2_range[0]:g}–"
+                f"{slice_.target_size_m2_range[1]:g} m²"
+                if slice_.target_size_m2_range
+                else ""
+            )
+            lines.append(
+                f"  - {slice_.tenure} × {slice_.size_band}"
+                f" ({slice_.typology or 'mixed typology'}): "
+                f"{slice_.fraction_of_total_dwellings * 100:.0f}%"
+                f"{cnt}{sz}"
+            )
+
+    lines.append("")
+    lines.append(
+        f"**Rationale:** {p.use_split.rationale[:600].rstrip()}"
+        f"{'…' if len(p.use_split.rationale) > 600 else ''}"
+    )
+    lines.append("")
+    lines.append(
+        f"**Overall confidence:** {p.confidence.score:.2f} — "
+        "see `programme.json` for the full reasoning trace."
+    )
+    lines.append("")
+
+    # --------------------------------------------------------------
+    # Numerical constraints (top binding values)
+    # --------------------------------------------------------------
+    lines.append("## Numerical constraints (top binding values)")
+    lines.append("")
+    by_cat: dict[str, list] = {}
+    for c in fw.constraints.numerical:
+        by_cat.setdefault(c.category, []).append(c)
+
+    def _value_magnitude(c: Any) -> float:
+        v = c.value
+        if isinstance(v, list | tuple):
+            return float(v[1])
+        return float(v)
+
+    # Display categories in a meaningful order, only what's present.
+    display_order = [
+        ("height", "Heights"),
+        ("setback", "Setbacks"),
+        ("footprint", "Footprint / coverage"),
+        ("fsi_far", "FSI / FAR"),
+        ("bvo_limit", "Programme BVO caps and floors"),
+        ("parking", "Parking norms"),
+        ("use_mix", "Use mix"),
+        ("noise", "Noise"),
+        ("sustainability", "Sustainability"),
+        ("accessibility", "Accessibility"),
+        ("other", "Other"),
+    ]
+    for cat_key, label in display_order:
+        items = by_cat.get(cat_key)
+        if not items:
+            continue
+        items.sort(
+            key=lambda c: (-c.confidence.score, -_value_magnitude(c))
+        )
+        shown = items[:15]
+        lines.append(f"### {label} ({len(items)} total, showing top {len(shown)})")
+        lines.append("")
+        for c in shown:
+            lines.extend(_constraint_line(c))
+        if len(items) > len(shown):
+            lines.append(
+                f"- … and {len(items) - len(shown)} more in `framework.json` →"
+                f" `constraints.numerical` (category = `{cat_key}`)."
+            )
+        lines.append("")
+
+    lines.append(
+        f"See `framework.json` → `constraints.numerical` for all "
+        f"{len(fw.constraints.numerical)} constraints with full provenance "
+        "(document, page, verbatim Dutch text) and confidence scores."
+    )
+    lines.append("")
+
+    # --------------------------------------------------------------
+    # Geometric constraints
+    # --------------------------------------------------------------
+    lines.append("## Geometric constraints")
+    lines.append("")
+    by_feature: dict[str, int] = {}
+    for g in fw.constraints.geometric:
+        by_feature[g.feature_type] = by_feature.get(g.feature_type, 0) + 1
+    lines.append("Polygon counts by feature type:")
+    for feature_type, n in sorted(by_feature.items(), key=lambda kv: -kv[1]):
+        lines.append(f"- {feature_type}: {n}")
+    lines.append("")
+
+    if parsed_geometry:
+        scale_d = parsed_geometry.get("scale_denominator")
+        src_pdf = parsed_geometry.get("source_pdf")
+        src_pdf_name = Path(src_pdf).name if src_pdf else None
+        plot_poly = parsed_geometry.get("plot_polygon") or []
+        plot_dims = (
+            _bbox_dims(plot_poly) if isinstance(plot_poly, list) else None
+        )
+        lines.append("Source drawing:")
+        if src_pdf_name:
+            lines.append(f"- File: {src_pdf_name}")
+        if scale_d:
+            lines.append(f"- Scale: 1:{int(scale_d)}")
+        if plot_dims:
+            lines.append(
+                f"- Plot bounding box: {plot_dims[0]:.0f} m × "
+                f"{plot_dims[1]:.0f} m (RD New)"
+            )
+        lines.append("")
+    lines.append(
+        "Reconciled with regels for bouwvlak heights — see the "
+        "Reconciliation summary below and `reconciliation_report.json`."
+    )
+    lines.append("")
+
+    # --------------------------------------------------------------
+    # Narrative constraints
+    # --------------------------------------------------------------
+    lines.append("## Narrative constraints (selected)")
+    lines.append("")
+    narratives = sorted(
+        fw.constraints.narrative,
+        key=lambda n: -n.confidence.score,
+    )[:10]
+    for n in narratives:
+        lines.append(
+            f"- **{n.statement}** (`{n.id}`, {n.category}) — "
+            f"confidence {n.confidence.score:.2f}"
+        )
+        if n.provenance.quoted_text:
+            quote = n.provenance.quoted_text.strip()
+            lines.append(
+                f'  > "{quote}" — {n.provenance.document or "unknown"}'
+                f" p.{n.provenance.page or '?'}"
+            )
+    if len(fw.constraints.narrative) > 10:
+        lines.append(
+            f"- … and {len(fw.constraints.narrative) - 10} more in "
+            "`framework.json` → `constraints.narrative`."
+        )
+    lines.append("")
+
+    # --------------------------------------------------------------
+    # Flagged ambiguities
+    # --------------------------------------------------------------
+    lines.append("## Flagged ambiguities")
+    lines.append("")
+    low_conf_num = [
+        c
+        for c in fw.constraints.numerical
+        if c.confidence.score < 0.80
+    ]
+    low_conf_narr = [
+        c
+        for c in fw.constraints.narrative
+        if c.confidence.score < 0.80
+    ]
     disagreements = [
         c
         for c in fw.constraints.numerical
         if c.cross_validation and c.cross_validation.agreement == "disagreement"
     ]
+    unverifiable = [
+        c
+        for c in fw.constraints.numerical
+        if c.cross_validation and c.cross_validation.agreement == "unverifiable"
+    ]
+    extraction_errors: list[Any] = []
+    if extraction_raw:
+        extraction_errors = list(
+            extraction_raw.get("pages_with_extraction_errors") or []
+        )
+
+    reconciliation_actions: dict[str, int] = {}
+    if reconciliation_report:
+        for entry in reconciliation_report:
+            reconciliation_actions[entry["action"]] = (
+                reconciliation_actions.get(entry["action"], 0) + 1
+            )
+
     if disagreements:
-        lines.append("## IMRO API disagreements (review first)")
-        lines.append("")
-        for c in disagreements:
-            auth = c.cross_validation.authoritative_value if c.cross_validation else None
-            lines.append(
-                f"- **{c.name}** (`{c.id}`): extracted "
-                f"{_format_value(c.value, c.unit)}, authoritative {auth}"
-            )
-            if c.provenance.quoted_text:
-                lines.append(f"  > \"{c.provenance.quoted_text}\" — "
-                             f"{c.provenance.document} p.{c.provenance.page}")
-        lines.append("")
-
-    lines.append("## Objective")
-    lines.append("")
-    lines.append(fw.objective.statement)
-    lines.append("")
-
-    lines.append("## Numerical constraints")
-    lines.append("")
-    for c in fw.constraints.numerical:
-        flag = "❗" if c.confidence.score < CONFIDENCE_REVIEW_THRESHOLD else ""
         lines.append(
-            f"- {flag} **{c.name}** (`{c.id}`): {_format_value(c.value, c.unit)} "
-            f"— confidence {c.confidence.score:.2f}"
+            f"- **IMRO API disagreements ({len(disagreements)}):** "
+            "extracted values differ from the authoritative source. "
+            "Listed under the relevant numerical-constraint entries."
         )
-        if c.provenance.document:
+        for c in disagreements[:5]:
+            auth = c.cross_validation.authoritative_value
             lines.append(
-                f"  - source: {c.provenance.document} p.{c.provenance.page}"
+                f"  - `{c.id}`: extracted {_format_value(c.value, c.unit)}, "
+                f"authoritative {auth}"
             )
-        if c.condition:
-            lines.append(f"  - condition: {c.condition}")
-    lines.append("")
 
-    lines.append("## Geometric constraints")
-    lines.append("")
-    for g in fw.constraints.geometric:
+    if reconciliation_actions.get("corrected"):
         lines.append(
-            f"- **{g.name}** (`{g.id}`, {g.feature_type}, LOD {g.lod}, CRS {g.crs.value})"
+            f"- **Reconciliation overrides "
+            f"({reconciliation_actions['corrected']}):** regels clauses "
+            "corrected the verbeelding's spatial-proximity reading. See "
+            "`reconciliation_report.json`."
         )
+
+    if low_conf_num:
+        lines.append(
+            f"- **{len(low_conf_num)} numerical constraints with "
+            "confidence < 0.80:** review before relying on them. Listed "
+            "with the ❗ marker under the relevant category above."
+        )
+    if low_conf_narr:
+        lines.append(
+            f"- **{len(low_conf_narr)} narrative constraints with "
+            "confidence < 0.80.**"
+        )
+    if unverifiable:
+        lines.append(
+            f"- **{len(unverifiable)} constraints unverifiable against "
+            "IMRO API:** API was contacted but field could not be matched."
+        )
+    if extraction_errors:
+        lines.append(
+            f"- **{len(extraction_errors)} pages had extraction errors** "
+            "(see `extraction_raw.json` → `pages_with_extraction_errors`)."
+        )
+    if p.confidence.score < 0.75:
+        lines.append(
+            f"- **Programme inference confidence {p.confidence.score:.2f} "
+            "below 0.75:** treat the programme proposal as a sketch."
+        )
+
+    if not any(
+        [
+            disagreements,
+            reconciliation_actions.get("corrected"),
+            low_conf_num,
+            low_conf_narr,
+            unverifiable,
+            extraction_errors,
+            p.confidence.score < 0.75,
+        ]
+    ):
+        lines.append("- None flagged at the document level.")
     lines.append("")
 
-    lines.append("## Programme proposal")
+    # --------------------------------------------------------------
+    # Data sources used
+    # --------------------------------------------------------------
+    lines.append("## Data sources used")
     lines.append("")
-    p = fw.programme
-    lines.append(f"- Target GFA: {p.target_total_gfa_m2:g} m²")
-    if p.target_dwelling_count is not None:
-        lines.append(f"- Target dwellings: {p.target_dwelling_count}")
-    if p.parking_demand is not None:
-        lines.append(f"- Parking demand: {p.parking_demand:g}")
+
+    num_count = len(fw.constraints.numerical)
+    narr_count = len(fw.constraints.narrative)
+    doc_names = [d.filename for d in fw.metadata.source_documents]
+    page_total = sum(d.page_count for d in fw.metadata.source_documents)
+    lines.append(
+        f"- ✓ Document extraction: {num_count} numerical, {narr_count} "
+        f"narrative constraints across {len(doc_names)} PDFs "
+        f"({page_total} pages total)."
+    )
+
+    if parsed_geometry and parsed_geometry.get("status") == "ok":
+        n_bouw = len(parsed_geometry.get("bouwvlakken") or [])
+        n_zones = len(parsed_geometry.get("constraint_zones") or [])
+        scale_d = parsed_geometry.get("scale_denominator")
+        scale_txt = f", scale 1:{int(scale_d)}" if scale_d else ""
+        lines.append(
+            f"- ✓ Vector geometry: {n_bouw + n_zones + 1} polygons from "
+            f"kaveltekening{scale_txt} (1 plot, {n_bouw} bouwvlakken, "
+            f"{n_zones} constraint zones)."
+        )
+    elif parsed_geometry:
+        lines.append(
+            f"- ✗ Vector geometry: parsing failed "
+            f"({parsed_geometry.get('reason', 'unknown')})."
+        )
+
+    # Cross-validation summary
+    cv_agree = sum(
+        1
+        for c in fw.constraints.numerical
+        if c.cross_validation and c.cross_validation.agreement == "agreement"
+    )
+    cv_disagree = len(disagreements)
+    cv_unverif = len(unverifiable)
+    cv_not_attempted = sum(
+        1
+        for c in fw.constraints.numerical
+        if c.cross_validation
+        and c.cross_validation.agreement == "not_attempted"
+    )
+    cv_marker = "✓" if cv_agree or cv_disagree else "✗"
+    cv_summary = (
+        f"{cv_agree} agreed, {cv_disagree} disagreed, "
+        f"{cv_unverif} unverifiable"
+    )
+    if cv_not_attempted:
+        cv_summary += f", {cv_not_attempted} not attempted (API unavailable)"
+    lines.append(f"- {cv_marker} IMRO API cross-validation: {cv_summary}.")
+
+    geo = fw.geo_context
+    if geo:
+        if geo.nearby_buildings:
+            nb = geo.nearby_buildings
+            lines.append(
+                f"- ✓ PDOK BAG: {nb.count} buildings within {nb.radius_m:g} m"
+                + (
+                    f" (year built {nb.typical_year_built[0]}–{nb.typical_year_built[1]})"
+                    if nb.typical_year_built
+                    else ""
+                )
+                + "."
+            )
+            if not nb.has_3d_bag_data:
+                lines.append(
+                    "- ✗ 3D BAG: not available — 2D context only for massing visualisation."
+                )
+        if geo.demographics:
+            d = geo.demographics
+            lines.append(
+                f"- ✓ CBS demographics (buurt {d.buurt_code}): "
+                f"pop {d.population}, "
+                f"{d.household_count} households, "
+                f"avg household size {d.average_household_size}, "
+                f"median age {d.median_age}."
+            )
+        if geo.transit or geo.nearby_amenities:
+            transit_bits = []
+            if geo.transit:
+                t = geo.transit
+                if t.nearest_bus_m is not None:
+                    transit_bits.append(f"bus {t.nearest_bus_m:.0f} m")
+                if t.nearest_tram_m is not None:
+                    transit_bits.append(f"tram {t.nearest_tram_m:.0f} m")
+                if t.nearest_metro_m is not None:
+                    transit_bits.append(f"metro {t.nearest_metro_m:.0f} m")
+                if t.nearest_train_m is not None:
+                    transit_bits.append(f"train {t.nearest_train_m:.0f} m")
+            transit_txt = ", ".join(transit_bits) if transit_bits else ""
+            amenities_txt = (
+                f", {sum(geo.nearby_amenities.values())} amenities across "
+                f"{len(geo.nearby_amenities)} categories"
+                if geo.nearby_amenities
+                else ""
+            )
+            lines.append(f"- ✓ OSM Overpass: {transit_txt}{amenities_txt}.")
+        for failed in geo.data_sources_failed:
+            if failed != "pdok_3d_bag":
+                lines.append(f"- ✗ {failed}: failed (see geo_context.json).")
     lines.append("")
-    lines.append("### Reasoning trace")
+
+    # --------------------------------------------------------------
+    # Reconciliation summary
+    # --------------------------------------------------------------
+    if reconciliation_report:
+        lines.append("## Reconciliation summary")
+        lines.append("")
+        counts = reconciliation_actions
+        action_descriptions = [
+            (
+                "matched",
+                ("polygon height confirmed", "polygon heights confirmed"),
+                "regels matched verbeelding",
+            ),
+            (
+                "corrected",
+                ("polygon height corrected by regels", "polygon heights corrected by regels"),
+                "verbeelding's spatial-proximity reading overridden",
+            ),
+            (
+                "inferred",
+                ("polygon height inferred from regels", "polygon heights inferred from regels"),
+                "verbeelding had no label",
+            ),
+            (
+                "unmatched",
+                ("regels clause with no matching polygon", "regels clauses with no matching polygon"),
+                "non-bouwvlak labels or permit-gated deviations",
+            ),
+            (
+                "skipped_non_base",
+                ("non-base height constraint skipped", "non-base height constraints skipped"),
+                "deviations, fences, lights",
+            ),
+        ]
+        for key, (sing, plur), explainer in action_descriptions:
+            n = counts.get(key, 0)
+            if n:
+                label = sing if n == 1 else plur
+                lines.append(f"- {n} {label} ({explainer}).")
+        lines.append("")
+        lines.append("See `reconciliation_report.json` for per-polygon details.")
+        lines.append("")
+
+    # --------------------------------------------------------------
+    # Sanity check (Scenario 1 Layer 5)
+    # --------------------------------------------------------------
+    lines.append("## Sanity check")
     lines.append("")
-    for step in p.reasoning_trace:
-        if isinstance(step, str):
-            lines.append(f"- {step}")
-        else:
-            evidence = f" — evidence: {step.evidence}" if step.evidence else ""
-            lines.append(f"- Step {step.step}: {step.decision}{evidence}")
+    if not sanity_report:
+        lines.append(
+            "No physical-sense violations detected. Every numerical constraint "
+            "sits within universal bounds (heights 3–200 m, FSI 0–8, parking "
+            "0–4/dwelling, GFA 100–1,000,000 m²) and the programme is internally "
+            "consistent."
+        )
+        lines.append("")
+    else:
+        errors = [f for f in sanity_report if f.get("severity") == "error"]
+        warnings = [f for f in sanity_report if f.get("severity") == "warning"]
+        lines.append(
+            f"**{len(sanity_report)} finding(s):** "
+            f"{len(errors)} error(s), {len(warnings)} warning(s)."
+        )
+        lines.append("")
+        for f in sanity_report:
+            name = f.get("constraint_name") or f.get("category")
+            value = f.get("value")
+            unit = f.get("unit") or ""
+            sev = f.get("severity")
+            msg = f.get("message", "")
+            lines.append(f"- **[{sev}]** `{name}` = {value} {unit} — {msg}")
+        lines.append("")
+        lines.append("See `sanity_report.json` for the full list.")
+        lines.append("")
+
+    # --------------------------------------------------------------
+    # For the Grasshopper engineer
+    # --------------------------------------------------------------
+    lines.append("## For the Grasshopper engineer")
+    lines.append("")
+    lines.append(
+        "Start with `framework.json` → `objective` and `programme` for "
+        "context. Then `constraints.geometric` for the polygons (or load "
+        "the `.compas` files directly). Then `constraints.numerical` for "
+        "the binding rules. `massings/` contains two example variants "
+        "illustrating how the inputs translate to geometry."
+    )
+    lines.append("")
+    lines.append("**What to trust most:**")
+    lines.append("")
+    lines.append(
+        "- `source_type: \"document\"` with `confidence ≥ 0.85` — verbatim "
+        "from regels or toelichting and above the review threshold."
+    )
+    lines.append(
+        "- `cross_validation.agreement == \"agreement\"` — additionally "
+        "confirmed by the IMRO authoritative API."
+    )
+    lines.append(
+        "- Bouwvlak heights with `height_reconciled_from == \"regels\"` — "
+        "the regels clause is the canonical source; verbeelding-only values "
+        "may reflect drawing-association errors."
+    )
+    lines.append("")
+    lines.append("**What to treat with care:**")
+    lines.append("")
+    lines.append(
+        "- `source_type: \"inferred\"` — derived by LLM reasoning. The "
+        "entire `programme` block is inferred; treat numbers as the "
+        "model's best estimate, not a brief."
+    )
+    lines.append(
+        "- Any constraint flagged ❗ above (confidence below "
+        f"{CONFIDENCE_REVIEW_THRESHOLD:.2f})."
+    )
+    lines.append(
+        "- Bouwvlak heights with `height_reconciled_from == "
+        "\"verbeelding_uncorrected\"` — drawing value with no regels "
+        "clause to confirm."
+    )
+    lines.append("")
+    lines.append(
+        f"This output is **{PROTOTYPE_BANNER}**. A project manager will "
+        "review before final use in the Run system."
+    )
     lines.append("")
 
     return "\n".join(lines)
@@ -395,8 +1003,23 @@ def write_grasshopper_handoff(
         len(massing_inputs["geometric_constraints"]),
     )
 
+    extraction_raw = _load_json(output_dir / "extraction_raw.json")
+    reconciliation_report = _load_json(output_dir / "reconciliation_report.json")
+    parsed_geometry = _load_json(output_dir / "geometry.json")
+    sanity_report = _load_json(output_dir / "sanity_report.json")
+
     summary_path = output_dir / "summary.md"
-    summary_path.write_text(render_summary(framework))
+    summary_path.write_text(
+        render_summary(
+            framework,
+            extraction_raw=extraction_raw if isinstance(extraction_raw, dict) else None,
+            reconciliation_report=reconciliation_report
+            if isinstance(reconciliation_report, list)
+            else None,
+            parsed_geometry=parsed_geometry if isinstance(parsed_geometry, dict) else None,
+            sanity_report=sanity_report if isinstance(sanity_report, list) else None,
+        )
+    )
     logger.info("Wrote {}", summary_path)
 
     return framework_path

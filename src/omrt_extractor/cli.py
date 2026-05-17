@@ -122,6 +122,53 @@ def _run_programme(framework, geo_context, out_path: Path) -> dict[str, Any]:
 # =====================================================================
 
 
+_SOURCE_DOC_TYPE_FROM_FILENAME = {
+    "regels": "regels",
+    "toelichting": "toelichting",
+    "kaveltekening": "verbeelding",
+    "verbeelding": "verbeelding",
+    "plankaart": "verbeelding",
+}
+
+
+def _build_source_documents(input_dir: Path) -> list:
+    """Scan the input dir for PDFs and build SourceDocument metadata.
+
+    Computes SHA-256 of each PDF's bytes and reads page_count via pymupdf.
+    Classification follows the same filename heuristic as preprocess.py;
+    the LLM-decided document_type is not yet available at framework-
+    assembly time.
+    """
+    import hashlib
+
+    import pymupdf
+
+    from omrt_extractor.schemas import SourceDocument
+
+    docs: list = []
+    for pdf_path in sorted(input_dir.iterdir()):
+        if pdf_path.suffix.lower() != ".pdf":
+            continue
+        name_lc = pdf_path.name.lower()
+        doc_type = "other"
+        for hint, mapped in _SOURCE_DOC_TYPE_FROM_FILENAME.items():
+            if hint in name_lc:
+                doc_type = mapped
+                break
+        sha = hashlib.sha256(pdf_path.read_bytes()).hexdigest()
+        with pymupdf.open(pdf_path) as pdf:
+            page_count = pdf.page_count
+        docs.append(
+            SourceDocument(
+                filename=pdf_path.name,
+                document_type=doc_type,
+                page_count=page_count,
+                sha256=sha,
+            )
+        )
+    return docs
+
+
 def _dedup_by_id(items: list[dict]) -> list[dict]:
     seen: set[str] = set()
     out: list[dict] = []
@@ -138,6 +185,7 @@ def _assemble_framework(
     extraction: dict,
     programme_data: dict,
     geo_data: dict | None,
+    source_documents: list | None = None,
 ):
     """Build a ParametricFramework from cached stage outputs.
 
@@ -199,7 +247,8 @@ def _assemble_framework(
             neighbourhood=neighbourhoods[0] if neighbourhoods else None,
             plan_id=(extraction.get("plan_ids_found") or [None])[0],
         ),
-        source_documents=[
+        source_documents=source_documents
+        or [
             SourceDocument(
                 filename="extraction_raw.json",
                 document_type="other",
@@ -286,6 +335,8 @@ def run(
     cached: list[str] = []
     fresh: list[str] = []
 
+    source_documents = _build_source_documents(in_dir)
+
     # ---------- Stage: extraction ----------
     if skip_extraction or (paths["extraction"].exists() and not force):
         if not paths["extraction"].exists():
@@ -352,7 +403,11 @@ def run(
             confidence=stub_conf,
         )
         stub_framework = _assemble_framework(
-            project, extraction, stub_programme.model_dump(mode="json"), None
+            project,
+            extraction,
+            stub_programme.model_dump(mode="json"),
+            None,
+            source_documents=source_documents,
         )
         logger.info("Running geo enrichment (expensive)…")
         geo_data = _run_geo(stub_framework, paths["geo"])
@@ -417,6 +472,7 @@ def run(
             extraction,
             stub_programme.model_dump(mode="json"),
             geo_data,
+            source_documents=source_documents,
         )
         geo_obj = GeoContext.model_validate(geo_data) if geo_data else None
         logger.info("Running programme inference (expensive)…")
@@ -424,7 +480,13 @@ def run(
         fresh.append("programme")
 
     # ---------- Assemble the real framework ----------
-    framework = _assemble_framework(project, extraction, programme_data, geo_data)
+    framework = _assemble_framework(
+        project,
+        extraction,
+        programme_data,
+        geo_data,
+        source_documents=source_documents,
+    )
 
     # ---------- Stage: IMRO cross-validation ----------
     if skip_cross_validate:
@@ -466,6 +528,20 @@ def run(
     framework = framework.model_copy(update={"massings": massings})
     fresh.append("massings")
 
+    # ---------- Stage: sanity validation (Scenario 1 Layer 5) ----------
+    from omrt_extractor.validators import run_all_validations
+
+    findings = run_all_validations(framework)
+    sanity_path = out_dir / "sanity_report.json"
+    _write_json(sanity_path, [f.model_dump(mode="json") for f in findings])
+    fresh.append("sanity")
+    if findings:
+        logger.info("Sanity report: {} finding(s) at {}", len(findings), sanity_path)
+        for f in findings[:10]:
+            logger.warning("[{}] {}: {}", f.severity, f.constraint_name, f.message)
+    else:
+        logger.info("Sanity report: no physical-sense violations detected.")
+
     framework_path = write_grasshopper_handoff(framework, out_dir)
     fresh.append("output")
 
@@ -490,8 +566,29 @@ def run(
 
 @app.command()
 def validate(framework_path: str) -> None:
-    """Re-run validators on an existing framework.json."""
-    typer.echo(f"TODO: implement validate on {framework_path}")
+    """Re-run sanity validators on an existing framework.json."""
+    from omrt_extractor.schemas import ParametricFramework
+    from omrt_extractor.validators import run_all_validations
+
+    path = Path(framework_path).resolve()
+    if not path.is_file():
+        typer.echo(f"framework.json not found: {path}", err=True)
+        raise typer.Exit(code=2)
+
+    framework = ParametricFramework.model_validate_json(path.read_text())
+    findings = run_all_validations(framework)
+    out_path = path.parent / "sanity_report.json"
+    _write_json(out_path, [f.model_dump(mode="json") for f in findings])
+
+    if not findings:
+        typer.echo(f"No physical-sense violations detected. Wrote {out_path}")
+        return
+    errors = sum(1 for f in findings if f.severity == "error")
+    warnings = sum(1 for f in findings if f.severity == "warning")
+    typer.echo(f"{len(findings)} finding(s): {errors} error(s), {warnings} warning(s).")
+    for f in findings:
+        typer.echo(f"  [{f.severity}] {f.constraint_name}: {f.message}")
+    typer.echo(f"Wrote {out_path}")
 
 
 @app.command()

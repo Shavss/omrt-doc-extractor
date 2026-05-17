@@ -2,16 +2,28 @@
   "header": {
     "banner": "PROTOTYPE OUTPUT, NOT VERIFIED",
     "verification_status": "extracted",
-    "generated_at": "2026-05-17T14:14:38.108429+00:00",
+    "generated_at": "2026-05-17T19:18:50.659114+00:00",
     "tool_version": "0.1.0-omrt-run",
     "project_name": "draka",
     "plan_id": "NL.IMRO.0363.N2102BPGST-VG01",
     "source_documents": [
       {
-        "filename": "extraction_raw.json",
-        "document_type": "other",
+        "filename": "Draka Terrein Hamerkwartier_Regels.pdf",
+        "document_type": "regels",
+        "page_count": 38,
+        "sha256": "a815e802402f9ce08a718728b7b07a6ea9930b3905fd6fd28f0ba5527712087c"
+      },
+      {
+        "filename": "Draka Terrein Hamerkwartier_Toelichting.pdf",
+        "document_type": "toelichting",
+        "page_count": 198,
+        "sha256": "db5c92a2b1b8b7124828f2e768e5eab761fca8ae9a06b26bf583ec9c5100b301"
+      },
+      {
+        "filename": "Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf",
+        "document_type": "verbeelding",
         "page_count": 1,
-        "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        "sha256": "154dcde7be01f4fe13609826f81ca784840b4f04c202d2c6cad17175f81fc753"
       }
     ],
     "review_threshold": 0.85

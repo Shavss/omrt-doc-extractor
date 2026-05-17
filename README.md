@@ -57,6 +57,48 @@ data/outputs/<project>/
   massings/*.compas.json       # example massings
 ```
 
+## Testing on a new project
+
+The pipeline is designed to generalise to any reasonable Dutch zoning
+packet. To validate that on an unseen project:
+
+1. Place the new project's PDFs in `data/inputs/<project_name>/`
+   (regels, toelichting, kaveltekening).
+2. Make sure `ANTHROPIC_API_KEY` is set in `.env`.
+3. Run:
+
+   ```bash
+   omrt run data/inputs/<project_name>/
+   ```
+
+   The pipeline runs full extraction (Sonnet 4.5), geometry parsing,
+   geo enrichment, IMRO cross-validation, programme inference
+   (Opus 4.7), reconciliation, and output writing.
+
+4. Estimated time: 60–90 minutes depending on document length.
+5. Estimated cost: €1.50–3.00 in API calls.
+6. Outputs land in `data/outputs/<project_name>/`.
+7. Run the sanity check to confirm the outputs are well-formed:
+
+   ```bash
+   python scripts/sanity_check.py data/outputs/<project_name>/
+   ```
+
+   Exits 0 if `framework.json` validates against `ParametricFramework`,
+   carries at least one height constraint and one plot/bouwvlak
+   geometric constraint, `programme.json` has a positive
+   `target_total_gfa_m2`, `reconciliation_report.json` shows at least
+   one matched or corrected polygon, and `summary.md` is non-empty
+   with the expected section headers. Otherwise prints a diagnostic
+   for each failed check.
+
+8. Open the Streamlit viewer and load the new `framework.json` to
+   inspect:
+
+   ```bash
+   streamlit run viewer/streamlit_app.py
+   ```
+
 ## Documentation
 
 Start with one of these depending on what you want:

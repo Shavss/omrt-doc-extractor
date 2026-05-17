@@ -1,0 +1,82 @@
+[
+  {
+    "kind": "sanity_bound",
+    "constraint_id": "max_height_by_maatvoeringaanduiding",
+    "constraint_name": "Maximum building height per maatvoeringsaanduiding",
+    "value": 0.0,
+    "unit": "m",
+    "category": "height",
+    "bound": [
+      0.5,
+      250.0
+    ],
+    "severity": "error",
+    "message": "Maximum building height per maatvoeringsaanduiding = 0.0 m is outside the universal height bound (0.5, 250.0).",
+    "provenance_document": "Draka Terrein Hamerkwartier_Regels.pdf",
+    "provenance_page": 17
+  },
+  {
+    "kind": "sanity_bound",
+    "constraint_id": "bike_parking_residents_worst_case",
+    "constraint_name": "Bicycle parking spaces for residents (worst-case programme)",
+    "value": 4295.0,
+    "unit": "per_dwelling",
+    "category": "parking",
+    "bound": [
+      0.0,
+      5.0
+    ],
+    "severity": "error",
+    "message": "Bicycle parking spaces for residents (worst-case programme) = 4295.0 per_dwelling is outside the universal parking bound (0.0, 5.0).",
+    "provenance_document": "Draka Terrein Hamerkwartier_Toelichting.pdf",
+    "provenance_page": 105
+  },
+  {
+    "kind": "sanity_bound",
+    "constraint_id": "bike_parking_visitors_workers",
+    "constraint_name": "Bicycle parking spaces for visitors and workers",
+    "value": 1535.0,
+    "unit": "per_dwelling",
+    "category": "parking",
+    "bound": [
+      0.0,
+      5.0
+    ],
+    "severity": "error",
+    "message": "Bicycle parking spaces for visitors and workers = 1535.0 per_dwelling is outside the universal parking bound (0.0, 5.0).",
+    "provenance_document": "Draka Terrein Hamerkwartier_Toelichting.pdf",
+    "provenance_page": 105
+  },
+  {
+    "kind": "sanity_bound",
+    "constraint_id": "scooter_parking_residents_worst_case",
+    "constraint_name": "Scooter parking spaces for residents (worst-case programme)",
+    "value": 212.0,
+    "unit": "per_dwelling",
+    "category": "parking",
+    "bound": [
+      0.0,
+      5.0
+    ],
+    "severity": "error",
+    "message": "Scooter parking spaces for residents (worst-case programme) = 212.0 per_dwelling is outside the universal parking bound (0.0, 5.0).",
+    "provenance_document": "Draka Terrein Hamerkwartier_Toelichting.pdf",
+    "provenance_page": 105
+  },
+  {
+    "kind": "sanity_bound",
+    "constraint_id": "scooter_parking_visitors_workers",
+    "constraint_name": "Scooter parking spaces for visitors and workers",
+    "value": 77.0,
+    "unit": "per_dwelling",
+    "category": "parking",
+    "bound": [
+      0.0,
+      5.0
+    ],
+    "severity": "error",
+    "message": "Scooter parking spaces for visitors and workers = 77.0 per_dwelling is outside the universal parking bound (0.0, 5.0).",
+    "provenance_document": "Draka Terrein Hamerkwartier_Toelichting.pdf",
+    "provenance_page": 105
+  }
+]

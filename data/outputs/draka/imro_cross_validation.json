@@ -1,0 +1,5282 @@
+{
+  "inhangvloer_footprint_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082209Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "kelder_depth_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082355Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "ondergeschikte_detailhandel_bvo_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082383Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "ondergeschikte_detailhandel_ratio_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082403Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "ondergeschikte_horeca_bvo_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082418Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "ondergeschikte_horeca_ratio_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082440Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "kantoor_werkvloer_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082453Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_by_maatvoeringaanduiding": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082471Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "max_bvo_per_floor_high_rise_21_50m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082491Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_bvo_per_floor_high_rise_above_50m_from_21m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082505Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "min_plint_height": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082519Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "min_overhead_door_height_commercial": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082533Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "min_building_gap_general": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082549Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "min_building_gap_sba4": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082676Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "setback_above_21m_general": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082694Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "setback_above_30_5m_sba3": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082710Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "min_height_noise_sensitive_sba_dove_gevel_1": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082726Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "wind_study_threshold_height": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082746Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "sunlight_study_threshold_height": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082762Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "landscape_integration_study_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082775Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "mpg_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082790Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "green_coverage_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082802Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "roof_green_substrate_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082817Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.95
+  },
+  "water_storage_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082832Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "rainfall_retention_duration": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082845Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "water_discharge_rate_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082857Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "bvo_min_gemengd_2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082870Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "bvo_min_gemengd_3": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082882Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "bvo_min_gemengd_4": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082901Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "bvo_min_gemengd_6": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082917Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "height_threshold_wind_20m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082930Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "height_threshold_shadow_20m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082943Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "height_threshold_visibility_30m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082955Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_height_general": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082968Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "max_height_alternative": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082983Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "max_height_sba1_increased": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.082998Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_sba2_increased": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083013Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "avg_height_sba1": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083026Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "avg_height_sba2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083041Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_woontoren_direct": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083059Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "noise_quiet_facade_limit": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083071Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_fence_groen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083087Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_playground_groen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083102Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_other_structures_groen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083117Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_reclamemasten_verkeer": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083129Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_erfafscheidingen_verkeer": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083141Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_lichtmasten_verkeer": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083154Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_overige_bouwwerken_verkeer": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083166Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "archaeology_depth_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083179Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "archaeology_area_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083196Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_overschrijding_plint_fundament": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083211Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_overschrijding_hijsinrichting": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083223Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_overschrijding_dakterras_techniek": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083235Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "min_setback_dakterras_techniek": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083253Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_basement_area_overige_zone_2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083271Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "max_basement_depth_overige_zone_2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083285Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "deviation_utility_building_max_height": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083298Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "deviation_utility_building_max_bvo": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083350Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "deviation_minor_structures_max_area_pct": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083364Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "deviation_siting_max_shift": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083382Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "deviation_roof_terrace_height_increase": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083395Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "deviation_rooftop_equipment_height_increase": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083407Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "deviation_elevator_stair_core_height_increase": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083419Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "deviation_building_boundary_overhang": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083431Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "deviation_dimensions_max_variation": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083443Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "boundary_adjustment_limit": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083455Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "parking_norm_sociale_huur": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083468Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "parking_norm_middeldure_huur": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083483Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "parking_norm_vrije_sector_under_30m2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083496Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "parking_norm_vrije_sector_30_60m2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083508Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "parking_norm_vrije_sector_over_60m2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083522Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "parking_norm_bezoekers_wonen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083537Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "parking_norm_kantoor": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083550Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "carshare_replacement_minimum": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083563Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "ev_parking_minimum": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083575Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "overgangsrecht_uitbreiding_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083588Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 1.0
+  },
+  "max_height_hamerstraatgebied": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083602Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_fsi_hamerstraatgebied": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083618Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "target_programme_woningen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083631Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "target_bvo_woningen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083644Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "target_bvo_maakindustrie": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083661Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "target_bvo_kantoren": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083674Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "target_bvo_voorzieningen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083688Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "target_bvo_school": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083701Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "building_height_range": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083713Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "programme_total_dwellings": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083736Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "programme_total_residential_bvo": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083754Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "existing_work_bvo_preserved": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083767Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "new_work_bvo_added": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083780Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "max_office_volume_post_2020": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083796Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_work_and_facilities_bvo": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083816Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "preserved_valuable_buildings_gfa": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083833Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "preserved_adequate_buildings_gfa": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083845Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "hamerblok_base_height_north": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083857Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "hamerblok_base_height_south": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083870Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "hamerblok_loods_height": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083883Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "hamerblok_loods_clearance_height": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083896Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "hamerblok_tower_height_range": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083912Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "hamerblok_plint_height": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083927Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "base_height_17m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083939Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.82
+  },
+  "base_height_21m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.083951Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.82
+  },
+  "green_roof_height_9m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084006Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.78
+  },
+  "hamerkop_accent_80m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084019Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "hamerkop_accent_100m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084032Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "hamerkop_accent_120m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084045Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "max_height_base_zone": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084058Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "max_height_main_street_zone": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084071Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "max_height_side_street_zone": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084085Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "tower_spacing_35m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084101Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "tower_spacing_50m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084114Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "building_height_variation_60m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084127Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "woonwerkstraat_max_vehicle_weight": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084142Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "woonwerkstraat_max_vehicle_length": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084156Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "vrachtwagens_gedempt_hamerkanaal_max_weight": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084168Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "vrachtwagens_gedempt_hamerkanaal_max_length": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084180Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "bicycle_parking_norm_residential": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084192Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "scooter_parking_norm_residential": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084212Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "base_elevation_nap": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084226Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "rainwater_drainage_capacity": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084241Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "rainwater_onsite_processing": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084255Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "max_bvo_blokken_a6_a13": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084269Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plint_height_blokken_a6_a13": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084285Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "height_accents_blokken_a6_a13": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084301Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "oppervlak_a6": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084315Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "oppervlak_a7": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084336Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "oppervlak_a8": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084350Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "oppervlak_a9": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084362Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "oppervlak_a10": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084375Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "oppervlak_a11": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084387Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "oppervlak_a12": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084400Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "oppervlak_a13": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084412Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "school_area_total": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084430Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "residential_gfa_target": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084446Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "residential_unit_count_target": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084459Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "existing_business_gfa_retained": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084471Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "new_work_gfa_target": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084486Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "office_gfa_target_post_2020": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084499Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "work_facilities_gfa_minimum": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084513Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "horeca_total_area": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084526Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "leisure_total_area": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084538Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "retail_total_area": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084550Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "commercial_total_area": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084563Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "green_norm_gebruiksgroen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084596Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "green_norm_ecogroen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084611Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "green_percent_kavel": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084623Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "sport_norm_public_space_per_dwelling": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084672Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "organized_outdoor_sport_per_dwelling": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084685Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "urban_sportpark_hamerkop": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084697Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "sport_public_space_total": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084709Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "play_areas_0_6_year": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084724Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "play_fields_6_12_year": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084737Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "total_dwellings_target": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084750Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "green_total_target": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084767Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "non_residential_bvo_total": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084780Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "bvo_residential_total": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084792Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "programme_dwellings_worst_case": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084809Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "programme_dwellings_expected": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084825Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.82
+  },
+  "bvo_industry": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084838Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "bvo_offices": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084854Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "bvo_amenities": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084867Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "bvo_school": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084879Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "height_range_draka": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084897Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.82
+  },
+  "hamerblok_max_layers": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084910Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "hamerblok_plinth_height": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084926Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_bvo_total_draka": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084938Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_bvo_residential": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084950Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_bvo_office": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084962Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_bvo_social_functions": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084977Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_bvo_culture_recreation": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.084992Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_bvo_horeca": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085004Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_bvo_productive_industry": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085016Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_bvo_services_combined": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085028Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_office_size_single": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085040Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plinth_height_draka": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085058Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.7
+  },
+  "barro_vaarweg_vrijwaringszone_50m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085070Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "regional_housing_need_2017_2027": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085087Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "regional_plan_capacity_shortage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085100Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_business_use_percent": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085115Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_height_noordelijke_ij_oever_second_line": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085127Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "max_height_highrise_context": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085142Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_height_hamerkwartier_70m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085157Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "programme_target_hamerkwartier_1630": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085175Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "programme_social_housing_40_percent": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085192Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "programme_middeldure_40_percent": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085208Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "programme_dure_20_percent": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085222Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "programme_social_housing_transformation_30_percent": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085234Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "programme_middeldure_transformation_40_percent": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085246Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "programme_dure_transformation_30_percent": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085259Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_middeldure_huur_go": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085271Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_rental_period_middeldure_huur": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085320Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "price_range_middeldure_koop_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085336Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "price_range_middeldure_koop_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085349Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "office_supply_demand_2019_2026": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085362Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "office_vacancy_friction_target_2019": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085376Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.7
+  },
+  "office_supply_plan_total": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085393Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "office_gfa_hamerkwartier": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085408Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "office_gfa_draka": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085424Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "parking_pressure_blue_zone": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085439Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "bicycle_parking_zone_1": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085452Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "air_quality_no2_annual_eu_limit": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085466Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "air_quality_no2_annual_who": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085478Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "air_quality_pm10_annual_eu_limit": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085493Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "air_quality_pm10_annual_who": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085505Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "air_quality_pm25_annual_eu_limit": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085517Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "air_quality_pm25_annual_who": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085534Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "parking_norm_residential": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085546Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "parking_norm_visitors": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085558Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "ev_charging_minimum_percentage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085571Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "ev_charging_immediate_percentage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085583Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "milieu_cat_1_rustige_woonwijk": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085594Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_1_gemengd": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085609Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_2_rustige_woonwijk": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085621Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_2_gemengd": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085633Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_31_rustige_woonwijk": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085648Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_31_gemengd": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085662Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_32_rustige_woonwijk": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085677Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_32_gemengd": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085689Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_41_rustige_woonwijk": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085704Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_41_gemengd": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085716Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_42_rustige_woonwijk": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085727Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "milieu_cat_42_gemengd": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085739Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "noise_exceedance_gvb_veren_1db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085751Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_exceedance_gvb_veren_4db_incidental": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085766Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "gvb_veren_noise_zone_richtafstand": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085778Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "albemarle_zonering_richtafstand": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085789Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "emissions_assessment_height_50m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085804Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "parking_norm_reduction": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085817Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.5
+  },
+  "parking_electric_charging_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085832Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "parking_private_electric_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085844Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "parking_private_charging_immediate": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085856Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "modal_split_car_2030": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085869Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "parking_car_total": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085884Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "parking_car_shared": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085897Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "parking_bike_residents_total": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085951Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "parking_bike_residents_low_rack": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085965Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "parking_bike_visitors_total_realistic": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085980Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "bike_parking_residents_worst_case": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.085993Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "bike_parking_visitors_workers": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086007Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "scooter_parking_residents_worst_case": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086020Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "scooter_parking_visitors_workers": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086032Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "traffic_increase_worst_case": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086045Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "traffic_effect_draka_rotonde": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086060Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_from_unesco_zone": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086073Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "unesco_buffer_zone_distance": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086085Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_hamerkwartier_solitair": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086097Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_centrumgebied_standard": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086115Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "max_height_haven_stad": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086128Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_height_nieuw_west_zuidoost": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086143Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "search_zone_height_structuurvisie": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086156Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_investeringsnota_hamerkwartier": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086168Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "search_zone_height_projectnota": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086183Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_her_hamerkwartier": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086197Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_height_cluster_her": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086210Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_60m_variation": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086222Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "sunlight_hours_requirement": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086235Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "highrise_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086247Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_hamerkwartier_torens": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086261Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "height_range_base_buildings": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086275Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.82
+  },
+  "min_sunlight_duration_pocketparks": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086289Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_sunlight_coverage_pocketparks": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086301Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_sunlight_hours_per_day": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086313Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_wind_hindrance_probability_slentergebied": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086325Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "sunlight_pocketparks_march_sept_min_hours": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086338Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "sunlight_pocketparks_june_min_hours": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086356Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "sunlight_collective_roofgardens_march_sept": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086368Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "sunlight_collective_roofgardens_june": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086380Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "sunlight_existing_hamerstraat_apartments": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086399Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "height_exclusiva_lowest_dwellings": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086416Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_height_accent_1": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086431Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_accent_2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086446Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_max_48db_gevel": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086458Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_residential_55db_geluidskaart_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086470Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "noise_action_plan_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086486Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "noise_meeuwenlaan_50kmh": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086498Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "noise_roads_30kmh": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086511Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "noise_threshold_preferred_48db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086525Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_max_meeuwenlaan_45db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086546Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_max_unacceptable_63db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086596Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "speed_limit_30kmh_gedempt_hamerkanaal": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086609Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "noise_increase_existing_gedempt_hamerkanaal": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086622Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "noise_absolute_exclusiva_gedempt_hamerkanaal": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086635Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "noise_threshold_still_side": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086647Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.93
+  },
+  "noise_max_exemption_zoned_roads": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086662Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "noise_baseline_schaafstraat_4": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086675Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "noise_baseline_hamerstraat_3_5": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086689Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "noise_increase_schaafstraat_hamerstraat": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086701Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "noise_increase_hamerstraat_johan_van_hasseltweg": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086713Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "noise_cumulative_all_roads": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086733Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.93
+  },
+  "max_cumulative_noise_all_roads": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086746Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_exemption_noise_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086758Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_acceptable_cumulative_noise": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086769Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_speed_for_quiet_asphalt": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086785Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "planned_road_speed_limit": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086797Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_max_voorkeur_facade": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086809Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_max_ontheffing_facade": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086821Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_max_meeuwenlaan_facade": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086834Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_speed_limit_30kmh": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086846Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_road_max_63db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086866Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_road_increase_4db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086878Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_road_threshold_48db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086890Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "noise_industrial_base_50db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086902Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_industrial_dwelling_max_55db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086915Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_industrial_education_max_60db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086927Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_assessment_albemarle": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086939Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.7
+  },
+  "max_noise_level_overall": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086956Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_bouwdeel_f_height_55_5m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086970Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_contour_55db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086982Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "noise_contour_50db": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.086996Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "noise_limit_residential_base": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087008Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "noise_limit_residential_max_allowable": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087023Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "noise_exceedance_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087036Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "noise_cumulative_max_facades": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087051Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_north_facade_building_g": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087063Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_higher_value_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087076Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_limit_etmaal_gvb_veren": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087088Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_limit_day_gvb_veren_activiteitenbesluit": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087100Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_limit_evening_gvb_veren_activiteitenbesluit": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087117Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_limit_night_gvb_veren_activiteitenbesluit": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087129Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "setback_milieucategorie_3_1": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087144Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "setback_milieucategorie_4_1_gvb_veren": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087157Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "distance_gvb_veren_housing_aambeeldstraat": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087169Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "noise_music_events_max_exceedance": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087219Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "setback_school_to_housing_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087234Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_limit_industrial_first_phase": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087249Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_level_current_development": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087263Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "noise_limit_residential_higher_value": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087275Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_exceedance_current_situation": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087287Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "noise_target_quiet_side_tavga": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087299Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "noise_limit_design_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087315Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_etmaalwaarde_veerhuis_exceedance": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087329Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.88
+  },
+  "noise_hogere_waarde_industrielawaai": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087341Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "noise_dagperiode_gvb_veren_exceedance": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087353Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "noise_silent_facade_requirement": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087366Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_dove_gevel_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087378Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "noise_deviation_allowance": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087391Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "air_quality_investigation_zone_provincial_roads": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087405Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "air_quality_investigation_zone_national_roads": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087417Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "sensitive_function_setback_busy_urban_roads": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087432Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "particulate_matter_contribution_albemarle_60m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087446Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "nitrogen_dioxide_contribution_albemarle_60m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087459Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "grondwater_ontwateringsnorm": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087473Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.88
+  },
+  "ontwateringsnorm_openbare_ruimte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087490Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "hemelwater_bergingsnorm": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087503Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "basement_max_area_small": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087516Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "basement_max_depth_small": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087528Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "groundwater_norm_depth_below_surface": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087540Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "groundwater_tree_dewatering_depth": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087553Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "min_maaiveldniveau_wonen_ij_oever": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087565Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "rainproof_capacity_60mm_1hr": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087578Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "dove_gevel_min_geluidwering": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087592Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "nitrogen_deposition_operational": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087608Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "nitrogen_deposition_construction": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087622Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "co2_reduction_2025": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087634Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "co2_reduction_2040": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087646Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "green_roof_target": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087658Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.75
+  },
+  "waste_separation_target": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087671Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "epc_target": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087685Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "renewable_energy_local_generation": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087698Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "setback_pipeline_protection": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087709Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "fire_attention_zone_transport": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087729Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "explosion_attention_zone_transport": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087741Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "nautical_safety_setback": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087753Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "pr_contour_risicobronnen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087766Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "pr_contour_spoorlijn": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087778Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_distance_spoorlijn": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087790Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "groepsrisico_orientatiewaarde_current": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087840Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "groepsrisico_orientatiewaarde_future": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087854Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "groepsrisico_threshold_bevb": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087867Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "programme_total_dwellings_hamerkartier": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087879Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "occupancy_density_hamerkartier": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087898Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plaatsgebonden_risico_contour_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087911Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "vaarweg_vrijwaringszone_50m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087924Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "archaeology_threshold_area": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087936Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "high_rise_accent_45m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087951Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "high_rise_accent_60m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087964Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "increased_height_51m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087977Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "increased_height_70m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.087990Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_height_lib_outer_horizontal_surface": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088005Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_bestemmingsplan_current": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088018Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_tar_radar": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088030Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_draka_terrein": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088045Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_hoogbouwaccenten_40m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088057Z"
+    },
+    "confidence_flags": [
+      "unit_inferred",
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_height_hoogbouwaccenten_45m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088069Z"
+    },
+    "confidence_flags": [
+      "unit_inferred",
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_height_general_21": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088081Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_general_30_5": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088093Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_special_60": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088105Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_exception_70": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088123Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plint_height_8m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088135Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_bvo_maatschappelijke_voorzieningen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088147Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_school_area": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088161Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_schoolplein_pocketpark_area": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088175Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_green_area_schoolplein_pocketpark": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088187Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "wind_solar_study_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088199Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_base": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088213Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_sba1_deviation": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088226Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "max_height_sba2_deviation": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
+      "timestamp": "2026-05-17T14:14:37.088241Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  }
+}

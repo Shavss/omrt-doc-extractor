@@ -1,0 +1,356 @@
+{
+  "target_total_gfa_m2": 151400.0,
+  "target_total_gfa_m2_range": [
+    145000.0,
+    151400.0
+  ],
+  "use_split": {
+    "residential_m2": 120000.0,
+    "productive_m2": 12000.0,
+    "office_m2": 9000.0,
+    "retail_horeca_m2": 3000.0,
+    "cultural_m2": 3500.0,
+    "social_m2": 3900.0,
+    "other_m2": 0.0,
+    "normalised_from_pct": false,
+    "rationale": "Use split is directly anchored in the bestemmingsplan's explicit programmatic caps for the Draka terrein: 120,000 m\u00b2 residential (max_bvo_residential), 12,000 m\u00b2 productive industry (min_bvo_productive_industry, a hard minimum), 9,000 m\u00b2 office (max_bvo_office), 3,900 m\u00b2 social/maatschappelijk (max_bvo_social_functions), 3,500 m\u00b2 culture (max_bvo_culture_recreation), 3,000 m\u00b2 horeca (max_bvo_horeca). Total reconciles with max_bvo_total_draka = 151,400 m\u00b2. Office, horeca, culture, and social are capped; productive is a floor. The combined dienstverlening+horeca+culture ceiling of 6,500 m\u00b2 (max_bvo_services_combined) is respected (3,000+3,500=6,500). BAG context (1000 buildings within 1km, mixed residential and former industrial) and OSM amenities (schools, shops, supermarkets nearby) confirm a mixed-use programme is contextually appropriate.",
+    "provenance": {
+      "source_type": "inferred",
+      "document": null,
+      "page": null,
+      "quoted_text": null,
+      "api_name": null,
+      "inferred_from": [
+        "max_bvo_total_draka",
+        "max_bvo_residential",
+        "min_bvo_productive_industry",
+        "max_bvo_office",
+        "max_bvo_social_functions",
+        "max_bvo_culture_recreation",
+        "max_bvo_horeca",
+        "max_bvo_services_combined",
+        "target_bvo_woningen",
+        "target_bvo_maakindustrie",
+        "target_bvo_kantoren",
+        "target_bvo_school"
+      ],
+      "entered_by": null,
+      "timestamp": "2025-01-15T00:00:00Z"
+    },
+    "confidence": {
+      "score": 0.9,
+      "reasons": [
+        "Programme caps explicitly stated in regels and toelichting",
+        "All sub-totals reconcile with overall 151,400 m\u00b2 cap"
+      ],
+      "flags": []
+    }
+  },
+  "unit_mix": [
+    {
+      "tenure": "sociale_huur",
+      "size_band": "30_60m2",
+      "fraction_of_total_dwellings": 0.18,
+      "typology": "1br",
+      "target_count_range": [
+        280,
+        310
+      ],
+      "target_size_m2_range": [
+        40.0,
+        55.0
+      ],
+      "rationale": "Transformation-project social housing share is 30% (programme_social_housing_transformation_30_percent). CBS shows avg household size 1.9 and population skewed to young adults (median age 39.4), supporting smaller social-rent units in the 1br/30-60m\u00b2 band.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "programme_social_housing_transformation_30_percent",
+          "cbs_demographics: avg household size 1.9",
+          "parking_norm_sociale_huur"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.78,
+        "reasons": [
+          "Tenure split explicit in toelichting",
+          "Typology split is designer inference from CBS household size"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "sociale_huur",
+      "size_band": "60_90m2",
+      "fraction_of_total_dwellings": 0.12,
+      "typology": "2br",
+      "target_count_range": [
+        180,
+        210
+      ],
+      "target_size_m2_range": [
+        60.0,
+        80.0
+      ],
+      "rationale": "Remaining sociale_huur share allocated to family-suitable 2br units to broaden household mix in a primarily single/2-person buurt.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "programme_social_housing_transformation_30_percent",
+          "cbs_demographics: 2135 households"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.7,
+        "reasons": [
+          "Tenure cap from toelichting",
+          "Typology designer judgment"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "middenhuur",
+      "size_band": "30_60m2",
+      "fraction_of_total_dwellings": 0.2,
+      "typology": "1br",
+      "target_count_range": [
+        310,
+        340
+      ],
+      "target_size_m2_range": [
+        40.0,
+        60.0
+      ],
+      "rationale": "Middenhuur is 40% of dwellings (programme_middeldure_transformation_40_percent). Minimum GO is 40 m\u00b2 (min_middeldure_huur_go). Half of middenhuur set as compact 1br to match CBS 1.9 person/household and to address Amsterdam middenhuur demand.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "programme_middeldure_transformation_40_percent",
+          "min_middeldure_huur_go",
+          "cbs_demographics: avg household size 1.9"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.78,
+        "reasons": [
+          "Tenure share explicit",
+          "Minimum size constraint binding"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "middenhuur",
+      "size_band": "60_90m2",
+      "fraction_of_total_dwellings": 0.2,
+      "typology": "2br",
+      "target_count_range": [
+        310,
+        340
+      ],
+      "target_size_m2_range": [
+        60.0,
+        85.0
+      ],
+      "rationale": "Other half of middenhuur as 2br to provide family-suitable middenhuur stock.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "programme_middeldure_transformation_40_percent"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.72,
+        "reasons": [
+          "Tenure share explicit; typology split is judgment"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "vrije_sector_huur",
+      "size_band": "60_90m2",
+      "fraction_of_total_dwellings": 0.18,
+      "typology": "2br",
+      "target_count_range": [
+        280,
+        310
+      ],
+      "target_size_m2_range": [
+        60.0,
+        90.0
+      ],
+      "rationale": "Vrije sector/dure share is 30% for transformation projects (programme_dure_transformation_30_percent). Majority allocated to mid-size 2br for market demand at this scale.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "programme_dure_transformation_30_percent",
+          "parking_norm_vrije_sector_over_60m2"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.75,
+        "reasons": [
+          "Tenure share explicit"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "vrije_sector_huur",
+      "size_band": "over_90m2",
+      "fraction_of_total_dwellings": 0.12,
+      "typology": "3br",
+      "target_count_range": [
+        180,
+        210
+      ],
+      "target_size_m2_range": [
+        90.0,
+        130.0
+      ],
+      "rationale": "Remainder of vrije sector as larger 3br family units to diversify household composition.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "programme_dure_transformation_30_percent"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.65,
+        "reasons": [
+          "Designer judgment on typology split"
+        ],
+        "flags": []
+      }
+    }
+  ],
+  "target_dwelling_count": 1630,
+  "total_dwelling_count_range": [
+    1540,
+    1720
+  ],
+  "parking_demand": 595.0,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "decision": "Set target total GFA at 151,400 m\u00b2 (hard ceiling for the entire Draka programme).",
+      "evidence": "[max_bvo_total_draka] explicitly caps total programme at 151,400 m\u00b2 bvo; [max_bvo_blokken_a6_a13] confirms the same figure for blokken A6\u2013A13.",
+      "confidence_in_step": 0.92
+    },
+    {
+      "step": 2,
+      "decision": "Allocate 120,000 m\u00b2 to residential and \u22481,630 dwellings.",
+      "evidence": "[max_bvo_residential] caps residential at 120,000 m\u00b2; [target_bvo_woningen] and toelichting state circa 1,630 woningen for 120,000 m\u00b2 BVO \u2014 implies average \u224874 m\u00b2 GFA per dwelling.",
+      "confidence_in_step": 0.88
+    },
+    {
+      "step": 3,
+      "decision": "Set productive industry at 12,000 m\u00b2 (hard minimum) and office at 9,000 m\u00b2.",
+      "evidence": "[min_bvo_productive_industry] requires \u226512,000 m\u00b2 maakindustrie (a floor, not a ceiling); [max_bvo_office] caps office at 9,000 m\u00b2. Both align with [target_bvo_maakindustrie] and [target_bvo_kantoren] in the toelichting.",
+      "confidence_in_step": 0.9
+    },
+    {
+      "step": 4,
+      "decision": "Apply tenure split 30% sociale huur / 40% middenhuur / 30% vrije sector consistent with transformation policy.",
+      "evidence": "[programme_social_housing_transformation_30_percent], [programme_middeldure_transformation_40_percent], [programme_dure_transformation_30_percent] \u2014 transformation projects in Amsterdam follow 30/40/30 not the 40/40/20 new-build default.",
+      "confidence_in_step": 0.85
+    },
+    {
+      "step": 5,
+      "decision": "Bias unit sizes toward compact 1br/2br units in the 40\u201380 m\u00b2 range.",
+      "evidence": "[cbs_demographics: Population 4075, Households 2135, Avg household size 1.9, median age 39.4] indicates a buurt dominated by 1\u20132 person households; [min_middeldure_huur_go] sets a 40 m\u00b2 floor for middenhuur units.",
+      "confidence_in_step": 0.82
+    },
+    {
+      "step": 6,
+      "decision": "Acknowledge 3D BAG unavailability and rely on 2D BAG + document height envelope (21\u201370 m, with one tower to 70 m).",
+      "evidence": "Geo context notes 'pdok_3d_bag' failed (HTTP 400) and '3D BAG data available: False'. Height envelope derived from [building_height_range], [max_height_draka_terrein] (71 m TAR/radar cap), [max_height_exception_70] (one building to 70 m), and [hamerblok_base_height_south] (21 m base).",
+      "confidence_in_step": 0.8
+    },
+    {
+      "step": 7,
+      "decision": "Set total parking demand at 595 spaces (including 38 carshare).",
+      "evidence": "[parking_car_total] explicitly states 595 parking spaces are required for the worst-case functieprogramma; [parking_car_shared] confirms 38 of those are deelauto's. Consistent with low norms [parking_norm_residential]=0.3, [parking_norm_sociale_huur]=0.1, [parking_norm_kantoor]=0.6/100m\u00b2, and the autoluw character of Hamerkwartier supported by OSM transit access (bus 76 m, metro/train 377 m).",
+      "confidence_in_step": 0.9
+    },
+    {
+      "step": 8,
+      "decision": "Mixed-use programme aligns with surrounding built context.",
+      "evidence": "[pdok_bag: 1000 buildings within 1000 m radius, year-built range 1888\u20132022] shows a transforming former industrial fabric; [osm: 35 playgrounds, 6 schools, 6 supermarkets, 10 parks nearby] confirms the neighbourhood already supports family/residential uses, justifying the 79% residential share within the 151,400 m\u00b2 cap.",
+      "confidence_in_step": 0.78
+    }
+  ],
+  "provenance": {
+    "source_type": "inferred",
+    "document": null,
+    "page": null,
+    "quoted_text": null,
+    "api_name": null,
+    "inferred_from": [
+      "max_bvo_total_draka",
+      "max_bvo_residential",
+      "min_bvo_productive_industry",
+      "max_bvo_office",
+      "max_bvo_horeca",
+      "max_bvo_culture_recreation",
+      "max_bvo_social_functions",
+      "target_bvo_woningen",
+      "programme_social_housing_transformation_30_percent",
+      "programme_middeldure_transformation_40_percent",
+      "programme_dure_transformation_30_percent",
+      "parking_car_total",
+      "pdok_bag",
+      "cbs_demographics",
+      "osm_overpass"
+    ],
+    "entered_by": null,
+    "timestamp": "2025-01-15T00:00:00Z"
+  },
+  "confidence": {
+    "score": 0.85,
+    "reasons": [
+      "Programme totals and use caps are explicitly stated in the bestemmingsplan regels and toelichting",
+      "Tenure split anchored in explicit transformation policy",
+      "Parking demand stated verbatim in toelichting",
+      "Unit typology split partly designer judgment; 3D BAG context missing"
+    ],
+    "flags": []
+  }
+}

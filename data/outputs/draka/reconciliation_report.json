@@ -1,0 +1,153 @@
+[
+  {
+    "polygon_index": 5,
+    "label": "sba_2",
+    "action": "corrected",
+    "previous_height_m": 30.5,
+    "new_height_m": 60.0,
+    "source_constraint_id": "avg_height_sba2",
+    "source_constraint_provenance": {
+      "source_type": "document",
+      "document": "Draka Terrein Hamerkwartier_Regels.pdf",
+      "page": 22,
+      "quoted_text": "mits het gemiddelde van de bouwhoogtes op de gronden met 'specifieke bouwaanduiding - 2' maximaal 60 m bedraagt",
+      "api_name": null,
+      "inferred_from": [],
+      "entered_by": null,
+      "timestamp": "2026-05-16T16:38:15.381495Z"
+    },
+    "non_base_height_constraints_skipped": []
+  },
+  {
+    "polygon_index": 8,
+    "label": "sba_2",
+    "action": "matched",
+    "previous_height_m": 60.0,
+    "new_height_m": 60.0,
+    "source_constraint_id": "avg_height_sba2",
+    "source_constraint_provenance": {
+      "source_type": "document",
+      "document": "Draka Terrein Hamerkwartier_Regels.pdf",
+      "page": 22,
+      "quoted_text": "mits het gemiddelde van de bouwhoogtes op de gronden met 'specifieke bouwaanduiding - 2' maximaal 60 m bedraagt",
+      "api_name": null,
+      "inferred_from": [],
+      "entered_by": null,
+      "timestamp": "2026-05-16T16:38:15.381495Z"
+    },
+    "non_base_height_constraints_skipped": []
+  },
+  {
+    "polygon_index": 11,
+    "label": "sba_2",
+    "action": "matched",
+    "previous_height_m": 60.0,
+    "new_height_m": 60.0,
+    "source_constraint_id": "avg_height_sba2",
+    "source_constraint_provenance": {
+      "source_type": "document",
+      "document": "Draka Terrein Hamerkwartier_Regels.pdf",
+      "page": 22,
+      "quoted_text": "mits het gemiddelde van de bouwhoogtes op de gronden met 'specifieke bouwaanduiding - 2' maximaal 60 m bedraagt",
+      "api_name": null,
+      "inferred_from": [],
+      "entered_by": null,
+      "timestamp": "2026-05-16T16:38:15.381495Z"
+    },
+    "non_base_height_constraints_skipped": []
+  },
+  {
+    "polygon_index": 2,
+    "label": "sba_1",
+    "action": "inferred",
+    "previous_height_m": null,
+    "new_height_m": 45.0,
+    "source_constraint_id": "avg_height_sba1",
+    "source_constraint_provenance": {
+      "source_type": "document",
+      "document": "Draka Terrein Hamerkwartier_Regels.pdf",
+      "page": 22,
+      "quoted_text": "mits het gemiddelde van de bouwhoogtes op de gronden met 'specifieke bouwaanduiding - 1' maximaal 45 m bedraagt",
+      "api_name": null,
+      "inferred_from": [],
+      "entered_by": null,
+      "timestamp": "2026-05-16T16:38:15.381481Z"
+    },
+    "non_base_height_constraints_skipped": []
+  },
+  {
+    "polygon_index": 10,
+    "label": "sba_1",
+    "action": "matched",
+    "previous_height_m": 45.0,
+    "new_height_m": 45.0,
+    "source_constraint_id": "avg_height_sba1",
+    "source_constraint_provenance": {
+      "source_type": "document",
+      "document": "Draka Terrein Hamerkwartier_Regels.pdf",
+      "page": 22,
+      "quoted_text": "mits het gemiddelde van de bouwhoogtes op de gronden met 'specifieke bouwaanduiding - 1' maximaal 45 m bedraagt",
+      "api_name": null,
+      "inferred_from": [],
+      "entered_by": null,
+      "timestamp": "2026-05-16T16:38:15.381481Z"
+    },
+    "non_base_height_constraints_skipped": []
+  },
+  {
+    "polygon_index": -1,
+    "label": "groen_bestemming",
+    "action": "unmatched",
+    "previous_height_m": null,
+    "new_height_m": 3.0,
+    "source_constraint_id": "max_height_other_structures_groen",
+    "source_constraint_provenance": {
+      "source_type": "document",
+      "document": "Draka Terrein Hamerkwartier_Regels.pdf",
+      "page": 24,
+      "quoted_text": "de bouwhoogte van overige bouwwerken, geen gebouwen zijnde, bedraagt maximaal 3 meter",
+      "api_name": null,
+      "inferred_from": [],
+      "entered_by": null,
+      "timestamp": "2026-05-16T16:38:54.600597Z"
+    },
+    "non_base_height_constraints_skipped": []
+  },
+  {
+    "polygon_index": -1,
+    "label": "",
+    "action": "skipped_non_base",
+    "previous_height_m": null,
+    "new_height_m": 0.0,
+    "source_constraint_id": "",
+    "source_constraint_provenance": {
+      "source_type": "inferred",
+      "document": null,
+      "page": null,
+      "quoted_text": null,
+      "api_name": null,
+      "inferred_from": [
+        "max_height_erfafscheidingen_verkeer",
+        "max_height_fence_groen",
+        "max_height_lichtmasten_verkeer",
+        "max_height_overige_bouwwerken_verkeer",
+        "max_height_playground_groen",
+        "max_height_reclamemasten_verkeer",
+        "max_height_sba1_deviation",
+        "max_height_sba2_deviation"
+      ],
+      "entered_by": null,
+      "timestamp": "2026-05-17T14:14:38.023455Z"
+    },
+    "non_base_height_constraints_skipped": [
+      "max_height_erfafscheidingen_verkeer",
+      "max_height_fence_groen",
+      "max_height_lichtmasten_verkeer",
+      "max_height_overige_bouwwerken_verkeer",
+      "max_height_playground_groen",
+      "max_height_reclamemasten_verkeer",
+      "max_height_sba1_deviation",
+      "max_height_sba2_deviation"
+    ]
+  }
+]

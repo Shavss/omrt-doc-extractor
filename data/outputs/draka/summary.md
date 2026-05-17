@@ -1,0 +1,1086 @@
+# draka
+
+> **PROTOTYPE OUTPUT, NOT VERIFIED**
+
+- Verification status: `extracted`
+- Tool version: `0.1.0-omrt-run`
+- Plan ID: `NL.IMRO.0363.N2102BPGST-VG01`
+- Municipality: Amsterdam, neighbourhood: Hamerkwartier
+
+## Objective
+
+Inferred design goal for draka.
+
+## Numerical constraints
+
+-  **Maximum footprint coverage for inhangvloer** (`inhangvloer_footprint_max`): 50 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.12
+-  **Minimum depth for kelder classification** (`kelder_depth_min`): 0.5 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.12
+  - condition: measured from peil to the underside of the floor slab of the relevant building layer
+-  **Maximum BVO for ondergeschikte detailhandel** (`ondergeschikte_detailhandel_bvo_max`): 50 m2 — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.12
+  - condition: when realized within another main function
+-  **Maximum ratio of ondergeschikte detailhandel to host function** (`ondergeschikte_detailhandel_ratio_max`): 20 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.12
+  - condition: when realized within another main function
+-  **Maximum BVO for ondergeschikte horeca** (`ondergeschikte_horeca_bvo_max`): 50 m2 — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.12
+  - condition: when realized within another main function
+-  **Maximum ratio of ondergeschikte horeca to host function** (`ondergeschikte_horeca_ratio_max`): 20 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.12
+  - condition: when realized within another main function
+-  **Minimum proportion of work floor for kantoor classification** (`kantoor_werkvloer_min`): 50 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.12
+  - condition: for the hybrid office/workspace definition; more than 50% of the work floor must be set up as office space
+-  **Maximum building height per maatvoeringsaanduiding** (`max_height_by_maatvoeringaanduiding`): 0 m — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+  - condition: As specified by the maatvoeringsaanduiding 'maximum bouwhoogte (m)' on the plan
+-  **Maximum BVO per floor for high-rise 21-50m** (`max_bvo_per_floor_high_rise_21_50m`): 600 m2 — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+  - condition: For high-rise accents between 21 and 50 meters height
+-  **Maximum BVO per floor for high-rise above 50m (from 21m upward)** (`max_bvo_per_floor_high_rise_above_50m_from_21m`): 500 m2 — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+  - condition: For high-rise accents above 50 meters height, starting from 21 meters upward
+-  **Minimum plint height** (`min_plint_height`): 8 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+-  **Minimum overhead door height for commercial functions** (`min_overhead_door_height_commercial`): 4 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+  - condition: For buildings with functions mentioned under 3.1 sub c and d, on the street-facing side
+-  **Minimum gap between buildings per bouwvlak** (`min_building_gap_general`): 12 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+  - condition: At least two gaps of minimum 12m per bouwvlak, except at bouwvlakken with 'specifieke bouwaanduiding – 4' or '– 3'
+-  **Minimum gap between buildings at sba-4** (`min_building_gap_sba4`): 12 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+  - condition: At specifieke bouwaanduiding – 4, at least one gap of minimum 12m must be provided
+-  **Setback above 21m building height (general)** (`setback_above_21m_general`): 2.5 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+  - condition: For buildings with height 21m or higher, on the exterior side of bouwvlakken, except at bouwvlakken with 'specifieke bouwaanduiding – 3'
+-  **Setback above 30.5m at sba-3** (`setback_above_30_5m_sba3`): 2.5 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+  - condition: At specifieke bouwaanduiding – 3, for buildings with height 30.5m or higher, on the exterior side of bouwvlakken
+-  **Minimum height for noise-sensitive functions at dove gevel 1** (`min_height_noise_sensitive_sba_dove_gevel_1`): 21 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.17
+  - condition: At 'specifieke bouwaanduiding - dove gevel 1', noise-sensitive functions only allowed from 21m height upward if the facade is a dove gevel or has noise-reducing cladding
+-  **Wind study threshold height** (`wind_study_threshold_height`): 20 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.20
+  - condition: buildings exceeding this height require wind impact study
+-  **Sunlight study threshold height** (`sunlight_study_threshold_height`): 20 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.20
+  - condition: buildings exceeding this height require sunlight impact study
+-  **Landscape integration study threshold height** (`landscape_integration_study_threshold`): 30 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.20
+  - condition: buildings exceeding this height require landscape integration study
+-  **Maximum MPG (Milieuprestatie Gebouwen)** (`mpg_max`): 0.7 ratio — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.20
+-  **Minimum green coverage percentage** (`green_coverage_min`): 40 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.20
+-  **Minimum substrate thickness for roof green** (`roof_green_substrate_min`): 10 m — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.20
+-  **Minimum water storage capacity** (`water_storage_min`): 60 mm — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.20
+-  **Rainfall retention duration** (`rainfall_retention_duration`): 24 uur — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.20
+-  **Maximum water discharge rate** (`water_discharge_rate_max`): 2.5 liter/m2/uur — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.20
+-  **Minimum BVO productieve bedrijvigheid - gemengd 2** (`bvo_min_gemengd_2`): 2000 m2 — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.21
+  - condition: voor woningen op gronden met Specifieke vorm van gemengd - 2
+-  **Minimum BVO productieve bedrijvigheid - gemengd 3** (`bvo_min_gemengd_3`): 2000 m2 — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.21
+  - condition: voor woningen op gronden met Specifieke vorm van gemengd - 3
+-  **Minimum BVO productieve bedrijvigheid - gemengd 4** (`bvo_min_gemengd_4`): 1000 m2 — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.21
+  - condition: voor woningen op gronden met Specifieke vorm van gemengd - 4
+-  **Minimum BVO productieve bedrijvigheid - gemengd 6** (`bvo_min_gemengd_6`): 3000 m2 — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.21
+  - condition: voor woningen op gronden met Specifieke vorm van gemengd - 6
+-  **Height threshold for wind impact assessment** (`height_threshold_wind_20m`): 20 m — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.21
+  - condition: nadere eisen mogelijk boven 20 meter hoogte voor windhinder/windgevaar
+-  **Height threshold for shadow impact assessment** (`height_threshold_shadow_20m`): 20 m — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.21
+  - condition: nadere eisen mogelijk boven 20 meter hoogte voor schaduwwerking
+-  **Height threshold for visibility impact assessment** (`height_threshold_visibility_30m`): 30 m — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.21
+  - condition: nadere eisen mogelijk boven 30 meter hoogte voor zichtbaarheid
+-  **Maximum bouwhoogte algemeen (verbeelding)** (`max_height_general`): 45 m — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.22
+-  **Maximum bouwhoogte alternatief (verbeelding)** (`max_height_alternative`): 60 m — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.22
+-  **Maximum bouwhoogte verhoogd voor sba-1** (`max_height_sba1_increased`): 50 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.22
+  - condition: Met omgevingsvergunning; gemiddelde bouwhoogte op sba-1 gronden maximaal 45 m
+-  **Maximum bouwhoogte verhoogd voor sba-2** (`max_height_sba2_increased`): 65 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.22
+  - condition: Met omgevingsvergunning; gemiddelde bouwhoogte op sba-2 gronden maximaal 60 m
+-  **Gemiddelde bouwhoogte sba-1** (`avg_height_sba1`): 45 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.22
+  - condition: Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-1
+-  **Gemiddelde bouwhoogte sba-2** (`avg_height_sba2`): 60 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.22
+  - condition: Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-2
+-  **Maximum bouwhoogte woontoren (direct toegestaan)** (`max_height_woontoren_direct`): 70 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.22
+-  **Geluidsniveau geluidsluwe gevel (afwijking toegestaan)** (`noise_quiet_facade_limit`): 3 dB(A) — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.22
+  - condition: Afwijking boven voorkeursgrenswaarde, met akoestisch onderzoek en maatregelen
+-  **Maximale bouwhoogte erfafscheidingen (Groen)** (`max_height_fence_groen`): 2 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.24
+-  **Maximale bouwhoogte speelvoorzieningen (Groen)** (`max_height_playground_groen`): 3 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.24
+-  **Maximale bouwhoogte overige bouwwerken (Groen)** (`max_height_other_structures_groen`): 3 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.24
+-  **Maximale bouwhoogte reclamemasten en vlaggenmasten** (`max_height_reclamemasten_verkeer`): 10 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.25
+-  **Maximale bouwhoogte erfafscheidingen** (`max_height_erfafscheidingen_verkeer`): 2 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.25
+-  **Maximale bouwhoogte lichtmasten** (`max_height_lichtmasten_verkeer`): 15 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.25
+-  **Maximale bouwhoogte overige bouwwerken (geen gebouwen)** (`max_height_overige_bouwwerken_verkeer`): 6 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.25
+-  **Maximum disturbance depth without archaeology permit** (`archaeology_depth_threshold`): 4 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.26
+  - condition: measured below NAP (or below waterbed if water is present)
+-  **Maximum disturbance area without archaeology permit** (`archaeology_area_threshold`): 10000 m2 — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.26
+  - condition: when disturbance depth is less than 4.0m below NAP
+-  **Maximum overschrijding plinten, funderingen e.d.** (`max_overschrijding_plint_fundament`): 0.2 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.29
+  - condition: voor stoepen, stoeptreden, funderingen, plinten, pilasters, kozijnen, standleidingen voor hemelwater, gevelversieringen, wanden van ventilatiekanalen, schoorstenen en dergelijke delen van gebouwen
+-  **Maximum overschrijding hijsinrichtingen boven bouwhoogte** (`max_overschrijding_hijsinrichting`): 1 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.29
+  - condition: alleen voor hijsinrichtingen
+-  **Maximum overschrijding dakterrassen en technische installaties boven bouwhoogte** (`max_overschrijding_dakterras_techniek`): 2 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.29
+  - condition: voor trappenhuizen, technische installaties, dakterrassen, hekwerken en vergelijkbare bouwwerken; op tenminste 2 meter afstand van de gevellijn
+-  **Minimum afstand dakterrassen en technische installaties tot gevellijn** (`min_setback_dakterras_techniek`): 2 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.29
+  - condition: wanneer deze de bouwhoogte overschrijden
+-  **Maximum basement area for Overige zone - 2 (≤300 m² threshold)** (`max_basement_area_overige_zone_2`): 300 m2 — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.31
+  - condition: when basement depth ≤ 4 m and approval via beleidsregel 'Grondwaterneutrale Kelders Amsterdam'
+-  **Maximum basement depth for Overige zone - 2 (≤4 m threshold)** (`max_basement_depth_overige_zone_2`): 4 m — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.31
+  - condition: when basement area ≤ 300 m² and approval via beleidsregel 'Grondwaterneutrale Kelders Amsterdam'
+-  **Maximum bouwhoogte nutsvoorzieningen (afwijking)** (`deviation_utility_building_max_height`): 6 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.33
+  - condition: bij omgevingsvergunning voor gebouwen ten behoeve van nutsvoorzieningen
+-  **Maximum bruto vloeroppervlak nutsvoorzieningen (afwijking)** (`deviation_utility_building_max_bvo`): 25 m2 — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.33
+  - condition: bij omgevingsvergunning voor gebouwen ten behoeve van nutsvoorzieningen
+-  **Maximum oppervlakte bouwwerken geen gebouwen (afwijking)** (`deviation_minor_structures_max_area_pct`): 2 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.33
+  - condition: bij omgevingsvergunning voor bouwwerken geen gebouwen zijnde (gedenktekens, plastieken, reclameobjecten, vrijstaande muren, geluidwerende voorzieningen, etc.)
+-  **Maximum afwijking situering bouwwerken (afwijking)** (`deviation_siting_max_shift`): 2 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.33
+  - condition: bij omgevingsvergunning voor geringe afwijkingen in het belang van ruimtelijk of technisch beter verantwoorde plaatsing
+-  **Maximale verhoging bouwhoogte voor dakterras (afwijking)** (`deviation_roof_terrace_height_increase`): 1.5 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.33
+  - condition: bij omgevingsvergunning ten behoeve van voorzieningen voor een dakterras
+-  **Maximale overschrijding bouwhoogte voor schoorstenen, ventilatie etc. (afwijking)** (`deviation_rooftop_equipment_height_increase`): 5 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.33
+  - condition: bij omgevingsvergunning ten behoeve van schoorstenen, ventilatie-inrichtingen, vlaggenmasten, antennes en vergelijkbare bouwwerken voor duurzame energie
+-  **Maximale overschrijding bouwhoogte voor lift- en trappenhuizen (afwijking)** (`deviation_elevator_stair_core_height_increase`): 3 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.33
+  - condition: bij omgevingsvergunning ten behoeve van lift- en trappenhuizen en algemene technische ruimten
+-  **Maximale overschrijding bebouwingsgrenzen voor balkons etc. (afwijking)** (`deviation_building_boundary_overhang`): 2 m — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.33
+  - condition: bij omgevingsvergunning ten behoeve van balkons, bordessen, luifels, buitentrappen, bouwkundige maatregelen voor ondergeschikte delen van gebouwen
+-  **Maximale afwijking toegestane afmetingen en percentages (afwijking)** (`deviation_dimensions_max_variation`): 10 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.33
+  - condition: bij omgevingsvergunning mits geen onevenredige aantasting plaatsvindt van straat- en bebouwingsbeeld, verkeersveiligheid, gebruiksmogelijkheden aangrenzende gronden en bouwwerken en milieusituatie
+-  **Maximum adjustment to boundary lines** (`boundary_adjustment_limit`): 2 m — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.34
+  - condition: when adjusting plot boundaries, destination boundaries, or other boundary lines for improved spatial or technical placement of buildings or to align with actual site conditions
+-  **Parking norm sociale huur** (`parking_norm_sociale_huur`): 0.1 per_dwelling — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.35
+-  **Parking norm middeldure huur** (`parking_norm_middeldure_huur`): 0.4 per_dwelling — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.35
+-  **Parking norm vrije sector < 30 m² bvo** (`parking_norm_vrije_sector_under_30m2`): 0.4 per_dwelling — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.35
+  - condition: when dwelling GFA < 30 m²
+-  **Parking norm vrije sector 30-60 m² bvo** (`parking_norm_vrije_sector_30_60m2`): 0.5 per_dwelling — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.35
+  - condition: when dwelling GFA is 30-60 m²
+-  **Parking norm vrije sector > 60 m² bvo** (`parking_norm_vrije_sector_over_60m2`): 0.6 per_dwelling — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.35
+  - condition: when dwelling GFA > 60 m²
+-  **Parking norm bezoekers wonen** (`parking_norm_bezoekers_wonen`): 0.1 per_dwelling — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.35
+-  **Parking norm kantoor** (`parking_norm_kantoor`): 0.6 per_100m2_bvo — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.35
+-  **Minimum car-share replacement** (`carshare_replacement_minimum`): 30 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.35
+-  **Minimum electric vehicle parking** (`ev_parking_minimum`): 50 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.35
+-  **Overgangsrecht bouwwerk uitbreiding maximum** (`overgangsrecht_uitbreiding_max`): 10 percent — confidence 1.00
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.36
+  - condition: Alleen voor bestaande bouwwerken die afwijken van het plan, bij eenmalige afwijking door bevoegd gezag
+-  **Maximum bouwhoogte Hamerstraatgebied** (`max_height_hamerstraatgebied`): 30 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.11
+-  **Maximum Floor Space Index Hamerstraatgebied** (`max_fsi_hamerstraatgebied`): 2 ratio — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.11
+- ❗ **Target programme: woningen (dwellings)** (`target_programme_woningen`): 1630 dwellings — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.12
+- ❗ **Target BVO: woningen** (`target_bvo_woningen`): 120000 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.12
+- ❗ **Target BVO: maakindustrie** (`target_bvo_maakindustrie`): 12000 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.12
+- ❗ **Target BVO: kantoren** (`target_bvo_kantoren`): 9000 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.12
+- ❗ **Target BVO: voorzieningen** (`target_bvo_voorzieningen`): 6500 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.12
+- ❗ **Target BVO: school** (`target_bvo_school`): 3900 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.12
+- ❗ **Building height range** (`building_height_range`): 21.0–70.0 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.12
+-  **Total dwellings in Hamerkwartier** (`programme_total_dwellings`): 6700 dwellings — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.21
+-  **Total residential GFA in Hamerkwartier** (`programme_total_residential_bvo`): 510000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.21
+-  **Existing work BVO to be preserved** (`existing_work_bvo_preserved`): 100000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.21
+-  **New work BVO to be added** (`new_work_bvo_added`): 130000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.21
+-  **Maximum office volume after 2020** (`max_office_volume_post_2020`): 50000 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.21
+  - condition: na 2020
+-  **Minimum work and facilities BVO in final state** (`min_work_and_facilities_bvo`): 270000 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.21
+- ❗ **Te handhaven waardevolle gebouwen GFA** (`preserved_valuable_buildings_gfa`): 100000 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.23
+- ❗ **Te conserveren adequate gebouwen GFA** (`preserved_adequate_buildings_gfa`): 87000 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.23
+-  **Basis-bouwhoogte Hamerblok (noord)** (`hamerblok_base_height_north`): 17 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.24
+  - condition: ten noorden van het gedempt Hamerkanaal
+-  **Basis-bouwhoogte Hamerblok (zuid)** (`hamerblok_base_height_south`): 21 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.24
+  - condition: ten zuiden van het gedempt Hamerkanaal
+-  **Hoogte bedrijfsloodsen Hamerblok** (`hamerblok_loods_height`): 9 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.24
+-  **Vrije hoogte bedrijfsloodsen Hamerblok** (`hamerblok_loods_clearance_height`): 8 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.24
+- ❗ **Hoogte ranke torens Hamerblok** (`hamerblok_tower_height_range`): 45.0–60.0 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.24
+-  **Hoogte plint Hamerblok** (`hamerblok_plint_height`): 9 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.24
+- ❗ **Basishoogte 17 meter** (`base_height_17m`): 17 m — confidence 0.82
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.25
+- ❗ **Basishoogte 21 meter** (`base_height_21m`): 21 m — confidence 0.82
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.25
+- ❗ **Hoogte groene daktuinen 9 meter** (`green_roof_height_9m`): 9 m — confidence 0.78
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.25
+  - condition: voor daktuinen op loodsen
+- ❗ **Hoogbouwaccent Hamerkop 80 meter** (`hamerkop_accent_80m`): 80 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.25
+  - condition: binnen nader vast te stellen compositie
+- ❗ **Hoogbouwaccent Hamerkop 100 meter** (`hamerkop_accent_100m`): 100 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.25
+  - condition: binnen nader vast te stellen compositie
+- ❗ **Hoogbouwaccent Hamerkop 120 meter** (`hamerkop_accent_120m`): 120 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.25
+  - condition: binnen nader vast te stellen compositie
+- ❗ **Maximum building height - Basishoogte zone** (`max_height_base_zone`): 21 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.26
+  - condition: Hoofdstructuur, hoofdstraat of lijn zone
+- ❗ **Maximum building height - Hoofdstraat zone** (`max_height_main_street_zone`): 21 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.26
+  - condition: Hoofdstraat zone
+- ❗ **Maximum building height - Tussenstraat zone** (`max_height_side_street_zone`): 17 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.26
+  - condition: Tussenstraat zone
+- ❗ **Minimum tower spacing 35m** (`tower_spacing_35m`): 35 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.27
+  - condition: Afstand tussen de verschillende torens
+- ❗ **Alternative tower spacing 50m** (`tower_spacing_50m`): 50 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.27
+  - condition: Afstand tussen de verschillende torens (alternative scenario)
+- ❗ **Building height variation around 60 meters** (`building_height_variation_60m`): 60 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.28
+  - condition: Per ontwikkeling wordt hiertoe een passende stimulus ingezet. Variatie in bouwhoogte rond de 60 meter.
+-  **Maximum vehicle weight for woon- en werkstraten** (`woonwerkstraat_max_vehicle_weight`): 7.5 ton — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.31
+-  **Maximum vehicle length for woon- en werkstraten** (`woonwerkstraat_max_vehicle_length`): 10 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.31
+-  **Maximum truck weight for Gedempt Hamerkanaal** (`vrachtwagens_gedempt_hamerkanaal_max_weight`): 7.5 ton — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.31
+-  **Maximum truck length for Gedempt Hamerkanaal** (`vrachtwagens_gedempt_hamerkanaal_max_length`): 10 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.31
+-  **Bicycle parking norm for residential units** (`bicycle_parking_norm_residential`): 0.5 per_dwelling — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.32
+  - condition: visitor bicycle parking in public realm
+-  **Scooter parking norm for residential units** (`scooter_parking_norm_residential`): 0.13 per_dwelling — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.32
+  - condition: visitor scooter parking in public realm
+-  **Average ground level (maaiveld) above NAP** (`base_elevation_nap`): 1 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.32
+-  **Openbare ruimte regenwaterafvoer capaciteit** (`rainwater_drainage_capacity`): 60 mm/h — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.33
+- ❗ **Hemelwater verwerking op eigen terrein** (`rainwater_onsite_processing`): 60 mm — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.33
+-  **Maximum BVO blokken A6 t/m A13** (`max_bvo_blokken_a6_a13`): 151400 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Generieke plinthoogte blokken A6 t/m A13** (`plint_height_blokken_a6_a13`): 21 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+- ❗ **Hoogteaccenten blokken A6 t/m A13** (`height_accents_blokken_a6_a13`): 45.0–60.0 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Oppervlak bouwveld A6** (`oppervlak_a6`): 2183 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Oppervlak bouwveld A7** (`oppervlak_a7`): 4217 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Oppervlak bouwveld A8** (`oppervlak_a8`): 1729 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Oppervlak bouwveld A9** (`oppervlak_a9`): 5726 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Oppervlak bouwveld A10** (`oppervlak_a10`): 2174 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Oppervlak bouwveld A11** (`oppervlak_a11`): 1562 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Oppervlak bouwveld A12** (`oppervlak_a12`): 4053 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Oppervlak bouwveld A13** (`oppervlak_a13`): 4774 m2 — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.37
+-  **Schoolplein oppervlak totaal** (`school_area_total`): 1600 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.38
+- ❗ **Woonprogramma BVO circa** (`residential_gfa_target`): 520000 m2 — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.38
+- ❗ **Aantal woningen circa** (`residential_unit_count_target`): 6700 dwellings — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.38
+- ❗ **Bestaand bedrijfsvastgoed BVO gehandhaafd** (`existing_business_gfa_retained`): 100000 m2 — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.38
+- ❗ **Nieuw werkprogramma BVO** (`new_work_gfa_target`): 130000 m2 — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.38
+- ❗ **Kantoorvolume na 2020** (`office_gfa_target_post_2020`): 50000 m2 — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.38
+  - condition: na 2020
+-  **Harde ondergrens werken en voorzieningen BVO** (`work_facilities_gfa_minimum`): 270000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.38
+-  **Total horeca area** (`horeca_total_area`): 11000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.44
+-  **Total leisure area** (`leisure_total_area`): 10875 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.44
+-  **Total retail area** (`retail_total_area`): 7350 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.44
+-  **Total commercial area (horeca + leisure + retail)** (`commercial_total_area`): 29275 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.44
+-  **Gebruiksgroen norm per woning** (`green_norm_gebruiksgroen`): 8 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.45
+  - condition: Centrum Stedelijke woonmilieu type
+-  **Ecogroen norm per woning** (`green_norm_ecogroen`): 8 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.45
+  - condition: Centrum Stedelijke woonmilieu type
+-  **Percentage kaveloppervlak voor groen** (`green_percent_kavel`): 40 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.45
+-  **Sport in openbare ruimte per woning** (`sport_norm_public_space_per_dwelling`): 1 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.46
+-  **Georganiseerde buitensport per woning** (`organized_outdoor_sport_per_dwelling`): 2 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.46
+-  **Urban sportpark op Hamerkop** (`urban_sportpark_hamerkop`): 6500 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.46
+-  **Sport in openbare ruimte totaal** (`sport_public_space_total`): 6500 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.46
+-  **Speelplekken (0-6 jaar)** (`play_areas_0_6_year`): 3500 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.46
+-  **Speelvelden (6-12 jaar)** (`play_fields_6_12_year`): 3000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.46
+-  **Aantal woningen mogelijk totaal** (`total_dwellings_target`): 6365 dwellings — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.46
+  - condition: na aftrek 23.400 m2 voor niet wonen
+-  **Totaal groen te realiseren** (`green_total_target`): 125260 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.46
+-  **BVO niet wonen totaal** (`non_residential_bvo_total`): 234000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.46
+-  **Total BVO for residential** (`bvo_residential_total`): 120000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.48
+- ❗ **Maximum number of dwellings (worst case)** (`programme_dwellings_worst_case`): 1650 dwellings — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.48
+  - condition: worst case scenario based on dwelling typology
+- ❗ **Expected number of dwellings** (`programme_dwellings_expected`): 1630 dwellings — confidence 0.82
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.48
+  - condition: expected scenario with larger dwellings
+- ❗ **BVO for maakindustrie (manufacturing/industry)** (`bvo_industry`): 12000 m2 — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.48
+- ❗ **BVO for offices (kantoren)** (`bvo_offices`): 9000 m2 — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.48
+- ❗ **BVO for voorzieningen (amenities/facilities)** (`bvo_amenities`): 6500 m2 — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.48
+- ❗ **BVO for school** (`bvo_school`): 3900 m2 — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.48
+- ❗ **Building height range for Draka development** (`height_range_draka`): 21.0–70.0 m — confidence 0.82
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.48
+-  **Hamerblok maximum number of building layers** (`hamerblok_max_layers`): 4.0–8.0 bouwlagen — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.49
+  - condition: for open onderbouw (base) of Hamerblok typology
+-  **Hamerblok plinth height** (`hamerblok_plinth_height`): 8 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.49
+  - condition: for Hamerblok typology
+-  **Maximum BVO totaal Draka-terrein** (`max_bvo_total_draka`): 151400 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+-  **Maximum BVO woonbebouwing** (`max_bvo_residential`): 120000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+-  **Maximum BVO kantoorfuncties** (`max_bvo_office`): 9000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+-  **Maximum BVO maatschappelijke functies** (`max_bvo_social_functions`): 3900 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+-  **Maximum BVO cultuur en ontspanning** (`max_bvo_culture_recreation`): 3500 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+-  **Maximum BVO horeca** (`max_bvo_horeca`): 3000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+-  **Minimum BVO productieve bedrijvigheid** (`min_bvo_productive_industry`): 12000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+-  **Maximum BVO dienstverlening, horeca, cultuur en ontspanning gecombineerd** (`max_bvo_services_combined`): 6500 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+-  **Maximale omvang enkel kantoor** (`max_office_size_single`): 3000.0–5000.0 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+- ❗ **Plinthoogte Draka blokken** (`plinth_height_draka`): 8 m — confidence 0.70
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.50
+-  **Vrijwaringszone vaarweg Barro** (`barro_vaarweg_vrijwaringszone_50m`): 50 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.55
+  - condition: Voor vaarwegen met een CEMT-klasse VI
+-  **Regional housing need 2017-2027** (`regional_housing_need_2017_2027`): 79500 dwellings — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.61
+-  **Regional plan capacity shortage** (`regional_plan_capacity_shortage`): 17000 dwellings — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.61
+- ❗ **Minimum percentage bedrijven (business use)** (`min_business_use_percent`): 50 percent — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.64
+  - condition: voor transformatie van bestaande bedrijventerrein (anno 2009)
+- ❗ **Maximum bouwhoogte tweede linie Noordelijke IJ-oever** (`max_height_noordelijke_ij_oever_second_line`): 60 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.64
+  - condition: langs de Noordelijke IJ-oever in de tweede linie
+- ❗ **Maximum building height in Amsterdam highrise areas (context)** (`max_height_highrise_context`): 70 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.67
+  - condition: along long thoroughfares and lanes and at large parks, well integrated into the urban structure
+- ❗ **Maximum building height Hamerkwartier** (`max_height_hamerkwartier_70m`): 70 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.68
+- ❗ **Programme target dwellings Draka-terrein** (`programme_target_hamerkwartier_1630`): 1630 dwellings — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.68
+-  **Social housing percentage for new developments** (`programme_social_housing_40_percent`): 40 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.74
+  - condition: For new development projects without existing investment decisions or contracts
+-  **Mid-price housing percentage for new developments** (`programme_middeldure_40_percent`): 40 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.74
+  - condition: For new development projects without existing investment decisions or contracts
+-  **Expensive housing percentage for new developments** (`programme_dure_20_percent`): 20 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.74
+  - condition: For new development projects without existing investment decisions or contracts
+-  **Social housing percentage for transformation projects** (`programme_social_housing_transformation_30_percent`): 30 percent — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.74
+  - condition: For transformation projects (herontwikkeling) specifically
+-  **Mid-price housing percentage for transformation projects** (`programme_middeldure_transformation_40_percent`): 40 percent — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.74
+  - condition: For transformation projects (herontwikkeling) specifically
+-  **Expensive housing percentage for transformation projects** (`programme_dure_transformation_30_percent`): 30 percent — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.74
+  - condition: For transformation projects (herontwikkeling) specifically
+-  **Minimum gebruiksoppervlak middeldure huurwoningen** (`min_middeldure_huur_go`): 40 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.75
+-  **Minimum verhuurperiode middeldure huurwoningen** (`min_rental_period_middeldure_huur`): 25 jaar — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.75
+-  **Minimum verkoopprijs middeldure koopwoning** (`price_range_middeldure_koop_min`): 183000 euro — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.75
+-  **Maximum verkoopprijs middeldure koopwoning** (`price_range_middeldure_koop_max`): 306000 euro — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.75
+- ❗ **Kantooruitbreidingsvraag 2019-2026** (`office_supply_demand_2019_2026`): 125000 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.76
+  - condition: per jaar, voor korte en middellange termijn
+- ❗ **Frictieleegstand kantoren doelstelling 2019** (`office_vacancy_friction_target_2019`): 8 percent — confidence 0.70
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.76
+- ❗ **Totale planvoorraad kantoren Amsterdam** (`office_supply_plan_total`): 970000 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.76
+  - condition: flexibel inzetten tot en met 2020
+- ❗ **Office GFA target Hamerkwartier** (`office_gfa_hamerkwartier`): 50000 m2 — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.78
+-  **Office GFA contribution from Draka bestemmingsplan** (`office_gfa_draka`): 9000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.78
+- ❗ **Parking pressure in blue zone (daytime)** (`parking_pressure_blue_zone`): 50.0–60.0 percent — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.81
+  - condition: daytime in blue zone
+-  **Bicycle parking norm zone 1 (high cycle use)** (`bicycle_parking_zone_1`): 1 zone_classification — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.82
+  - condition: for non-residential functions in zone 1 'hoog fietsverbruik'
+-  **NO₂ jaargemiddelde EU-grenswaarde** (`air_quality_no2_annual_eu_limit`): 40 µg/m3 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.84
+-  **NO₂ jaargemiddelde WHO advieswaarde (2005)** (`air_quality_no2_annual_who`): 40 µg/m3 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.84
+-  **PM₁₀ jaargemiddelde EU-grenswaarde** (`air_quality_pm10_annual_eu_limit`): 40 µg/m3 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.84
+-  **PM₁₀ jaargemiddelde WHO advieswaarde (2005)** (`air_quality_pm10_annual_who`): 20 µg/m3 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.84
+-  **PM₂.₅ jaargemiddelde EU-grenswaarde** (`air_quality_pm25_annual_eu_limit`): 25 µg/m3 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.84
+-  **PM₂.₅ jaargemiddelde WHO advieswaarde (2005)** (`air_quality_pm25_annual_who`): 10 µg/m3 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.84
+-  **Parking norm residential dwellings** (`parking_norm_residential`): 0.3 per_dwelling — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.86
+-  **Parking norm visitors** (`parking_norm_visitors`): 0.1 per_dwelling — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.86
+-  **Minimum EV charging provision** (`ev_charging_minimum_percentage`): 50 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.86
+  - condition: For non-public parking facilities on plots
+-  **Immediate EV charging points** (`ev_charging_immediate_percentage`): 25 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.86
+  - condition: For non-public parking facilities on plots
+- ❗ **Richtafstand milieucat. 1 rustige woonwijk** (`milieu_cat_1_rustige_woonwijk`): 10 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in rustige woonwijk
+- ❗ **Richtafstand milieucat. 1 gemengd gebied** (`milieu_cat_1_gemengd`): 0 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in gemengd gebied
+- ❗ **Richtafstand milieucat. 2 rustige woonwijk** (`milieu_cat_2_rustige_woonwijk`): 30 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in rustige woonwijk
+- ❗ **Richtafstand milieucat. 2 gemengd gebied** (`milieu_cat_2_gemengd`): 10 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in gemengd gebied
+- ❗ **Richtafstand milieucat. 3.1 rustige woonwijk** (`milieu_cat_31_rustige_woonwijk`): 50 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in rustige woonwijk
+- ❗ **Richtafstand milieucat. 3.1 gemengd gebied** (`milieu_cat_31_gemengd`): 30 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in gemengd gebied
+- ❗ **Richtafstand milieucat. 3.2 rustige woonwijk** (`milieu_cat_32_rustige_woonwijk`): 100 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in rustige woonwijk
+- ❗ **Richtafstand milieucat. 3.2 gemengd gebied** (`milieu_cat_32_gemengd`): 50 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in gemengd gebied
+- ❗ **Richtafstand milieucat. 4.1 rustige woonwijk** (`milieu_cat_41_rustige_woonwijk`): 200 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in rustige woonwijk
+- ❗ **Richtafstand milieucat. 4.1 gemengd gebied** (`milieu_cat_41_gemengd`): 100 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in gemengd gebied
+- ❗ **Richtafstand milieucat. 4.2 rustige woonwijk** (`milieu_cat_42_rustige_woonwijk`): 300 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in rustige woonwijk
+- ❗ **Richtafstand milieucat. 4.2 gemengd gebied** (`milieu_cat_42_gemengd`): 200 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.90
+  - condition: Voor milieubelastende bedrijven in gemengd gebied
+-  **Noise exceedance GVB Veren +1 dB(A)** (`noise_exceedance_gvb_veren_1db`): 1 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.93
+  - condition: at Draka terrein from GVB Veren pontveerhaven
+-  **Incidental noise exceedance GVB Veren +4 dB(A)** (`noise_exceedance_gvb_veren_4db_incidental`): 4 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.93
+  - condition: incidental exceedance at Draka terrein from GVB Veren pontveerhaven
+-  **GVB Veren noise zone reference distance** (`gvb_veren_noise_zone_richtafstand`): 100 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.93
+  - condition: for mixed-use area (gemengd gebied) noise assessment
+- ❗ **Albemarle facility zonering reference distance** (`albemarle_zonering_richtafstand`): 200 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.93
+  - condition: zonering around Albemarle Brzo facility
+- ❗ **Emissions assessment reference height** (`emissions_assessment_height_50m`): 50 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.94
+  - condition: Height threshold for emissions calculations using Geomilieu; concentrations above 50m are lower than at or below 50m
+- ❗ **Parking norm (strict reduction through implementation)** (`parking_norm_reduction`): 0 per_dwelling — confidence 0.50
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.98
+  - condition: Implementation of strict parking norm to reduce car numbers
+-  **Minimum electric charging provision in public parking** (`parking_electric_charging_min`): 25 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.99
+  - condition: For parking spaces realized in public realm
+-  **Minimum electric vehicle provision in private parking** (`parking_private_electric_min`): 50 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.99
+  - condition: For non-public parking facilities on private plots
+-  **Immediate electric charging in private parking** (`parking_private_charging_immediate`): 25 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.99
+  - condition: For non-public parking facilities on private plots
+- ❗ **Expected car modal share 2030** (`modal_split_car_2030`): 17 percent — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.99
+  - condition: In autoluw variant, total transformation scenario for 2030
+-  **Total car parking spaces required (worst-case)** (`parking_car_total`): 595 parking_spaces — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.104
+  - condition: worst-case functieprogramma
+-  **Parking spaces for shared cars (deelauto's)** (`parking_car_shared`): 38 parking_spaces — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.104
+  - condition: worst-case functieprogramma
+-  **Bicycle parking spaces for residents (worst-case)** (`parking_bike_residents_total`): 4295 parking_spaces — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.104
+  - condition: worst-case functieprogramma
+-  **Bicycle parking spaces for residents in low racks** (`parking_bike_residents_low_rack`): 3260 parking_spaces — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.104
+  - condition: worst-case functieprogramma
+-  **Bicycle parking for short and long-term visitors (realistic scenario)** (`parking_bike_visitors_total_realistic`): 2133 parking_spaces — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.104
+  - condition: reële scenario, without double-use
+-  **Bicycle parking spaces for residents (worst-case programme)** (`bike_parking_residents_worst_case`): 4295 per_dwelling — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.105
+  - condition: worst-case functieprogramma
+-  **Bicycle parking spaces for visitors and workers** (`bike_parking_visitors_workers`): 1535 per_dwelling — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.105
+  - condition: worst-case functieprogramma, maatgevende moment
+-  **Scooter parking spaces for residents (worst-case programme)** (`scooter_parking_residents_worst_case`): 212 per_dwelling — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.105
+  - condition: worst-case functieprogramma
+- ❗ **Scooter parking spaces for visitors and workers** (`scooter_parking_visitors_workers`): 77 per_dwelling — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.105
+  - condition: worst-case functieprogramma
+-  **Traffic increase worst-case scenario** (`traffic_increase_worst_case`): 1100 mvt/etmaal — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.106
+  - condition: worst-case functieprogramma ten opzichte van Mobiliteitsplan Hamerkwartier
+-  **Traffic effect Draka development on Meeuwenlaan roundabout** (`traffic_effect_draka_rotonde`): 15 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.106
+  - condition: worst-case functieprogramma, vergeleken met autonome situatie
+- ❗ **Maximum building height visible from UNESCO world heritage zone** (`max_height_from_unesco_zone`): 60 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.108
+  - condition: when viewed from 2 km distance from UNESCO world heritage area
+-  **UNESCO buffer zone distance for tall building visibility assessment** (`unesco_buffer_zone_distance`): 2000 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.108
+  - condition: around UNESCO world heritage core area and buffer zone
+-  **Maximum bouwhoogte solitair Hamerkwartier** (`max_height_hamerkwartier_solitair`): 146 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.109
+  - condition: solitair
+- ❗ **Maximum bouwhoogte centrumgebied (standaard)** (`max_height_centrumgebied_standard`): 30.0–60.0 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.109
+- ❗ **Maximum bouwhoogte Haven-Stad** (`max_height_haven_stad`): 70 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.109
+- ❗ **Maximum building height Nieuw-West and Zuidoost** (`max_height_nieuw_west_zuidoost`): 70 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.110
+  - condition: along long through roads and lanes and at large parks, provided it fits well in the urban structure
+-  **Search zone for high-rise above 60 m (Structuurvisie 2040)** (`search_zone_height_structuurvisie`): 60 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.110
+  - condition: within search zone around Johan van Hasseltkanaal where IJ is widest
+- ❗ **Maximum height accent Investeringsnota** (`max_height_investeringsnota_hamerkwartier`): 70 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.110
+  - condition: high-rise accents, subject to conditions, conforming to draft Omgevingsvisie 2050
+-  **Search zone height projectnota** (`search_zone_height_projectnota`): 140 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.110
+  - condition: within search zone at kaap location at Johan van Hasseltkanaal
+-  **Maximum height HER Hamerkwartier (reduced zone)** (`max_height_her_hamerkwartier`): 120 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.110
+  - condition: at kaap location at Johan van Hasseltkanaal, cluster of three accents between 80 and 120 m
+-  **Minimum height cluster HER** (`min_height_cluster_her`): 80 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.110
+  - condition: cluster of three accents at kaap location
+- ❗ **Maximum building height variation around 60m** (`max_height_60m_variation`): 60 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.111
+  - condition: with variation as determined by supervision team
+-  **Minimum sunlight hours per day** (`sunlight_hours_requirement`): 2 hours — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.112
+  - condition: Between 10:00-18:00 on March 21 or September 21, on at least one facade of the dwelling
+-  **Height threshold triggering HER requirement** (`highrise_threshold`): 30 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.112
+  - condition: When building height exceeds 30 m, a Hoogbouw Effect Rapportage (HER) is required
+-  **Maximum height of towers around Johan van Hasseltkom** (`max_height_hamerkwartier_torens`): 120 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.113
+  - condition: Towers in clustervorm around Johan van Hasseltkom
+- ❗ **Height range for base buildings with towers** (`height_range_base_buildings`): 45.0–60.0 m — confidence 0.82
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.113
+  - condition: Circa 25 blokken op basement geprojecteerd
+-  **Minimum sunlight duration for pocket parks** (`min_sunlight_duration_pocketparks`): 2 hour — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.114
+  - condition: applies to each pocket park
+-  **Minimum sunlight coverage area for pocket parks** (`min_sunlight_coverage_pocketparks`): 50 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.114
+  - condition: applies to each pocket park, measured over the surface area that receives minimum 2 hours of sun
+-  **Minimum bezonningsuren per dag per gevel** (`min_sunlight_hours_per_day`): 2 hours — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.115
+  - condition: tussen 10:00-18:00 op 21 maart/21 september
+-  **Maximum hinderkans in slentergebieden** (`max_wind_hindrance_probability_slentergebied`): 5 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.115
+  - condition: slentergebieden (pedestrian areas near building entrances and throughout)
+-  **Minimum sunlight hours pocket parks (March/September)** (`sunlight_pocketparks_march_sept_min_hours`): 2 hours — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.117
+  - condition: on March 21 / September 21, on at least 50% of surface area
+-  **Minimum sunlight hours pocket parks (June)** (`sunlight_pocketparks_june_min_hours`): 4 hours — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.117
+  - condition: on June 21, on at least 50% of surface area
+-  **Minimum sunlight hours collective roof gardens (March/September)** (`sunlight_collective_roofgardens_march_sept`): 2 hours — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.117
+  - condition: on at least 50% of surface area in March/September
+-  **Minimum sunlight hours collective roof gardens (June)** (`sunlight_collective_roofgardens_june`): 4 hours — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.117
+  - condition: on at least 50% of surface area in June
+-  **Minimum sunlight hours existing Hamerstraat apartments** (`sunlight_existing_hamerstraat_apartments`): 2 hours — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.117
+  - condition: on facade
+-  **Height of lowest situated dwellings in Exclusiva development** (`height_exclusiva_lowest_dwellings`): 8 m — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.117
+-  **Maximum height accent 1** (`max_height_accent_1`): 51 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.119
+-  **Maximum height accent 2** (`max_height_accent_2`): 70 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.119
+-  **Maximum geluidbelasting 48 dB op de gevel (hoogst toelaatbare waarde)** (`noise_max_48db_gevel`): 48 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.120
+  - condition: voor geluidsgevoelige functies binnen 30 km-zone
+- ❗ **Geluidbelasting ondergrens geluidskaart** (`noise_residential_55db_geluidskaart_threshold`): 55 dB — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.120
+  - condition: ondergrens voor opname in geluidskaart vanwege wegverkeer
+- ❗ **Actieplan Geluid plandrempel** (`noise_action_plan_threshold`): 68 dB — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.121
+- ❗ **Geluidbelasting Meeuwenlaan (50 km/uur)** (`noise_meeuwenlaan_50kmh`): 50 km/h — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.123
+  - condition: ten gevolge van de 50 km/uur weg de Meeuwenlaan
+- ❗ **Geluidbelasting overige wegen (30 km/uur)** (`noise_roads_30kmh`): 30 km/h — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.123
+  - condition: ten gevolge van overige 30 km/uur wegen
+-  **Preferred noise threshold** (`noise_threshold_preferred_48db`): 48 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.124
+-  **Maximum noise load Meeuwenlaan** (`noise_max_meeuwenlaan_45db`): 45 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.124
+  - condition: due to traffic over Meeuwenlaan
+-  **Maximum unacceptable noise level for noise-zoned roads** (`noise_max_unacceptable_63db`): 63 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.124
+  - condition: for noise-zoned roads (geluidgezoneerde wegen)
+-  **Speed limit Gedempt Hamerkanaal and Hamerstraat** (`speed_limit_30kmh_gedempt_hamerkanaal`): 30 km/h — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.124
+-  **Maximum noise increase at existing dwellings, Gedempt Hamerkanaal** (`noise_increase_existing_gedempt_hamerkanaal`): 4 dB — confidence 0.92
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.125
+  - condition: as result of traffic to and from the plan area
+-  **Absolute noise level at Exclusiva, Gedempt Hamerkanaal** (`noise_absolute_exclusiva_gedempt_hamerkanaal`): 58 dB — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.125
+  - condition: traffic noise from Gedempt Hamerkanaal
+-  **Noise threshold for 'still side' requirement** (`noise_threshold_still_side`): 48 dB — confidence 0.93
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.125
+-  **Maximum exemption value for noise-zoned roads** (`noise_max_exemption_zoned_roads`): 63 dB — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.125
+-  **Baseline noise level at Schaafstraat 4** (`noise_baseline_schaafstraat_4`): 48 dB — confidence 0.92
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.125
+  - condition: without plan development
+-  **Baseline noise level at Hamerstraat 3-5** (`noise_baseline_hamerstraat_3_5`): 53 dB — confidence 0.92
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.125
+  - condition: without plan development
+-  **Maximum noise increase at Schaafstraat 4 and Hamerstraat 3-5** (`noise_increase_schaafstraat_hamerstraat`): 3 dB — confidence 0.92
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.125
+  - condition: as result of plan development
+-  **Noise increase at Hamerstraat and Johan van Hasseltweg** (`noise_increase_hamerstraat_johan_van_hasseltweg`): 1.0–2.0 dB — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.125
+  - condition: existing and planned dwellings, traffic on Hamerstraat and Johan van Hasseltweg
+-  **Cumulative noise from all surrounding roads** (`noise_cumulative_all_roads`): 64 dB — confidence 0.93
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.125
+-  **Maximum cumulative noise from all roads** (`max_cumulative_noise_all_roads`): 64 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.126
+-  **Maximum exemption noise threshold** (`max_exemption_noise_threshold`): 63 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.126
+-  **Maximum acceptable cumulative noise load** (`max_acceptable_cumulative_noise`): 66 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.126
+-  **Minimum speed for quiet asphalt application** (`min_speed_for_quiet_asphalt`): 50 km/h — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.126
+-  **Planned road speed limit in area** (`planned_road_speed_limit`): 30 km/h — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.126
+-  **Voorkeursgrenswaarde geluidbelasting gevels** (`noise_max_voorkeur_facade`): 48 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.127
+-  **Maximale ontheffingswaarde geluidbelasting gevels** (`noise_max_ontheffing_facade`): 63 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.127
+-  **Geluidbelasting gevels Meeuwenlaan** (`noise_max_meeuwenlaan_facade`): 45 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.127
+  - condition: Als gevolg van wegverkeer over de Meeuwenlaan
+-  **Toegestane snelheid 30 km/uur wegen** (`noise_speed_limit_30kmh`): 30 km/uur — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.127
+  - condition: Voor de omliggende 30 km/uur-wegen en wegen binnen het plangebied
+-  **Maximum geluidbelasting wegverkeer Gedempt Hamerkanaal** (`noise_road_max_63db`): 63 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.128
+  - condition: wegverkeer over het Gedempt Hamerkanaal
+-  **Maximum toename geluidbelasting wegverkeer** (`noise_road_increase_4db`): 4 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.128
+  - condition: ter plaatse van gevels van bestaande en geprojecteerde woningen buiten het plangebied
+- ❗ **Geluidbelasting drempelwaarde woningen** (`noise_road_threshold_48db`): 48 dB — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.128
+-  **Geluidbelasting industrieterrein Johan van Hasseltkanaal Oost - basiswaarde** (`noise_industrial_base_50db`): 50 dB(A) — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.128
+  - condition: ter plaatse van de gevels van geluidgevoelige functies, in eerste aanleg
+-  **Geluidbelasting industrieterrein - hogere grenswaarde woningen** (`noise_industrial_dwelling_max_55db`): 55 dB(A) — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.128
+-  **Geluidbelasting industrieterrein - hogere grenswaarde onderwijsgebouwen** (`noise_industrial_education_max_60db`): 60 dB(A) — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.128
+- ❗ **Geluidbelasting vanuit industrieterrein Johan van Hasseltkanaal Oost** (`noise_assessment_albemarle`): 460 m — confidence 0.70
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.129
+  - condition: afstand tot de inrichting van Albemarle en de maatgevende bronnen voor het maximale geluidniveau
+-  **Maximum etmaalwaarde geluid** (`max_noise_level_overall`): 58 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.130
+-  **Hoogste etmaalwaarde bouwdeel F op 55,5 m hoogte** (`noise_bouwdeel_f_height_55_5m`): 58 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.130
+  - condition: op een hoogte van 55,5 meter
+- ❗ **Geluidcontour 55 dB(A)** (`noise_contour_55db`): 55 dB — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.130
+- ❗ **Geluidcontour 50 dB(A)** (`noise_contour_50db`): 50 dB — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.130
+-  **Base noise limit for new residential buildings (industrial noise)** (`noise_limit_residential_base`): 50 dB — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.131
+  - condition: Industrial noise, etmaalwaarde
+-  **Maximum allowable higher noise limit for new residential buildings (industrial noise)** (`noise_limit_residential_max_allowable`): 55 dB — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.131
+  - condition: Industrial noise, hogere waarde for new residential buildings
+-  **Maximum noise exceedance above allowable limit** (`noise_exceedance_max`): 3 dB — confidence 0.90
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.131
+  - condition: At various facades where 55 dB(A) limit is exceeded
+-  **Maximum cumulative noise level at facades** (`noise_cumulative_max_facades`): 64 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.132
+  - condition: cumulative noise from traffic and industrial sources
+-  **Cumulative noise at north facade building G at 4.5m height** (`noise_north_facade_building_g`): 64 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.132
+  - condition: at height of 4.5 meters, north facade of building section G
+-  **Higher noise value threshold for facades** (`noise_higher_value_threshold`): 55 dB(A) — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.132
+-  **Etmaalwaarde geluidsbelasting GVB Veren** (`noise_limit_etmaal_gvb_veren`): 50 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.134
+  - condition: langtijdgemiddelde beoordelingsniveau als gevolg van GVB Veren
+-  **Geluidgrenswaarde dagperiode Activiteitenbesluit** (`noise_limit_day_gvb_veren_activiteitenbesluit`): 70 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.134
+  - condition: dagperiode, Activiteitenbesluit grenswaarde voor GVB Veren werkzaamheden
+-  **Geluidgrenswaarde avondperiode Activiteitenbesluit** (`noise_limit_evening_gvb_veren_activiteitenbesluit`): 60 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.134
+  - condition: avondperiode, Activiteitenbesluit grenswaarde voor GVB Veren
+-  **Geluidgrenswaarde nachtperiode Activiteitenbesluit** (`noise_limit_night_gvb_veren_activiteitenbesluit`): 65 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.134
+  - condition: nachtperiode, Activiteitenbesluit grenswaarde voor GVB Veren
+-  **Richtafstand milieucategorie 3.1 bedrijf** (`setback_milieucategorie_3_1`): 30 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.134
+  - condition: van perceelgrens van een categorie 3.1 bedrijf tot de gevels van milieugevoelige functies in gemengd gebied
+-  **Richtafstand milieucategorie 4.1 (GVB Veren)** (`setback_milieucategorie_4_1_gvb_veren`): 100 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.134
+  - condition: voor milieucategorie 4.1 bedrijven zoals GVB Veren
+- ❗ **Afstand GVB Veren tot woning Aambeeldstraat 16** (`distance_gvb_veren_housing_aambeeldstraat`): 10 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.134
+-  **Maximum noise exceedance from music during events** (`noise_music_events_max_exceedance`): 4 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.135
+  - condition: during festivals, maximum 6 times per year
+-  **Minimum setback from school to surrounding housing** (`setback_school_to_housing_min`): 20 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.135
+  - condition: from planned development to surrounding residential buildings
+-  **Noise limit industrial terrain first phase** (`noise_limit_industrial_first_phase`): 50 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.136
+  - condition: in eerste aanleg
+- ❗ **Actual noise level at planned development facades** (`noise_level_current_development`): 58 dB — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.136
+-  **Maximum permissible higher noise value for residential** (`noise_limit_residential_higher_value`): 55 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.136
+- ❗ **Noise exceedance in current situation** (`noise_exceedance_current_situation`): 3 dB — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.136
+  - condition: in voorliggende situatie
+- ❗ **Target noise level for quiet side (TAVGA preference)** (`noise_target_quiet_side_tavga`): 50 dB — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.136
+  - condition: voor stille zijde
+-  **Geluidbelasting ontwerpdrempel voor stille zijde-eis** (`noise_limit_design_threshold`): 50 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.137
+  - condition: Bij geluidbelasting hoger dan 50 dB(A) moet een woning over een stille zijde beschikken
+-  **Etmaalwaarde overschrijding door Veerhuis feesten** (`noise_etmaalwaarde_veerhuis_exceedance`): 50 dB — confidence 0.88
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.137
+  - condition: Incidentele feesten ter plaatse van het Veerhuis, maximaal 6 keer per jaar
+-  **Hogere waarde voor industrielawaai Johan van Hasseltkanaal Oost** (`noise_hogere_waarde_industrielawaai`): 58 dB — confidence 0.92
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.137
+  - condition: Geluidbelasting als gevolg van gezoneerd industrieterrein Johan van Hasseltkanaal Oost
+-  **Geluidgrenswaarde dagperiode overschrijding GVB Veren** (`noise_dagperiode_gvb_veren_exceedance`): 1 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.137
+  - condition: Dagperiode werkzaamheden op bedrijfsterrein GVB Veren
+-  **Stille zijde verplichting voor hogere waarde woningen** (`noise_silent_facade_requirement`): 1 per_dwelling — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.138
+-  **Dove gevels bij geluidsbelasting industrielawaai** (`noise_dove_gevel_threshold`): 55 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.138
+-  **Afwijkingsmogelijkheid overschrijding voorkeursgrenswaarde** (`noise_deviation_allowance`): 3 dB — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.138
+  - condition: when omgevingsvergunning is granted
+-  **Onderzoekszone breedte provinciale wegen** (`air_quality_investigation_zone_provincial_roads`): 50 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.140
+  - condition: Voor provinciale wegen
+-  **Onderzoekszone breedte rijkswegen** (`air_quality_investigation_zone_national_roads`): 300 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.140
+  - condition: Voor rijkswegen aan weerszijde
+-  **Afstand gevoelige bestemmingen drukke stedelijke wegen** (`sensitive_function_setback_busy_urban_roads`): 50 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.140
+  - condition: Voor stedelijke wegen met meer dan 10.000 motorvoertuigbewegingen per etmaal, ongeacht de luchtkwaliteit
+-  **Fijnstof bijdrage Albemarle op 60m hoogte** (`particulate_matter_contribution_albemarle_60m`): 1 µg/m3 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.140
+  - condition: Op 60 meter hoogte bij de dichtstbijzijnde gesitueerde hoogbouw
+-  **Stikstofdioxide bijdrage Albemarle op 60m hoogte** (`nitrogen_dioxide_contribution_albemarle_60m`): 2 µg/m3 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.140
+  - condition: Op 60 meter hoogte bij de dichtstbijzijnde gesitueerde hoogbouw
+-  **Grondwater ontwateringsnorm** (`grondwater_ontwateringsnorm`): 0.9 m — confidence 0.88
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.141
+  - condition: for new construction in public space, post-2021 policy target
+- ❗ **Ontwateringsnorm openbare ruimte** (`ontwateringsnorm_openbare_ruimte`): 0.9 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.142
+-  **Hemelwater bergingsnorm per m² bebouwd oppervlak** (`hemelwater_bergingsnorm`): 60 liter per m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.142
+  - condition: voor nieuwe gebouwen en voor bestaande gebouwen die ingrijpend worden gerenoveerd, waaraan één of meer bouwlagen worden toegevoegd, of waarvan het bebouwde oppervlak wordt uitgebreid
+-  **Maximum basement area for small basements** (`basement_max_area_small`): 300 m2 — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.143
+  - condition: for basements qualifying under small basement standard measures
+-  **Maximum basement depth for small basements** (`basement_max_depth_small`): 4 m — confidence 0.95
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.143
+  - condition: for basements qualifying under small basement standard measures
+-  **Groundwater norm depth below surface** (`groundwater_norm_depth_below_surface`): 0.5 m — confidence 0.92
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.143
+-  **Desired groundwater dewatering depth for trees in public space** (`groundwater_tree_dewatering_depth`): 0.9 m — confidence 0.92
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.143
+  - condition: for trees in public space (openbare ruimte)
+-  **Minimum maaiveldniveau wonen langs IJ-oever** (`min_maaiveldniveau_wonen_ij_oever`): 1 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.144
+  - condition: toekomstige hoogstedelijke ontwikkelingen langs de IJ-oever
+-  **Rainproof plan maaiveld design capacity** (`rainproof_capacity_60mm_1hr`): 60 mm — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.144
+  - condition: precipitation event of 60 mm in 1 hour
+- ❗ **Minimum geluidwering dove gevel** (`dove_gevel_min_geluidwering`): 33 dB — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Regels.pdf p.9
+  - condition: voor dove gevels, gemeten volgens NEN 5077, als verschil tussen geluidsbelasting en 33 dB onderscheidenlijk 35 dB(A)
+-  **Nitrogen deposition in operational phase (Natura 2000)** (`nitrogen_deposition_operational`): -0.02 mol/ha/jaar — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.155
+  - condition: operational phase impact on Ilperveld, Varkensland, Oostzanderveld & Twiske Natura 2000 area
+-  **Nitrogen deposition in construction phase (Natura 2000)** (`nitrogen_deposition_construction`): 0 mol/ha/jaar — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.155
+  - condition: construction phase, contingent on use of stage 4 (2014) machinery minimum and Euro VI (2013) trucks minimum
+-  **CO₂ reduction target 2025** (`co2_reduction_2025`): 40 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.157
+  - condition: ten opzichte van 1990
+-  **CO₂ reduction target 2040** (`co2_reduction_2040`): 75 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.157
+- ❗ **Green roof target Hamerkwartier** (`green_roof_target`): 50000 m2 — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.158
+- ❗ **Household waste separation target** (`waste_separation_target`): 65 percent — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.158
+  - condition: from 2020
+- ❗ **Energy Performance Coefficient (EPC) target** (`epc_target`): 0.1 ratio — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.158
+-  **Local renewable energy generation minimum (BENG requirement)** (`renewable_energy_local_generation`): 50 percent — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.158
+-  **Belemmeringenstrook buisleidingen** (`setback_pipeline_protection`): 4.0–5.0 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.165
+  - condition: aan weerszijden van buisleidingen, ter bescherming en toegankelijkheid
+- ❗ **Brandaandachtsgebied transportroutes** (`fire_attention_zone_transport`): 30 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.165
+  - condition: voor transportroutes uit het Basisnet onder de Omgevingswet
+- ❗ **Explosieaandachtsgebied transportroutes** (`explosion_attention_zone_transport`): 200 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.165
+  - condition: voor transportroutes uit het Basisnet onder de Omgevingswet
+-  **Vrijwaringszone Rijksvaarweg (nautische veiligheid)** (`nautical_safety_setback`): 50 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.166
+  - condition: aan weerszijden van de Rijksvaarweg, gemeten vanaf de begrenzing van de vaarweg
+-  **Plaatsgebonden risico contour overige risicobronnen** (`pr_contour_risicobronnen`): 1e-06 ratio — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.168
+-  **Plaatsgebonden risico contour spoorlijn** (`pr_contour_spoorlijn`): 1e-06 ratio — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.168
+-  **Minimum afstand tot spoorlijn** (`min_distance_spoorlijn`): 200 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.168
+-  **Groepsrisico oriëntatiewaarde huidige situatie (aardgastransportleiding)** (`groepsrisico_orientatiewaarde_current`): 0.021 ratio — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.168
+-  **Groepsrisico oriëntatiewaarde na ontwikkeling (aardgastransportleiding)** (`groepsrisico_orientatiewaarde_future`): 0.085 ratio — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.168
+-  **Groepsrisico drempelwaarde beperkte verantwoording** (`groepsrisico_threshold_bevb`): 0.1 ratio — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.168
+-  **Toekomstige programma woningen Hamerkartier** (`programme_total_dwellings_hamerkartier`): 6000.0–6500.0 dwellings — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.170
+-  **Personen per woning** (`occupancy_density_hamerkartier`): 2.4 per_dwelling — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.170
+  - condition: voor de geprojecteerde woningen
+-  **Minimale straal plaatsgebonden risicocontour** (`plaatsgebonden_risico_contour_min`): 450 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.170
+  - condition: nieuwe plaatsgebonden risico-contour
+-  **Vrijwaringszone vaarweg IJ** (`vaarweg_vrijwaringszone_50m`): 50 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.172
+  - condition: gemeten vanaf de begrenzingslijn van de vaarweg; geen bebouwing toegestaan binnen deze zone
+-  **Archaeology research area threshold** (`archaeology_threshold_area`): 10000 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.179
+  - condition: when excavation depth exceeds 4 m below ground level
+-  **Hoogbouwaccent 45 meter** (`high_rise_accent_45m`): 45 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.184
+  - condition: mits 'rank'
+-  **Hoogbouwaccent 60 meter** (`high_rise_accent_60m`): 60 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.184
+  - condition: mits 'rank'
+- ❗ **Verhoogde bouwhoogte 51 meter** (`increased_height_51m`): 51 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.184
+  - condition: onder voorwaarden zoals verwoord in de regels; extra bouwhoogte moet afdoende bijdragen aan stedenbouwkundige en ruimtelijke kwaliteit
+- ❗ **Verhoogde bouwhoogte 70 meter** (`increased_height_70m`): 70 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.184
+  - condition: onder voorwaarden zoals verwoord in de regels; extra bouwhoogte moet afdoende bijdragen aan stedenbouwkundige en ruimtelijke kwaliteit
+-  **Maximum building height due to LIB outer horizontal surface** (`max_height_lib_outer_horizontal_surface`): 146 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.186
+  - condition: Relevant for high-rise buildings; constraint from Schiphol airport outer horizontal surface and approach routes for runways 22 (Oostbaan) and 24 (Kaagbaan)
+-  **Maximum building height in current bestemmingsplan** (`max_height_bestemmingsplan_current`): 70 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.186
+-  **Maximum building height (TAR radar constraint)** (`max_height_tar_radar`): 71 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.187
+  - condition: NAP-referenced height limit due to Terminal Area Radar (TAR1 and TAR4) interference zones
+-  **Maximum building height Draka terrein** (`max_height_draka_terrein`): 71 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.188
+- ❗ **Maximum building height for high-rise accent buildings (40 m)** (`max_height_hoogbouwaccenten_40m`): 40 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.190
+  - condition: For hoogbouwaccenten (high-rise accent buildings)
+- ❗ **Maximum building height for high-rise accent buildings (45 m)** (`max_height_hoogbouwaccenten_45m`): 45 m — confidence 0.75
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.190
+  - condition: For hoogbouwaccenten (high-rise accent buildings)
+-  **Maximum bouwhoogte 21 meter** (`max_height_general_21`): 21 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+-  **Maximum bouwhoogte 30,5 meter** (`max_height_general_30_5`): 30.5 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+-  **Maximum bouwhoogte 60 meter (plangebied)** (`max_height_special_60`): 60 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+-  **Maximum bouwhoogte 70 meter (één gebouw)** (`max_height_exception_70`): 70 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+  - condition: één gebouw binnen het plangebied
+-  **Plinthoogte 8 meter** (`plint_height_8m`): 8 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+-  **Maximale BVO maatschappelijke voorzieningen** (`max_bvo_maatschappelijke_voorzieningen`): 3900 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+-  **Minimale oppervlakte school** (`min_school_area`): 1250 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+-  **Minimale oppervlakte schoolplein en pocketpark** (`min_schoolplein_pocketpark_area`): 1600 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+-  **Minimale groenoppervlakte schoolplein/pocketpark** (`min_green_area_schoolplein_pocketpark`): 675 m2 — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+-  **Hoogte drempel windhinder- en bezonningsstudie** (`wind_solar_study_threshold`): 20 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.191
+  - condition: when building height exceeds 20 m
+-  **Maximum bouwhoogte (base)** (`max_height_base`): 45 m — confidence 0.85
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.192
+- ❗ **Maximum bouwhoogte with deviation (sba-1)** (`max_height_sba1_deviation`): 50 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.192
+  - condition: when average building height on grounds with 'specifieke bouwaanduiding-1' is max 45m
+- ❗ **Maximum bouwhoogte with deviation (sba-2)** (`max_height_sba2_deviation`): 70 m — confidence 0.80
+  - source: Draka Terrein Hamerkwartier_Toelichting.pdf p.192
+  - condition: when average building height on grounds with 'specifieke bouwaanduiding 2' is max 60m
+
+## Geometric constraints
+
+- **Plot boundary** (`plot_boundary_01`, plot_boundary, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-4** (`bouwvlak_01`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-dvg3** (`bouwvlak_02`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-1** (`bouwvlak_03`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-dvg4** (`bouwvlak_04`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-3, sba-dvg2** (`bouwvlak_05`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-2, sba-dvg3, sba-dvg5** (`bouwvlak_06`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-4** (`bouwvlak_07`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-4, sgd-7** (`bouwvlak_08`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-2, sgd-4** (`bouwvlak_09`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-4, GD** (`bouwvlak_10`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-1, sgd-2** (`bouwvlak_11`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-2, m** (`bouwvlak_12`, bouwvlak, LOD 0, CRS drawing_local)
+- **Bouwvlak sba-dvg1, sba-dvg2, sgd-3** (`bouwvlak_13`, bouwvlak, LOD 0, CRS drawing_local)
+- **Zone sgd-9, GD** (`other_01`, other, LOD 0, CRS drawing_local)
+- **Zone GD** (`other_02`, other, LOD 0, CRS drawing_local)
+- **Zone V** (`other_03`, other, LOD 0, CRS drawing_local)
+- **Zone V** (`other_04`, other, LOD 0, CRS drawing_local)
+- **Zone WR-A** (`no_build_zone_01`, no_build_zone, LOD 0, CRS drawing_local)
+- **Zone G** (`other_05`, other, LOD 0, CRS drawing_local)
+- **Zone GD** (`other_06`, other, LOD 0, CRS drawing_local)
+- **Zone sgd-1** (`other_07`, other, LOD 0, CRS drawing_local)
+- **Zone GD** (`other_08`, other, LOD 0, CRS drawing_local)
+- **Zone GD** (`other_09`, other, LOD 0, CRS drawing_local)
+- **Zone sgd-5** (`other_10`, other, LOD 0, CRS drawing_local)
+- **Zone sgd-8, GD** (`other_11`, other, LOD 0, CRS drawing_local)
+- **Zone V** (`other_12`, other, LOD 0, CRS drawing_local)
+- **Zone GD** (`other_13`, other, LOD 0, CRS drawing_local)
+- **Zone sgd-6** (`other_14`, other, LOD 0, CRS drawing_local)
+- **Zone G** (`other_15`, other, LOD 0, CRS drawing_local)
+- **Zone V** (`other_16`, other, LOD 0, CRS drawing_local)
+- **Zone GD** (`other_17`, other, LOD 0, CRS drawing_local)
+- **Zone V** (`other_18`, other, LOD 0, CRS drawing_local)
+- **Zone WR-A** (`no_build_zone_02`, no_build_zone, LOD 0, CRS drawing_local)
+- **Zone G** (`other_19`, other, LOD 0, CRS drawing_local)
+
+## Programme proposal
+
+- Target GFA: 151400 m²
+- Target dwellings: 1630
+- Parking demand: 595
+
+### Reasoning trace
+
+- Step 1: Set target total GFA at 151,400 m² (hard ceiling for the entire Draka programme). — evidence: [max_bvo_total_draka] explicitly caps total programme at 151,400 m² bvo; [max_bvo_blokken_a6_a13] confirms the same figure for blokken A6–A13.
+- Step 2: Allocate 120,000 m² to residential and ≈1,630 dwellings. — evidence: [max_bvo_residential] caps residential at 120,000 m²; [target_bvo_woningen] and toelichting state circa 1,630 woningen for 120,000 m² BVO — implies average ≈74 m² GFA per dwelling.
+- Step 3: Set productive industry at 12,000 m² (hard minimum) and office at 9,000 m². — evidence: [min_bvo_productive_industry] requires ≥12,000 m² maakindustrie (a floor, not a ceiling); [max_bvo_office] caps office at 9,000 m². Both align with [target_bvo_maakindustrie] and [target_bvo_kantoren] in the toelichting.
+- Step 4: Apply tenure split 30% sociale huur / 40% middenhuur / 30% vrije sector consistent with transformation policy. — evidence: [programme_social_housing_transformation_30_percent], [programme_middeldure_transformation_40_percent], [programme_dure_transformation_30_percent] — transformation projects in Amsterdam follow 30/40/30 not the 40/40/20 new-build default.
+- Step 5: Bias unit sizes toward compact 1br/2br units in the 40–80 m² range. — evidence: [cbs_demographics: Population 4075, Households 2135, Avg household size 1.9, median age 39.4] indicates a buurt dominated by 1–2 person households; [min_middeldure_huur_go] sets a 40 m² floor for middenhuur units.
+- Step 6: Acknowledge 3D BAG unavailability and rely on 2D BAG + document height envelope (21–70 m, with one tower to 70 m). — evidence: Geo context notes 'pdok_3d_bag' failed (HTTP 400) and '3D BAG data available: False'. Height envelope derived from [building_height_range], [max_height_draka_terrein] (71 m TAR/radar cap), [max_height_exception_70] (one building to 70 m), and [hamerblok_base_height_south] (21 m base).
+- Step 7: Set total parking demand at 595 spaces (including 38 carshare). — evidence: [parking_car_total] explicitly states 595 parking spaces are required for the worst-case functieprogramma; [parking_car_shared] confirms 38 of those are deelauto's. Consistent with low norms [parking_norm_residential]=0.3, [parking_norm_sociale_huur]=0.1, [parking_norm_kantoor]=0.6/100m², and the autoluw character of Hamerkwartier supported by OSM transit access (bus 76 m, metro/train 377 m).
+- Step 8: Mixed-use programme aligns with surrounding built context. — evidence: [pdok_bag: 1000 buildings within 1000 m radius, year-built range 1888–2022] shows a transforming former industrial fabric; [osm: 35 playgrounds, 6 schools, 6 supermarkets, 10 parks nearby] confirms the neighbourhood already supports family/residential uses, justifying the 79% residential share within the 151,400 m² cap.

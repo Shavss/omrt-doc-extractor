@@ -1,7 +1,6 @@
 # OMRT doc-extractor
 
-A prototype that turns Dutch project document bundles (bestemmingsplan regels, toelichting, kaveltekening) into a validated, structured Parametric Framework for the OMRT Run system.
-
+A prototype that turns Dutch project document bundles (bestemmingsplan regels, toelichting, kaveltekening) into a validated, structured Parametric Framework.
 ## Quick start
 
 ```bash
@@ -64,8 +63,6 @@ Start with one of these depending on what you want:
 
 - **`docs/architecture.md`** if you want to understand what the system does and why.
 - **`docs/schema_reference.md`** if you want to consume the JSON output or build against the Pydantic schema.
-- **`PROJECT_PLAN.md`** if you want to see the working plan with stage-by-stage build prompts and time estimates.
-- **`CLAUDE.md`** if you are working in the repo with Claude Code; this is the working agreement.
 
 ## Repository layout
 

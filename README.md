@@ -15,11 +15,47 @@ cp .env.example .env
 # 3. Seed the glossary (one-off)
 python scripts/seed_glossary.py
 
-# 4. Run the pipeline on Draka
+# 4. Run the pipeline on a project
 omrt run data/inputs/draka/
 
 # 5. Review in the Streamlit viewer
 streamlit run viewer/streamlit_app.py
+```
+
+## Pipeline orchestration
+
+`omrt run <input_dir>` is the canonical entry point. It derives the
+project name from the input directory basename and writes every artifact
+to `data/outputs/<project>/`. The four expensive stages — multimodal
+extraction, geo enrichment, IMRO cross-validation, programme inference —
+are skipped when their cached output already exists; the cheap chain
+(geometry parse, reconciliation, framework assembly, massings, handoff)
+always runs so any change to the assembly logic takes effect on the
+next invocation.
+
+Flags:
+
+- `--force` re-runs every stage, ignoring caches.
+- `--skip-extraction` / `--skip-programme` / `--skip-enrich` /
+  `--skip-cross-validate` opt out of a single expensive stage. The
+  cached output must already exist (or, for cross-validate, may be
+  absent — the constraint set is then used as-is).
+
+Output layout per project:
+
+```
+data/outputs/<project>/
+  extraction_raw.json          # expensive (LLM)
+  programme.json               # expensive (LLM)
+  geo_context.json             # expensive (PDOK / CBS / OSM)
+  imro_cross_validation.json   # expensive (IMRO API)
+  geometry.json                # cheap (vector parser)
+  reconciliation_report.json   # cheap
+  framework.json               # final handoff
+  summary.md                   # human-readable handoff
+  massing_inputs.json          # slim envelope for Grasshopper
+  geometry/*.compas            # per-polygon COMPAS Polygons
+  massings/*.compas.json       # example massings
 ```
 
 ## Documentation

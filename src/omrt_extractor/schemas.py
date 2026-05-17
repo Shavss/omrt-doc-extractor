@@ -429,7 +429,26 @@ ConstraintCategory = Literal[
     "other",
 ]
 
+class ReasoningStep(BaseModel):
+    """A single step in the programme reasoning trace."""
 
+    model_config = ConfigDict(extra="forbid")
+
+    step: int
+    decision: str = Field(description="What was decided in this step.")
+    evidence: str | None = Field(
+        default=None,
+        description="Constraint IDs, geo data points, or 'designer judgment: ...' cited.",
+    )
+    confidence_in_step: float | None = Field(
+        default=None,
+        ge=0.0,
+        le=1.0,
+        description="Model's self-reported confidence in this specific reasoning step.",
+    )
+
+
+    
 class NumericalConstraint(BaseModel):
     """A single numerical rule extracted from the documents.
 
@@ -577,6 +596,19 @@ class GeometricConstraint(BaseModel):
     associated_rules: list[str] = Field(
         default_factory=list,
         description="IDs of NumericalConstraint and NarrativeConstraint records that bind on this feature.",
+    )
+    height_reconciled_from: Literal["regels", "verbeelding", "verbeelding_uncorrected"] | None = (
+        Field(
+            default=None,
+            description=(
+                "For bouwvlakken: how the polygon's height was sourced after the "
+                "reconciliation pass. 'regels' = set or overwritten by a regels "
+                "clause. 'verbeelding' = drawing value confirmed by regels. "
+                "'verbeelding_uncorrected' = drawing value with no matching "
+                "regels clause to confirm. None for non-height features or when "
+                "reconciliation was skipped."
+            ),
+        )
     )
     provenance: Provenance
     confidence: Confidence
@@ -779,6 +811,28 @@ class UnitTypeTarget(BaseModel):
         le=1.0,
         description="Fraction of total dwellings as 0.0 to 1.0.",
     )
+    typology: str | None = Field(
+        default=None,
+        description=(
+            "Free-form typology label as returned by the LLM "
+            "(e.g. 'studio_1br', '1br_2br', '2br_3br'). Informational only — "
+            "not used in Run. Retained so reviewers can see the LLM's original intent."
+        ),
+    )
+    target_count_range: tuple[int, int] | None = Field(
+        default=None,
+        description=(
+            "LLM-suggested dwelling count range (min, max) for this tenure band. "
+            "Not enforced by Run; surfaced in the viewer for human review."
+        ),
+    )
+    target_size_m2_range: tuple[float, float] | None = Field(
+        default=None,
+        description=(
+            "LLM-suggested floor area range in m² (min, max) for this band. "
+            "Not enforced by Run; surfaced in the viewer for human review."
+        ),
+    )
     rationale: str
     provenance: Provenance
     confidence: Confidence
@@ -802,10 +856,17 @@ class UseSplit(BaseModel):
         description="Maatschappelijke voorzieningen, schools, kinderdagverblijf.",
     )
     other_m2: float = Field(ge=0)
+    normalised_from_pct: bool = Field(
+        default=False,
+        description=(
+            "True when m2 values were derived by multiplying LLM-returned "
+            "percentages (*_pct fields) by target_total_gfa_m2. "
+            "Flag for reviewers — verify the GFA base value is correct."
+        ),
+    )
     rationale: str
     provenance: Provenance
     confidence: Confidence
-
 
 class ProgrammeProposal(BaseModel):
     """The inferred developer programme.
@@ -820,23 +881,41 @@ class ProgrammeProposal(BaseModel):
     target_total_gfa_m2: float = Field(
         gt=0, description="Total GFA the proposed programme delivers."
     )
+    target_total_gfa_m2_range: tuple[float, float] | None = Field(
+        default=None,
+        description=(
+            "LLM-suggested GFA range (min, max) in m². "
+            "target_total_gfa_m2 is the midpoint when this is present."
+        ),
+    )
     use_split: UseSplit
     unit_mix: list[UnitTypeTarget] = Field(
-        description="Breakdown of housing tenure and size bands."
+        description=(
+            "Breakdown of housing by tenure × typology. One entry per combination, "
+            "e.g. sociale_huur×studio, sociale_huur×1br, middenhuur×1br, etc."
+        )
     )
     target_dwelling_count: int | None = Field(
         default=None,
         description="Approximate dwelling count implied by the programme.",
     )
+    total_dwelling_count_range: tuple[int, int] | None = Field(
+        default=None,
+        description=(
+            "LLM-suggested dwelling count range (min, max). "
+            "target_dwelling_count is the midpoint when this is present."
+        ),
+    )
     parking_demand: float | None = Field(
         default=None,
         description="Estimated total parking spaces required given the unit mix and norms.",
     )
-    reasoning_trace: list[str] = Field(
+    reasoning_trace: list[ReasoningStep | str] = Field(
         description=(
             "Stepwise reasoning. Each step cites either a constraint ID, a "
             "geo context data point, or explicitly states 'designer judgment' "
-            "with rationale."
+            "with rationale. Steps may be structured ReasoningStep objects "
+            "(with per-step confidence) or plain strings (legacy)."
         )
     )
     provenance: Provenance
@@ -966,6 +1045,24 @@ class Massing(BaseModel):
     obj_file: str | None = Field(
         default=None,
         description="Optional path to an OBJ export.",
+    )
+    mesh_polygons: list[list[list[float]]] | None = Field(
+        default=None,
+        description=(
+            "Optional inline triangulated mesh as a list of triangles, each a "
+            "list of three [x, y, z] points. Lets the viewer render with "
+            "plotly Mesh3d without re-reading the COMPAS JSON. The COMPAS "
+            "JSON at geometry_file remains the authoritative artifact."
+        ),
+    )
+    provenance: Provenance | None = Field(
+        default=None,
+        description=(
+            "Provenance of the massing as a whole. source_type='inferred' with "
+            "inferred_from listing the constraint IDs whose values drove the moves. "
+            "Optional for backward compatibility, but populated by "
+            "generate_example_massings."
+        ),
     )
     total_gfa_m2: float | None = Field(
         default=None,

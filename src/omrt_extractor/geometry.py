@@ -27,6 +27,11 @@ Implementation notes:
     [square brackets]         -> bouwaanduidingen
     Numbers in 3..200 range   -> likely heights in metres
     'WR-X' / 'WS-X' style     -> dubbelbestemmingen
+- Height annotation diamonds (5-vertex shapes < 100 m^2) are identified by
+  shape before label association so they cannot capture IMRO codes; their
+  height values are spatially joined onto the bouwvlakken they annotate.
+- 'm' (moveto) operations inside a path are handled explicitly so multi-
+  ring drawings are not collapsed into degenerate triangles.
 - Graceful fallback: if the PDF is raster-only, has no extractable vectors,
   or the scale cannot be derived, return Geometry with
   ``status='manual_input_required'`` and a populated ``reason`` so the
@@ -52,6 +57,14 @@ if TYPE_CHECKING:
 
 # 1 PDF point = 1/72 inch = 25.4/72 mm.
 MM_PER_POINT = 25.4 / 72.0  # ~0.35278 mm/pt
+
+# Maximum distance (in real-world metres, after scale conversion) between
+# consecutive ring vertices for them to be treated as coincident and
+# collapsed into a single point. Operating in metres keeps the behaviour
+# stable across drawing scales; doing the snap in raw PDF units made the
+# effective tolerance swing with 1:N. Kept tight enough that two distinct
+# corners on a real plot polygon are never merged.
+AUTO_CLOSE_THRESHOLD_M = 0.5
 
 ScaleStatus = Literal["measure_dict", "schaal_text", "unknown"]
 GeometryStatus = Literal["ok", "manual_input_required"]
@@ -79,7 +92,41 @@ class LabeledPolygon(BaseModel):
         default=None,
         description="Numeric label in 3..200 range associated to this polygon, in metres.",
     )
+    height_reconciled_from: Literal["regels", "verbeelding", "verbeelding_uncorrected"] | None = (
+        Field(
+            default=None,
+            description=(
+                "How this polygon's height_m was sourced after the reconciliation "
+                "pass. 'regels' when set or overwritten by a regels clause, "
+                "'verbeelding' when a regels clause confirmed the value from the "
+                "drawing, 'verbeelding_uncorrected' when no regels constraint "
+                "applied and the drawing value stands. None before reconcile runs."
+            ),
+        )
+    )
     raw_labels: list[str] = Field(default_factory=list)
+    original_unique_count: int | None = Field(
+        default=None,
+        description=(
+            "Number of well-separated corners (clustered at "
+            "AUTO_CLOSE_THRESHOLD_M) in the raw polygon BEFORE auto-close "
+            "vertex collapse ran. Lets the degenerate-geometry test tell "
+            "a legitimate source triangle (original < 4) from a rectangle "
+            "that auto-close collapsed (original >= 4, final < 4)."
+        ),
+    )
+    final_unique_count: int | None = Field(
+        default=None,
+        description=(
+            "Well-separated corner count AFTER the auto-close vertex "
+            "collapse, before any later Polygon/buffer(0) self-"
+            "intersection repair. Compared to original_unique_count to "
+            "detect the rectangle-collapsed-into-a-triangle bug. The "
+            "polygon's actual stored coordinates may have fewer unique "
+            "vertices than this if Shapely had to repair a self-"
+            "intersecting ring — that is not an auto-close failure."
+        ),
+    )
 
 
 class Geometry(BaseModel):
@@ -110,6 +157,27 @@ class Geometry(BaseModel):
     plot_polygon: list[list[float]] | None = None
     bouwvlakken: list[LabeledPolygon] = Field(default_factory=list)
     constraint_zones: list[LabeledPolygon] = Field(default_factory=list)
+    degenerate_polygons_excluded: int = Field(
+        default=0,
+        description=(
+            "Count of reconstructed rings dropped because auto-close "
+            "collapsed an originally-4+-unique-point polygon down to fewer "
+            "than 4 unique points (the bug case: rectangles snapped into "
+            "triangles). Raw coordinates are logged at WARNING level. "
+            "Polygons that were already triangular in the source are NOT "
+            "counted here; see legitimate_triangles_kept."
+        ),
+    )
+    legitimate_triangles_kept: int = Field(
+        default=0,
+        description=(
+            "Count of polygons kept in output that have fewer than 4 "
+            "unique vertex positions but were already triangular in the "
+            "source (i.e. auto-close did not collapse them). These pass "
+            "the area filter and are legitimate small shapes in the "
+            "drawing — distinct from the degenerate-rectangle bug above."
+        ),
+    )
 
 
 # =====================================================================
@@ -203,21 +271,40 @@ def _scale_denominator_from_text(page: pymupdf.Page) -> float | None:
 # Vector extraction
 # =====================================================================
 
+# A moveto that lands more than this many PDF user-space units from the
+# last point of the in-progress ring is treated as starting a new sub-path,
+# not as a micro-gap inside the same ring. Below the threshold the moveto
+# is silently treated as continuation.
+_MOVETO_GAP_THRESHOLD = 2.0
+
 
 def _polygons_from_drawings(
     page: pymupdf.Page, page_height: float
 ) -> list[list[tuple[float, float]]]:
     """Reconstruct closed rings from pymupdf get_drawings output.
 
-    Each drawing has a list of path items: lines, curves, and rectangles.
-    A drawing whose segments form a closed loop (or contains a rectangle)
-    is treated as a polygon. Curves are sampled at their endpoints only.
-    Y is flipped so positive Y points up, matching cartesian convention.
+    Each drawing has a list of path items: lines, curves, rectangles, and
+    movetos. A drawing whose segments form a closed loop (or contains a
+    rectangle) is treated as a polygon. Curves are sampled at their
+    endpoints only. Y is flipped so positive Y points up.
+
+    Moveto handling: a moveto far from the last point flushes the in-
+    progress ring and starts a new one. Without this, multi-ring drawings
+    were being collapsed into degenerate triangles by closing across the
+    sub-path boundary.
     """
     rings: list[list[tuple[float, float]]] = []
 
     def _flip(p: tuple[float, float]) -> tuple[float, float]:
         return (p[0], page_height - p[1])
+
+    def _flush(current: list[tuple[float, float]]) -> None:
+        if len(current) < 3:
+            return
+        first, last = current[0], current[-1]
+        if first != last:
+            current.append(first)
+        rings.append(list(current))
 
     for d in page.get_drawings():
         items = d.get("items") or []
@@ -225,19 +312,39 @@ def _polygons_from_drawings(
             continue
 
         current: list[tuple[float, float]] = []
+
         for item in items:
             op = item[0]
-            if op == "l":  # line: (op, p1, p2)
+
+            if op == "m":  # moveto: (op, point)
+                target = _flip((item[1].x, item[1].y))
+                if current:
+                    dist = math.hypot(
+                        target[0] - current[-1][0], target[1] - current[-1][1]
+                    )
+                    if dist > _MOVETO_GAP_THRESHOLD:
+                        _flush(current)
+                        current = [target]
+                    elif dist > 0.01:
+                        current.append(target)
+                else:
+                    current = [target]
+
+            elif op == "l":  # line: (op, p1, p2)
                 p1, p2 = item[1], item[2]
                 if not current:
                     current.append(_flip((p1.x, p1.y)))
                 current.append(_flip((p2.x, p2.y)))
+
             elif op == "c":  # cubic bezier: (op, p1, p2, p3, p4)
                 p1, p4 = item[1], item[4]
                 if not current:
                     current.append(_flip((p1.x, p1.y)))
                 current.append(_flip((p4.x, p4.y)))
+
             elif op == "qu":  # quad: (op, Quad)
+                _flush(current)
+                current = []
                 quad = item[1]
                 corners = [
                     _flip((quad.ul.x, quad.ul.y)),
@@ -247,9 +354,11 @@ def _polygons_from_drawings(
                     _flip((quad.ul.x, quad.ul.y)),
                 ]
                 rings.append(corners)
+
             elif op == "re":  # rectangle: (op, rect)
+                _flush(current)
+                current = []
                 rect = item[1]
-                # rect corners CCW after Y-flip
                 corners = [
                     _flip((rect.x0, rect.y0)),
                     _flip((rect.x1, rect.y0)),
@@ -258,17 +367,8 @@ def _polygons_from_drawings(
                     _flip((rect.x0, rect.y0)),
                 ]
                 rings.append(corners)
-            else:
-                # 'm' moves implicitly handled by segment endpoints
-                continue
 
-        if len(current) >= 3:
-            # Auto-close if endpoints are near each other
-            first, last = current[0], current[-1]
-            if math.hypot(first[0] - last[0], first[1] - last[1]) < 1.0:
-                if first != last:
-                    current.append(first)
-                rings.append(current)
+        _flush(current)
 
     return rings
 
@@ -338,47 +438,158 @@ def _extract_labels(
 # =====================================================================
 
 
-def _scaled_polygon(ring: list[tuple[float, float]], meters_per_unit: float) -> Polygon | None:
+def _distinct_corners(seq, threshold: float) -> int:
+    """Count corners no two of which are within ``threshold`` metres.
+
+    Greedy single-link: walks the input and adds each point as a new
+    corner only if it lies at least ``threshold`` away from every corner
+    already kept. Used to count well-separated corners regardless of
+    listing order; a pen-lift micro-wiggle inside one real corner
+    contributes one corner, not two.
+    """
+    centers: list[tuple[float, float]] = []
+    for p in seq:
+        if any(
+            math.hypot(p[0] - c[0], p[1] - c[1]) < threshold for c in centers
+        ):
+            continue
+        centers.append(p)
+    return len(centers)
+
+
+def _scaled_polygon(
+    ring: list[tuple[float, float]], meters_per_unit: float
+) -> tuple[Polygon | None, int, int]:
+    """Scale a ring to metres, collapse near-coincident vertices, build a Polygon.
+
+    Returns ``(polygon_or_None, original_unique_count, final_unique_count)``
+    so the caller can distinguish a legitimate source triangle (original
+    < 4) from a polygon whose corners auto-close collapsed (original >= 4
+    AND final < 4). Degeneracy logging stays in the caller so the raw
+    PDF-unit coordinates can be preserved in the warning.
+    """
     pts = [(x * meters_per_unit, y * meters_per_unit) for x, y in ring]
     if len(pts) < 4:
-        return None
+        return None, _distinct_corners(pts, AUTO_CLOSE_THRESHOLD_M), 0
+
+    # Count well-separated corners, not raw vertex positions: a pen-lift
+    # micro-wiggle (two raw points within the auto-close threshold) is one
+    # corner, not two. Without this the guard would mistakenly flag rings
+    # like (A, A', B, C, A) — drawing artifacts that auto-close cleans up
+    # to a legitimate triangle.
+    original_unique = _distinct_corners(pts, AUTO_CLOSE_THRESHOLD_M)
+
+    deduped: list[tuple[float, float]] = []
+    for p in pts:
+        if deduped and math.hypot(p[0] - deduped[-1][0], p[1] - deduped[-1][1]) < AUTO_CLOSE_THRESHOLD_M:
+            continue
+        deduped.append(p)
+    # Restore explicit closure if the collapse swallowed the closing vertex.
+    if len(deduped) >= 1 and deduped[0] != deduped[-1]:
+        deduped.append(deduped[0])
+
+    # final_unique reflects ONLY the effect of the auto-close vertex
+    # collapse, not any later Polygon/buffer(0) self-intersection repair.
+    # That distinction matters: the degenerate guard is about auto-close
+    # losing corners, not Shapely fixing zig-zag rings. Use the same
+    # corner-clustering metric as original_unique so they are comparable.
+    final_unique = _distinct_corners(deduped, AUTO_CLOSE_THRESHOLD_M)
+
+    if len(deduped) < 4:
+        return None, original_unique, final_unique
+
     try:
-        poly = Polygon(pts)
+        poly = Polygon(deduped)
         if not poly.is_valid:
             poly = poly.buffer(0)
         if poly.is_empty or poly.area <= 0:
-            return None
-        return poly
+            return None, original_unique, final_unique
+        # buffer(0) on a self-intersecting ring may yield a MultiPolygon;
+        # take the largest part so downstream stays single-polygon.
+        if poly.geom_type == "MultiPolygon":
+            poly = max(poly.geoms, key=lambda g: g.area)
+        if poly.geom_type != "Polygon":
+            return None, original_unique, final_unique
+        return poly, original_unique, final_unique
     except Exception:
-        return None
+        return None, original_unique, final_unique
+
+
+
+
+# Annotation diamonds: 4-corner shape (5 vertices incl. closure) under
+# 100 m^2. Identified by shape alone so the label-association step can
+# avoid handing IMRO codes to them.
+_DIAMOND_VERTEX_COUNT = 5
+_DIAMOND_MAX_AREA_M2 = 100.0
+
+
+def _is_diamond_shape(poly: Polygon) -> bool:
+    if len(poly.exterior.coords) != _DIAMOND_VERTEX_COUNT:
+        return False
+    return poly.area <= _DIAMOND_MAX_AREA_M2
 
 
 def _associate_labels(
     polys_m: list[Polygon],
     labels_m: list[tuple[str, tuple[float, float]]],
 ) -> list[list[str]]:
-    """For each polygon, return raw label tokens whose centroid is closest.
+    """For each polygon, return raw label tokens assigned by spatial proximity.
 
-    A label is assigned to the polygon it falls inside; if it falls in none,
-    to the polygon with the smallest centroid-to-label distance.
+    Assignment strategy:
+    - Numeric height tokens go to the smallest containing polygon (the
+      annotation diamond itself is fine — its value is spatially joined
+      onto the parent bouwvlak in step 4).
+    - IMRO tokens (bestemming, function, bouw, dubbel) go to the smallest
+      containing *non-diamond* polygon. Diamonds are excluded from the
+      candidate pool so they cannot steal zone codes from the real zones
+      they sit inside.
+    - Labels with no containing polygon go to the nearest non-diamond
+      polygon by distance.
+
+    Output token lists are deduplicated (order-preserving).
     """
     assigned: list[list[str]] = [[] for _ in polys_m]
+    if not polys_m:
+        return assigned
+
+    diamond_flags = [_is_diamond_shape(p) for p in polys_m]
+    real_indices = [i for i, d in enumerate(diamond_flags) if not d]
+
     for text, (lx, ly) in labels_m:
         pt = Point(lx, ly)
         containing = [i for i, p in enumerate(polys_m) if p.contains(pt)]
+
+        cls = _classify_token(text.strip().strip(",;"))
+        is_height = cls is not None and cls[0] == "height"
+
         if containing:
-            # Smallest containing polygon wins (most specific).
-            idx = min(containing, key=lambda i: polys_m[i].area)
+            if is_height:
+                pool = containing
+            else:
+                real = [i for i in containing if not diamond_flags[i]]
+                pool = real if real else containing
+            idx = min(pool, key=lambda i: polys_m[i].area)
         else:
-            if not polys_m:
-                continue
-            idx = min(range(len(polys_m)), key=lambda i: polys_m[i].distance(pt))
+            pool = real_indices if real_indices else list(range(len(polys_m)))
+            idx = min(pool, key=lambda i: polys_m[i].distance(pt))
+
         for tok in text.split():
             assigned[idx].append(tok)
-    return assigned
+
+    deduped: list[list[str]] = []
+    for toks in assigned:
+        seen: set[str] = set()
+        deduped.append([t for t in toks if not (t in seen or seen.add(t))])  # type: ignore[func-returns-value]
+    return deduped
 
 
-def _build_labeled(poly_m: Polygon, tokens: list[str]) -> LabeledPolygon:
+def _build_labeled(
+    poly_m: Polygon,
+    tokens: list[str],
+    original_unique_count: int | None = None,
+    final_unique_count: int | None = None,
+) -> LabeledPolygon:
     bestemming, function, bouw, dubbel = [], [], [], []
     height: float | None = None
     for tok in tokens:
@@ -408,7 +619,69 @@ def _build_labeled(poly_m: Polygon, tokens: list[str]) -> LabeledPolygon:
         dubbelbestemmingen=sorted(set(dubbel)),
         height_m=height,
         raw_labels=tokens,
+        original_unique_count=original_unique_count,
+        final_unique_count=final_unique_count,
     )
+
+
+# =====================================================================
+# Height annotation diamond detection and spatial join
+# =====================================================================
+
+
+def _is_height_marker(poly: Polygon, tokens: list[str]) -> bool:
+    """Return True if this polygon is a height annotation diamond to strip.
+
+    Shape must match a diamond (5 vertices, < 100 m^2). Either it carries
+    no classifiable tokens at all (decoration), or every classifiable
+    token is a height value (no IMRO code present).
+    """
+    if not _is_diamond_shape(poly):
+        return False
+    classified = [c for c in (_classify_token(t) for t in tokens) if c is not None]
+    if not classified:
+        return True
+    return all(cat == "height" for cat, _ in classified)
+
+
+def _assign_heights_to_bouwvlakken(
+    height_markers: list[tuple[Polygon, float]],
+    bouwvlakken: list[LabeledPolygon],
+) -> None:
+    """Spatially join height values from diamonds onto bouwvlakken, in-place.
+
+    For each marker centroid: pick the smallest containing bouwvlak; if
+    none contains it, pick the nearest by distance. Heights only fill an
+    empty ``height_m`` — directly labelled polygons are never overwritten.
+    """
+    if not bouwvlakken or not height_markers:
+        return
+
+    bv_polys: list[Polygon | None] = []
+    for lp in bouwvlakken:
+        try:
+            bv_polys.append(Polygon(lp.coordinates))
+        except Exception:
+            bv_polys.append(None)
+
+    for marker_poly, h in height_markers:
+        centroid = marker_poly.centroid
+        containing = [
+            i for i, p in enumerate(bv_polys) if p is not None and p.contains(centroid)
+        ]
+        if containing:
+            idx = min(containing, key=lambda i: bv_polys[i].area)  # type: ignore[union-attr]
+        else:
+            distances = [
+                p.distance(centroid) if p is not None else float("inf")
+                for p in bv_polys
+            ]
+            if not distances:
+                continue
+            idx = min(range(len(distances)), key=lambda i: distances[i])
+
+        if bouwvlakken[idx].height_m is None:
+            bouwvlakken[idx].height_m = h
 
 
 # =====================================================================
@@ -503,14 +776,52 @@ def parse_kaveltekening(pdf_path: Path | str) -> Geometry:
         # Step 2: vector polygons.
         rings = _polygons_from_drawings(page, page_height)
         polys_m: list[Polygon] = []
+        degenerate_excluded = 0
+        legitimate_triangles_kept = 0
+        # Per-polygon corner counts, aligned with polys_m, so the downstream
+        # LabeledPolygon can carry the values for honest reporting.
+        polys_original_unique: list[int] = []
+        polys_final_unique: list[int] = []
         for r in rings:
-            poly = _scaled_polygon(r, meters_per_unit)
+            poly, original_unique, final_unique = _scaled_polygon(r, meters_per_unit)
             if poly is None:
+                # Polygon couldn't even be constructed. Only flag the bug
+                # case (originally >=4 unique, but collapsed); silent drop
+                # for source triangles/lines that never had enough corners.
+                if original_unique >= 4 and final_unique < 4:
+                    logger.warning(
+                        "Excluding degenerate polygon (collapsed from {} to "
+                        "{} unique pts by auto-close; polygon could not be "
+                        "rebuilt); raw ring coords (PDF units, Y-flipped) = {}",
+                        original_unique,
+                        final_unique,
+                        r,
+                    )
+                    degenerate_excluded += 1
                 continue
-            # Reject specks: anything under 1 m^2 is decoration.
+            # Reject specks: anything under 1 m^2 is decoration. The area
+            # filter is the right place to drop hatch/marker triangles —
+            # the unique-point guard only handles the auto-close bug case.
             if poly.area < 1.0:
                 continue
+            if original_unique >= 4 and final_unique < 4:
+                logger.warning(
+                    "Excluding degenerate polygon (auto-close collapsed {} "
+                    "unique pts to {}, area={:.1f} m2); raw ring coords "
+                    "(PDF units, Y-flipped) = {}",
+                    original_unique,
+                    final_unique,
+                    poly.area,
+                    r,
+                )
+                degenerate_excluded += 1
+                continue
+            if final_unique < 4:
+                # Legitimate source triangle that survived the area filter.
+                legitimate_triangles_kept += 1
             polys_m.append(poly)
+            polys_original_unique.append(original_unique)
+            polys_final_unique.append(final_unique)
 
         if not polys_m:
             return Geometry(
@@ -546,31 +857,73 @@ def parse_kaveltekening(pdf_path: Path | str) -> Geometry:
                 ),
             )
 
-        # Step 4: categorise polygons. The single largest polygon with at
-        # least one label is treated as the plot boundary; polygons with an
-        # inferred height become bouwvlakken; the remainder, if labelled,
-        # become constraint zones.
-        labeled = [_build_labeled(p, toks) for p, toks in zip(polys_m, assigned, strict=True)]
+        # Step 4: build LabeledPolygons, strip annotation diamonds (joining
+        # their height values onto the parent bouwvlak), then categorise
+        # the remaining real polygons into plot / bouwvlakken / zones.
+        labeled = [
+            _build_labeled(p, toks, ou, fu)
+            for p, toks, ou, fu in zip(
+                polys_m,
+                assigned,
+                polys_original_unique,
+                polys_final_unique,
+                strict=True,
+            )
+        ]
 
+        height_markers: list[tuple[Polygon, float]] = []
+        real_entries: list[tuple[Polygon, LabeledPolygon]] = []
+        for poly, lp in zip(polys_m, labeled, strict=True):
+            if _is_height_marker(poly, lp.raw_labels):
+                if lp.height_m is not None:
+                    height_markers.append((poly, lp.height_m))
+            else:
+                real_entries.append((poly, lp))
+
+        logger.debug(
+            "Stripped {} annotation diamonds; {} real polygons remain.",
+            len(labeled) - len(real_entries),
+            len(real_entries),
+        )
+
+        # Plot boundary: the single largest real polygon. Always picked,
+        # even if it carries no IMRO label — the page outline often does
+        # not. Smaller polygons inside it become the labelled zones.
         plot_idx: int | None = None
-        for i in sorted(range(len(labeled)), key=lambda j: labeled[j].area_m2, reverse=True):
-            if labeled[i].raw_labels:
-                plot_idx = i
-                break
+        if real_entries:
+            plot_idx = max(
+                range(len(real_entries)),
+                key=lambda i: real_entries[i][1].area_m2,
+            )
+        plot_polygon = (
+            real_entries[plot_idx][1].coordinates if plot_idx is not None else None
+        )
 
         bouwvlakken: list[LabeledPolygon] = []
         constraint_zones: list[LabeledPolygon] = []
-        for i, lp in enumerate(labeled):
+        for i, (_poly, lp) in enumerate(real_entries):
             if i == plot_idx:
                 continue
             if not lp.raw_labels:
                 continue
-            if lp.height_m is not None or lp.bouwaanduidingen:
+            if lp.bouwaanduidingen:
                 bouwvlakken.append(lp)
             elif lp.dubbelbestemmingen or lp.bestemming_codes or lp.function_aanduidingen:
                 constraint_zones.append(lp)
 
-        plot_polygon = labeled[plot_idx].coordinates if plot_idx is not None else None
+        _assign_heights_to_bouwvlakken(height_markers, bouwvlakken)
+
+        logger.info(
+            "Parsed {} polygons from {}: plot={}, bouwvlakken={}, zones={}, "
+            "degenerate_polygons_excluded={}, legitimate_triangles_kept={}",
+            len(polys_m),
+            pdf_path.name,
+            plot_polygon is not None,
+            len(bouwvlakken),
+            len(constraint_zones),
+            degenerate_excluded,
+            legitimate_triangles_kept,
+        )
 
         return Geometry(
             status="ok",
@@ -582,6 +935,218 @@ def parse_kaveltekening(pdf_path: Path | str) -> Geometry:
             plot_polygon=plot_polygon,
             bouwvlakken=bouwvlakken,
             constraint_zones=constraint_zones,
+            degenerate_polygons_excluded=degenerate_excluded,
+            legitimate_triangles_kept=legitimate_triangles_kept,
         )
     finally:
         doc.close()
+
+
+# =====================================================================
+# Merge Stage 3 output into a ParametricFramework
+# Converts the raw Geometry (plot_polygon, bouwvlakken, constraint_zones)
+# into GeometricConstraint records and attaches them to a framework,
+# wiring associated_rules from the existing numerical constraints by
+# matching slug-normalised aanduiding codes against their applies_to.
+# =====================================================================
+
+
+def _slugify_code(code: str) -> str:
+    """Normalise an aanduiding code so 'sba-1' matches an applies_to of 'sba_1'."""
+    return code.lower().replace("-", "_").replace(" ", "_")
+
+
+def _build_associated_rules(
+    codes: list[str], framework_numerical: list  # list[NumericalConstraint]
+) -> list[str]:
+    """Find NumericalConstraint IDs whose applies_to references any of these codes."""
+    slugs = {_slugify_code(c) for c in codes}
+    return [
+        c.id
+        for c in framework_numerical
+        if any(_slugify_code(a) in slugs for a in c.applies_to)
+    ]
+
+
+def merge_geometry_into_framework(
+    framework,  # ParametricFramework
+    geometry: "Geometry | dict",
+):
+    """Return a new ParametricFramework with bouwvlakken/zones added as GeometricConstraints.
+
+    Inputs:
+      framework: an existing ParametricFramework (typically from the extraction stage).
+      geometry:  a parsed Geometry object or the raw dict loaded from
+                 ``data/outputs/<project>_geometry.json``.
+
+    Behaviour:
+      - Plot polygon becomes one GeometricConstraint with feature_type='plot_boundary'.
+      - Each bouwvlak becomes one GeometricConstraint with feature_type='bouwvlak'.
+      - Each constraint zone becomes one with feature_type='no_build_zone' or
+        'other' depending on whether dubbelbestemmingen are present.
+      - associated_rules are wired from existing numerical constraints whose
+        applies_to references any of the polygon's aanduiding codes
+        (slug-normalised, so 'sba-1' matches an applies_to of 'sba_1').
+      - Coordinates stay in their native CRS. The geometry parser produces
+        drawing-local cartesian metres, so crs=CRS.DRAWING_LOCAL. A later
+        georeferencing step can rewrite these to RD New.
+      - Existing geometric constraints on the framework are preserved; new
+        ones are appended.
+
+    Returns a NEW framework (via model_validate(model_dump())). Does not mutate input.
+    """
+    # Local imports to avoid a top-level circular dependency between
+    # geometry.py and schemas.py.
+    from omrt_extractor.schemas import (
+        CRS,
+        Confidence,
+        Constraints,
+        GeometricConstraint,
+        ParametricFramework,
+        Provenance,
+        SourceType,
+    )
+
+    if isinstance(geometry, dict):
+        geo = Geometry.model_validate(geometry)
+    else:
+        geo = geometry
+
+    if geo.status != "ok":
+        logger.warning(
+            "Geometry status is '{}'; nothing to merge. reason={}",
+            geo.status,
+            geo.reason,
+        )
+        return framework
+
+    source_doc = Path(geo.source_pdf).name
+    page = geo.source_page or 1
+    base_prov = Provenance(
+        source_type=SourceType.DOCUMENT,
+        document=source_doc,
+        page=page,
+        quoted_text=f"Vector geometry parsed from {source_doc} page {page}.",
+    )
+    # Confidence: parsed structure is mechanically extracted, but the
+    # scale derivation can be soft. Lower confidence when scale_status
+    # is 'unknown' or 'measure_missing'.
+    base_score = 0.9 if geo.scale_status in ("measure_dict", "schaal_text") else 0.6
+    base_conf = Confidence(
+        score=base_score,
+        reasons=[f"Stage 3 vector parser; scale_status={geo.scale_status}"],
+    )
+
+    def _close_ring(coords: list[list[float]]) -> list[list[float]]:
+        if len(coords) >= 1 and coords[0] != coords[-1]:
+            return coords + [coords[0]]
+        return coords
+
+    def _next_id(used: set[str], stem: str) -> str:
+        i = 1
+        while f"{stem}_{i:02d}" in used:
+            i += 1
+            if i > 999:
+                raise RuntimeError(f"Could not find a free ID for stem '{stem}'")
+        return f"{stem}_{i:02d}"
+
+    new_geoms: list[GeometricConstraint] = []
+    used_ids = {
+        c.id
+        for collection in (
+            framework.constraints.numerical,
+            framework.constraints.geometric,
+            framework.constraints.narrative,
+            framework.variables.items,
+            framework.kpis.items,
+            framework.massings,
+        )
+        for c in collection
+    }
+
+    if geo.plot_polygon:
+        pid = _next_id(used_ids, "plot_boundary")
+        used_ids.add(pid)
+        new_geoms.append(
+            GeometricConstraint(
+                id=pid,
+                name="Plot boundary",
+                feature_type="plot_boundary",
+                coordinates=_close_ring(geo.plot_polygon),
+                crs=CRS.DRAWING_LOCAL,
+                associated_rules=[],
+                provenance=base_prov,
+                confidence=base_conf,
+            )
+        )
+
+    for lp in geo.bouwvlakken:
+        bid = _next_id(used_ids, "bouwvlak")
+        used_ids.add(bid)
+        codes = (
+            lp.bouwaanduidingen
+            + lp.function_aanduidingen
+            + lp.bestemming_codes
+        )
+        rules = _build_associated_rules(codes, framework.constraints.numerical)
+        label = ", ".join(codes) if codes else "(no label)"
+        new_geoms.append(
+            GeometricConstraint(
+                id=bid,
+                name=f"Bouwvlak {label}",
+                feature_type="bouwvlak",
+                coordinates=_close_ring(lp.coordinates),
+                crs=CRS.DRAWING_LOCAL,
+                associated_rules=rules,
+                extrusion_height_m=lp.height_m,
+                height_reconciled_from=lp.height_reconciled_from,
+                provenance=base_prov,
+                confidence=base_conf,
+                notes=(
+                    f"raw_labels={lp.raw_labels}; height_m={lp.height_m}; "
+                    f"area_m2={lp.area_m2:.0f}"
+                ),
+            )
+        )
+
+    for lp in geo.constraint_zones:
+        ft = "no_build_zone" if lp.dubbelbestemmingen else "other"
+        zid = _next_id(used_ids, ft)
+        used_ids.add(zid)
+        codes = (
+            lp.dubbelbestemmingen
+            + lp.function_aanduidingen
+            + lp.bestemming_codes
+        )
+        rules = _build_associated_rules(codes, framework.constraints.numerical)
+        label = ", ".join(codes) if codes else "(no label)"
+        new_geoms.append(
+            GeometricConstraint(
+                id=zid,
+                name=f"Zone {label}",
+                feature_type=ft,
+                coordinates=_close_ring(lp.coordinates),
+                crs=CRS.DRAWING_LOCAL,
+                associated_rules=rules,
+                provenance=base_prov,
+                confidence=base_conf,
+                notes=f"raw_labels={lp.raw_labels}; area_m2={lp.area_m2:.0f}",
+            )
+        )
+
+    logger.info(
+        "Merging {} geometric features into framework "
+        "({} bouwvlakken, {} zones, plot={})",
+        len(new_geoms),
+        len(geo.bouwvlakken),
+        len(geo.constraint_zones),
+        geo.plot_polygon is not None,
+    )
+
+    # Build a new framework via dump/validate so the model_validators re-fire
+    # (in particular the ID uniqueness check).
+    payload = framework.model_dump(mode="json")
+    payload["constraints"]["geometric"].extend(
+        [g.model_dump(mode="json") for g in new_geoms]
+    )
+    return ParametricFramework.model_validate(payload)

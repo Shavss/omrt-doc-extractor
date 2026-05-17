@@ -51,7 +51,7 @@ data/outputs/
 # Inputs are committed by default, except for the corrupted variant
 # which gets generated at Stage 7b
 data/inputs/draka_corrupted/
-data/inputs/draka
+data/inputs/draka/
 
 
 # Streamlit

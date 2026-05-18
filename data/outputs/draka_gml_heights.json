@@ -1,0 +1,164 @@
+{
+  "plan_id": "NL.IMRO.0363.N2102BPGST-VG01",
+  "source": "GML via ruimtelijkeplannen.nl",
+  "total_maatvoeringen": 21,
+  "bouwhoogte_distribution_m": {
+    "21.0": 7,
+    "30.5": 6,
+    "40.0": 2,
+    "45.0": 2,
+    "60.0": 3,
+    "70.0": 1
+  },
+  "max_bouwhoogte_m": 70.0,
+  "min_bouwhoogte_m": 21.0,
+  "detail": [
+    {
+      "id": "NL.IMRO.e0fd78236bef46a4a4f09d5e23561c3c",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 30.5,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.3ed264ca63b447a8b752f310640e6f05",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 40.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.4e9e4a57a99d4e9d96138387aecc14d1",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 30.5,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.efd9731c7f674141ab41490c2e9bc275",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 30.5,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.304d6a978e18407ea31021476301f194",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 30.5,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.7de4738e31334a9d82889b22e1528631",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 21.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.497a7d8809154debb02e6508c9cc123b",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 21.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.5292059590f549d493f648267694f020",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 21.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.466c29acc7904ba491baf163b64cdf9a",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 21.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.5fb6748e32e94ec5b8599080df33a6e9",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 21.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.872928e3601d42f5b4de6fc759d6fb2c",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 60.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.87d4c76df7734eb098b045db563299a6",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 21.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.7ee161a70a0f47d1866cd280e9919eac",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 45.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.9170bd06ba334f908bc2aa3cbfccf18f",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 21.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.2a3b46614940432da4648d7cf46ede94",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 70.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.df5e45a5496c45fbbd8b459af4ef05c1",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 45.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.0363.MP8554226424-00",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 30.5,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.6b4a22fcd19d4a82bd289baae9702d26",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 30.5,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.0363.MP10554226435-00",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 60.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.a2f71c854adb4bb094566eb7e171e19d",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 60.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    },
+    {
+      "id": "NL.IMRO.0363.MP11554226437-00",
+      "naam": "maximum bouwhoogte (m)",
+      "waarde_m": 40.0,
+      "waarde_type": "maximum bouwhoogte (m)",
+      "coords_rd": []
+    }
+  ]
+}

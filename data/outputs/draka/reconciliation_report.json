@@ -1,6 +1,6 @@
 [
   {
-    "polygon_index": 5,
+    "polygon_index": 3,
     "label": "sba_2",
     "action": "corrected",
     "previous_height_m": 30.5,
@@ -19,7 +19,7 @@
     "non_base_height_constraints_skipped": []
   },
   {
-    "polygon_index": 8,
+    "polygon_index": 6,
     "label": "sba_2",
     "action": "matched",
     "previous_height_m": 60.0,
@@ -38,7 +38,7 @@
     "non_base_height_constraints_skipped": []
   },
   {
-    "polygon_index": 11,
+    "polygon_index": 9,
     "label": "sba_2",
     "action": "matched",
     "previous_height_m": 60.0,
@@ -57,7 +57,7 @@
     "non_base_height_constraints_skipped": []
   },
   {
-    "polygon_index": 2,
+    "polygon_index": 1,
     "label": "sba_1",
     "action": "inferred",
     "previous_height_m": null,
@@ -76,10 +76,10 @@
     "non_base_height_constraints_skipped": []
   },
   {
-    "polygon_index": 10,
+    "polygon_index": 8,
     "label": "sba_1",
-    "action": "matched",
-    "previous_height_m": 45.0,
+    "action": "corrected",
+    "previous_height_m": 70.0,
     "new_height_m": 45.0,
     "source_constraint_id": "avg_height_sba1",
     "source_constraint_provenance": {
@@ -137,7 +137,7 @@
         "max_height_sba2_deviation"
       ],
       "entered_by": null,
-      "timestamp": "2026-05-17T19:18:50.574100Z"
+      "timestamp": "2026-05-18T12:13:27.704605Z"
     },
     "non_base_height_constraints_skipped": [
       "max_height_erfafscheidingen_verkeer",

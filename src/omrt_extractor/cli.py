@@ -524,6 +524,14 @@ def run(
         framework = merge_geometry_into_framework(framework, geometry_obj)
         fresh.append("merge")
 
+    from omrt_extractor.enrich_zones import enrich_zones, write_zone_summary, print_zone_table
+
+    framework, zone_summaries = enrich_zones(framework)
+    zone_summary_path = out_dir / "zone_programme_summary.json"
+    write_zone_summary(zone_summaries, zone_summary_path)
+    print_zone_table(zone_summaries)
+    fresh.append("zone_enrichment")
+
     massings = generate_example_massings(framework, output_dir=out_dir)
     framework = framework.model_copy(update={"massings": massings})
     fresh.append("massings")

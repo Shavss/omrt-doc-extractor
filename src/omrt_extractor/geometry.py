@@ -709,6 +709,40 @@ def _pick_drawing_page(doc: pymupdf.Document) -> int:
 
 
 # =====================================================================
+# DVG overlay classification
+# =====================================================================
+
+
+def _is_dvg_only(lp: "LabeledPolygon") -> bool:
+    """True when every bouwaanduiding on this polygon is a dove-gevel overlay.
+
+    Identified purely by the IMRO naming convention: the standard Dutch
+    planning code for specifieke bouwaanduiding dove gevel always has the
+    form 'sba-dvgN' (N = 1..5). This is a structural pattern, not
+    project-specific knowledge -- every bestemmingsplan that uses dove
+    gevel aanduidingen uses this naming scheme per PRBP2012.
+
+    A dvg-only polygon is an acoustic constraint annotation printed on the
+    kaveltekening. It is NOT a building envelope and must not be extruded
+    as a massing volume. It belongs in constraint_zones, not bouwvlakken.
+
+    A polygon is dvg-only when:
+      - it has at least one bouwaanduiding
+      - ALL of its bouwaanduidingen start with 'sba-dvg'
+      - it has NO bestemming_codes or function_aanduidingen
+        (which would indicate it overlaps a real programme zone)
+    """
+    if not lp.bouwaanduidingen:
+        return False
+    if lp.bestemming_codes or lp.function_aanduidingen:
+        return False
+    return all(
+        code.lower().startswith("sba-dvg")
+        for code in lp.bouwaanduidingen
+    )
+
+
+# =====================================================================
 # Public entry point
 # =====================================================================
 
@@ -906,7 +940,12 @@ def parse_kaveltekening(pdf_path: Path | str) -> Geometry:
                 continue
             if not lp.raw_labels:
                 continue
-            if lp.bouwaanduidingen:
+            if _is_dvg_only(lp):
+                # Dove gevel acoustic overlay -- a constraint zone, never a building volume.
+                # The height number next to it on the kaveltekening is the tower height
+                # for the underlying bouwvlak, not a separate building height.
+                constraint_zones.append(lp)
+            elif lp.bouwaanduidingen:
                 bouwvlakken.append(lp)
             elif lp.dubbelbestemmingen or lp.bestemming_codes or lp.function_aanduidingen:
                 constraint_zones.append(lp)
@@ -1110,7 +1149,12 @@ def merge_geometry_into_framework(
         )
 
     for lp in geo.constraint_zones:
-        ft = "no_build_zone" if lp.dubbelbestemmingen else "other"
+        if _is_dvg_only(lp):
+            ft = "dvg_overlay"
+        elif lp.dubbelbestemmingen:
+            ft = "no_build_zone"
+        else:
+            ft = "other"
         zid = _next_id(used_ids, ft)
         used_ids.add(zid)
         codes = (

@@ -555,6 +555,7 @@ class GeometricConstraint(BaseModel):
         "no_build_zone",
         "setback_zone",
         "dove_gevel_zone",
+        "dvg_overlay",
         "archaeology_zone",
         "vaarweg_zone",
         "noise_contour",

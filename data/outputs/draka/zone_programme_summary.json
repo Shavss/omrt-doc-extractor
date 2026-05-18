@@ -1,0 +1,278 @@
+[
+  {
+    "zone_id": "bouwvlak_01",
+    "zone_name": "Bouwvlak sba-4",
+    "zone_codes": [
+      "sba_4"
+    ],
+    "acoustic_overlays": [],
+    "height_m": 30.5,
+    "height_source": "verbeelding_uncorrected",
+    "rules_by_category": {},
+    "narrative_rules": [],
+    "rule_count": 0
+  },
+  {
+    "zone_id": "bouwvlak_02",
+    "zone_name": "Bouwvlak sba-1",
+    "zone_codes": [
+      "sba_1"
+    ],
+    "acoustic_overlays": [],
+    "height_m": 45.0,
+    "height_source": "regels",
+    "rules_by_category": {
+      "height": [
+        {
+          "id": "max_height_sba1_increased",
+          "name": "Maximum bouwhoogte verhoogd voor sba-1",
+          "value": 50.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-1 gronden maximaal 45 m",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        },
+        {
+          "id": "avg_height_sba1",
+          "name": "Gemiddelde bouwhoogte sba-1",
+          "value": 45.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-1",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        }
+      ]
+    },
+    "narrative_rules": [],
+    "rule_count": 2
+  },
+  {
+    "zone_id": "bouwvlak_03",
+    "zone_name": "Bouwvlak sba-3, sba-dvg2",
+    "zone_codes": [
+      "sba_3",
+      "sba_dvg2"
+    ],
+    "acoustic_overlays": [
+      "sba_dvg2"
+    ],
+    "height_m": 30.5,
+    "height_source": "verbeelding_uncorrected",
+    "rules_by_category": {},
+    "narrative_rules": [],
+    "rule_count": 0
+  },
+  {
+    "zone_id": "bouwvlak_04",
+    "zone_name": "Bouwvlak sba-2, sba-dvg3, sba-dvg5",
+    "zone_codes": [
+      "sba_2",
+      "sba_dvg3",
+      "sba_dvg5"
+    ],
+    "acoustic_overlays": [
+      "sba_dvg3",
+      "sba_dvg5"
+    ],
+    "height_m": 60.0,
+    "height_source": "regels",
+    "rules_by_category": {
+      "height": [
+        {
+          "id": "max_height_sba2_increased",
+          "name": "Maximum bouwhoogte verhoogd voor sba-2",
+          "value": 65.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-2 gronden maximaal 60 m",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        },
+        {
+          "id": "avg_height_sba2",
+          "name": "Gemiddelde bouwhoogte sba-2",
+          "value": 60.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-2",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        }
+      ]
+    },
+    "narrative_rules": [],
+    "rule_count": 2
+  },
+  {
+    "zone_id": "bouwvlak_05",
+    "zone_name": "Bouwvlak sba-4",
+    "zone_codes": [
+      "sba_4"
+    ],
+    "acoustic_overlays": [],
+    "height_m": 30.5,
+    "height_source": "verbeelding_uncorrected",
+    "rules_by_category": {},
+    "narrative_rules": [],
+    "rule_count": 0
+  },
+  {
+    "zone_id": "bouwvlak_06",
+    "zone_name": "Bouwvlak sba-4, sgd-7",
+    "zone_codes": [
+      "sba_4",
+      "sgd_7"
+    ],
+    "acoustic_overlays": [],
+    "height_m": 30.5,
+    "height_source": "verbeelding_uncorrected",
+    "rules_by_category": {},
+    "narrative_rules": [],
+    "rule_count": 0
+  },
+  {
+    "zone_id": "bouwvlak_07",
+    "zone_name": "Bouwvlak sba-2, sgd-4",
+    "zone_codes": [
+      "sba_2",
+      "sgd_4"
+    ],
+    "acoustic_overlays": [],
+    "height_m": 60.0,
+    "height_source": "verbeelding",
+    "rules_by_category": {
+      "height": [
+        {
+          "id": "max_height_sba2_increased",
+          "name": "Maximum bouwhoogte verhoogd voor sba-2",
+          "value": 65.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-2 gronden maximaal 60 m",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        },
+        {
+          "id": "avg_height_sba2",
+          "name": "Gemiddelde bouwhoogte sba-2",
+          "value": 60.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-2",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        }
+      ]
+    },
+    "narrative_rules": [],
+    "rule_count": 2
+  },
+  {
+    "zone_id": "bouwvlak_08",
+    "zone_name": "Bouwvlak sba-4, GD",
+    "zone_codes": [
+      "gd",
+      "sba_4"
+    ],
+    "acoustic_overlays": [],
+    "height_m": 40.0,
+    "height_source": "verbeelding_uncorrected",
+    "rules_by_category": {},
+    "narrative_rules": [],
+    "rule_count": 0
+  },
+  {
+    "zone_id": "bouwvlak_09",
+    "zone_name": "Bouwvlak sba-1, sgd-2",
+    "zone_codes": [
+      "sba_1",
+      "sgd_2"
+    ],
+    "acoustic_overlays": [],
+    "height_m": 45.0,
+    "height_source": "regels",
+    "rules_by_category": {
+      "height": [
+        {
+          "id": "max_height_sba1_increased",
+          "name": "Maximum bouwhoogte verhoogd voor sba-1",
+          "value": 50.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-1 gronden maximaal 45 m",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        },
+        {
+          "id": "avg_height_sba1",
+          "name": "Gemiddelde bouwhoogte sba-1",
+          "value": 45.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-1",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        }
+      ]
+    },
+    "narrative_rules": [],
+    "rule_count": 2
+  },
+  {
+    "zone_id": "bouwvlak_10",
+    "zone_name": "Bouwvlak sba-2, m",
+    "zone_codes": [
+      "m",
+      "sba_2"
+    ],
+    "acoustic_overlays": [],
+    "height_m": 60.0,
+    "height_source": "verbeelding",
+    "rules_by_category": {
+      "height": [
+        {
+          "id": "max_height_sba2_increased",
+          "name": "Maximum bouwhoogte verhoogd voor sba-2",
+          "value": 65.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-2 gronden maximaal 60 m",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        },
+        {
+          "id": "avg_height_sba2",
+          "name": "Gemiddelde bouwhoogte sba-2",
+          "value": 60.0,
+          "unit": "m",
+          "is_maximum": true,
+          "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-2",
+          "confidence": 1.0,
+          "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+        }
+      ]
+    },
+    "narrative_rules": [],
+    "rule_count": 2
+  },
+  {
+    "zone_id": "bouwvlak_11",
+    "zone_name": "Bouwvlak sba-dvg1, sba-dvg2, sgd-3",
+    "zone_codes": [
+      "sba_dvg1",
+      "sba_dvg2",
+      "sgd_3"
+    ],
+    "acoustic_overlays": [
+      "sba_dvg1",
+      "sba_dvg2"
+    ],
+    "height_m": 60.0,
+    "height_source": "verbeelding_uncorrected",
+    "rules_by_category": {},
+    "narrative_rules": [],
+    "rule_count": 0
+  }
+]

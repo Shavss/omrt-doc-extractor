@@ -1,0 +1,177 @@
+[
+  {
+    "pdf_index": 1,
+    "pdf_labels": [
+      "sba-dvg3"
+    ],
+    "pdf_height_m": 70.0,
+    "pdf_area_m2": 1143.8275770974496,
+    "gml_id": "",
+    "gml_height_m": null,
+    "gml_area_m2": 0,
+    "match_method": "classified",
+    "agreement": "overlay_annotation",
+    "delta_m": null,
+    "notes": "Dove gevel acoustic overlay -- not a building envelope zone"
+  },
+  {
+    "pdf_index": 3,
+    "pdf_labels": [
+      "sba-dvg4"
+    ],
+    "pdf_height_m": 70.0,
+    "pdf_area_m2": 2478.760131962859,
+    "gml_id": "",
+    "gml_height_m": null,
+    "gml_area_m2": 0,
+    "match_method": "classified",
+    "agreement": "overlay_annotation",
+    "delta_m": null,
+    "notes": "Dove gevel acoustic overlay -- not a building envelope zone"
+  },
+  {
+    "pdf_index": 4,
+    "pdf_labels": [
+      "sba-3",
+      "sba-dvg2"
+    ],
+    "pdf_height_m": 30.5,
+    "pdf_area_m2": 2073.6513172898467,
+    "gml_id": "463aa112122393ad29f7",
+    "gml_height_m": 30.5,
+    "gml_area_m2": 1975.0,
+    "match_method": "area (5.0% diff)",
+    "agreement": "agreement",
+    "delta_m": 0.0,
+    "notes": ""
+  },
+  {
+    "pdf_index": 5,
+    "pdf_labels": [
+      "sba-2",
+      "sba-dvg3",
+      "sba-dvg5"
+    ],
+    "pdf_height_m": 30.5,
+    "pdf_area_m2": 1301.878554262042,
+    "gml_id": "",
+    "gml_height_m": null,
+    "gml_area_m2": 0,
+    "match_method": "area",
+    "agreement": "unmatched",
+    "delta_m": null,
+    "notes": "No GML bouwvlak within 25% area tolerance"
+  },
+  {
+    "pdf_index": 6,
+    "pdf_labels": [
+      "sba-4"
+    ],
+    "pdf_height_m": 30.5,
+    "pdf_area_m2": 1756.2905535459392,
+    "gml_id": "4b7cb6685d631e8d6419",
+    "gml_height_m": 30.5,
+    "gml_area_m2": 1754.8,
+    "match_method": "area (0.1% diff)",
+    "agreement": "agreement",
+    "delta_m": 0.0,
+    "notes": ""
+  },
+  {
+    "pdf_index": 7,
+    "pdf_labels": [
+      "sgd-7",
+      "sba-4"
+    ],
+    "pdf_height_m": 30.5,
+    "pdf_area_m2": 1605.3946988995756,
+    "gml_id": "4e54925675fb8c4b1925",
+    "gml_height_m": 30.5,
+    "gml_area_m2": 1605.1,
+    "match_method": "sgd_code",
+    "agreement": "agreement",
+    "delta_m": 0.0,
+    "notes": ""
+  },
+  {
+    "pdf_index": 8,
+    "pdf_labels": [
+      "sgd-4",
+      "sba-2"
+    ],
+    "pdf_height_m": 60.0,
+    "pdf_area_m2": 4830.757091121892,
+    "gml_id": "4a3fb38b9e35451bc011",
+    "gml_height_m": 60.0,
+    "gml_area_m2": 4829.4,
+    "match_method": "sgd_code",
+    "agreement": "agreement",
+    "delta_m": 0.0,
+    "notes": ""
+  },
+  {
+    "pdf_index": 9,
+    "pdf_labels": [
+      "GD",
+      "sba-4"
+    ],
+    "pdf_height_m": 40.0,
+    "pdf_area_m2": 1848.3643861103712,
+    "gml_id": "4b71a5a371d43106bf8b",
+    "gml_height_m": 40.0,
+    "gml_area_m2": 1848.0,
+    "match_method": "area (0.0% diff)",
+    "agreement": "agreement",
+    "delta_m": 0.0,
+    "notes": ""
+  },
+  {
+    "pdf_index": 10,
+    "pdf_labels": [
+      "sgd-2",
+      "sba-1"
+    ],
+    "pdf_height_m": 45.0,
+    "pdf_area_m2": 5743.548545951257,
+    "gml_id": "45bcadc4c540500230a6",
+    "gml_height_m": 70.0,
+    "gml_area_m2": 5746.1,
+    "match_method": "sgd_code",
+    "agreement": "disagreement",
+    "delta_m": 25.0,
+    "notes": ""
+  },
+  {
+    "pdf_index": 11,
+    "pdf_labels": [
+      "maatschappelijk",
+      "sba-2"
+    ],
+    "pdf_height_m": 60.0,
+    "pdf_area_m2": 4946.167473439411,
+    "gml_id": "464989fef2e20bc0ef2a",
+    "gml_height_m": 60.0,
+    "gml_area_m2": 4946.6,
+    "match_method": "sgd_code",
+    "agreement": "agreement",
+    "delta_m": 0.0,
+    "notes": ""
+  },
+  {
+    "pdf_index": 12,
+    "pdf_labels": [
+      "sgd-3",
+      "sba-dvg1",
+      "sba-dvg2"
+    ],
+    "pdf_height_m": 60.0,
+    "pdf_area_m2": 4001.344063736921,
+    "gml_id": "419f88a8b83ab185ff85",
+    "gml_height_m": 60.0,
+    "gml_area_m2": 4000.5,
+    "match_method": "sgd_code",
+    "agreement": "agreement",
+    "delta_m": 0.0,
+    "notes": ""
+  }
+]

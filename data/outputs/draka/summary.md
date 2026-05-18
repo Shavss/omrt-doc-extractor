@@ -2,7 +2,7 @@
 
 **Status:** PROTOTYPE OUTPUT, NOT VERIFIED
 **Plan ID:** NL.IMRO.0363.N2102BPGST-VG01 (IMRO API cross-validation unavailable — see Data sources)
-**Generated:** 2026-05-17T19:18:50+00:00
+**Generated:** 2026-05-18T12:13:27+00:00
 **Location:** Amsterdam, Hamerkwartier
 
 ## How to consume this output
@@ -484,7 +484,8 @@ See `framework.json` → `constraints.numerical` for all 396 constraints with fu
 
 Polygon counts by feature type:
 - other: 19
-- bouwvlak: 13
+- bouwvlak: 11
+- dvg_overlay: 2
 - no_build_zone: 2
 - plot_boundary: 1
 
@@ -494,6 +495,24 @@ Source drawing:
 - Plot bounding box: 594 m × 420 m (RD New)
 
 Reconciled with regels for bouwvlak heights — see the Reconciliation summary below and `reconciliation_report.json`.
+
+## Zone programme summary
+
+| Zone | Height | Source | Codes | Matched rules | Key constraints |
+|------|--------|--------|-------|---------------|-----------------|
+| Bouwvlak sba-4 | 30.5m | verbeelding_uncorrected | sba_4 | 0 | — |
+| Bouwvlak sba-1 | 45m | regels | sba_1 | 2 | Maximum bouwhoogte verhoogd voor sba-1=50.0m, Gemiddelde bouwhoogte sba-1=45.0m |
+| Bouwvlak sba-3, sba-dvg2 | 30.5m | verbeelding_uncorrected | sba_3, sba_dvg2 | 0 | — |
+| Bouwvlak sba-2, sba-dvg3, sba-dvg5 | 60m | regels | sba_2, sba_dvg3, sba_dvg5 | 2 | Maximum bouwhoogte verhoogd voor sba-2=65.0m, Gemiddelde bouwhoogte sba-2=60.0m |
+| Bouwvlak sba-4 | 30.5m | verbeelding_uncorrected | sba_4 | 0 | — |
+| Bouwvlak sba-4, sgd-7 | 30.5m | verbeelding_uncorrected | sba_4, sgd_7 | 0 | — |
+| Bouwvlak sba-2, sgd-4 | 60m | verbeelding | sba_2, sgd_4 | 2 | Maximum bouwhoogte verhoogd voor sba-2=65.0m, Gemiddelde bouwhoogte sba-2=60.0m |
+| Bouwvlak sba-4, GD | 40m | verbeelding_uncorrected | gd, sba_4 | 0 | — |
+| Bouwvlak sba-1, sgd-2 | 45m | regels | sba_1, sgd_2 | 2 | Maximum bouwhoogte verhoogd voor sba-1=50.0m, Gemiddelde bouwhoogte sba-1=45.0m |
+| Bouwvlak sba-2, m | 60m | verbeelding | m, sba_2 | 2 | Maximum bouwhoogte verhoogd voor sba-2=65.0m, Gemiddelde bouwhoogte sba-2=60.0m |
+| Bouwvlak sba-dvg1, sba-dvg2, sgd-3 | 60m | verbeelding_uncorrected | sba_dvg1, sba_dvg2, sgd_3 | 0 | — |
+
+Full zone-constraint mapping in `zone_programme_summary.json`. Zones with 0 matched rules may indicate that `applies_to` codes in the extracted constraints do not match the zone labels from the kaveltekening. Run `scripts/inspect_zones.py` to diagnose.
 
 ## Narrative constraints (selected)
 
@@ -521,14 +540,14 @@ Reconciled with regels for bouwvlak heights — see the Reconciliation summary b
 
 ## Flagged ambiguities
 
-- **Reconciliation overrides (1):** regels clauses corrected the verbeelding's spatial-proximity reading. See `reconciliation_report.json`.
+- **Reconciliation overrides (2):** regels clauses corrected the verbeelding's spatial-proximity reading. See `reconciliation_report.json`.
 - **55 numerical constraints with confidence < 0.80:** review before relying on them. Listed with the ❗ marker under the relevant category above.
 - **41 narrative constraints with confidence < 0.80.**
 
 ## Data sources used
 
 - ✓ Document extraction: 396 numerical, 552 narrative constraints across 3 PDFs (237 pages total).
-- ✓ Vector geometry: 35 polygons from kaveltekening, scale 1:1000 (1 plot, 13 bouwvlakken, 21 constraint zones).
+- ✓ Vector geometry: 35 polygons from kaveltekening, scale 1:1000 (1 plot, 11 bouwvlakken, 23 constraint zones).
 - ✗ IMRO API cross-validation: 0 agreed, 0 disagreed, 0 unverifiable, 396 not attempted (API unavailable).
 - ✓ PDOK BAG: 1000 buildings within 1000 m (year built 1888–2022).
 - ✗ 3D BAG: not available — 2D context only for massing visualisation.
@@ -537,8 +556,8 @@ Reconciled with regels for bouwvlak heights — see the Reconciliation summary b
 
 ## Reconciliation summary
 
-- 3 polygon heights confirmed (regels matched verbeelding).
-- 1 polygon height corrected by regels (verbeelding's spatial-proximity reading overridden).
+- 2 polygon heights confirmed (regels matched verbeelding).
+- 2 polygon heights corrected by regels (verbeelding's spatial-proximity reading overridden).
 - 1 polygon height inferred from regels (verbeelding had no label).
 - 1 regels clause with no matching polygon (non-bouwvlak labels or permit-gated deviations).
 - 1 non-base height constraint skipped (deviations, fences, lights).

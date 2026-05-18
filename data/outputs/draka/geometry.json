@@ -66,40 +66,6 @@
     {
       "coordinates": [
         [
-          296.79900258382156,
-          232.1136528862847
-        ],
-        [
-          343.5773273044162,
-          165.4809844970703
-        ],
-        [
-          309.2449913872613,
-          165.4809844970703
-        ],
-        [
-          296.79900258382156,
-          232.1136528862847
-        ]
-      ],
-      "area_m2": 1143.8275770974496,
-      "bestemming_codes": [],
-      "function_aanduidingen": [],
-      "bouwaanduidingen": [
-        "sba-dvg3"
-      ],
-      "dubbelbestemmingen": [],
-      "height_m": 70.0,
-      "height_reconciled_from": null,
-      "raw_labels": [
-        "[sba-dvg3]"
-      ],
-      "original_unique_count": 4,
-      "final_unique_count": 4
-    },
-    {
-      "coordinates": [
-        [
           89.19633204142252,
           196.55365719265407
         ],
@@ -130,40 +96,6 @@
       ],
       "original_unique_count": 3,
       "final_unique_count": 3
-    },
-    {
-      "coordinates": [
-        [
-          140.80066494411892,
-          286.76600172254774
-        ],
-        [
-          220.89532385932074,
-          211.79366149902341
-        ],
-        [
-          154.7706670973036,
-          211.79366149902341
-        ],
-        [
-          140.80066494411892,
-          286.76600172254774
-        ]
-      ],
-      "area_m2": 2478.760131962859,
-      "bestemming_codes": [],
-      "function_aanduidingen": [],
-      "bouwaanduidingen": [
-        "sba-dvg4"
-      ],
-      "dubbelbestemmingen": [],
-      "height_m": 70.0,
-      "height_reconciled_from": null,
-      "raw_labels": [
-        "[sba-dvg4]"
-      ],
-      "original_unique_count": 4,
-      "final_unique_count": 4
     },
     {
       "coordinates": [
@@ -436,7 +368,7 @@
         "sba-1"
       ],
       "dubbelbestemmingen": [],
-      "height_m": 45.0,
+      "height_m": 70.0,
       "height_reconciled_from": null,
       "raw_labels": [
         "(sgd-2)",
@@ -759,6 +691,40 @@
     {
       "coordinates": [
         [
+          296.79900258382156,
+          232.1136528862847
+        ],
+        [
+          343.5773273044162,
+          165.4809844970703
+        ],
+        [
+          309.2449913872613,
+          165.4809844970703
+        ],
+        [
+          296.79900258382156,
+          232.1136528862847
+        ]
+      ],
+      "area_m2": 1143.8275770974496,
+      "bestemming_codes": [],
+      "function_aanduidingen": [],
+      "bouwaanduidingen": [
+        "sba-dvg3"
+      ],
+      "dubbelbestemmingen": [],
+      "height_m": null,
+      "height_reconciled_from": null,
+      "raw_labels": [
+        "[sba-dvg3]"
+      ],
+      "original_unique_count": 4,
+      "final_unique_count": 4
+    },
+    {
+      "coordinates": [
+        [
           64.98166559007431,
           170.6456563313802
         ],
@@ -959,6 +925,40 @@
       ],
       "original_unique_count": 3,
       "final_unique_count": 3
+    },
+    {
+      "coordinates": [
+        [
+          140.80066494411892,
+          286.76600172254774
+        ],
+        [
+          220.89532385932074,
+          211.79366149902341
+        ],
+        [
+          154.7706670973036,
+          211.79366149902341
+        ],
+        [
+          140.80066494411892,
+          286.76600172254774
+        ]
+      ],
+      "area_m2": 2478.760131962859,
+      "bestemming_codes": [],
+      "function_aanduidingen": [],
+      "bouwaanduidingen": [
+        "sba-dvg4"
+      ],
+      "dubbelbestemmingen": [],
+      "height_m": null,
+      "height_reconciled_from": null,
+      "raw_labels": [
+        "[sba-dvg4]"
+      ],
+      "original_unique_count": 4,
+      "final_unique_count": 4
     },
     {
       "coordinates": [

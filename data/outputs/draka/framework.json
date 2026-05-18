@@ -2,7 +2,7 @@
   "header": {
     "banner": "PROTOTYPE OUTPUT, NOT VERIFIED",
     "verification_status": "extracted",
-    "generated_at": "2026-05-17T19:18:50.626169+00:00",
+    "generated_at": "2026-05-18T12:13:27.763023+00:00",
     "tool_version": "0.1.0-omrt-run",
     "project_name": "draka",
     "plan_id": "NL.IMRO.0363.N2102BPGST-VG01",
@@ -172,68 +172,6 @@
           "coordinates": [
             [
               [
-                296.79900258382156,
-                232.1136528862847
-              ],
-              [
-                343.5773273044162,
-                165.4809844970703
-              ],
-              [
-                309.2449913872613,
-                165.4809844970703
-              ],
-              [
-                296.79900258382156,
-                232.1136528862847
-              ]
-            ]
-          ]
-        },
-        "properties": {
-          "name": "Bouwvlak sba-dvg3",
-          "feature_type": "bouwvlak",
-          "lod": 0,
-          "elevation_m": null,
-          "extrusion_height_m": 70.0,
-          "associated_rules": [],
-          "confidence_score": 0.9
-        }
-      },
-      "compas": {
-        "dtype": "compas.geometry/Polygon",
-        "value": {
-          "points": [
-            [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ]
-          ]
-        },
-        "crs": "drawing_local"
-      }
-    },
-    {
-      "id": "bouwvlak_03",
-      "geojson": {
-        "type": "Feature",
-        "id": "bouwvlak_03",
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
                 89.19633204142252,
                 196.55365719265407
               ],
@@ -290,72 +228,10 @@
       }
     },
     {
-      "id": "bouwvlak_04",
+      "id": "bouwvlak_03",
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_04",
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                140.80066494411892,
-                286.76600172254774
-              ],
-              [
-                220.89532385932074,
-                211.79366149902341
-              ],
-              [
-                154.7706670973036,
-                211.79366149902341
-              ],
-              [
-                140.80066494411892,
-                286.76600172254774
-              ]
-            ]
-          ]
-        },
-        "properties": {
-          "name": "Bouwvlak sba-dvg4",
-          "feature_type": "bouwvlak",
-          "lod": 0,
-          "elevation_m": null,
-          "extrusion_height_m": 70.0,
-          "associated_rules": [],
-          "confidence_score": 0.9
-        }
-      },
-      "compas": {
-        "dtype": "compas.geometry/Polygon",
-        "value": {
-          "points": [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ]
-          ]
-        },
-        "crs": "drawing_local"
-      }
-    },
-    {
-      "id": "bouwvlak_05",
-      "geojson": {
-        "type": "Feature",
-        "id": "bouwvlak_05",
+        "id": "bouwvlak_03",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -414,10 +290,10 @@
       }
     },
     {
-      "id": "bouwvlak_06",
+      "id": "bouwvlak_04",
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_06",
+        "id": "bouwvlak_04",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -479,10 +355,10 @@
       }
     },
     {
-      "id": "bouwvlak_07",
+      "id": "bouwvlak_05",
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_07",
+        "id": "bouwvlak_05",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -550,10 +426,10 @@
       }
     },
     {
-      "id": "bouwvlak_08",
+      "id": "bouwvlak_06",
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_08",
+        "id": "bouwvlak_06",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -621,10 +497,10 @@
       }
     },
     {
-      "id": "bouwvlak_09",
+      "id": "bouwvlak_07",
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_09",
+        "id": "bouwvlak_07",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -695,10 +571,10 @@
       }
     },
     {
-      "id": "bouwvlak_10",
+      "id": "bouwvlak_08",
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_10",
+        "id": "bouwvlak_08",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -766,10 +642,10 @@
       }
     },
     {
-      "id": "bouwvlak_11",
+      "id": "bouwvlak_09",
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_11",
+        "id": "bouwvlak_09",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -849,10 +725,10 @@
       }
     },
     {
-      "id": "bouwvlak_12",
+      "id": "bouwvlak_10",
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_12",
+        "id": "bouwvlak_10",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -932,10 +808,10 @@
       }
     },
     {
-      "id": "bouwvlak_13",
+      "id": "bouwvlak_11",
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_13",
+        "id": "bouwvlak_11",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -1450,6 +1326,68 @@
       }
     },
     {
+      "id": "dvg_overlay_01",
+      "geojson": {
+        "type": "Feature",
+        "id": "dvg_overlay_01",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                296.79900258382156,
+                232.1136528862847
+              ],
+              [
+                343.5773273044162,
+                165.4809844970703
+              ],
+              [
+                309.2449913872613,
+                165.4809844970703
+              ],
+              [
+                296.79900258382156,
+                232.1136528862847
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "name": "Zone (no label)",
+          "feature_type": "dvg_overlay",
+          "lod": 0,
+          "elevation_m": null,
+          "extrusion_height_m": null,
+          "associated_rules": [],
+          "confidence_score": 0.9
+        }
+      },
+      "compas": {
+        "dtype": "compas.geometry/Polygon",
+        "value": {
+          "points": [
+            [
+              296.79900258382156,
+              232.1136528862847,
+              0.0
+            ],
+            [
+              343.5773273044162,
+              165.4809844970703,
+              0.0
+            ],
+            [
+              309.2449913872613,
+              165.4809844970703,
+              0.0
+            ]
+          ]
+        },
+        "crs": "drawing_local"
+      }
+    },
+    {
       "id": "other_04",
       "geojson": {
         "type": "Feature",
@@ -1814,6 +1752,68 @@
             [
               140.80066494411892,
               286.76600172254774,
+              0.0
+            ]
+          ]
+        },
+        "crs": "drawing_local"
+      }
+    },
+    {
+      "id": "dvg_overlay_02",
+      "geojson": {
+        "type": "Feature",
+        "id": "dvg_overlay_02",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                140.80066494411892,
+                286.76600172254774
+              ],
+              [
+                220.89532385932074,
+                211.79366149902341
+              ],
+              [
+                154.7706670973036,
+                211.79366149902341
+              ],
+              [
+                140.80066494411892,
+                286.76600172254774
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "name": "Zone (no label)",
+          "feature_type": "dvg_overlay",
+          "lod": 0,
+          "elevation_m": null,
+          "extrusion_height_m": null,
+          "associated_rules": [],
+          "confidence_score": 0.9
+        }
+      },
+      "compas": {
+        "dtype": "compas.geometry/Polygon",
+        "value": {
+          "points": [
+            [
+              140.80066494411892,
+              286.76600172254774,
+              0.0
+            ],
+            [
+              220.89532385932074,
+              211.79366149902341,
+              0.0
+            ],
+            [
+              154.7706670973036,
+              211.79366149902341,
               0.0
             ]
           ]
@@ -3219,7 +3219,7 @@
           "sha256": "154dcde7be01f4fe13609826f81ca784840b4f04c202d2c6cad17175f81fc753"
         }
       ],
-      "generated_at": "2026-05-17T19:18:49.711965Z",
+      "generated_at": "2026-05-18T12:13:26.875737Z",
       "tool_version": "0.1.0-omrt-run",
       "verification_status": "extracted"
     },
@@ -3236,7 +3236,7 @@
           "urban_intent_passages"
         ],
         "entered_by": null,
-        "timestamp": "2026-05-17T19:18:49.711887Z"
+        "timestamp": "2026-05-18T12:13:26.875610Z"
       },
       "confidence": {
         "score": 0.5,
@@ -19041,7 +19041,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19157,7 +19157,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19229,113 +19229,6 @@
         },
         {
           "id": "bouwvlak_02",
-          "name": "Bouwvlak sba-dvg3",
-          "feature_type": "bouwvlak",
-          "lod": 0,
-          "coordinates": [
-            [
-              296.79900258382156,
-              232.1136528862847
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703
-            ],
-            [
-              296.79900258382156,
-              232.1136528862847
-            ]
-          ],
-          "crs": "drawing_local",
-          "elevation_m": null,
-          "extrusion_height_m": 70.0,
-          "geometry_file": null,
-          "associated_rules": [],
-          "height_reconciled_from": "verbeelding_uncorrected",
-          "provenance": {
-            "source_type": "document",
-            "document": "Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf",
-            "page": 1,
-            "quoted_text": "Vector geometry parsed from Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf page 1.",
-            "api_name": null,
-            "inferred_from": [],
-            "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
-          },
-          "confidence": {
-            "score": 0.9,
-            "reasons": [
-              "Stage 3 vector parser; scale_status=schaal_text"
-            ],
-            "flags": []
-          },
-          "notes": "raw_labels=['[sba-dvg3]']; height_m=70.0; area_m2=1144",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_02",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    296.79900258382156,
-                    232.1136528862847
-                  ],
-                  [
-                    343.5773273044162,
-                    165.4809844970703
-                  ],
-                  [
-                    309.2449913872613,
-                    165.4809844970703
-                  ],
-                  [
-                    296.79900258382156,
-                    232.1136528862847
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-dvg3",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 70.0,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  296.79900258382156,
-                  232.1136528862847,
-                  0.0
-                ],
-                [
-                  343.5773273044162,
-                  165.4809844970703,
-                  0.0
-                ],
-                [
-                  309.2449913872613,
-                  165.4809844970703,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
-        },
-        {
-          "id": "bouwvlak_03",
           "name": "Bouwvlak sba-1",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -19374,7 +19267,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19383,10 +19276,10 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['[sba-1]']; height_m=45.0; area_m2=295",
+          "notes": "raw_labels=['[sba-1]']; height_m=45.0; area_m2=295 | programme_rules: 2 constraints across categories ['height']",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_03",
+            "id": "bouwvlak_02",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -19448,114 +19341,7 @@
           }
         },
         {
-          "id": "bouwvlak_04",
-          "name": "Bouwvlak sba-dvg4",
-          "feature_type": "bouwvlak",
-          "lod": 0,
-          "coordinates": [
-            [
-              140.80066494411892,
-              286.76600172254774
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341
-            ],
-            [
-              140.80066494411892,
-              286.76600172254774
-            ]
-          ],
-          "crs": "drawing_local",
-          "elevation_m": null,
-          "extrusion_height_m": 70.0,
-          "geometry_file": null,
-          "associated_rules": [],
-          "height_reconciled_from": "verbeelding_uncorrected",
-          "provenance": {
-            "source_type": "document",
-            "document": "Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf",
-            "page": 1,
-            "quoted_text": "Vector geometry parsed from Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf page 1.",
-            "api_name": null,
-            "inferred_from": [],
-            "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
-          },
-          "confidence": {
-            "score": 0.9,
-            "reasons": [
-              "Stage 3 vector parser; scale_status=schaal_text"
-            ],
-            "flags": []
-          },
-          "notes": "raw_labels=['[sba-dvg4]']; height_m=70.0; area_m2=2479",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_04",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    140.80066494411892,
-                    286.76600172254774
-                  ],
-                  [
-                    220.89532385932074,
-                    211.79366149902341
-                  ],
-                  [
-                    154.7706670973036,
-                    211.79366149902341
-                  ],
-                  [
-                    140.80066494411892,
-                    286.76600172254774
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-dvg4",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 70.0,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  140.80066494411892,
-                  286.76600172254774,
-                  0.0
-                ],
-                [
-                  220.89532385932074,
-                  211.79366149902341,
-                  0.0
-                ],
-                [
-                  154.7706670973036,
-                  211.79366149902341,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
-        },
-        {
-          "id": "bouwvlak_05",
+          "id": "bouwvlak_03",
           "name": "Bouwvlak sba-3, sba-dvg2",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -19591,7 +19377,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19603,7 +19389,7 @@
           "notes": "raw_labels=['[sba-3]', '[sba-dvg2]']; height_m=30.5; area_m2=2074",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_05",
+            "id": "bouwvlak_03",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -19662,7 +19448,7 @@
           }
         },
         {
-          "id": "bouwvlak_06",
+          "id": "bouwvlak_04",
           "name": "Bouwvlak sba-2, sba-dvg3, sba-dvg5",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -19701,7 +19487,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19710,10 +19496,10 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['[sba-2]', '[sba-dvg3]', '[sba-dvg5]']; height_m=60.0; area_m2=1302",
+          "notes": "raw_labels=['[sba-2]', '[sba-dvg3]', '[sba-dvg5]']; height_m=60.0; area_m2=1302 | programme_rules: 2 constraints across categories ['height']",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_06",
+            "id": "bouwvlak_04",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -19775,7 +19561,7 @@
           }
         },
         {
-          "id": "bouwvlak_07",
+          "id": "bouwvlak_05",
           "name": "Bouwvlak sba-4",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -19815,7 +19601,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19827,7 +19613,7 @@
           "notes": "raw_labels=['[sba-4]']; height_m=30.5; area_m2=1756",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_07",
+            "id": "bouwvlak_05",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -19895,7 +19681,7 @@
           }
         },
         {
-          "id": "bouwvlak_08",
+          "id": "bouwvlak_06",
           "name": "Bouwvlak sba-4, sgd-7",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -19935,7 +19721,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19947,7 +19733,7 @@
           "notes": "raw_labels=['(sgd-7)', '[sba-4]']; height_m=30.5; area_m2=1605",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_08",
+            "id": "bouwvlak_06",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -20015,7 +19801,7 @@
           }
         },
         {
-          "id": "bouwvlak_09",
+          "id": "bouwvlak_07",
           "name": "Bouwvlak sba-2, sgd-4",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -20058,7 +19844,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20067,10 +19853,10 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(sgd-4)', '[sba-2]']; height_m=60.0; area_m2=4831",
+          "notes": "raw_labels=['(sgd-4)', '[sba-2]']; height_m=60.0; area_m2=4831 | programme_rules: 2 constraints across categories ['height']",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_09",
+            "id": "bouwvlak_07",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -20141,7 +19927,7 @@
           }
         },
         {
-          "id": "bouwvlak_10",
+          "id": "bouwvlak_08",
           "name": "Bouwvlak sba-4, GD",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -20181,7 +19967,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20193,7 +19979,7 @@
           "notes": "raw_labels=['GD', '[sba-4]']; height_m=40.0; area_m2=1848",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_10",
+            "id": "bouwvlak_08",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -20261,7 +20047,7 @@
           }
         },
         {
-          "id": "bouwvlak_11",
+          "id": "bouwvlak_09",
           "name": "Bouwvlak sba-1, sgd-2",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -20299,7 +20085,7 @@
             "max_height_sba1_increased",
             "avg_height_sba1"
           ],
-          "height_reconciled_from": "verbeelding",
+          "height_reconciled_from": "regels",
           "provenance": {
             "source_type": "document",
             "document": "Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf",
@@ -20308,7 +20094,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20317,10 +20103,10 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(sgd-2)', '[sba-1]']; height_m=45.0; area_m2=5744",
+          "notes": "raw_labels=['(sgd-2)', '[sba-1]']; height_m=45.0; area_m2=5744 | programme_rules: 2 constraints across categories ['height']",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_11",
+            "id": "bouwvlak_09",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -20400,7 +20186,7 @@
           }
         },
         {
-          "id": "bouwvlak_12",
+          "id": "bouwvlak_10",
           "name": "Bouwvlak sba-2, m",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -20447,7 +20233,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20456,10 +20242,10 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(m)', '[sba-2]']; height_m=60.0; area_m2=4946",
+          "notes": "raw_labels=['(m)', '[sba-2]']; height_m=60.0; area_m2=4946 | programme_rules: 2 constraints across categories ['height']",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_12",
+            "id": "bouwvlak_10",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -20539,7 +20325,7 @@
           }
         },
         {
-          "id": "bouwvlak_13",
+          "id": "bouwvlak_11",
           "name": "Bouwvlak sba-dvg1, sba-dvg2, sgd-3",
           "feature_type": "bouwvlak",
           "lod": 0,
@@ -20695,7 +20481,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20707,7 +20493,7 @@
           "notes": "raw_labels=['(sgd-3)', '[sba-dvg1]', '[sba-dvg2]']; height_m=60.0; area_m2=4001",
           "geometry_geojson": {
             "type": "Feature",
-            "id": "bouwvlak_13",
+            "id": "bouwvlak_11",
             "geometry": {
               "type": "Polygon",
               "coordinates": [
@@ -21072,7 +20858,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21179,7 +20965,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21286,7 +21072,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21357,6 +21143,113 @@
           }
         },
         {
+          "id": "dvg_overlay_01",
+          "name": "Zone (no label)",
+          "feature_type": "dvg_overlay",
+          "lod": 0,
+          "coordinates": [
+            [
+              296.79900258382156,
+              232.1136528862847
+            ],
+            [
+              343.5773273044162,
+              165.4809844970703
+            ],
+            [
+              309.2449913872613,
+              165.4809844970703
+            ],
+            [
+              296.79900258382156,
+              232.1136528862847
+            ]
+          ],
+          "crs": "drawing_local",
+          "elevation_m": null,
+          "extrusion_height_m": null,
+          "geometry_file": null,
+          "associated_rules": [],
+          "height_reconciled_from": null,
+          "provenance": {
+            "source_type": "document",
+            "document": "Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf",
+            "page": 1,
+            "quoted_text": "Vector geometry parsed from Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf page 1.",
+            "api_name": null,
+            "inferred_from": [],
+            "entered_by": null,
+            "timestamp": "2026-05-18T12:13:27.705737Z"
+          },
+          "confidence": {
+            "score": 0.9,
+            "reasons": [
+              "Stage 3 vector parser; scale_status=schaal_text"
+            ],
+            "flags": []
+          },
+          "notes": "raw_labels=['[sba-dvg3]']; area_m2=1144",
+          "geometry_geojson": {
+            "type": "Feature",
+            "id": "dvg_overlay_01",
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    296.79900258382156,
+                    232.1136528862847
+                  ],
+                  [
+                    343.5773273044162,
+                    165.4809844970703
+                  ],
+                  [
+                    309.2449913872613,
+                    165.4809844970703
+                  ],
+                  [
+                    296.79900258382156,
+                    232.1136528862847
+                  ]
+                ]
+              ]
+            },
+            "properties": {
+              "name": "Zone (no label)",
+              "feature_type": "dvg_overlay",
+              "lod": 0,
+              "elevation_m": null,
+              "extrusion_height_m": null,
+              "associated_rules": [],
+              "confidence_score": 0.9
+            }
+          },
+          "geometry_compas": {
+            "dtype": "compas.geometry/Polygon",
+            "value": {
+              "points": [
+                [
+                  296.79900258382156,
+                  232.1136528862847,
+                  0.0
+                ],
+                [
+                  343.5773273044162,
+                  165.4809844970703,
+                  0.0
+                ],
+                [
+                  309.2449913872613,
+                  165.4809844970703,
+                  0.0
+                ]
+              ]
+            },
+            "crs": "drawing_local"
+          }
+        },
+        {
           "id": "other_04",
           "name": "Zone V",
           "feature_type": "other",
@@ -21393,7 +21286,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21500,7 +21393,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21607,7 +21500,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21714,7 +21607,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21821,7 +21714,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21928,7 +21821,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21999,6 +21892,113 @@
           }
         },
         {
+          "id": "dvg_overlay_02",
+          "name": "Zone (no label)",
+          "feature_type": "dvg_overlay",
+          "lod": 0,
+          "coordinates": [
+            [
+              140.80066494411892,
+              286.76600172254774
+            ],
+            [
+              220.89532385932074,
+              211.79366149902341
+            ],
+            [
+              154.7706670973036,
+              211.79366149902341
+            ],
+            [
+              140.80066494411892,
+              286.76600172254774
+            ]
+          ],
+          "crs": "drawing_local",
+          "elevation_m": null,
+          "extrusion_height_m": null,
+          "geometry_file": null,
+          "associated_rules": [],
+          "height_reconciled_from": null,
+          "provenance": {
+            "source_type": "document",
+            "document": "Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf",
+            "page": 1,
+            "quoted_text": "Vector geometry parsed from Drakaterrein-A2_2022-04-26 versie 2_kaveltekening.pdf page 1.",
+            "api_name": null,
+            "inferred_from": [],
+            "entered_by": null,
+            "timestamp": "2026-05-18T12:13:27.705737Z"
+          },
+          "confidence": {
+            "score": 0.9,
+            "reasons": [
+              "Stage 3 vector parser; scale_status=schaal_text"
+            ],
+            "flags": []
+          },
+          "notes": "raw_labels=['[sba-dvg4]']; area_m2=2479",
+          "geometry_geojson": {
+            "type": "Feature",
+            "id": "dvg_overlay_02",
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    140.80066494411892,
+                    286.76600172254774
+                  ],
+                  [
+                    220.89532385932074,
+                    211.79366149902341
+                  ],
+                  [
+                    154.7706670973036,
+                    211.79366149902341
+                  ],
+                  [
+                    140.80066494411892,
+                    286.76600172254774
+                  ]
+                ]
+              ]
+            },
+            "properties": {
+              "name": "Zone (no label)",
+              "feature_type": "dvg_overlay",
+              "lod": 0,
+              "elevation_m": null,
+              "extrusion_height_m": null,
+              "associated_rules": [],
+              "confidence_score": 0.9
+            }
+          },
+          "geometry_compas": {
+            "dtype": "compas.geometry/Polygon",
+            "value": {
+              "points": [
+                [
+                  140.80066494411892,
+                  286.76600172254774,
+                  0.0
+                ],
+                [
+                  220.89532385932074,
+                  211.79366149902341,
+                  0.0
+                ],
+                [
+                  154.7706670973036,
+                  211.79366149902341,
+                  0.0
+                ]
+              ]
+            },
+            "crs": "drawing_local"
+          }
+        },
+        {
           "id": "other_09",
           "name": "Zone GD",
           "feature_type": "other",
@@ -22035,7 +22035,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22142,7 +22142,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22249,7 +22249,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22356,7 +22356,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22463,7 +22463,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22578,7 +22578,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22727,7 +22727,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -23108,7 +23108,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -23710,7 +23710,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -23817,7 +23817,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -23948,7 +23948,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -24109,7 +24109,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-17T19:18:50.574560Z"
+            "timestamp": "2026-05-18T12:13:27.705737Z"
           },
           "confidence": {
             "score": 0.9,
@@ -38473,18 +38473,10 @@
             "driven_by": []
           },
           {
-            "description": "Extruded bouwvlak 'Bouwvlak sba-dvg3' to 70.0 m, no setback. Height source: verbeelding.",
-            "driven_by": []
-          },
-          {
             "description": "Extruded bouwvlak 'Bouwvlak sba-1' to 45.0 m, no setback. Height source: regels (avg_height_sba1).",
             "driven_by": [
               "avg_height_sba1"
             ]
-          },
-          {
-            "description": "Extruded bouwvlak 'Bouwvlak sba-dvg4' to 70.0 m, no setback. Height source: verbeelding.",
-            "driven_by": []
           },
           {
             "description": "Extruded bouwvlak 'Bouwvlak sba-3, sba-dvg2' to 30.5 m, no setback. Height source: verbeelding.",
@@ -38672,142 +38664,6 @@
           ],
           [
             [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ]
-          ],
-          [
-            [
-              296.79900258382156,
-              232.1136528862847,
-              70.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              70.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              70.0
-            ],
-            [
-              296.79900258382156,
-              232.1136528862847,
-              70.0
-            ]
-          ],
-          [
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              70.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              296.79900258382156,
-              232.1136528862847,
-              70.0
-            ]
-          ],
-          [
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              296.79900258382156,
-              232.1136528862847,
-              70.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
               89.19633204142252,
               196.55365719265407,
               0.0
@@ -38940,142 +38796,6 @@
               141.52033462524412,
               184.78499569363063,
               45.0
-            ]
-          ],
-          [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ]
-          ],
-          [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              70.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              70.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              70.0
-            ]
-          ],
-          [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              70.0
-            ]
-          ],
-          [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              70.0
-            ],
-            [
-              140.80066494411892,
-              286.76600172254774,
-              70.0
-            ]
-          ],
-          [
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              70.0
-            ]
-          ],
-          [
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              70.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              70.0
-            ]
-          ],
-          [
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              140.80066494411892,
-              286.76600172254774,
-              70.0
-            ]
-          ],
-          [
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              140.80066494411892,
-              286.76600172254774,
-              70.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              70.0
             ]
           ],
           [
@@ -42898,7 +42618,7 @@
             "avg_height_sba2"
           ],
           "entered_by": null,
-          "timestamp": "2026-05-17T19:18:50.611707Z"
+          "timestamp": "2026-05-18T12:13:27.741340Z"
         },
         "total_gfa_m2": null,
         "uses_unverified_inputs": true
@@ -42917,23 +42637,9 @@
             ]
           },
           {
-            "description": "Bouwvlak 'Bouwvlak sba-dvg3': base to 8.0 m, upper volume inset by 2.0 m and extruded to 70.0 m to satisfy the setback above the threshold.",
-            "driven_by": [
-              "min_plint_height",
-              "min_setback_dakterras_techniek"
-            ]
-          },
-          {
             "description": "Bouwvlak 'Bouwvlak sba-1': base to 8.0 m, upper volume inset by 2.0 m and extruded to 45.0 m to satisfy the setback above the threshold.",
             "driven_by": [
               "avg_height_sba1",
-              "min_plint_height",
-              "min_setback_dakterras_techniek"
-            ]
-          },
-          {
-            "description": "Bouwvlak 'Bouwvlak sba-dvg4': base to 8.0 m, upper volume inset by 2.0 m and extruded to 70.0 m to satisfy the setback above the threshold.",
-            "driven_by": [
               "min_plint_height",
               "min_setback_dakterras_techniek"
             ]
@@ -43283,278 +42989,6 @@
           ],
           [
             [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ]
-          ],
-          [
-            [
-              296.79900258382156,
-              232.1136528862847,
-              8.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              8.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              8.0
-            ]
-          ],
-          [
-            [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              8.0
-            ]
-          ],
-          [
-            [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              8.0
-            ],
-            [
-              296.79900258382156,
-              232.1136528862847,
-              8.0
-            ]
-          ],
-          [
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              8.0
-            ]
-          ],
-          [
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              8.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              8.0
-            ]
-          ],
-          [
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              296.79900258382156,
-              232.1136528862847,
-              8.0
-            ]
-          ],
-          [
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              296.79900258382156,
-              232.1136528862847,
-              8.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              8.0
-            ]
-          ],
-          [
-            [
-              300.4570195989697,
-              223.42223390694775,
-              8.0
-            ],
-            [
-              310.9060107715709,
-              167.4809844970703,
-              8.0
-            ],
-            [
-              339.72961656125193,
-              167.4809844970703,
-              8.0
-            ]
-          ],
-          [
-            [
-              300.4570195989697,
-              223.42223390694775,
-              70.0
-            ],
-            [
-              339.72961656125193,
-              167.4809844970703,
-              70.0
-            ],
-            [
-              310.9060107715709,
-              167.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
-              300.4570195989697,
-              223.42223390694775,
-              8.0
-            ],
-            [
-              339.72961656125193,
-              167.4809844970703,
-              8.0
-            ],
-            [
-              339.72961656125193,
-              167.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
-              300.4570195989697,
-              223.42223390694775,
-              8.0
-            ],
-            [
-              339.72961656125193,
-              167.4809844970703,
-              70.0
-            ],
-            [
-              300.4570195989697,
-              223.42223390694775,
-              70.0
-            ]
-          ],
-          [
-            [
-              339.72961656125193,
-              167.4809844970703,
-              8.0
-            ],
-            [
-              310.9060107715709,
-              167.4809844970703,
-              8.0
-            ],
-            [
-              310.9060107715709,
-              167.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
-              339.72961656125193,
-              167.4809844970703,
-              8.0
-            ],
-            [
-              310.9060107715709,
-              167.4809844970703,
-              70.0
-            ],
-            [
-              339.72961656125193,
-              167.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
-              310.9060107715709,
-              167.4809844970703,
-              8.0
-            ],
-            [
-              300.4570195989697,
-              223.42223390694775,
-              8.0
-            ],
-            [
-              300.4570195989697,
-              223.42223390694775,
-              70.0
-            ]
-          ],
-          [
-            [
-              310.9060107715709,
-              167.4809844970703,
-              8.0
-            ],
-            [
-              300.4570195989697,
-              223.42223390694775,
-              70.0
-            ],
-            [
-              310.9060107715709,
-              167.4809844970703,
-              70.0
-            ]
-          ],
-          [
-            [
               89.19633204142252,
               196.55365719265407,
               0.0
@@ -43823,278 +43257,6 @@
               138.99599704517746,
               187.40273157545388,
               45.0
-            ]
-          ],
-          [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ]
-          ],
-          [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              8.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              8.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              8.0
-            ]
-          ],
-          [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              8.0
-            ]
-          ],
-          [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              8.0
-            ],
-            [
-              140.80066494411892,
-              286.76600172254774,
-              8.0
-            ]
-          ],
-          [
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              8.0
-            ]
-          ],
-          [
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              8.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              8.0
-            ]
-          ],
-          [
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              140.80066494411892,
-              286.76600172254774,
-              8.0
-            ]
-          ],
-          [
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              140.80066494411892,
-              286.76600172254774,
-              8.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              8.0
-            ]
-          ],
-          [
-            [
-              143.88320330548666,
-              281.1411250117604,
-              8.0
-            ],
-            [
-              156.4324208899906,
-              213.79366149902341,
-              8.0
-            ],
-            [
-              215.83203273743925,
-              213.79366149902341,
-              8.0
-            ]
-          ],
-          [
-            [
-              143.88320330548666,
-              281.1411250117604,
-              70.0
-            ],
-            [
-              215.83203273743925,
-              213.79366149902341,
-              70.0
-            ],
-            [
-              156.4324208899906,
-              213.79366149902341,
-              70.0
-            ]
-          ],
-          [
-            [
-              143.88320330548666,
-              281.1411250117604,
-              8.0
-            ],
-            [
-              215.83203273743925,
-              213.79366149902341,
-              8.0
-            ],
-            [
-              215.83203273743925,
-              213.79366149902341,
-              70.0
-            ]
-          ],
-          [
-            [
-              143.88320330548666,
-              281.1411250117604,
-              8.0
-            ],
-            [
-              215.83203273743925,
-              213.79366149902341,
-              70.0
-            ],
-            [
-              143.88320330548666,
-              281.1411250117604,
-              70.0
-            ]
-          ],
-          [
-            [
-              215.83203273743925,
-              213.79366149902341,
-              8.0
-            ],
-            [
-              156.4324208899906,
-              213.79366149902341,
-              8.0
-            ],
-            [
-              156.4324208899906,
-              213.79366149902341,
-              70.0
-            ]
-          ],
-          [
-            [
-              215.83203273743925,
-              213.79366149902341,
-              8.0
-            ],
-            [
-              156.4324208899906,
-              213.79366149902341,
-              70.0
-            ],
-            [
-              215.83203273743925,
-              213.79366149902341,
-              70.0
-            ]
-          ],
-          [
-            [
-              156.4324208899906,
-              213.79366149902341,
-              8.0
-            ],
-            [
-              143.88320330548666,
-              281.1411250117604,
-              8.0
-            ],
-            [
-              143.88320330548666,
-              281.1411250117604,
-              70.0
-            ]
-          ],
-          [
-            [
-              156.4324208899906,
-              213.79366149902341,
-              8.0
-            ],
-            [
-              143.88320330548666,
-              281.1411250117604,
-              70.0
-            ],
-            [
-              156.4324208899906,
-              213.79366149902341,
-              70.0
             ]
           ],
           [
@@ -53087,11 +52249,289 @@
             "min_setback_dakterras_techniek"
           ],
           "entered_by": null,
-          "timestamp": "2026-05-17T19:18:50.614577Z"
+          "timestamp": "2026-05-18T12:13:27.744551Z"
         },
         "total_gfa_m2": null,
         "uses_unverified_inputs": false
       }
     ]
-  }
+  },
+  "zone_programme_summary": [
+    {
+      "zone_id": "bouwvlak_01",
+      "zone_name": "Bouwvlak sba-4",
+      "zone_codes": [
+        "sba_4"
+      ],
+      "acoustic_overlays": [],
+      "height_m": 30.5,
+      "height_source": "verbeelding_uncorrected",
+      "rules_by_category": {},
+      "narrative_rules": [],
+      "rule_count": 0
+    },
+    {
+      "zone_id": "bouwvlak_02",
+      "zone_name": "Bouwvlak sba-1",
+      "zone_codes": [
+        "sba_1"
+      ],
+      "acoustic_overlays": [],
+      "height_m": 45.0,
+      "height_source": "regels",
+      "rules_by_category": {
+        "height": [
+          {
+            "id": "max_height_sba1_increased",
+            "name": "Maximum bouwhoogte verhoogd voor sba-1",
+            "value": 50.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-1 gronden maximaal 45 m",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          },
+          {
+            "id": "avg_height_sba1",
+            "name": "Gemiddelde bouwhoogte sba-1",
+            "value": 45.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-1",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          }
+        ]
+      },
+      "narrative_rules": [],
+      "rule_count": 2
+    },
+    {
+      "zone_id": "bouwvlak_03",
+      "zone_name": "Bouwvlak sba-3, sba-dvg2",
+      "zone_codes": [
+        "sba_3",
+        "sba_dvg2"
+      ],
+      "acoustic_overlays": [
+        "sba_dvg2"
+      ],
+      "height_m": 30.5,
+      "height_source": "verbeelding_uncorrected",
+      "rules_by_category": {},
+      "narrative_rules": [],
+      "rule_count": 0
+    },
+    {
+      "zone_id": "bouwvlak_04",
+      "zone_name": "Bouwvlak sba-2, sba-dvg3, sba-dvg5",
+      "zone_codes": [
+        "sba_2",
+        "sba_dvg3",
+        "sba_dvg5"
+      ],
+      "acoustic_overlays": [
+        "sba_dvg3",
+        "sba_dvg5"
+      ],
+      "height_m": 60.0,
+      "height_source": "regels",
+      "rules_by_category": {
+        "height": [
+          {
+            "id": "max_height_sba2_increased",
+            "name": "Maximum bouwhoogte verhoogd voor sba-2",
+            "value": 65.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-2 gronden maximaal 60 m",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          },
+          {
+            "id": "avg_height_sba2",
+            "name": "Gemiddelde bouwhoogte sba-2",
+            "value": 60.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-2",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          }
+        ]
+      },
+      "narrative_rules": [],
+      "rule_count": 2
+    },
+    {
+      "zone_id": "bouwvlak_05",
+      "zone_name": "Bouwvlak sba-4",
+      "zone_codes": [
+        "sba_4"
+      ],
+      "acoustic_overlays": [],
+      "height_m": 30.5,
+      "height_source": "verbeelding_uncorrected",
+      "rules_by_category": {},
+      "narrative_rules": [],
+      "rule_count": 0
+    },
+    {
+      "zone_id": "bouwvlak_06",
+      "zone_name": "Bouwvlak sba-4, sgd-7",
+      "zone_codes": [
+        "sba_4",
+        "sgd_7"
+      ],
+      "acoustic_overlays": [],
+      "height_m": 30.5,
+      "height_source": "verbeelding_uncorrected",
+      "rules_by_category": {},
+      "narrative_rules": [],
+      "rule_count": 0
+    },
+    {
+      "zone_id": "bouwvlak_07",
+      "zone_name": "Bouwvlak sba-2, sgd-4",
+      "zone_codes": [
+        "sba_2",
+        "sgd_4"
+      ],
+      "acoustic_overlays": [],
+      "height_m": 60.0,
+      "height_source": "verbeelding",
+      "rules_by_category": {
+        "height": [
+          {
+            "id": "max_height_sba2_increased",
+            "name": "Maximum bouwhoogte verhoogd voor sba-2",
+            "value": 65.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-2 gronden maximaal 60 m",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          },
+          {
+            "id": "avg_height_sba2",
+            "name": "Gemiddelde bouwhoogte sba-2",
+            "value": 60.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-2",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          }
+        ]
+      },
+      "narrative_rules": [],
+      "rule_count": 2
+    },
+    {
+      "zone_id": "bouwvlak_08",
+      "zone_name": "Bouwvlak sba-4, GD",
+      "zone_codes": [
+        "gd",
+        "sba_4"
+      ],
+      "acoustic_overlays": [],
+      "height_m": 40.0,
+      "height_source": "verbeelding_uncorrected",
+      "rules_by_category": {},
+      "narrative_rules": [],
+      "rule_count": 0
+    },
+    {
+      "zone_id": "bouwvlak_09",
+      "zone_name": "Bouwvlak sba-1, sgd-2",
+      "zone_codes": [
+        "sba_1",
+        "sgd_2"
+      ],
+      "acoustic_overlays": [],
+      "height_m": 45.0,
+      "height_source": "regels",
+      "rules_by_category": {
+        "height": [
+          {
+            "id": "max_height_sba1_increased",
+            "name": "Maximum bouwhoogte verhoogd voor sba-1",
+            "value": 50.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-1 gronden maximaal 45 m",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          },
+          {
+            "id": "avg_height_sba1",
+            "name": "Gemiddelde bouwhoogte sba-1",
+            "value": 45.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-1",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          }
+        ]
+      },
+      "narrative_rules": [],
+      "rule_count": 2
+    },
+    {
+      "zone_id": "bouwvlak_10",
+      "zone_name": "Bouwvlak sba-2, m",
+      "zone_codes": [
+        "m",
+        "sba_2"
+      ],
+      "acoustic_overlays": [],
+      "height_m": 60.0,
+      "height_source": "verbeelding",
+      "rules_by_category": {
+        "height": [
+          {
+            "id": "max_height_sba2_increased",
+            "name": "Maximum bouwhoogte verhoogd voor sba-2",
+            "value": 65.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Met omgevingsvergunning; gemiddelde bouwhoogte op sba-2 gronden maximaal 60 m",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          },
+          {
+            "id": "avg_height_sba2",
+            "name": "Gemiddelde bouwhoogte sba-2",
+            "value": 60.0,
+            "unit": "m",
+            "is_maximum": true,
+            "condition": "Geldt als gemiddelde over alle bouwhoogtes op gronden met sba-2",
+            "confidence": 1.0,
+            "source": "Draka Terrein Hamerkwartier_Regels.pdf p.22"
+          }
+        ]
+      },
+      "narrative_rules": [],
+      "rule_count": 2
+    },
+    {
+      "zone_id": "bouwvlak_11",
+      "zone_name": "Bouwvlak sba-dvg1, sba-dvg2, sgd-3",
+      "zone_codes": [
+        "sba_dvg1",
+        "sba_dvg2",
+        "sgd_3"
+      ],
+      "acoustic_overlays": [
+        "sba_dvg1",
+        "sba_dvg2"
+      ],
+      "height_m": 60.0,
+      "height_source": "verbeelding_uncorrected",
+      "rules_by_category": {},
+      "narrative_rules": [],
+      "rule_count": 0
+    }
+  ]
 }

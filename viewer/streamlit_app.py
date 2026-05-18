@@ -599,6 +599,109 @@ def render_neighbourhood_panel(geo: dict[str, Any]) -> None:
     )
 
 
+def render_zones_panel(zone_summaries: list[dict[str, Any]]) -> None:
+    """Render the per-bouwvlak zone-to-rule mapping.
+
+    Driven entirely by ``zone_programme_summary.json``. Row colour is a
+    health signal for the zone-label-to-applies_to matching: green when at
+    least two rules matched and the height has a textual source, yellow
+    when rules matched but the height came from the verbeelding without a
+    regels confirmation, red when nothing matched.
+    """
+    if not zone_summaries:
+        st.info(
+            "Zone programme summary not found. Re-run the pipeline to "
+            "generate it."
+        )
+        return
+
+    st.markdown("## Zones")
+    st.info(
+        "Zone programme rules are matched from the extracted constraints. "
+        "Zones with 0 matched rules indicate a label normalisation "
+        "mismatch — check that the extracted NumericalConstraints have "
+        "`applies_to` fields referencing the zone codes shown in the "
+        "table."
+    )
+
+    def _row_colour(z: dict[str, Any]) -> str:
+        rc = z.get("rule_count", 0)
+        hs = z.get("height_source")
+        if rc == 0:
+            return "background-color: #fde2e1"
+        if hs == "verbeelding_uncorrected":
+            return "background-color: #fff4cd"
+        if rc >= 2 and hs in ("regels", "verbeelding"):
+            return "background-color: #dcefdc"
+        return ""
+
+    rows = []
+    for z in zone_summaries:
+        rows.append(
+            {
+                "Zone": z.get("zone_name") or z.get("zone_id") or "?",
+                "Height (m)": z.get("height_m"),
+                "Source": z.get("height_source") or "—",
+                "Rules": z.get("rule_count", 0),
+                "Categories": ", ".join(
+                    sorted((z.get("rules_by_category") or {}).keys())
+                )
+                or "—",
+            }
+        )
+
+    import pandas as pd
+
+    df = pd.DataFrame(rows)
+    styled = df.style.apply(
+        lambda row: [_row_colour(zone_summaries[row.name])] * len(row),
+        axis=1,
+    )
+    st.dataframe(styled, use_container_width=True, hide_index=True)
+
+    zone_names = [
+        z.get("zone_name") or z.get("zone_id") or "?" for z in zone_summaries
+    ]
+    selected = st.selectbox("Inspect zone", zone_names, key="zone_inspect")
+    z = zone_summaries[zone_names.index(selected)]
+
+    with st.expander(f"Details — {selected}", expanded=True):
+        st.write(f"**Zone codes:** {', '.join(z.get('zone_codes') or []) or '—'}")
+        overlays = z.get("acoustic_overlays") or []
+        if overlays:
+            st.write(f"**Acoustic overlays:** {', '.join(overlays)}")
+        h = z.get("height_m")
+        h_txt = f"{h} m" if h is not None else "—"
+        st.write(
+            f"**Height:** {h_txt} (source: {z.get('height_source') or '—'})"
+        )
+        rule_count = z.get("rule_count", 0)
+        if rule_count == 0:
+            st.warning(
+                "No rules matched. Likely cause: the extracted "
+                "NumericalConstraints' `applies_to` codes do not match "
+                "any of this zone's codes after normalisation. Confirm "
+                "that the regels actually reference these codes."
+            )
+        for cat, items in (z.get("rules_by_category") or {}).items():
+            st.markdown(f"**{cat}**")
+            for r in items:
+                val = r.get("value")
+                unit = r.get("unit") or ""
+                cond = r.get("condition")
+                src = r.get("source") or "—"
+                line = f"- `{r.get('id')}` {r.get('name')}: **{val} {unit}**"
+                if cond:
+                    line += f" — _{cond}_"
+                line += f"  \n  source: {src}"
+                st.markdown(line)
+        narr = z.get("narrative_rules") or []
+        if narr:
+            st.markdown("**Narrative**")
+            for n in narr:
+                st.write(f"- [{n.get('category')}] {n.get('statement')}")
+
+
 def _resolve_sibling(base: Path, override: str | None, default_name: str) -> Path:
     """Resolve a sibling JSON path next to the framework file, or a sidebar override."""
     if override:
@@ -726,6 +829,29 @@ def page_review(
         st.info("No numerical constraints.")
     for c in numerical:
         render_constraint_card(c, reviewed)
+
+    # --- Zone programme summary (per-bouwvlak rule mapping) ---
+    zone_summary_inline = payload.get("zone_programme_summary")
+    zone_summary_path = payload_path.parent / "zone_programme_summary.json"
+    zone_summary: list[dict[str, Any]] | None = None
+    if isinstance(zone_summary_inline, list):
+        zone_summary = zone_summary_inline
+    elif zone_summary_path.exists():
+        try:
+            loaded = json.loads(zone_summary_path.read_text())
+            if isinstance(loaded, list):
+                zone_summary = loaded
+        except Exception as exc:  # noqa: BLE001
+            st.warning(f"Could not load {zone_summary_path}: {exc}")
+    if zone_summary is not None:
+        render_zones_panel(zone_summary)
+    else:
+        st.markdown("## Zones")
+        st.info(
+            "Zone programme summary not found. Re-run the pipeline to "
+            "generate it."
+        )
+    st.markdown("---")
 
     st.markdown("### Geometric constraints")
     for g in constraints.get("geometric", []):

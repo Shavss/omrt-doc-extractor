@@ -177,8 +177,18 @@ def _build_header(framework: ParametricFramework) -> dict[str, Any]:
     }
 
 
-def serialise_framework(framework: ParametricFramework) -> dict[str, Any]:
-    """Produce the JSON-ready dict for framework.json."""
+def serialise_framework(
+    framework: ParametricFramework,
+    *,
+    zone_programme_summary: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    """Produce the JSON-ready dict for framework.json.
+
+    If ``zone_programme_summary`` is provided (the per-bouwvlak rules list
+    written by ``enrich_zones.write_zone_summary``), it is embedded as a
+    top-level key so the Grasshopper engineer can read every zone-to-rule
+    mapping from framework.json alone.
+    """
     body = framework.model_dump(mode="json")
 
     geometries_out: list[dict[str, Any]] = []
@@ -193,11 +203,14 @@ def serialise_framework(framework: ParametricFramework) -> dict[str, Any]:
             {"id": geom.id, "geojson": feature, "compas": compas_block}
         )
 
-    return {
+    payload: dict[str, Any] = {
         "header": _build_header(framework),
         "geometries": geometries_out,
         "framework": body,
     }
+    if zone_programme_summary is not None:
+        payload["zone_programme_summary"] = zone_programme_summary
+    return payload
 
 
 def body_geom_lookup(body: dict[str, Any], geom_id: str) -> dict[str, Any] | None:
@@ -309,6 +322,7 @@ def render_summary(
     reconciliation_report: list[dict[str, Any]] | None = None,
     parsed_geometry: dict[str, Any] | None = None,
     sanity_report: list[dict[str, Any]] | None = None,
+    zone_programme_summary: list[dict[str, Any]] | None = None,
 ) -> str:
     """Render the Grasshopper-engineer handoff document.
 
@@ -596,6 +610,47 @@ def render_summary(
         "Reconciliation summary below and `reconciliation_report.json`."
     )
     lines.append("")
+
+    # --------------------------------------------------------------
+    # Zone programme summary (per-bouwvlak rule mapping)
+    # --------------------------------------------------------------
+    if zone_programme_summary:
+        lines.append("## Zone programme summary")
+        lines.append("")
+        lines.append(
+            "| Zone | Height | Source | Codes | Matched rules | Key constraints |"
+        )
+        lines.append(
+            "|------|--------|--------|-------|---------------|-----------------|"
+        )
+        for z in zone_programme_summary:
+            h = z.get("height_m")
+            h_txt = f"{h:g}m" if isinstance(h, int | float) else "—"
+            source = z.get("height_source") or "—"
+            codes = ", ".join(z.get("zone_codes") or []) or "—"
+            rule_count = z.get("rule_count", 0)
+            height_rules = (z.get("rules_by_category") or {}).get("height", [])
+            keys = [
+                f"{r.get('name', r.get('id', '?'))}="
+                f"{r.get('value')}{r.get('unit') or ''}"
+                for r in height_rules[:2]
+            ]
+            if len(height_rules) > 2:
+                keys.append("…")
+            key_txt = ", ".join(keys) or "—"
+            zone_name = z.get("zone_name") or z.get("zone_id") or "?"
+            lines.append(
+                f"| {zone_name} | {h_txt} | {source} | {codes} | "
+                f"{rule_count} | {key_txt} |"
+            )
+        lines.append("")
+        lines.append(
+            "Full zone-constraint mapping in `zone_programme_summary.json`. "
+            "Zones with 0 matched rules may indicate that `applies_to` codes "
+            "in the extracted constraints do not match the zone labels from "
+            "the kaveltekening. Run `scripts/inspect_zones.py` to diagnose."
+        )
+        lines.append("")
 
     # --------------------------------------------------------------
     # Narrative constraints
@@ -982,7 +1037,14 @@ def write_grasshopper_handoff(
     geom_dir = output_dir / "geometry"
     geom_dir.mkdir(exist_ok=True)
 
-    payload = serialise_framework(framework)
+    zone_programme_summary = _load_json(output_dir / "zone_programme_summary.json")
+    zone_programme_summary = (
+        zone_programme_summary if isinstance(zone_programme_summary, list) else None
+    )
+
+    payload = serialise_framework(
+        framework, zone_programme_summary=zone_programme_summary
+    )
 
     for entry in payload["geometries"]:
         path = geom_dir / f"{entry['id']}.compas"
@@ -1018,6 +1080,7 @@ def write_grasshopper_handoff(
             else None,
             parsed_geometry=parsed_geometry if isinstance(parsed_geometry, dict) else None,
             sanity_report=sanity_report if isinstance(sanity_report, list) else None,
+            zone_programme_summary=zone_programme_summary,
         )
     )
     logger.info("Wrote {}", summary_path)

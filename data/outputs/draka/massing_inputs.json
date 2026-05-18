@@ -2,7 +2,7 @@
   "header": {
     "banner": "PROTOTYPE OUTPUT, NOT VERIFIED",
     "verification_status": "extracted",
-    "generated_at": "2026-05-17T19:18:50.659114+00:00",
+    "generated_at": "2026-05-18T12:13:27.810615+00:00",
     "tool_version": "0.1.0-omrt-run",
     "project_name": "draka",
     "plan_id": "NL.IMRO.0363.N2102BPGST-VG01",
@@ -7429,74 +7429,6 @@
     },
     {
       "id": "bouwvlak_02",
-      "name": "Bouwvlak sba-dvg3",
-      "feature_type": "bouwvlak",
-      "lod": 0,
-      "elevation_m": null,
-      "extrusion_height_m": 70.0,
-      "associated_rules": [],
-      "geojson": {
-        "type": "Feature",
-        "id": "bouwvlak_02",
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                296.79900258382156,
-                232.1136528862847
-              ],
-              [
-                343.5773273044162,
-                165.4809844970703
-              ],
-              [
-                309.2449913872613,
-                165.4809844970703
-              ],
-              [
-                296.79900258382156,
-                232.1136528862847
-              ]
-            ]
-          ]
-        },
-        "properties": {
-          "name": "Bouwvlak sba-dvg3",
-          "feature_type": "bouwvlak",
-          "lod": 0,
-          "elevation_m": null,
-          "extrusion_height_m": 70.0,
-          "associated_rules": [],
-          "confidence_score": 0.9
-        }
-      },
-      "compas": {
-        "dtype": "compas.geometry/Polygon",
-        "value": {
-          "points": [
-            [
-              296.79900258382156,
-              232.1136528862847,
-              0.0
-            ],
-            [
-              343.5773273044162,
-              165.4809844970703,
-              0.0
-            ],
-            [
-              309.2449913872613,
-              165.4809844970703,
-              0.0
-            ]
-          ]
-        },
-        "crs": "drawing_local"
-      }
-    },
-    {
-      "id": "bouwvlak_03",
       "name": "Bouwvlak sba-1",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -7508,7 +7440,7 @@
       ],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_03",
+        "id": "bouwvlak_02",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -7570,75 +7502,7 @@
       }
     },
     {
-      "id": "bouwvlak_04",
-      "name": "Bouwvlak sba-dvg4",
-      "feature_type": "bouwvlak",
-      "lod": 0,
-      "elevation_m": null,
-      "extrusion_height_m": 70.0,
-      "associated_rules": [],
-      "geojson": {
-        "type": "Feature",
-        "id": "bouwvlak_04",
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                140.80066494411892,
-                286.76600172254774
-              ],
-              [
-                220.89532385932074,
-                211.79366149902341
-              ],
-              [
-                154.7706670973036,
-                211.79366149902341
-              ],
-              [
-                140.80066494411892,
-                286.76600172254774
-              ]
-            ]
-          ]
-        },
-        "properties": {
-          "name": "Bouwvlak sba-dvg4",
-          "feature_type": "bouwvlak",
-          "lod": 0,
-          "elevation_m": null,
-          "extrusion_height_m": 70.0,
-          "associated_rules": [],
-          "confidence_score": 0.9
-        }
-      },
-      "compas": {
-        "dtype": "compas.geometry/Polygon",
-        "value": {
-          "points": [
-            [
-              140.80066494411892,
-              286.76600172254774,
-              0.0
-            ],
-            [
-              220.89532385932074,
-              211.79366149902341,
-              0.0
-            ],
-            [
-              154.7706670973036,
-              211.79366149902341,
-              0.0
-            ]
-          ]
-        },
-        "crs": "drawing_local"
-      }
-    },
-    {
-      "id": "bouwvlak_05",
+      "id": "bouwvlak_03",
       "name": "Bouwvlak sba-3, sba-dvg2",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -7647,7 +7511,7 @@
       "associated_rules": [],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_05",
+        "id": "bouwvlak_03",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -7706,7 +7570,7 @@
       }
     },
     {
-      "id": "bouwvlak_06",
+      "id": "bouwvlak_04",
       "name": "Bouwvlak sba-2, sba-dvg3, sba-dvg5",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -7718,7 +7582,7 @@
       ],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_06",
+        "id": "bouwvlak_04",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -7780,7 +7644,7 @@
       }
     },
     {
-      "id": "bouwvlak_07",
+      "id": "bouwvlak_05",
       "name": "Bouwvlak sba-4",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -7789,7 +7653,7 @@
       "associated_rules": [],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_07",
+        "id": "bouwvlak_05",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -7857,7 +7721,7 @@
       }
     },
     {
-      "id": "bouwvlak_08",
+      "id": "bouwvlak_06",
       "name": "Bouwvlak sba-4, sgd-7",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -7866,7 +7730,7 @@
       "associated_rules": [],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_08",
+        "id": "bouwvlak_06",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -7934,7 +7798,7 @@
       }
     },
     {
-      "id": "bouwvlak_09",
+      "id": "bouwvlak_07",
       "name": "Bouwvlak sba-2, sgd-4",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -7946,7 +7810,7 @@
       ],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_09",
+        "id": "bouwvlak_07",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -8017,7 +7881,7 @@
       }
     },
     {
-      "id": "bouwvlak_10",
+      "id": "bouwvlak_08",
       "name": "Bouwvlak sba-4, GD",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -8026,7 +7890,7 @@
       "associated_rules": [],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_10",
+        "id": "bouwvlak_08",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -8094,7 +7958,7 @@
       }
     },
     {
-      "id": "bouwvlak_11",
+      "id": "bouwvlak_09",
       "name": "Bouwvlak sba-1, sgd-2",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -8106,7 +7970,7 @@
       ],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_11",
+        "id": "bouwvlak_09",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -8186,7 +8050,7 @@
       }
     },
     {
-      "id": "bouwvlak_12",
+      "id": "bouwvlak_10",
       "name": "Bouwvlak sba-2, m",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -8198,7 +8062,7 @@
       ],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_12",
+        "id": "bouwvlak_10",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -8278,7 +8142,7 @@
       }
     },
     {
-      "id": "bouwvlak_13",
+      "id": "bouwvlak_11",
       "name": "Bouwvlak sba-dvg1, sba-dvg2, sgd-3",
       "feature_type": "bouwvlak",
       "lod": 0,
@@ -8287,7 +8151,7 @@
       "associated_rules": [],
       "geojson": {
         "type": "Feature",
-        "id": "bouwvlak_13",
+        "id": "bouwvlak_11",
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -8820,6 +8684,74 @@
       }
     },
     {
+      "id": "dvg_overlay_01",
+      "name": "Zone (no label)",
+      "feature_type": "dvg_overlay",
+      "lod": 0,
+      "elevation_m": null,
+      "extrusion_height_m": null,
+      "associated_rules": [],
+      "geojson": {
+        "type": "Feature",
+        "id": "dvg_overlay_01",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                296.79900258382156,
+                232.1136528862847
+              ],
+              [
+                343.5773273044162,
+                165.4809844970703
+              ],
+              [
+                309.2449913872613,
+                165.4809844970703
+              ],
+              [
+                296.79900258382156,
+                232.1136528862847
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "name": "Zone (no label)",
+          "feature_type": "dvg_overlay",
+          "lod": 0,
+          "elevation_m": null,
+          "extrusion_height_m": null,
+          "associated_rules": [],
+          "confidence_score": 0.9
+        }
+      },
+      "compas": {
+        "dtype": "compas.geometry/Polygon",
+        "value": {
+          "points": [
+            [
+              296.79900258382156,
+              232.1136528862847,
+              0.0
+            ],
+            [
+              343.5773273044162,
+              165.4809844970703,
+              0.0
+            ],
+            [
+              309.2449913872613,
+              165.4809844970703,
+              0.0
+            ]
+          ]
+        },
+        "crs": "drawing_local"
+      }
+    },
+    {
       "id": "other_04",
       "name": "Zone V",
       "feature_type": "other",
@@ -9220,6 +9152,74 @@
             [
               140.80066494411892,
               286.76600172254774,
+              0.0
+            ]
+          ]
+        },
+        "crs": "drawing_local"
+      }
+    },
+    {
+      "id": "dvg_overlay_02",
+      "name": "Zone (no label)",
+      "feature_type": "dvg_overlay",
+      "lod": 0,
+      "elevation_m": null,
+      "extrusion_height_m": null,
+      "associated_rules": [],
+      "geojson": {
+        "type": "Feature",
+        "id": "dvg_overlay_02",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                140.80066494411892,
+                286.76600172254774
+              ],
+              [
+                220.89532385932074,
+                211.79366149902341
+              ],
+              [
+                154.7706670973036,
+                211.79366149902341
+              ],
+              [
+                140.80066494411892,
+                286.76600172254774
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "name": "Zone (no label)",
+          "feature_type": "dvg_overlay",
+          "lod": 0,
+          "elevation_m": null,
+          "extrusion_height_m": null,
+          "associated_rules": [],
+          "confidence_score": 0.9
+        }
+      },
+      "compas": {
+        "dtype": "compas.geometry/Polygon",
+        "value": {
+          "points": [
+            [
+              140.80066494411892,
+              286.76600172254774,
+              0.0
+            ],
+            [
+              220.89532385932074,
+              211.79366149902341,
+              0.0
+            ],
+            [
+              154.7706670973036,
+              211.79366149902341,
               0.0
             ]
           ]

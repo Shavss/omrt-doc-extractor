@@ -867,6 +867,722 @@ def page_review(
         st.write(f"- [{score:.2f}] {n.get('statement', '')}")
 
 
+# ---------------------------------------------------------------------------
+# Approach 2 — GML
+# ---------------------------------------------------------------------------
+
+
+def _normalise_code(code: str) -> str:
+    """Normalise a zone code for cross-approach matching.
+
+    Strips brackets/parens, lowercases, converts hyphens to underscores.
+    """
+    if code is None:
+        return ""
+    s = str(code).strip()
+    for ch in "[](){}":
+        s = s.replace(ch, "")
+    return s.strip().lower().replace("-", "_")
+
+
+def _zone_label_pdf(bv: dict[str, Any]) -> str:
+    parts = (
+        (bv.get("bouwaanduidingen") or [])
+        + (bv.get("function_aanduidingen") or [])
+        + (bv.get("bestemming_codes") or [])
+    )
+    return ", ".join(parts) if parts else "(no codes)"
+
+
+def _zone_label_gml(z: dict[str, Any]) -> str:
+    sgd = z.get("sgd_code") or ""
+    sbas = z.get("sba_codes") or []
+    extras = ", ".join(sbas) if sbas else ""
+    return f"{sgd} ({extras})" if extras else sgd
+
+
+def _match_pdf_to_gml(
+    bouwvlakken: list[dict[str, Any]], zones: list[dict[str, Any]]
+) -> list[tuple[dict[str, Any] | None, dict[str, Any] | None, set[str]]]:
+    """Match by overlap of normalised zone codes; returns (pdf, gml, shared)."""
+    pdf_norm: list[set[str]] = []
+    for bv in bouwvlakken:
+        codes = (
+            (bv.get("bouwaanduidingen") or [])
+            + (bv.get("function_aanduidingen") or [])
+            + (bv.get("bestemming_codes") or [])
+        )
+        pdf_norm.append({_normalise_code(c) for c in codes if c})
+
+    gml_norm: list[set[str]] = []
+    for z in zones:
+        codes = [z.get("sgd_code")] + (z.get("sba_codes") or [])
+        gml_norm.append({_normalise_code(c) for c in codes if c})
+
+    rows: list[tuple[dict[str, Any] | None, dict[str, Any] | None, set[str]]] = []
+    used_gml: set[int] = set()
+    for i, bv in enumerate(bouwvlakken):
+        best_j = -1
+        best_shared: set[str] = set()
+        for j, z in enumerate(zones):
+            if j in used_gml:
+                continue
+            shared = pdf_norm[i] & gml_norm[j]
+            if shared and len(shared) > len(best_shared):
+                best_shared = shared
+                best_j = j
+        if best_j >= 0:
+            used_gml.add(best_j)
+            rows.append((bv, zones[best_j], best_shared))
+        else:
+            rows.append((bv, None, set()))
+    for j, z in enumerate(zones):
+        if j not in used_gml:
+            rows.append((None, z, set()))
+    return rows
+
+
+def _height_row_colour(delta: float | None) -> str:
+    if delta is None:
+        return f"background-color: {COLOURS['red']}33"
+    a = abs(delta)
+    if a <= 1.0:
+        return f"background-color: {COLOURS['green']}33"
+    if a <= 5.0:
+        return f"background-color: {COLOURS['amber']}33"
+    return f"background-color: {COLOURS['red']}33"
+
+
+def _find_constraint(
+    numerical: list[dict[str, Any]], id_substrings: tuple[str, ...]
+) -> dict[str, Any] | None:
+    for c in numerical:
+        cid = (c.get("id") or "").lower()
+        if any(s in cid for s in id_substrings):
+            return c
+    return None
+
+
+def _cv(c: dict[str, Any] | None) -> Any:
+    if not c:
+        return None
+    return c.get("value")
+
+
+def _match_marker(a: Any, b: Any) -> str:
+    if a is None or b is None:
+        return "✗"
+    try:
+        af = float(a)
+        bf = float(b)
+    except (TypeError, ValueError):
+        return "✓" if a == b else "✗"
+    if af == 0 and bf == 0:
+        return "✓"
+    denom = max(abs(af), abs(bf), 1e-9)
+    diff = abs(af - bf) / denom
+    if diff <= 0.01:
+        return "✓"
+    if diff <= 0.10:
+        return "⚠"
+    return "✗"
+
+
+def _render_pair_row(
+    field: str, a: Any, b: Any, unit: str = ""
+) -> dict[str, Any]:
+    mark = _match_marker(a, b)
+    fmt = lambda v: "—" if v is None else (f"{v:,.0f}" if isinstance(v, (int, float)) else str(v))
+    return {
+        "Field": field,
+        "Approach 1 (PDF)": f"{fmt(a)} {unit}".strip() if a is not None else "—",
+        "Approach 2 (GML)": f"{fmt(b)} {unit}".strip() if b is not None else "—",
+        "Match?": mark,
+    }
+
+
+def _prism_mesh3d(
+    polygon: list[list[float]],
+    height: float,
+    origin: tuple[float, float],
+    colour: str,
+    name: str,
+) -> go.Mesh3d | None:
+    """Build a Mesh3d prism by extruding a 2D polygon (RD metres) to `height`."""
+    if not polygon or height is None or height <= 0:
+        return None
+    ox, oy = origin
+    pts = [(p[0] - ox, p[1] - oy) for p in polygon]
+    if pts and pts[0] == pts[-1]:
+        pts = pts[:-1]
+    n = len(pts)
+    if n < 3:
+        return None
+    xs: list[float] = []
+    ys: list[float] = []
+    zs: list[float] = []
+    for x, y in pts:
+        xs.append(x)
+        ys.append(y)
+        zs.append(0.0)
+    for x, y in pts:
+        xs.append(x)
+        ys.append(y)
+        zs.append(float(height))
+    i: list[int] = []
+    j: list[int] = []
+    k: list[int] = []
+    for a in range(1, n - 1):
+        i.append(0); j.append(a); k.append(a + 1)
+    for a in range(1, n - 1):
+        i.append(n); j.append(n + a + 1); k.append(n + a)
+    for a in range(n):
+        b = (a + 1) % n
+        i.append(a); j.append(b); k.append(n + b)
+        i.append(a); j.append(n + b); k.append(n + a)
+    return go.Mesh3d(
+        x=xs, y=ys, z=zs, i=i, j=j, k=k,
+        color=colour, opacity=0.6, flatshading=True,
+        name=name, hovertext=name, hoverinfo="text",
+    )
+
+
+def _flat_polygon_trace(
+    polygon: list[list[float]],
+    origin: tuple[float, float],
+    z: float,
+    fill_colour: str,
+    line_colour: str,
+    name: str,
+    opacity: float = 0.4,
+) -> list[Any]:
+    """Flat filled polygon at height z, with outline. Returns Mesh3d + Scatter3d."""
+    if not polygon:
+        return []
+    ox, oy = origin
+    pts = [(p[0] - ox, p[1] - oy) for p in polygon]
+    if pts and pts[0] == pts[-1]:
+        pts = pts[:-1]
+    n = len(pts)
+    if n < 3:
+        return []
+    xs = [p[0] for p in pts]
+    ys = [p[1] for p in pts]
+    zs = [z] * n
+    i: list[int] = []
+    j: list[int] = []
+    k: list[int] = []
+    for a in range(1, n - 1):
+        i.append(0); j.append(a); k.append(a + 1)
+    mesh = go.Mesh3d(
+        x=xs, y=ys, z=zs, i=i, j=j, k=k,
+        color=fill_colour, opacity=opacity, flatshading=True,
+        name=name, hovertext=name, hoverinfo="text", showlegend=True,
+    )
+    outline = go.Scatter3d(
+        x=xs + [xs[0]], y=ys + [ys[0]], z=zs + [zs[0]],
+        mode="lines",
+        line=dict(color=line_colour, width=3),
+        name=name, showlegend=False, hoverinfo="skip",
+    )
+    return [mesh, outline]
+
+
+def _wgs_to_local_m(
+    polygon_wgs: list[list[float]], lat0: float, lon0: float
+) -> list[list[float]]:
+    """Equirectangular approximation, OK at site scale (<2 km)."""
+    import math
+    cos_lat = math.cos(math.radians(lat0))
+    out = []
+    for p in polygon_wgs:
+        lon, lat = p[0], p[1]
+        x = (lon - lon0) * 111320.0 * cos_lat
+        y = (lat - lat0) * 110540.0
+        out.append([x, y])
+    return out
+
+
+def _wgs_centroid(polygon_wgs: list[list[float]]) -> tuple[float, float]:
+    lons = [p[0] for p in polygon_wgs]
+    lats = [p[1] for p in polygon_wgs]
+    return (sum(lats) / len(lats), sum(lons) / len(lons))
+
+
+def _render_gml_3d(
+    zones: list[dict[str, Any]],
+    site_boundary_rd: list[list[float]] | None,
+    no_build: list[dict[str, Any]] | None = None,
+    overlays: list[dict[str, Any]] | None = None,
+    site_boundary_wgs84: list[list[float]] | None = None,
+) -> None:
+    if not zones:
+        st.info("No zones to render.")
+        return
+    xs_all = [p[0] for z in zones for p in (z.get("polygon_rd") or [])]
+    ys_all = [p[1] for z in zones for p in (z.get("polygon_rd") or [])]
+    if not xs_all:
+        st.info("Zones have no RD polygons.")
+        return
+    ox = (min(xs_all) + max(xs_all)) / 2
+    oy = (min(ys_all) + max(ys_all)) / 2
+    palette = [
+        "#4e79a7", "#f28e2b", "#e15759", "#76b7b2",
+        "#59a14f", "#edc948", "#b07aa1", "#ff9da7",
+    ]
+    traces: list[Any] = []
+    for idx, z in enumerate(zones):
+        poly = z.get("polygon_rd")
+        h = z.get("max_height_m") or 0
+        if not poly or h <= 0:
+            continue
+        name = f"{z.get('sgd_code')} h={h}m"
+        mesh = _prism_mesh3d(poly, h, (ox, oy), palette[idx % len(palette)], name)
+        if mesh is not None:
+            traces.append(mesh)
+    if site_boundary_rd:
+        sb = [(p[0] - ox, p[1] - oy) for p in site_boundary_rd]
+        traces.append(
+            go.Scatter3d(
+                x=[p[0] for p in sb] + [sb[0][0]],
+                y=[p[1] for p in sb] + [sb[0][1]],
+                z=[0] * (len(sb) + 1),
+                mode="lines",
+                line=dict(color="#333", width=4),
+                name="site boundary",
+            )
+        )
+
+    # No-build zones (Groen / Verkeer / vrijwaringszone) - have polygon_rd directly.
+    NO_BUILD_COLOURS = {
+        "Groen": "#2ca02c",
+        "Verkeer": "#7f7f7f",
+        "vrijwaringszone - vaarweg": "#1f77b4",
+    }
+    seen_nb_legend: set[str] = set()
+    for nb in (no_build or []):
+        poly = nb.get("polygon_rd")
+        naam = nb.get("naam") or "no_build"
+        colour = NO_BUILD_COLOURS.get(naam, "#999999")
+        label = f"no-build: {naam}"
+        # Only show legend entry for first instance of each naam.
+        show_in_legend = naam not in seen_nb_legend
+        seen_nb_legend.add(naam)
+        sub = _flat_polygon_trace(
+            poly, (ox, oy), z=0.05, fill_colour=colour,
+            line_colour=colour, name=label, opacity=0.55,
+        )
+        for t in sub:
+            if hasattr(t, "showlegend"):
+                t.showlegend = show_in_legend and isinstance(t, go.Mesh3d)
+            traces.append(t)
+
+    # Overlay zones only have WGS84 - convert via site_boundary_wgs84 centroid.
+    if overlays and site_boundary_wgs84:
+        lat0, lon0 = _wgs_centroid(site_boundary_wgs84)
+        # Need to subtract the equivalent local origin of the RD origin (ox, oy).
+        # Since both meshes share the site, we re-anchor overlays so their site
+        # boundary aligns with the RD one: compute the WGS84 boundary in local
+        # metres, then translate by the offset between that centroid and the
+        # RD boundary's centroid (which is at 0,0 because zones were centred).
+        wgs_site_local = _wgs_to_local_m(site_boundary_wgs84, lat0, lon0)
+        wsc_x = sum(p[0] for p in wgs_site_local) / len(wgs_site_local)
+        wsc_y = sum(p[1] for p in wgs_site_local) / len(wgs_site_local)
+        OVERLAY_COLOURS = {
+            "Waarde - Archeologie": "#b07aa1",
+            "overige zone - 2": "#edc948",
+            "vrijwaringszone - vaarweg": "#1f77b4",
+            "geluidzone - industrie": "#e15759",
+        }
+        z_levels = {"Waarde - Archeologie": -0.3, "overige zone - 2": -0.2,
+                    "vrijwaringszone - vaarweg": -0.4, "geluidzone - industrie": -0.5}
+        for ov in overlays:
+            poly_wgs = ov.get("polygon_wgs84")
+            if not poly_wgs:
+                continue
+            local = _wgs_to_local_m(poly_wgs, lat0, lon0)
+            # Anchor relative to RD site centroid (which is 0,0 in local frame).
+            anchored = [[p[0] - wsc_x, p[1] - wsc_y] for p in local]
+            naam = ov.get("naam") or "overlay"
+            colour = OVERLAY_COLOURS.get(naam, "#ccaa66")
+            z = z_levels.get(naam, -0.3)
+            label = f"overlay: {naam}"
+            # Pass through as already-localised polygon (origin 0,0).
+            sub = _flat_polygon_trace(
+                anchored, (0.0, 0.0), z=z, fill_colour=colour,
+                line_colour=colour, name=label, opacity=0.3,
+            )
+            traces.extend(sub)
+
+    if not traces:
+        st.info("No prisms to render (missing heights or polygons).")
+        return
+    fig = go.Figure(data=traces)
+    fig.update_layout(
+        scene=dict(
+            aspectmode="data",
+            xaxis=dict(title="x (m)"),
+            yaxis=dict(title="y (m)"),
+            zaxis=dict(title="z (m)"),
+        ),
+        margin=dict(l=0, r=0, t=10, b=0),
+        height=520,
+        showlegend=True,
+        legend=dict(orientation="h", y=-0.05),
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+
+def page_approach_gml(
+    geometry_path: Path,
+    gml_framework_path: Path,
+    framework_path: Path,
+    programme_path: Path,
+    gml_parameters_path: Path,
+) -> None:
+    """Approach 2 - GML view with comparison, zone programme, detail, validation."""
+    import pandas as pd
+
+    st.subheader("Approach 2 — GML")
+    st.caption(
+        "Compares PDF-extracted geometry and rules (Approach 1) with the "
+        "authoritative GML + DSO-teksten flow (Approach 2)."
+    )
+
+    missing = [p for p in [geometry_path, gml_framework_path] if not p.exists()]
+    if missing:
+        st.error(f"Missing files: {', '.join(str(p) for p in missing)}")
+        return
+
+    geometry = load_payload(geometry_path)
+    gml_fw = load_payload(gml_framework_path)
+    bouwvlakken = geometry.get("bouwvlakken") or []
+    zones = gml_fw.get("zones") or []
+    matches = _match_pdf_to_gml(bouwvlakken, zones)
+
+    # -------- 3D viewer --------
+    st.markdown("### 3D model (CityGML zones, extruded to max_height_m)")
+    st.caption(
+        "Each prism is a bouwvlak polygon from the GML, extruded to its "
+        "authoritative max height. Coordinates localised to site centroid (RD)."
+    )
+    # Load gml_params early so we can pass no_build + overlay polygons too.
+    gml_params_early: dict[str, Any] = {}
+    if gml_parameters_path.exists():
+        try:
+            gml_params_early = load_payload(gml_parameters_path)
+        except Exception as exc:  # noqa: BLE001
+            st.warning(f"Could not load {gml_parameters_path}: {exc}")
+    _render_gml_3d(
+        zones,
+        gml_fw.get("site_boundary_rd"),
+        no_build=gml_params_early.get("no_build_zones") or [],
+        overlays=gml_params_early.get("overlay_zones") or [],
+        site_boundary_wgs84=gml_params_early.get("site_boundary_wgs84"),
+    )
+
+    # -------- Section A: Height comparison --------
+    st.markdown("### A. Height comparison")
+
+    height_rows: list[dict[str, Any]] = []
+    agree_within_1 = 0
+    total_matched = 0
+    for bv, z, shared in matches:
+        pdf_h = bv.get("height_m") if bv else None
+        gml_h = z.get("max_height_m") if z else None
+        if pdf_h is not None and gml_h is not None:
+            total_matched += 1
+            delta = float(pdf_h) - float(gml_h)
+            if abs(delta) <= 1.0:
+                agree_within_1 += 1
+        else:
+            delta = None
+        if delta is None:
+            agreement = "missing"
+        elif abs(delta) <= 1.0:
+            agreement = "agree"
+        elif abs(delta) <= 5.0:
+            agreement = "drift"
+        else:
+            agreement = "conflict"
+        label_parts = []
+        if z is not None:
+            label_parts.append(_zone_label_gml(z))
+        if bv is not None:
+            label_parts.append(f"PDF: {_zone_label_pdf(bv)}")
+        height_rows.append(
+            {
+                "Zone": " | ".join(label_parts) if label_parts else "?",
+                "PDF height (m)": pdf_h,
+                "GML height (m)": gml_h,
+                "Delta (m)": None if delta is None else round(delta, 2),
+                "Agreement": agreement,
+            }
+        )
+
+    total_zones = len(matches)
+    st.info(
+        f"Approach 1 (PDF extraction) vs Approach 2 (GML authoritative): "
+        f"{agree_within_1}/{total_zones} zones agree within 1 m "
+        f"(of {total_matched} pairs with heights on both sides)."
+    )
+
+    df_h = pd.DataFrame(height_rows)
+
+    def _h_row_style(row: pd.Series) -> list[str]:
+        idx = row.name
+        delta = height_rows[idx]["Delta (m)"]
+        return [_height_row_colour(delta)] * len(row)
+
+    st.dataframe(df_h.style.apply(_h_row_style, axis=1), use_container_width=True, hide_index=True)
+
+    # -------- Section B: Zone programme table --------
+    st.markdown("### B. Zone programme")
+    st.caption(
+        "Spatial geometry from GML combined with programme rules per zone "
+        "(rules hardcoded from regels for this prototype)."
+    )
+    prog_rows: list[dict[str, Any]] = []
+    for z in zones:
+        eff = z.get("effective") or {}
+        sgd_rule = z.get("sgd_rule") or {}
+        prog_rows.append(
+            {
+                "Zone": _zone_label_gml(z),
+                "Height (m)": z.get("max_height_m"),
+                "Allows wonen": "yes" if eff.get("allows_wonen") else "no",
+                "Productive req (m²)": eff.get("productive_required_first_m2"),
+                "Floorplate cap exempt": "yes" if eff.get("floor_plate_cap_exempt") else "no",
+                "Setback trigger (m)": eff.get("setback_trigger_m"),
+                "Source": sgd_rule.get("source") or "—",
+            }
+        )
+    st.dataframe(pd.DataFrame(prog_rows), use_container_width=True, hide_index=True)
+
+    # -------- Section C: Zone detail --------
+    st.markdown("### C. Zone detail")
+    if zones:
+        labels = [_zone_label_gml(z) for z in zones]
+        sel = st.selectbox("Inspect GML zone", labels, key="gml_zone_inspect")
+        z = zones[labels.index(sel)]
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("**Spatial**")
+            st.write(f"- bouwvlak id: `{z.get('bouwvlak_id')}`")
+            st.write(f"- bestemmingsvlak id: `{z.get('bestemmingsvlak_id')}`")
+            st.write(f"- sgd: `{z.get('sgd_code')}` — {z.get('sgd_full_name')}")
+            st.write(f"- max height: **{z.get('max_height_m')} m**")
+            st.write(f"- all heights: {z.get('all_heights_m')}")
+            st.write(f"- footprint: {_fmt(z.get('footprint_area_m2'))} m²")
+            st.write(f"- sba codes: {', '.join(z.get('sba_codes') or []) or '—'}")
+            st.write(f"- overlaps WRA: {z.get('overlaps_wra')}")
+            st.write(f"- overlaps geluidzone: {z.get('overlaps_geluidzone')}")
+        with col2:
+            st.markdown("**Programme rules (sgd_rule)**")
+            st.json(z.get("sgd_rule") or {})
+            st.markdown("**SBA rules**")
+            st.json(z.get("sba_rules") or [])
+        st.markdown("**Acoustic overlays (DVG)**")
+        overlays = z.get("acoustic_overlays") or []
+        st.write(", ".join(overlays) if overlays else "—")
+        dvg = z.get("dvg_rules") or []
+        if dvg:
+            st.json(dvg)
+        st.markdown("**Effective combined**")
+        st.json(z.get("effective") or {})
+
+    # -------- Section D: Validation --------
+    st.markdown("### D. Validation — Approach 1 vs Approach 2")
+    st.markdown(
+        f"""<div style="background:#eef;padding:10px;border-radius:4px;
+        border-left:4px solid {COLOURS['amber']};margin:6px 0;">
+        <b>Approach 1:</b> LLM extraction from PDF regels + kaveltekening drawing.<br>
+        <b>Approach 2:</b> Authoritative GML geometry + DSO teksten API values
+        (rules hardcoded for prototype, would be API-derived in production).
+        </div>""",
+        unsafe_allow_html=True,
+    )
+
+    have_prog = programme_path.exists()
+    have_gml_params = gml_parameters_path.exists()
+    have_fw = framework_path.exists()
+    if not (have_prog and have_gml_params and have_fw):
+        st.warning(
+            "One or more inputs missing for full validation: "
+            f"programme={have_prog}, gml_parameters={have_gml_params}, framework={have_fw}"
+        )
+
+    programme = load_payload(programme_path) if have_prog else {}
+    gml_params = load_payload(gml_parameters_path) if have_gml_params else {}
+    site_c = gml_params.get("site_constraints") or {}
+    fw_root = load_payload(framework_path) if have_fw else {}
+    fw = framework_body(fw_root)
+    numerical = fw.get("constraints", {}).get("numerical", []) or []
+    use_split = (programme.get("use_split") or {}) if isinstance(programme, dict) else {}
+
+    site_rows = [
+        _render_pair_row(
+            "Total GFA cap",
+            programme.get("target_total_gfa_m2"),
+            site_c.get("max_bvo_total_m2"),
+            "m²",
+        ),
+        _render_pair_row(
+            "Max residential m²",
+            use_split.get("residential_m2"),
+            site_c.get("max_bvo_residential_m2"),
+            "m²",
+        ),
+        _render_pair_row(
+            "Min productive m²",
+            use_split.get("productive_m2"),
+            site_c.get("min_bvo_productive_m2"),
+            "m²",
+        ),
+        _render_pair_row(
+            "Max office m²",
+            use_split.get("office_m2"),
+            site_c.get("max_bvo_office_m2"),
+            "m²",
+        ),
+        _render_pair_row(
+            "Max horeca m²",
+            use_split.get("retail_horeca_m2"),
+            site_c.get("max_bvo_horeca_m2"),
+            "m²",
+        ),
+        _render_pair_row(
+            "Max cultural m²",
+            use_split.get("cultural_m2"),
+            site_c.get("max_bvo_cultural_m2"),
+            "m²",
+        ),
+        _render_pair_row(
+            "Max social m²",
+            use_split.get("social_m2"),
+            site_c.get("max_bvo_social_m2"),
+            "m²",
+        ),
+        _render_pair_row(
+            "Target dwellings",
+            programme.get("target_dwelling_count"),
+            site_c.get("target_dwelling_count"),
+        ),
+        _render_pair_row(
+            "Parking spaces",
+            programme.get("parking_demand"),
+            site_c.get("parking_spaces_total"),
+        ),
+    ]
+
+    def _style_pair_rows(rows: list[dict[str, Any]]) -> Any:
+        df = pd.DataFrame(rows)
+
+        def _row_style(row: pd.Series) -> list[str]:
+            mark = row["Match?"]
+            if mark == "✓":
+                bg = f"background-color: {COLOURS['green']}22"
+            elif mark == "⚠":
+                bg = f"background-color: {COLOURS['amber']}33"
+            else:
+                bg = f"background-color: {COLOURS['red']}33"
+            return [bg] * len(row)
+
+        return df.style.apply(_row_style, axis=1)
+
+    st.markdown("**Site-level programme**")
+    st.dataframe(_style_pair_rows(site_rows), use_container_width=True, hide_index=True)
+
+    # Per-zone heights
+    zone_rows: list[dict[str, Any]] = []
+    matched_zone_count = 0
+    zone_agree = 0
+    for bv, z, shared in matches:
+        if not (bv and z):
+            continue
+        matched_zone_count += 1
+        pdf_h = bv.get("height_m")
+        gml_h = z.get("max_height_m")
+        delta = (
+            None
+            if pdf_h is None or gml_h is None
+            else round(float(pdf_h) - float(gml_h), 2)
+        )
+        if delta is not None and abs(delta) <= 1.0:
+            zone_agree += 1
+        zone_rows.append(
+            {
+                "Zone": _zone_label_gml(z),
+                "PDF height": pdf_h,
+                "GML height": gml_h,
+                "Delta": delta,
+                "Source (PDF)": bv.get("height_reconciled_from") or "kaveltekening",
+                "Source (GML)": (z.get("sgd_rule") or {}).get("source") or "GML",
+            }
+        )
+    st.markdown("**Per-zone heights**")
+    if zone_rows:
+        df_z = pd.DataFrame(zone_rows)
+
+        def _zone_style(row: pd.Series) -> list[str]:
+            d = row["Delta"]
+            return [_height_row_colour(None if d is None else float(d))] * len(row)
+
+        st.dataframe(df_z.style.apply(_zone_style, axis=1), use_container_width=True, hide_index=True)
+
+    # Site rules from framework.json
+    plint = _find_constraint(numerical, ("min_plint_height", "plint_min", "hamerblok_plint"))
+    setback_trig = _find_constraint(numerical, ("setback_above_21m_general",))
+    setback_dep = _find_constraint(numerical, ("setback_above_21m_general", "setback_above_30_5m_sba3"))
+    bvo_21_50 = _find_constraint(numerical, ("max_bvo_per_floor_high_rise_21_50m",))
+    bvo_50p = _find_constraint(
+        numerical, ("max_bvo_per_floor_high_rise_above_50m",)
+    )
+
+    rule_rows = [
+        _render_pair_row(
+            "Plint min height",
+            _cv(plint),
+            site_c.get("plint_min_height_m"),
+            "m",
+        ),
+        _render_pair_row(
+            "Setback trigger",
+            _cv(setback_trig),
+            site_c.get("setback_standard_trigger_m"),
+            "m",
+        ),
+        _render_pair_row(
+            "Setback depth",
+            _cv(setback_dep),
+            site_c.get("setback_standard_depth_m"),
+            "m",
+        ),
+        _render_pair_row(
+            "Max bvo per floor 21–50m",
+            _cv(bvo_21_50),
+            site_c.get("max_bvo_per_floor_21_50m"),
+            "m²",
+        ),
+        _render_pair_row(
+            "Max bvo per floor above 50m",
+            _cv(bvo_50p),
+            site_c.get("max_bvo_per_floor_above_50m"),
+            "m²",
+        ),
+    ]
+    st.markdown("**Site rules**")
+    st.dataframe(_style_pair_rows(rule_rows), use_container_width=True, hide_index=True)
+
+    site_agree = sum(1 for r in site_rows if r["Match?"] == "✓")
+    rule_agree = sum(1 for r in rule_rows if r["Match?"] == "✓")
+    st.success(
+        f"{site_agree}/{len(site_rows)} site-level values agree · "
+        f"{zone_agree}/{matched_zone_count} zone heights agree · "
+        f"{rule_agree}/{len(rule_rows)} site rules agree"
+    )
+
+
 def _mesh3d_from_triangles(
     triangles: list[list[list[float]]], colour: str
 ) -> go.Mesh3d | None:
@@ -1035,7 +1751,9 @@ def main() -> None:
     st.title("OMRT framework viewer")
     st.caption("Safety-net review surface. Not a dashboard.")
 
-    mode = st.sidebar.radio("Mode", ["Review", "Massings", "Diff two passes"])
+    mode = st.sidebar.radio(
+        "Mode", ["Review", "Massings", "Diff two passes", "Approach 2 — GML"]
+    )
 
     if mode == "Review":
         path_str = st.sidebar.text_input(
@@ -1065,6 +1783,44 @@ def main() -> None:
             st.warning(f"Not found: {path}")
             return
         page_massings(path)
+    elif mode == "Approach 2 — GML":
+        geom_path = Path(
+            st.sidebar.text_input(
+                "geometry.json (Approach 1)",
+                value="data/outputs/draka/geometry.json",
+            )
+        )
+        gml_fw_path = Path(
+            st.sidebar.text_input(
+                "zone_framework_with_rules.json (Approach 2)",
+                value="data/outputs/draka/approach_gml/zone_framework_with_rules.json",
+            )
+        )
+        fw_path = Path(
+            st.sidebar.text_input(
+                "framework.json (Approach 1)",
+                value="data/outputs/draka/framework.json",
+            )
+        )
+        prog_path = Path(
+            st.sidebar.text_input(
+                "programme.json (Approach 1)",
+                value="data/outputs/draka/programme.json",
+            )
+        )
+        gml_params_path = Path(
+            st.sidebar.text_input(
+                "draka_gml_parameters.json (Approach 2)",
+                value="data/outputs/draka/approach_gml/draka_gml_parameters.json",
+            )
+        )
+        page_approach_gml(
+            geometry_path=geom_path,
+            gml_framework_path=gml_fw_path,
+            framework_path=fw_path,
+            programme_path=prog_path,
+            gml_parameters_path=gml_params_path,
+        )
     else:
         path_a = Path(st.sidebar.text_input("Pass A path", "data/outputs/draka/pass_a.json"))
         path_b = Path(st.sidebar.text_input("Pass B path", "data/outputs/draka/pass_b.json"))

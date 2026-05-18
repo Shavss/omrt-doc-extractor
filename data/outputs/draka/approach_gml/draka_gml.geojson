@@ -1,0 +1,1216 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.922159779190253,
+              52.38213754196662
+            ],
+            [
+              4.921861868535261,
+              52.38307561064737
+            ],
+            [
+              4.92233225145214,
+              52.384173639400245
+            ],
+            [
+              4.92531042138657,
+              52.38469104613497
+            ],
+            [
+              4.925811001280792,
+              52.384311362998496
+            ],
+            [
+              4.926704789814732,
+              52.38287079283379
+            ],
+            [
+              4.926432940369005,
+              52.38264538520979
+            ],
+            [
+              4.922159779190253,
+              52.38213754196662
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "object_type": "site_boundary",
+        "plan_id": "NL.IMRO.0363.N2102BPGST-VG01"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.92475707,
+              52.38433566
+            ],
+            [
+              4.92493638,
+              52.38376734
+            ],
+            [
+              4.92580693,
+              52.38387018
+            ],
+            [
+              4.92568682,
+              52.3842509
+            ],
+            [
+              4.92533234,
+              52.3845268
+            ],
+            [
+              4.92529955,
+              52.38450757
+            ],
+            [
+              4.92526634,
+              52.3844893
+            ],
+            [
+              4.92523271,
+              52.38447201
+            ],
+            [
+              4.92521573,
+              52.38446373
+            ],
+            [
+              4.92519864,
+              52.38445569
+            ],
+            [
+              4.92518146,
+              52.38444789
+            ],
+            [
+              4.92516417,
+              52.38444034
+            ],
+            [
+              4.92514676,
+              52.38443303
+            ],
+            [
+              4.92512927,
+              52.38442596
+            ],
+            [
+              4.92511166,
+              52.38441914
+            ],
+            [
+              4.92509395,
+              52.38441255
+            ],
+            [
+              4.92507613,
+              52.38440622
+            ],
+            [
+              4.9250582,
+              52.38440012
+            ],
+            [
+              4.92504018,
+              52.38439427
+            ],
+            [
+              4.92502204,
+              52.38438866
+            ],
+            [
+              4.92500379,
+              52.3843833
+            ],
+            [
+              4.92498546,
+              52.38437818
+            ],
+            [
+              4.924967,
+              52.3843733
+            ],
+            [
+              4.92494844,
+              52.38436866
+            ],
+            [
+              4.92492979,
+              52.38436427
+            ],
+            [
+              4.92491101,
+              52.38436012
+            ],
+            [
+              4.92489214,
+              52.38435621
+            ],
+            [
+              4.92487315,
+              52.38435255
+            ],
+            [
+              4.92485408,
+              52.38434913
+            ],
+            [
+              4.92483488,
+              52.38434595
+            ],
+            [
+              4.92481559,
+              52.38434301
+            ],
+            [
+              4.9247962,
+              52.38434032
+            ],
+            [
+              4.92477669,
+              52.38433787
+            ],
+            [
+              4.92475707,
+              52.38433566
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "zone_index": 1,
+        "bouwvlak_id": "400a1c988840419f88a8b83ab185ff85",
+        "bestemmingsvlak_id": "2c5bfd69140b42b7bdf4196d7ca9d1d4",
+        "sgd_code": "sgd-3",
+        "sgd_full_name": "specifieke vorm van gemengd - 3",
+        "max_height_m": 60.0,
+        "all_heights_m": [
+          21.0,
+          30.5,
+          60.0
+        ],
+        "footprint_area_m2": 4000.53,
+        "sba_codes": [
+          "sba-2"
+        ],
+        "acoustic_overlays": [
+          "sba-dvg1",
+          "sba-dvg2",
+          "sba-dvg3",
+          "sba-dvg5"
+        ],
+        "overlaps_wra": true,
+        "overlaps_geluidzone": true,
+        "sgd_rule": {
+          "sgd_code": "sgd-3",
+          "allows_wonen": true,
+          "productive_required_first_m2": 2000,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "floor_plate_cap_exempt": false,
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "source": "artikel 3.3.3 + 3.4.3"
+        },
+        "sba_rules": [
+          {
+            "code": "sba-2",
+            "naam": "specifieke bouwaanduiding - 2",
+            "sba_code": "sba-2",
+            "setback_trigger_m": 21,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "dvg_rules": [
+          {
+            "code": "sba-dvg1",
+            "naam": "specifieke bouwaanduiding - dove gevel 1",
+            "threshold_m": 21.0,
+            "source": "artikel 3.2.2"
+          },
+          {
+            "code": "sba-dvg2",
+            "naam": "specifieke bouwaanduiding - dove gevel 2",
+            "threshold_m": 30.0,
+            "source": "artikel 3.2.2"
+          },
+          {
+            "code": "sba-dvg3",
+            "naam": "specifieke bouwaanduiding - dove gevel 3",
+            "threshold_m": 22.5,
+            "source": "artikel 3.2.2"
+          },
+          {
+            "code": "sba-dvg5",
+            "naam": "specifieke bouwaanduiding - dove gevel 5",
+            "threshold_m": 40.0,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "effective": {
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "floor_plate_cap_exempt": false,
+          "allows_wonen": true,
+          "productive_required_first_m2": 2000,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "dvg_thresholds_m": [
+            21.0,
+            30.0,
+            22.5,
+            40.0
+          ]
+        },
+        "object_type": "bouwvlak"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.9238062,
+              52.38341416
+            ],
+            [
+              4.9247436,
+              52.38352489
+            ],
+            [
+              4.92449748,
+              52.384305
+            ],
+            [
+              4.92356007,
+              52.38419426
+            ],
+            [
+              4.9238062,
+              52.38341416
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "zone_index": 2,
+        "bouwvlak_id": "c817d96642c045bcadc4c540500230a6",
+        "bestemmingsvlak_id": "767b878ad78d4d8cb091001bda9483dc",
+        "sgd_code": "sgd-2",
+        "sgd_full_name": "specifieke vorm van gemengd - 2",
+        "max_height_m": 70.0,
+        "all_heights_m": [
+          21.0,
+          30.5,
+          45.0,
+          70.0
+        ],
+        "footprint_area_m2": 5746.09,
+        "sba_codes": [
+          "sba-1"
+        ],
+        "acoustic_overlays": [
+          "sba-dvg4"
+        ],
+        "overlaps_wra": false,
+        "overlaps_geluidzone": false,
+        "sgd_rule": {
+          "sgd_code": "sgd-2",
+          "allows_wonen": true,
+          "productive_required_first_m2": 2000,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "floor_plate_cap_exempt": false,
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "source": "artikel 3.3.2 + 3.4.2"
+        },
+        "sba_rules": [
+          {
+            "code": "sba-1",
+            "naam": "specifieke bouwaanduiding - 1",
+            "sba_code": "sba-1",
+            "setback_trigger_m": 30.5,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "dvg_rules": [
+          {
+            "code": "sba-dvg4",
+            "naam": "specifieke bouwaanduiding - dove gevel 4",
+            "threshold_m": 58.5,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "effective": {
+          "setback_trigger_m": 30.5,
+          "setback_depth_m": 2.5,
+          "floor_plate_cap_exempt": false,
+          "allows_wonen": true,
+          "productive_required_first_m2": 2000,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "dvg_thresholds_m": [
+            58.5
+          ]
+        },
+        "object_type": "bouwvlak"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.92286954,
+              52.38319363
+            ],
+            [
+              4.92358003,
+              52.3832776
+            ],
+            [
+              4.92330049,
+              52.3841636
+            ],
+            [
+              4.92258997,
+              52.38407966
+            ],
+            [
+              4.92286954,
+              52.38319363
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "zone_index": 3,
+        "bouwvlak_id": "cfb00bb8fa11464989fef2e20bc0ef2a",
+        "bestemmingsvlak_id": "d91df44a470240c7856b55035ec708a5",
+        "sgd_code": "sgd-1",
+        "sgd_full_name": "specifieke vorm van gemengd - 1",
+        "max_height_m": 60.0,
+        "all_heights_m": [
+          21.0,
+          45.0,
+          60.0
+        ],
+        "footprint_area_m2": 4946.62,
+        "sba_codes": [
+          "sba-1",
+          "sba-2"
+        ],
+        "acoustic_overlays": [],
+        "overlaps_wra": false,
+        "overlaps_geluidzone": false,
+        "sgd_rule": {
+          "sgd_code": "sgd-1",
+          "allows_wonen": true,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "floor_plate_cap_exempt": false,
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "source": "artikel 3.3.1 + 3.4"
+        },
+        "sba_rules": [
+          {
+            "code": "sba-1",
+            "naam": "specifieke bouwaanduiding - 1",
+            "sba_code": "sba-1",
+            "setback_trigger_m": 30.5,
+            "source": "artikel 3.2.2"
+          },
+          {
+            "code": "sba-2",
+            "naam": "specifieke bouwaanduiding - 2",
+            "sba_code": "sba-2",
+            "setback_trigger_m": 21,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "dvg_rules": [],
+        "effective": {
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "floor_plate_cap_exempt": false,
+          "allows_wonen": true,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "dvg_thresholds_m": []
+        },
+        "object_type": "bouwvlak"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.92519251,
+              52.38295545
+            ],
+            [
+              4.92606305,
+              52.38305829
+            ],
+            [
+              4.92584034,
+              52.38376428
+            ],
+            [
+              4.92496978,
+              52.38366145
+            ],
+            [
+              4.92519251,
+              52.38295545
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "zone_index": 4,
+        "bouwvlak_id": "eba617e18cfd4a3fb38b9e35451bc011",
+        "bestemmingsvlak_id": "b860051977ea4bc3a1f2c97135cd30a7",
+        "sgd_code": "sgd-4",
+        "sgd_full_name": "specifieke vorm van gemengd - 4",
+        "max_height_m": 60.0,
+        "all_heights_m": [
+          30.5,
+          40.0,
+          60.0
+        ],
+        "footprint_area_m2": 4829.44,
+        "sba_codes": [
+          "sba-2",
+          "sba-3"
+        ],
+        "acoustic_overlays": [
+          "sba-dvg2",
+          "sba-dvg3"
+        ],
+        "overlaps_wra": false,
+        "overlaps_geluidzone": false,
+        "sgd_rule": {
+          "sgd_code": "sgd-4",
+          "allows_wonen": true,
+          "productive_required_first_m2": 1000,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "floor_plate_cap_exempt": true,
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "source": "artikel 3.3.4 + 3.4.4 + 3.2.2"
+        },
+        "sba_rules": [
+          {
+            "code": "sba-2",
+            "naam": "specifieke bouwaanduiding - 2",
+            "sba_code": "sba-2",
+            "setback_trigger_m": 21,
+            "source": "artikel 3.2.2"
+          },
+          {
+            "code": "sba-3",
+            "naam": "specifieke bouwaanduiding - 3",
+            "sba_code": "sba-3",
+            "setback_trigger_m": 30.5,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "dvg_rules": [
+          {
+            "code": "sba-dvg2",
+            "naam": "specifieke bouwaanduiding - dove gevel 2",
+            "threshold_m": 30.0,
+            "source": "artikel 3.2.2"
+          },
+          {
+            "code": "sba-dvg3",
+            "naam": "specifieke bouwaanduiding - dove gevel 3",
+            "threshold_m": 22.5,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "effective": {
+          "setback_trigger_m": 30.5,
+          "setback_depth_m": 2.5,
+          "floor_plate_cap_exempt": true,
+          "allows_wonen": true,
+          "productive_required_first_m2": 1000,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "dvg_thresholds_m": [
+            30.0,
+            22.5
+          ]
+        },
+        "object_type": "bouwvlak"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.92454355,
+              52.3828788
+            ],
+            [
+              4.92501945,
+              52.38293501
+            ],
+            [
+              4.92486355,
+              52.38342919
+            ],
+            [
+              4.92438765,
+              52.38337297
+            ],
+            [
+              4.92454355,
+              52.3828788
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "zone_index": 5,
+        "bouwvlak_id": "68cf011489d34b71a5a371d43106bf8b",
+        "bestemmingsvlak_id": "b56bf5f76d144ff48fe771392566ac22",
+        "sgd_code": "sgd-5",
+        "sgd_full_name": "specifieke vorm van gemengd - 5",
+        "max_height_m": 40.0,
+        "all_heights_m": [
+          21.0,
+          40.0
+        ],
+        "footprint_area_m2": 1847.98,
+        "sba_codes": [
+          "sba-4"
+        ],
+        "acoustic_overlays": [],
+        "overlaps_wra": false,
+        "overlaps_geluidzone": false,
+        "sgd_rule": {
+          "sgd_code": "sgd-5",
+          "allows_wonen": false,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": 1500,
+          "floor_plate_cap_exempt": false,
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "source": "artikel 3.3.5"
+        },
+        "sba_rules": [
+          {
+            "code": "sba-4",
+            "naam": "specifieke bouwaanduiding - 4",
+            "sba_code": "sba-4",
+            "floor_plate_cap_exempt": true,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "dvg_rules": [],
+        "effective": {
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "floor_plate_cap_exempt": true,
+          "allows_wonen": false,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": 1500,
+          "dvg_thresholds_m": []
+        },
+        "object_type": "bouwvlak"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.92372474,
+              52.38278207
+            ],
+            [
+              4.92437049,
+              52.38285835
+            ],
+            [
+              4.9242476,
+              52.3832479
+            ],
+            [
+              4.92413735,
+              52.38323488
+            ],
+            [
+              4.92360181,
+              52.38317052
+            ],
+            [
+              4.92372474,
+              52.38278207
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "zone_index": 6,
+        "bouwvlak_id": "d066f24ae9d9463aa112122393ad29f7",
+        "bestemmingsvlak_id": "f5cd2fc154464ff2b61cb8cd658b5d56",
+        "sgd_code": "sgd-9",
+        "sgd_full_name": "specifieke vorm van gemengd - 9",
+        "max_height_m": 30.5,
+        "all_heights_m": [
+          21.0,
+          30.5
+        ],
+        "footprint_area_m2": 1974.98,
+        "sba_codes": [
+          "sba-4"
+        ],
+        "acoustic_overlays": [],
+        "overlaps_wra": false,
+        "overlaps_geluidzone": false,
+        "sgd_rule": {
+          "sgd_code": "sgd-9",
+          "allows_wonen": false,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": null,
+          "floor_plate_cap_exempt": false,
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "source": "artikel 3.3 + kaveltekening aanduiding sgd-9"
+        },
+        "sba_rules": [
+          {
+            "code": "sba-4",
+            "naam": "specifieke bouwaanduiding - 4",
+            "sba_code": "sba-4",
+            "floor_plate_cap_exempt": true,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "dvg_rules": [],
+        "effective": {
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "floor_plate_cap_exempt": true,
+          "allows_wonen": false,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": null,
+          "dvg_thresholds_m": []
+        },
+        "object_type": "bouwvlak"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.92302546,
+              52.38269945
+            ],
+            [
+              4.9235517,
+              52.38276162
+            ],
+            [
+              4.92342881,
+              52.38314988
+            ],
+            [
+              4.92290295,
+              52.38308773
+            ],
+            [
+              4.92302546,
+              52.38269945
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "zone_index": 7,
+        "bouwvlak_id": "fe00df9fb2264e54925675fb8c4b1925",
+        "bestemmingsvlak_id": "1b8ebd3bc62648e0b27e54cf771cf559",
+        "sgd_code": "sgd-7",
+        "sgd_full_name": "specifieke vorm van gemengd - 7",
+        "max_height_m": 30.5,
+        "all_heights_m": [
+          21.0,
+          30.5
+        ],
+        "footprint_area_m2": 1605.1,
+        "sba_codes": [
+          "sba-4"
+        ],
+        "acoustic_overlays": [],
+        "overlaps_wra": false,
+        "overlaps_geluidzone": false,
+        "sgd_rule": {
+          "sgd_code": "sgd-7",
+          "allows_wonen": false,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "floor_plate_cap_exempt": false,
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "source": "artikel 3.3.7"
+        },
+        "sba_rules": [
+          {
+            "code": "sba-4",
+            "naam": "specifieke bouwaanduiding - 4",
+            "sba_code": "sba-4",
+            "floor_plate_cap_exempt": true,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "dvg_rules": [],
+        "effective": {
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "floor_plate_cap_exempt": true,
+          "allows_wonen": false,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "dvg_thresholds_m": []
+        },
+        "object_type": "bouwvlak"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.9221109,
+              52.38299412
+            ],
+            [
+              4.92223456,
+              52.38260601
+            ],
+            [
+              4.92280915,
+              52.3826739
+            ],
+            [
+              4.92268664,
+              52.38306217
+            ],
+            [
+              4.9221109,
+              52.38299412
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "zone_index": 8,
+        "bouwvlak_id": "1eb47a06d8ec4b7cb6685d631e8d6419",
+        "bestemmingsvlak_id": "a30b443faaa34ff3b7575a6f028a2a3c",
+        "sgd_code": "sgd-8",
+        "sgd_full_name": "specifieke vorm van gemengd - 8",
+        "max_height_m": 30.5,
+        "all_heights_m": [
+          21.0,
+          30.5
+        ],
+        "footprint_area_m2": 1754.79,
+        "sba_codes": [
+          "sba-4"
+        ],
+        "acoustic_overlays": [],
+        "overlaps_wra": false,
+        "overlaps_geluidzone": false,
+        "sgd_rule": {
+          "sgd_code": "sgd-8",
+          "allows_wonen": false,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "floor_plate_cap_exempt": false,
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "source": "artikel 3.3.8"
+        },
+        "sba_rules": [
+          {
+            "code": "sba-4",
+            "naam": "specifieke bouwaanduiding - 4",
+            "sba_code": "sba-4",
+            "floor_plate_cap_exempt": true,
+            "source": "artikel 3.2.2"
+          }
+        ],
+        "dvg_rules": [],
+        "effective": {
+          "setback_trigger_m": 21,
+          "setback_depth_m": 2.5,
+          "floor_plate_cap_exempt": true,
+          "allows_wonen": false,
+          "productive_required_first_m2": null,
+          "horeca_dienstverlening_cultuur_max_m2": 4000,
+          "dvg_thresholds_m": []
+        },
+        "object_type": "bouwvlak"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.922234561793007,
+              52.3826060125452
+            ],
+            [
+              4.9220194626386435,
+              52.38258059552984
+            ],
+            [
+              4.9220535329882145,
+              52.382473263733885
+            ],
+            [
+              4.922115491801371,
+              52.38227800718186
+            ],
+            [
+              4.922142687282656,
+              52.38219174242814
+            ],
+            [
+              4.922154674256006,
+              52.38215374467318
+            ],
+            [
+              4.922159779190253,
+              52.38213754196662
+            ],
+            [
+              4.922375485498182,
+              52.382163689119785
+            ],
+            [
+              4.9238624065575145,
+              52.382343903811574
+            ],
+            [
+              4.924046492277625,
+              52.38236584379155
+            ],
+            [
+              4.924887488769611,
+              52.38246606190358
+            ],
+            [
+              4.925640461484777,
+              52.382552575315394
+            ],
+            [
+              4.926210440961255,
+              52.382619497640356
+            ],
+            [
+              4.926432940369005,
+              52.38264538520979
+            ],
+            [
+              4.926704789814732,
+              52.38287079283379
+            ],
+            [
+              4.926701800789092,
+              52.3828729202769
+            ],
+            [
+              4.926612918754123,
+              52.38301493034995
+            ],
+            [
+              4.92654978565697,
+              52.383115778116874
+            ],
+            [
+              4.926063054759081,
+              52.38305828614604
+            ],
+            [
+              4.925192505103483,
+              52.382955453586284
+            ],
+            [
+              4.925019445971043,
+              52.38293501443538
+            ],
+            [
+              4.924543545269367,
+              52.38287879876893
+            ],
+            [
+              4.924370486832076,
+              52.3828583496824
+            ],
+            [
+              4.923724742491116,
+              52.382782071428416
+            ],
+            [
+              4.923551699499938,
+              52.38276162120291
+            ],
+            [
+              4.923025456509267,
+              52.38269945020736
+            ],
+            [
+              4.922809153511521,
+              52.38267389509626
+            ],
+            [
+              4.922234561793007,
+              52.3826060125452
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "object_type": "no_build",
+        "sub_type": "enkelbestemming",
+        "naam": "Groen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.923546622002493,
+              52.3833834943208
+            ],
+            [
+              4.923580028002497,
+              52.383277597538154
+            ],
+            [
+              4.923613930297238,
+              52.38317198130476
+            ],
+            [
+              4.9241373520697795,
+              52.38323487561879
+            ],
+            [
+              4.924247595747899,
+              52.383247898356174
+            ],
+            [
+              4.924420655741966,
+              52.383268338635126
+            ],
+            [
+              4.924387646853641,
+              52.38337296993989
+            ],
+            [
+              4.924354227740867,
+              52.38347889385508
+            ],
+            [
+              4.9238062049671845,
+              52.38341416064585
+            ],
+            [
+              4.923546622002493,
+              52.3833834943208
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "object_type": "no_build",
+        "sub_type": "enkelbestemming",
+        "naam": "Groen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.925190953656397,
+              52.38461700708765
+            ],
+            [
+              4.924961663269742,
+              52.3845103994238
+            ],
+            [
+              4.924717929939712,
+              52.384456420626904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "object_type": "no_build",
+        "sub_type": "enkelbestemming",
+        "naam": "Verkeer"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.924247595747899,
+              52.383247898356174
+            ],
+            [
+              4.924370486832076,
+              52.3828583496824
+            ],
+            [
+              4.924543545269367,
+              52.38287879876893
+            ],
+            [
+              4.924420655741966,
+              52.383268338635126
+            ],
+            [
+              4.924247595747899,
+              52.383247898356174
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "object_type": "no_build",
+        "sub_type": "enkelbestemming",
+        "naam": "Verkeer"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.922077836557032,
+              52.3823966763521
+            ],
+            [
+              4.922115491801371,
+              52.38227800718186
+            ],
+            [
+              4.922142687282656,
+              52.38219174242814
+            ],
+            [
+              4.922159779190253,
+              52.38213754196662
+            ],
+            [
+              4.922375485498182,
+              52.382163689119785
+            ],
+            [
+              4.9238624065575145,
+              52.382343903811574
+            ],
+            [
+              4.924046492277625,
+              52.38236584379155
+            ],
+            [
+              4.924887488769611,
+              52.38246606190358
+            ],
+            [
+              4.925640461484777,
+              52.382552575315394
+            ],
+            [
+              4.926210440961255,
+              52.382619497640356
+            ],
+            [
+              4.926432940369005,
+              52.38264538520979
+            ],
+            [
+              4.926704789814732,
+              52.38287079283379
+            ],
+            [
+              4.926701800789092,
+              52.3828729202769
+            ],
+            [
+              4.926646912378966,
+              52.382960615243
+            ],
+            [
+              4.926622191196939,
+              52.38295369746022
+            ],
+            [
+              4.926504325589276,
+              52.38290099367932
+            ],
+            [
+              4.922077836557032,
+              52.3823966763521
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "object_type": "no_build",
+        "sub_type": "gebiedsaanduiding",
+        "naam": "vrijwaringszone - vaarweg"
+      }
+    }
+  ]
+}

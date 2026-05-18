@@ -1,43 +1,52 @@
 {
   "version": 1,
-  "source": "human_curated_fallback",
-  "term_count": 16,
+  "source": "stelselcatalogus",
+  "term_count": 18,
   "terms": [
     {
-      "term": "bouwaanduiding",
-      "definition": "Een aanduiding op de verbeelding die nadere regels stelt aan de bouwwijze of de toelaatbare bouwwerken binnen een bestemming.",
-      "definition_en": "A label on the verbeelding that imposes further rules on building method or permitted structures within a zoning category.",
-      "source": "human_curated",
-      "source_url": null,
+      "term": "bedrijfswoning",
+      "definition": "Woning in of bij een gebouw of op of bij een terrein, slechts bestemd voor het huishouden van een persoon wiens huisvesting daar, gelet op de bestemming van het gebouw of terrein, noodzakelijk is.",
+      "definition_en": null,
+      "source": "stelselcatalogus",
+      "source_url": "http://regelgeving.omgevingswet.overheid.nl/regelgeving/id/concept/Bedrijfswoning_bal",
       "seen_in_projects": [],
-      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+      "notes": null
+    },
+    {
+      "term": "bouwaanduiding",
+      "definition": "Waarde voor attribuut groep bij het object Omgevingsnorm voor het vaststellen, geometrisch begrenzen en per locatie waarden vastleggen van een omgevingsnorm over de wijze van bouwen.",
+      "definition_en": null,
+      "source": "stelselcatalogus",
+      "source_url": "http://standaarden.omgevingswet.overheid.nl/omgevingsnorm/id/concept/Bouwaanduiding",
+      "seen_in_projects": [],
+      "notes": "Groep bijvoorbeeld te gebruiken voor vrijstaand en aaneengebouwd voor woningtypen, karakteristiek voor gebouwen."
     },
     {
       "term": "bouwhoogte",
-      "definition": "De maximale hoogte van een bouwwerk, gemeten vanaf het peil tot het hoogste punt van het bouwwerk.",
-      "definition_en": "Maximum height of a building, measured from grade level to the highest point of the structure.",
-      "source": "human_curated",
-      "source_url": null,
+      "definition": "Waarde voor attribuut type bij de objecten Omgevingsnorm en Omgevingswaarde, te gebruiken in combinatie met waarde maatvoering bouwen van waardelijst Omgevingsnormgroep.",
+      "definition_en": null,
+      "source": "stelselcatalogus",
+      "source_url": "http://standaarden.omgevingswet.overheid.nl/typenorm/id/concept/Bouwhoogte",
       "seen_in_projects": [],
-      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+      "notes": ""
     },
     {
       "term": "bouwlaag",
-      "definition": "Een doorlopend gedeelte van een gebouw, begrensd door op gelijke of nagenoeg gelijke hoogte liggende vloeren.",
-      "definition_en": "A continuous part of a building, bounded by floors at equal or nearly equal heights.",
-      "source": "human_curated",
-      "source_url": null,
+      "definition": "(no definition supplied)",
+      "definition_en": null,
+      "source": "stelselcatalogus",
+      "source_url": "http://standaarden.omgevingswet.overheid.nl/eenheid/id/concept/Bouwlaag",
       "seen_in_projects": [],
-      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+      "notes": ""
     },
     {
       "term": "bouwvlak",
-      "definition": "Een geometrisch bepaald vlak waarbinnen gebouwen mogen worden opgericht.",
-      "definition_en": "A geometrically defined area within which buildings may be erected.",
-      "source": "human_curated",
-      "source_url": null,
+      "definition": "Waarde voor attribuut groep bij het Gebiedsaanwijzingtype Bouw voor het aanwijzen van een gebied waar het bouwen en instandhouden van bepaalde bouwwerken is toegelaten.",
+      "definition_en": null,
+      "source": "stelselcatalogus",
+      "source_url": "http://standaarden.omgevingswet.overheid.nl/bouw/id/concept/Bouwvlak",
       "seen_in_projects": [],
-      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+      "notes": "Alleen te gebruiken in het omgevingsplan, in voorbeschermingsregels voor het omgevingsplan en in omgevingsplanregels uit een projectbesluit."
     },
     {
       "term": "bvo",
@@ -95,12 +104,12 @@
     },
     {
       "term": "goothoogte",
-      "definition": "De hoogte van een bouwwerk, gemeten vanaf peil tot bovenkant goot, boeibord of daarmee gelijk te stellen constructiedeel.",
-      "definition_en": "Building height measured from grade to the top of the gutter, fascia, or equivalent structural element.",
-      "source": "human_curated",
-      "source_url": null,
+      "definition": "Waarde voor attribuut type bij de objecten Omgevingsnorm en Omgevingswaarde, te gebruiken in combinatie met waarde maatvoering bouwen van waardelijst Omgevingsnormgroep.",
+      "definition_en": null,
+      "source": "stelselcatalogus",
+      "source_url": "http://standaarden.omgevingswet.overheid.nl/typenorm/id/concept/Goothoogte",
       "seen_in_projects": [],
-      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+      "notes": ""
     },
     {
       "term": "maatschappelijke voorziening",
@@ -122,12 +131,12 @@
     },
     {
       "term": "peil",
-      "definition": "Het niveau dat als referentiepunt geldt voor hoogtematen, doorgaans de hoogte van de aangrenzende openbare ruimte ter plaatse van de hoofdtoegang.",
-      "definition_en": "Reference level for height measurements, typically the elevation of the adjacent public space at the main entrance.",
-      "source": "human_curated",
-      "source_url": null,
+      "definition": "a. Voor een bouwwerk waarvan de hoofdtoegang direct aan de weg grenst: de hoogte van de weg ter plaatse van die hoofdtoegang; b. voor een bouwwerk waarvan de hoofdtoegang niet direct aan de weg grenst: de hoogte van het terrein ter plaatse van die hoofdtoegang bij voltooiing van de bouw.",
+      "definition_en": null,
+      "source": "stelselcatalogus",
+      "source_url": "http://regelgeving.omgevingswet.overheid.nl/regelgeving/id/concept/Straatpeil",
       "seen_in_projects": [],
-      "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+      "notes": null
     },
     {
       "term": "plint",
@@ -137,6 +146,15 @@
       "source_url": null,
       "seen_in_projects": [],
       "notes": "Fallback definition used because no API key was set. Replace with authoritative Stelselcatalogus content when available."
+    },
+    {
+      "term": "vloeroppervlakte",
+      "definition": "Waarde voor attribuut type bij de objecten Omgevingsnorm en Omgevingswaarde, te gebruiken in combinatie met waarde maatvoering bouwen van waardelijst Omgevingsnormgroep.",
+      "definition_en": null,
+      "source": "stelselcatalogus",
+      "source_url": "http://standaarden.omgevingswet.overheid.nl/typenorm/id/concept/Vloeroppervlakte",
+      "seen_in_projects": [],
+      "notes": ""
     },
     {
       "term": "voorgevelrooilijn",

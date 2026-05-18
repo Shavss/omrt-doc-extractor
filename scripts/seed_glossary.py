@@ -24,9 +24,10 @@ Getting an API key:
 - The same key works for all DSO/Catalogus APIs.
 
 API documentation:
-- OpenAPI spec: https://stelselcatalogus.omgevingswet.overheid.nl/api/
+- OpenAPI spec: https://service.pre.omgevingswet.overheid.nl/publiek/catalogus/api/opvragen/v3/api
 - Endpoints: /begrippen, /activiteiten, /werkzaamheden, /begrippenkaders
-- Auth: API-Key header on every request.
+- Auth: X-API-KEY header on every request.
+- pageSize must be one of: 10, 20, 40, 100
 """
 
 from __future__ import annotations
@@ -44,19 +45,27 @@ from loguru import logger
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from omrt_extractor.schemas import GlossaryTerm
-
-# ---------------------------------------------------------------------
+# At the top of seed_glossary.py, after the imports
+from dotenv import load_dotenv
+load_dotenv()  # loads .env from the current working directory
+# ---------------------------------------------------------------------------
 # Configuration
-# ---------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 
-STELSELCATALOGUS_BASE = "https://stelselcatalogus.omgevingswet.overheid.nl/api/v3"
-PAGE_SIZE = 50
+# Pre-production environment (use until a production key is issued).
+# Switch to https://service.omgevingswet.overheid.nl/publiek/catalogus/api/opvragen/v3
+# once you have a production API key.
+STELSELCATALOGUS_BASE = (
+    "https://service.pre.omgevingswet.overheid.nl/publiek/catalogus/api/opvragen/v3"
+)
+
+# pageSize must be one of 10, 20, 40, 100 — never 1.
+PAGE_SIZE = 10
 REQUEST_TIMEOUT = 30.0
 
 # Terms we prioritise pulling from the catalog because they appear in
 # bestemmingsplan regels and toelichtingen and tend to have municipality-
-# specific resolutions. The full catalog is too large to mirror; this
-# focused subset is what extraction actually needs.
+# specific resolutions.
 PRIORITY_TERMS = [
     "bouwvlak",
     "bouwhoogte",
@@ -87,18 +96,15 @@ PRIORITY_TERMS = [
 
 OUTPUT_PATH = Path(__file__).parent.parent / "data" / "archive" / "glossary.json"
 
-# ---------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Fallback: hand-curated common terms
-# Used when no API key is available. Definitions are paraphrased from
-# common bestemmingsplan vocabulary; production should always use the
-# authoritative source.
-# ---------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 
 FALLBACK_TERMS: list[dict[str, Any]] = [
     {
         "term": "bouwvlak",
-        "definition": ("Een geometrisch bepaald vlak waarbinnen gebouwen mogen worden opgericht."),
-        "definition_en": ("A geometrically defined area within which buildings may be erected."),
+        "definition": "Een geometrisch bepaald vlak waarbinnen gebouwen mogen worden opgericht.",
+        "definition_en": "A geometrically defined area within which buildings may be erected.",
     },
     {
         "term": "bouwhoogte",
@@ -137,8 +143,7 @@ FALLBACK_TERMS: list[dict[str, Any]] = [
         "term": "dove gevel",
         "definition": (
             "Een gevel zonder te openen delen, waardoor geluidsbelasting op die "
-            "gevel buiten beschouwing kan blijven bij de toetsing aan de Wet "
-            "geluidhinder."
+            "gevel buiten beschouwing kan blijven bij de toetsing aan de Wet geluidhinder."
         ),
         "definition_en": (
             "A facade without operable openings, so that noise exposure on that "
@@ -172,7 +177,7 @@ FALLBACK_TERMS: list[dict[str, Any]] = [
             "Floor Space Index. Verhouding tussen de totale bruto vloeroppervlakte "
             "en het kaveloppervlak. Bepaalt de bebouwingsdichtheid van een kavel."
         ),
-        "definition_en": ("Ratio of total gross floor area to plot area. Determines plot density."),
+        "definition_en": "Ratio of total gross floor area to plot area. Determines plot density.",
     },
     {
         "term": "dubbelbestemming",
@@ -247,7 +252,7 @@ FALLBACK_TERMS: list[dict[str, Any]] = [
             "De maximale hoogte van een schuin dak, gemeten vanaf peil tot het "
             "hoogste punt van het dak (de nok)."
         ),
-        "definition_en": ("Maximum height of a pitched roof, measured from grade to the ridge."),
+        "definition_en": "Maximum height of a pitched roof, measured from grade to the ridge.",
     },
     {
         "term": "goothoogte",
@@ -262,23 +267,22 @@ FALLBACK_TERMS: list[dict[str, Any]] = [
     },
 ]
 
-
-# ---------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # API client
-# ---------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 
 
 def fetch_term_from_api(client: httpx.Client, term: str) -> GlossaryTerm | None:
     """Look up a single term in the Stelselcatalogus.
 
-    Returns None on any failure (404, 5xx, network error). Failures are
-    logged but never raised; we want the script to complete even if some
-    terms are missing from the catalog.
+    Uses zoekTerm for search and picks the best match by exact naam comparison.
+    pageSize must be one of 10, 20, 40, 100.
+    Returns None on any failure; errors are logged but never raised.
     """
     try:
         response = client.get(
             "/begrippen",
-            params={"naam": term, "pageSize": 1},
+            params={"zoekTerm": term, "pageSize": PAGE_SIZE},
         )
         response.raise_for_status()
     except httpx.HTTPError as e:
@@ -291,7 +295,12 @@ def fetch_term_from_api(client: httpx.Client, term: str) -> GlossaryTerm | None:
         logger.info(f"No catalog entry found for '{term}'")
         return None
 
-    item = items[0]
+    # Prefer an exact naam match; fall back to the first result.
+    item = next(
+        (i for i in items if i.get("naam", "").lower() == term.lower()),
+        items[0],
+    )
+
     return GlossaryTerm(
         term=term,
         definition=item.get("definitie", "").strip() or "(no definition supplied)",
@@ -304,7 +313,9 @@ def fetch_term_from_api(client: httpx.Client, term: str) -> GlossaryTerm | None:
 def seed_from_api(api_key: str) -> list[GlossaryTerm]:
     """Pull priority terms from the Stelselcatalogus."""
     logger.info(f"Seeding glossary from Stelselcatalogus for {len(PRIORITY_TERMS)} terms")
-    headers = {"X-Api-Key": api_key, "Accept": "application/json"}
+    # Header must be X-API-KEY (all caps) — the DSO gateway rejects other casings.
+    headers = {"X-API-KEY": api_key, "Accept": "application/hal+json"}
+
     terms: list[GlossaryTerm] = []
     with httpx.Client(
         base_url=STELSELCATALOGUS_BASE,
@@ -319,14 +330,14 @@ def seed_from_api(api_key: str) -> list[GlossaryTerm]:
     return terms
 
 
-def seed_from_fallback() -> list[GlossaryTerm]:
-    """Use the hand-curated fallback when no API key is available."""
-    logger.warning(
-        "No STELSELCATALOGUS_API_KEY set; falling back to hand-curated terms. "
-        "For authoritative definitions, register at "
-        "https://aandeslagmetdeomgevingswet.nl/ontwikkelaarsportaal/ "
-        "and set the env var."
-    )
+def seed_from_fallback(warn: bool = True) -> list[GlossaryTerm]:
+    if warn:
+        logger.warning(
+            "No STELSELCATALOGUS_API_KEY set; falling back to hand-curated terms. "
+            "For authoritative definitions, register at "
+            "https://aandeslagmetdeomgevingswet.nl/ontwikkelaarsportaal/ "
+            "and set the env var."
+        )
     return [
         GlossaryTerm(
             term=entry["term"],
@@ -342,10 +353,9 @@ def seed_from_fallback() -> list[GlossaryTerm]:
     ]
 
 
-# ---------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Main
-# ---------------------------------------------------------------------
-
+# ---------------------------------------------------------------------------
 
 def write_glossary(terms: list[GlossaryTerm]) -> None:
     """Write the glossary to disk, sorted by term for stable diffs."""
@@ -353,9 +363,11 @@ def write_glossary(terms: list[GlossaryTerm]) -> None:
     sorted_terms = sorted(terms, key=lambda t: t.term)
     payload = {
         "version": 1,
-        "source": "stelselcatalogus"
-        if any(t.source == "stelselcatalogus" for t in terms)
-        else "human_curated_fallback",
+        "source": (
+            "stelselcatalogus"
+            if any(t.source == "stelselcatalogus" for t in terms)
+            else "human_curated_fallback"
+        ),
         "term_count": len(sorted_terms),
         "terms": [t.model_dump(mode="json") for t in sorted_terms],
     }
@@ -370,11 +382,10 @@ def main() -> None:
     api_key = os.environ.get("STELSELCATALOGUS_API_KEY")
     if api_key:
         terms = seed_from_api(api_key)
-        # Always backfill any missing priority terms from the fallback.
         seen = {t.term for t in terms}
-        terms.extend(t for t in seed_from_fallback() if t.term not in seen)
+        terms.extend(t for t in seed_from_fallback(warn=False) if t.term not in seen)
     else:
-        terms = seed_from_fallback()
+        terms = seed_from_fallback(warn=True)
     write_glossary(terms)
 
 

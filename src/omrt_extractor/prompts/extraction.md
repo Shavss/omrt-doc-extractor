@@ -83,8 +83,12 @@ Common abbreviations on kaveltekening labels (the geometry parser handles these 
 - `GD` Gemengd (mixed-use bestemming)
 - `V` Verkeer (traffic / public-realm bestemming)
 - `G` Groen (green bestemming)
-- `sba-N` Specifieke bouwaanduiding
-- `sgd-N` Specifieke gebiedsaanduiding
+- `sba-N` Specifieke bouwaanduiding (building rule modifier, e.g. sba-1, sba-4)
+- `sba-dvg-N` Specifieke bouwaanduiding dove gevel (acoustic facade overlay, NOT a building zone)
+- `sgd-N` On many Amsterdam plans: shorthand for Specifieke vorm van gemengd
+  (a functieaanduiding defining allowed programme per sub-zone). Note: sgd is
+  NOT the same as the IMRO object type Gebiedsaanduiding.
+- `(m)` Maatschappelijk (social/institutional functieaanduiding, e.g. school)
 - `WR-A` Waarde Archeologie (dubbelbestemming)
 
 Hedging language to watch for (always flag with `"ambiguous_clause"`):

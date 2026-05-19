@@ -69,4 +69,4 @@ omrt run data/inputs/draka/
 
 - Architecture: `docs/architecture.md`
 - Schema reference: `docs/schema_reference.md`
-- Project plan: `PROJECT_PLAN.md`
+

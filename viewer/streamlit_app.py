@@ -904,7 +904,13 @@ def _zone_label_gml(z: dict[str, Any]) -> str:
 def _match_pdf_to_gml(
     bouwvlakken: list[dict[str, Any]], zones: list[dict[str, Any]]
 ) -> list[tuple[dict[str, Any] | None, dict[str, Any] | None, set[str]]]:
-    """Match by overlap of normalised zone codes; returns (pdf, gml, shared)."""
+    """Match by overlap of normalised zone codes; returns (pdf, gml, shared).
+
+    Uses greedy bipartite matching: pre-compute all (pdf, gml) pair scores,
+    then assign highest-scoring pairs first so that a PDF zone with more codes
+    in common beats one with fewer — preventing a weak match from consuming a
+    GML zone that belongs to a stronger candidate.
+    """
     pdf_norm: list[set[str]] = []
     for bv in bouwvlakken:
         codes = (
@@ -915,25 +921,40 @@ def _match_pdf_to_gml(
         pdf_norm.append({_normalise_code(c) for c in codes if c})
 
     gml_norm: list[set[str]] = []
+    gml_sgd: list[str] = []
     for z in zones:
         codes = [z.get("sgd_code")] + (z.get("sba_codes") or [])
         gml_norm.append({_normalise_code(c) for c in codes if c})
+        gml_sgd.append(_normalise_code(z.get("sgd_code") or ""))
+
+    # Score: (sgd_exact_match, shared_count).  SGD match is the primary signal.
+    candidates: list[tuple[float, int, int, set[str]]] = []
+    for i in range(len(bouwvlakken)):
+        for j in range(len(zones)):
+            shared = pdf_norm[i] & gml_norm[j]
+            if not shared:
+                continue
+            sgd_bonus = 1 if (gml_sgd[j] and gml_sgd[j] in pdf_norm[i]) else 0
+            score = (sgd_bonus, len(shared))
+            candidates.append((-score[0] * 1000 - score[1], i, j, shared))
+
+    candidates.sort(key=lambda t: t[0])
+
+    used_pdf: set[int] = set()
+    used_gml: set[int] = set()
+    matched_pdf: dict[int, tuple[int, set[str]]] = {}
+    for _, i, j, shared in candidates:
+        if i in used_pdf or j in used_gml:
+            continue
+        used_pdf.add(i)
+        used_gml.add(j)
+        matched_pdf[i] = (j, shared)
 
     rows: list[tuple[dict[str, Any] | None, dict[str, Any] | None, set[str]]] = []
-    used_gml: set[int] = set()
     for i, bv in enumerate(bouwvlakken):
-        best_j = -1
-        best_shared: set[str] = set()
-        for j, z in enumerate(zones):
-            if j in used_gml:
-                continue
-            shared = pdf_norm[i] & gml_norm[j]
-            if shared and len(shared) > len(best_shared):
-                best_shared = shared
-                best_j = j
-        if best_j >= 0:
-            used_gml.add(best_j)
-            rows.append((bv, zones[best_j], best_shared))
+        if i in matched_pdf:
+            j, shared = matched_pdf[i]
+            rows.append((bv, zones[j], shared))
         else:
             rows.append((bv, None, set()))
     for j, z in enumerate(zones):

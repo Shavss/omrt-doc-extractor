@@ -173,7 +173,10 @@ def _fetch_imro(
     try:
         r = client.get(
             plan_url,
-            headers={"Accept": "application/hal+json"},
+            headers={
+                "Accept": "application/hal+json",
+                "X-Api-Key": settings.dso_rp_api_key,
+            },
             timeout=30.0,
         )
     except httpx.HTTPError as exc:
@@ -218,7 +221,10 @@ def _fetch_imro(
         try:
             r = client.get(
                 url,
-                headers={"Accept": "application/hal+json"},
+                headers={
+                    "Accept": "application/hal+json",
+                    "X-Api-Key": settings.dso_rp_api_key,
+                },
                 timeout=30.0,
             )
         except httpx.HTTPError as exc:
@@ -262,7 +268,10 @@ def _fetch_tekst_node(url: str, client: httpx.Client) -> dict[str, Any] | None:
     try:
         r = client.get(
             url,
-            headers={"Accept": "application/hal+json"},
+            headers={
+                "Accept": "application/hal+json",
+                "X-Api-Key": settings.dso_rp_api_key,
+            },
             timeout=20.0,
         )
         if r.status_code == 200:

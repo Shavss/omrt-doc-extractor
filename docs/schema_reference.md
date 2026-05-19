@@ -2,7 +2,7 @@
 
 The Pydantic schema in `src/omrt_extractor/schemas.py` is the central contract of this prototype. Every other module produces or consumes instances of these models. This document is the field-by-field tour for anyone reading or building against the schema: the Grasshopper engineer who consumes the JSON output, the project manager who reviews a project in the Streamlit viewer, the reviewer assessing the prototype.
 
-For the data flow that produces these models see `architecture.md`. For the working plan with stage-by-stage build prompts see `PROJECT_PLAN.md`.
+For the data flow that produces these models see `architecture.md`. 
 
 ## Reading conventions
 

@@ -2,7 +2,7 @@
   "header": {
     "banner": "PROTOTYPE OUTPUT, NOT VERIFIED",
     "verification_status": "extracted",
-    "generated_at": "2026-05-18T14:00:09.066111+00:00",
+    "generated_at": "2026-05-19T08:45:11.280505+00:00",
     "tool_version": "0.1.0-omrt-run",
     "project_name": "draka",
     "plan_id": "NL.IMRO.0363.N2102BPGST-VG01",
@@ -60,10 +60,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082209Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'footprint'",
+        "timestamp": "2026-05-19T08:45:10.304090Z"
       },
       "notes": "Applies to inhangvloer (largely column-free floor) definition. This is a definitional constraint that may apply where inhangvloer is permitted."
     },
@@ -97,10 +97,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082383Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.304331Z"
       },
       "notes": "Ancillary retail must not exceed 20% of the host function's gross floor area AND must not exceed 50 m\u00b2. Both conditions apply."
     },
@@ -134,10 +134,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082403Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.304361Z"
       },
       "notes": "Ancillary retail must not exceed 20% of the host function's gross floor area AND must not exceed 50 m\u00b2. Both conditions apply."
     },
@@ -171,10 +171,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082418Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.304389Z"
       },
       "notes": "Ancillary horeca must not exceed 20% of the host function's gross floor area AND must not exceed 50 m\u00b2. Both conditions apply."
     },
@@ -208,10 +208,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082440Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.304415Z"
       },
       "notes": "Ancillary horeca must not exceed 20% of the host function's gross floor area AND must not exceed 50 m\u00b2. Both conditions apply."
     },
@@ -245,10 +245,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082453Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.304440Z"
       },
       "notes": "This is a definitional threshold for what qualifies as 'kantoor' under this plan when combined with creative/design workspace."
     },
@@ -283,10 +283,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082471Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.304477Z"
       },
       "notes": "This is a reference rule pointing to the verbeelding for specific height values per zone. The actual numeric values appear on the plan drawing."
     },
@@ -320,10 +320,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082491Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.304505Z"
       },
       "notes": null
     },
@@ -357,10 +357,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082505Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.304530Z"
       },
       "notes": null
     },
@@ -394,10 +394,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082519Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.304557Z"
       },
       "notes": "Applies to the plint (ground floor) of buildings, including entrances and foyers of residential buildings."
     },
@@ -431,10 +431,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082533Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.304584Z"
       },
       "notes": null
     },
@@ -468,10 +468,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082549Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.304615Z"
       },
       "notes": null
     },
@@ -505,10 +505,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082676Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.304647Z"
       },
       "notes": null
     },
@@ -542,10 +542,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082694Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.304675Z"
       },
       "notes": null
     },
@@ -579,10 +579,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082710Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.304699Z"
       },
       "notes": null
     },
@@ -618,10 +618,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082746Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.304753Z"
       },
       "notes": "Windhinderonderzoek required in omgevingsvergunning for buildings over 20m, covering impacts on building facades, roof terraces, surrounding area including adjacent pocket parks."
     },
@@ -657,10 +657,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082762Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.304784Z"
       },
       "notes": "Bezonningsonderzoek required in omgevingsvergunning for buildings over 20m, covering impacts on building facades, roof terraces, surrounding area including adjacent pocket parks."
     },
@@ -696,10 +696,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082775Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.304812Z"
       },
       "notes": "Study naar landschappelijke inpassing required for buildings over 30m. Must address visibility effects from relevant viewpoints including those specified in the Hoogbouweffectrapportage (HER) bij het Investeringsbesluit Hamerkwartier."
     },
@@ -737,10 +737,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082870Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.305245Z"
       },
       "notes": null
     },
@@ -778,10 +778,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082882Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.305289Z"
       },
       "notes": null
     },
@@ -819,10 +819,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082901Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.305330Z"
       },
       "notes": null
     },
@@ -860,10 +860,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082917Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.305373Z"
       },
       "notes": null
     },
@@ -898,10 +898,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082930Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305420Z"
       },
       "notes": null
     },
@@ -936,10 +936,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082943Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305461Z"
       },
       "notes": null
     },
@@ -974,10 +974,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082955Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305502Z"
       },
       "notes": null
     },
@@ -1012,10 +1012,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082968Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305543Z"
       },
       "notes": null
     },
@@ -1050,10 +1050,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082983Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305584Z"
       },
       "notes": null
     },
@@ -1090,10 +1090,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.082998Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305625Z"
       },
       "notes": null
     },
@@ -1130,10 +1130,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083013Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305668Z"
       },
       "notes": null
     },
@@ -1170,10 +1170,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083026Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305714Z"
       },
       "notes": null
     },
@@ -1210,10 +1210,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083041Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305756Z"
       },
       "notes": null
     },
@@ -1248,10 +1248,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083059Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305797Z"
       },
       "notes": "Deze woontoren is uitgesloten van de afwijkingsregeling in lid 3.6a punt 1"
     },
@@ -1289,10 +1289,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083087Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305893Z"
       },
       "notes": "Applies to fences and boundary structures (erfafscheidingen) within the Groen designation."
     },
@@ -1330,10 +1330,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083102Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305939Z"
       },
       "notes": "Applies to playground equipment (speelvoorzieningen) within the Groen designation."
     },
@@ -1371,10 +1371,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083117Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.305982Z"
       },
       "notes": "Applies to other structures (overige bouwwerken, geen gebouwen zijnde) within the Groen designation, excluding buildings, fences, and playground equipment."
     },
@@ -1412,10 +1412,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083129Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306023Z"
       },
       "notes": "Applies to advertising masts and flag masts within the Verkeer (traffic) bestemming."
     },
@@ -1453,10 +1453,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083141Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306068Z"
       },
       "notes": "Applies to property boundary fences/screens within the Verkeer bestemming."
     },
@@ -1494,10 +1494,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083154Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306109Z"
       },
       "notes": "Applies to light masts within the Verkeer bestemming."
     },
@@ -1535,10 +1535,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083166Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306150Z"
       },
       "notes": "Applies to other structures (not buildings) within the Verkeer bestemming, excluding those covered by specific rules a-c."
     },
@@ -1574,10 +1574,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083211Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.306282Z"
       },
       "notes": "Toegestane overschrijding van bestemmings- en bouwgrenzen voor ondergeschikte bouwdelen."
     },
@@ -1613,10 +1613,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083223Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306332Z"
       },
       "notes": "Toegestane overschrijding van de bouwhoogte specifiek voor hijsinrichtingen (liften)."
     },
@@ -1652,10 +1652,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083235Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306376Z"
       },
       "notes": "Toegestane overschrijding van de bouwhoogte voor dakterrassen, trappenhuizen en techniek, mits deze minimaal 2 meter van de gevellijn worden gebouwd."
     },
@@ -1691,10 +1691,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083253Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.306422Z"
       },
       "notes": "Trappenhuizen, technische installaties, dakterrassen en hekwerken die de bouwhoogte overschrijden moeten tenminste 2 meter van de gevellijn worden gebouwd."
     },
@@ -1732,10 +1732,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083271Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.306467Z"
       },
       "notes": "For basements up to 300 m\u00b2 BVO and 4 m depth, the municipality tests against the beleidsregel. For basements exceeding these thresholds, a geohydrological study is required (10.2.3 sub a, clause ii)."
     },
@@ -1769,10 +1769,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083298Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306561Z"
       },
       "notes": "This is a deviation rule (afwijkingsregel) that allows the municipality to permit utility buildings up to 6m height by omgevingsvergunning, as an exception to the standard rules."
     },
@@ -1806,10 +1806,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083350Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.306607Z"
       },
       "notes": "This is a deviation rule that allows utility buildings up to 25 m\u00b2 gross floor area by omgevingsvergunning."
     },
@@ -1843,10 +1843,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083382Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.306695Z"
       },
       "notes": "Minor deviations in siting of structures may be permitted up to 2 meters by omgevingsvergunning when justified by spatial or technical reasons related to actual site conditions."
     },
@@ -1880,10 +1880,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083395Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306735Z"
       },
       "notes": "The maximum building height stated in the regels may be increased by up to 1.5m by omgevingsvergunning to accommodate rooftop terrace facilities."
     },
@@ -1917,10 +1917,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083407Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306781Z"
       },
       "notes": "The maximum building height may be exceeded by up to 5m by omgevingsvergunning for chimneys, ventilation equipment, flagpoles, antennas, and similar structures including renewable energy equipment like wind turbines and solar panels."
     },
@@ -1954,10 +1954,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083419Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.306821Z"
       },
       "notes": "The maximum building height may be exceeded by up to 3m by omgevingsvergunning for elevator and stair cores and general technical spaces."
     },
@@ -1991,10 +1991,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083431Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.306861Z"
       },
       "notes": "Building boundaries (bebouwingsgrenzen) may be exceeded by up to 2m by omgevingsvergunning for balconies, terraces, canopies, external stairs, and other subordinate building elements."
     },
@@ -2030,10 +2030,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083602Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.307530Z"
       },
       "notes": "This constraint is from the existing plan 'Hamerstraatgebied' which applies to the site. The toelichting describes the current regulatory framework."
     },
@@ -2069,10 +2069,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083618Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'fsi_far'",
+        "timestamp": "2026-05-19T08:45:10.307569Z"
       },
       "notes": "This FSI constraint is from the existing plan 'Hamerstraatgebied' which applies to the site. The toelichting describes the current regulatory framework."
     },
@@ -2112,10 +2112,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083644Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.307636Z"
       },
       "notes": "Total gross floor area (BVO) for residential use. Stated as 'circa' in toelichting."
     },
@@ -2155,10 +2155,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083661Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.307668Z"
       },
       "notes": "Total gross floor area (BVO) for manufacturing/production industry. Stated as 'circa' in toelichting."
     },
@@ -2198,10 +2198,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083674Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.307707Z"
       },
       "notes": "Total gross floor area (BVO) for office use. Stated as 'circa' in toelichting."
     },
@@ -2241,10 +2241,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083688Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.307744Z"
       },
       "notes": "Total gross floor area (BVO) for facilities/amenities. Stated as 'circa' in toelichting."
     },
@@ -2284,10 +2284,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083701Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.307776Z"
       },
       "notes": "Total gross floor area (BVO) for school use. Stated as 'circa' in toelichting."
     },
@@ -2326,10 +2326,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083713Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.307808Z"
       },
       "notes": "The development consists of diverse building heights varying between 21 and 70 meters. This is a range describing the overall development, not a binding constraint on any specific building."
     },
@@ -2367,10 +2367,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083754Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.307888Z"
       },
       "notes": "Approximately 510,000 m\u00b2 of residential BVO corresponding to approximately 6,700 dwellings. This is stated as a target for the woonprogramma. Source is toelichting, informative not binding."
     },
@@ -2408,10 +2408,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083767Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.307920Z"
       },
       "notes": "Approximately 100,000 m\u00b2 BVO of existing bedrijfsvastgoed to be retained and distributed across the area. This is part of the gradual transformation strategy to avoid forced displacement of businesses."
     },
@@ -2449,10 +2449,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083780Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.307954Z"
       },
       "notes": "Approximately 130,000 m\u00b2 BVO of new werkprogramma in small, medium and large units of approximately 1,500 m\u00b2 BVO. Intended for hybrid businesses (50% bedrijfsruimte ground floor, 50% kantoorruimte upper floors), production businesses, fashion industry, architecture firms, artisan businesses, etc."
     },
@@ -2488,10 +2488,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083796Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.307987Z"
       },
       "notes": "Maximum office volume of 50,000 m\u00b2 after 2020, in line with the Kantorenstrategie Amsterdam uit 2017. This cap is intended to prevent the work programme from being displaced by the more lucrative residential programme."
     },
@@ -2527,10 +2527,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083816Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.308017Z"
       },
       "notes": "Hard minimum of 270,000 m\u00b2 BVO for work (werken) and facilities (voorzieningen) to be maintained in the end state, to prevent the work programme from being displaced by the more lucrative residential programme. Can be secured through public law (bestemmings- of omgevingsplan) and private law (erfpacht or anterieure overeenkomsten)."
     },
@@ -2565,10 +2565,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083857Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308124Z"
       },
       "notes": null
     },
@@ -2603,10 +2603,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083870Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308154Z"
       },
       "notes": null
     },
@@ -2641,10 +2641,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083883Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308185Z"
       },
       "notes": "Vrije hoogte van 8 meter mentioned in the same clause."
     },
@@ -2679,10 +2679,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083896Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308220Z"
       },
       "notes": "Vrije hoogte refers to internal clearance height within the loods."
     },
@@ -2723,10 +2723,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083912Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308250Z"
       },
       "notes": "The clause mentions 'ruimte voor extra hoogte onder voorwaarden', suggesting these may not be absolute maxima."
     },
@@ -2761,10 +2761,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083927Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308290Z"
       },
       "notes": "Plint bestaat uit 1 of 2 verdiepingen."
     },
@@ -2802,10 +2802,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083939Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308332Z"
       },
       "notes": "Base height regulation mentioned in context of Hoogbouw Effect Rapportage. This appears to be a baseline height for the Hamerkwartier area, with some areas having 21m base height instead."
     },
@@ -2843,10 +2843,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.083951Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308376Z"
       },
       "notes": "Alternative base height regulation mentioned in context of Hoogbouw Effect Rapportage. This appears to be a baseline height for certain parts of the Hamerkwartier area."
     },
@@ -2882,10 +2882,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084006Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308405Z"
       },
       "notes": "Height of green roof gardens on warehouse structures. Described as 'bescheiden hoogte' (modest height) providing daylight and sunlight to streets and variety in facades."
     },
@@ -2923,10 +2923,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084019Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308436Z"
       },
       "notes": "One of three high-rise accents possible on the Hamerkop (landtong between GVB ferry harbor and Van Hasseltkanaal). Final composition to be determined."
     },
@@ -2964,10 +2964,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084032Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308472Z"
       },
       "notes": "One of three high-rise accents possible on the Hamerkop (landtong between GVB ferry harbor and Van Hasseltkanaal). Final composition to be determined."
     },
@@ -3005,10 +3005,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084045Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308499Z"
       },
       "notes": "One of three high-rise accents possible on the Hamerkop (landtong between GVB ferry harbor and Van Hasseltkanaal). Final composition to be determined."
     },
@@ -3045,10 +3045,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084058Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308528Z"
       },
       "notes": "Extracted from legend on toelichting diagram showing building height zones. Diagram shows 'Basishoogte 21m, Hoofdstructuur, hoofdstraat of lijn'. This is an illustrative impression from the Investeringsnota, not binding regels text."
     },
@@ -3085,10 +3085,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084071Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308554Z"
       },
       "notes": "Extracted from legend on toelichting diagram. Shows 'max 21m Hoofdstraat Tussenstraat'. This represents the maximum height along main streets in the development."
     },
@@ -3125,10 +3125,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084085Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308582Z"
       },
       "notes": "Extracted from legend on toelichting diagram. Shows 'max 17m Hoofdstraat Tussenstraat'. This represents the maximum height along side streets in the development."
     },
@@ -3166,10 +3166,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084101Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.308608Z"
       },
       "notes": "Extracted from diagram showing tower spacing. This page is toelichting, so confidence capped at 0.85. The diagram shows two scenarios with 35m spacing and one with 50m spacing."
     },
@@ -3207,10 +3207,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084114Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.308638Z"
       },
       "notes": "Extracted from diagram showing an alternative tower spacing scenario. This page is toelichting, so confidence capped at 0.85. The diagram shows this as one of multiple spacing options."
     },
@@ -3250,10 +3250,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084127Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.308665Z"
       },
       "notes": "This value appears in the context of the supervisieteam seeking variation in building height around 60 meters. The phrasing 'rond de 60 meter' (around 60 meters) indicates this is a target or guideline rather than a strict maximum or minimum. The context discusses avoiding line-ups of high towers and ensuring variety."
     },
@@ -3292,10 +3292,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084269Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309022Z"
       },
       "notes": "Applies to building blocks A6 through A13 collectively. Individual plot areas are also listed on this page."
     },
@@ -3334,10 +3334,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084285Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.309053Z"
       },
       "notes": "Generic plinth height for the combined building block A6-A13. Multiple height accents between 45 and 60m are mentioned above this plinth."
     },
@@ -3379,10 +3379,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084301Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.309081Z"
       },
       "notes": "Range for multiple height accents above the 21m plinth. The text does not specify exact number or locations of these accents."
     },
@@ -3420,10 +3420,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084315Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'footprint'",
+        "timestamp": "2026-05-19T08:45:10.309122Z"
       },
       "notes": "Ground surface area of building plot A6."
     },
@@ -3461,10 +3461,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084336Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'footprint'",
+        "timestamp": "2026-05-19T08:45:10.309149Z"
       },
       "notes": "Ground surface area of building plot A7."
     },
@@ -3502,10 +3502,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084350Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'footprint'",
+        "timestamp": "2026-05-19T08:45:10.309176Z"
       },
       "notes": "Ground surface area of building plot A8."
     },
@@ -3543,10 +3543,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084362Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'footprint'",
+        "timestamp": "2026-05-19T08:45:10.309203Z"
       },
       "notes": "Ground surface area of building plot A9."
     },
@@ -3584,10 +3584,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084375Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'footprint'",
+        "timestamp": "2026-05-19T08:45:10.309233Z"
       },
       "notes": "Ground surface area of building plot A10."
     },
@@ -3625,10 +3625,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084387Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'footprint'",
+        "timestamp": "2026-05-19T08:45:10.309261Z"
       },
       "notes": "Ground surface area of building plot A11."
     },
@@ -3666,10 +3666,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084400Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'footprint'",
+        "timestamp": "2026-05-19T08:45:10.309290Z"
       },
       "notes": "Ground surface area of building plot A12."
     },
@@ -3707,10 +3707,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084412Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'footprint'",
+        "timestamp": "2026-05-19T08:45:10.309324Z"
       },
       "notes": "Ground surface area of building plot A13."
     },
@@ -3750,10 +3750,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084446Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309379Z"
       },
       "notes": "Approximate total residential programme GFA, corresponding to circa 6,700 dwellings."
     },
@@ -3793,10 +3793,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084471Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309439Z"
       },
       "notes": "Approximately 100,000 m\u00b2 BVO of existing business premises to remain in the plan through gradual transformation without forced relocation of businesses."
     },
@@ -3836,10 +3836,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084486Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309476Z"
       },
       "notes": "Approximately 130,000 m\u00b2 BVO new work programme in small, medium and large units of approximately 1,500 m\u00b2 BVO each. Includes hybrid businesses like modern production, fashion-industry, architecture offices, traditional crafts, local food processing and technical crafts."
     },
@@ -3877,10 +3877,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084499Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309504Z"
       },
       "notes": "Office volume target of 50,000 m\u00b2 after 2020, in line with the Amsterdam Office Strategy 2017."
     },
@@ -3919,10 +3919,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084513Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309531Z"
       },
       "notes": "Hard lower limit of 270,000 m\u00b2 BVO for work and facilities to be maintained in the final situation, to prevent the more lucrative residential programme from pushing out work functions. Explicitly includes attention for sports, social and cultural facilities."
     },
@@ -3960,10 +3960,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084526Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309562Z"
       },
       "notes": "Total horeca area shown in figure 2.3.14 for suitable areas for commercial facilities. This is from toelichting and represents target programme intent, not binding regulation."
     },
@@ -4001,10 +4001,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084538Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309589Z"
       },
       "notes": "Total leisure area shown in figure 2.3.14 for suitable areas for commercial facilities. This is from toelichting and represents target programme intent, not binding regulation."
     },
@@ -4042,10 +4042,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084550Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309615Z"
       },
       "notes": "Total retail area shown in figure 2.3.14 for suitable areas for commercial facilities. This is from toelichting and represents target programme intent, not binding regulation."
     },
@@ -4083,10 +4083,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084563Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309642Z"
       },
       "notes": "Total commercial area (sum of horeca, leisure, and retail) shown in figure 2.3.14. This is from toelichting and represents target programme intent, not binding regulation."
     },
@@ -4121,10 +4121,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084780Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.309972Z"
       },
       "notes": "Totaal BVO voor niet-wonen functies. Samengesteld uit: 80.000 m\u00b2 BVO behoud niet wonen, 30.000 m\u00b2 BVO nieuw commercieel, 124.000 m\u00b2 BVO nieuw werkfuncties."
     },
@@ -4162,10 +4162,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084792Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310008Z"
       },
       "notes": "This is an informative value from the toelichting. The text indicates this is the total residential BVO for the Draka development."
     },
@@ -4205,10 +4205,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084838Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310156Z"
       },
       "notes": "BVO allocated to manufacturing/industrial uses in the development programme."
     },
@@ -4248,10 +4248,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084854Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310184Z"
       },
       "notes": "BVO allocated to office uses in the development programme."
     },
@@ -4291,10 +4291,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084867Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310210Z"
       },
       "notes": "BVO allocated to amenities/facilities in the development programme."
     },
@@ -4334,10 +4334,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084879Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310238Z"
       },
       "notes": "BVO allocated to school in the development programme."
     },
@@ -4376,10 +4376,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084897Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.310268Z"
       },
       "notes": "The intended development consists of diverse building heights varying between 21 and 70 meters. This is a descriptive range from the toelichting, not a binding constraint."
     },
@@ -4418,10 +4418,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084910Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.310301Z"
       },
       "notes": "The Hamerblok typology consists of a base structure with 4-8 layers and high towers. This constraint applies to the base portion."
     },
@@ -4457,10 +4457,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084926Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.310334Z"
       },
       "notes": "The plinth (plint) of the Hamerblok is specified as 8 meters. This appears to be an exact value rather than a maximum."
     },
@@ -4496,10 +4496,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084938Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310361Z"
       },
       "notes": "Total maximum gross floor area for the entire Draka site. Exact allocation across building blocks is not yet determined."
     },
@@ -4538,10 +4538,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084950Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310395Z"
       },
       "notes": "Maximum gross floor area for residential use across the Draka site. Described as a concrete agreement to be anchored in plan rules."
     },
@@ -4579,10 +4579,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084962Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310425Z"
       },
       "notes": "Maximum gross floor area for office functions."
     },
@@ -4620,10 +4620,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084977Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310452Z"
       },
       "notes": "Maximum gross floor area for social/community functions (maatschappelijke functies)."
     },
@@ -4661,10 +4661,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.084992Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310479Z"
       },
       "notes": "Maximum gross floor area for culture and recreation functions."
     },
@@ -4702,10 +4702,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085004Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310505Z"
       },
       "notes": "Maximum gross floor area for hospitality/catering functions."
     },
@@ -4743,10 +4743,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085016Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310537Z"
       },
       "notes": "Minimum gross floor area for productive industry (maakindustrie). Not permitted in all building blocks; specifically excluded from blocks A6 and A8."
     },
@@ -4787,10 +4787,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085028Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310564Z"
       },
       "notes": "Combined maximum for services, hospitality, culture and recreation. This is a total cap across these combined functions."
     },
@@ -4831,10 +4831,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085040Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.310592Z"
       },
       "notes": "Maximum size of a single office unit. Stated as a range 3,000-5,000 m2. There is one such large office; other office units are smaller."
     },
@@ -4872,10 +4872,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085058Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.310624Z"
       },
       "notes": "Height of the plinth (base level) for Draka blocks. Used as reference for roofscape design approach: 'daken boven de plint, dus op ongeveer 8 meter hoogte'. This is an approximate value, not a regulatory constraint."
     },
@@ -4911,10 +4911,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085070Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.310659Z"
       },
       "notes": "Vanuit het Barro geldt een vrijwaringszone van 50 meter aan weerszijde van de vaarweg. De vrijwaringszone Barro van het Noordzeekanaal en/of de vaargeul van het Binnen IJ loopt tot in het Hamerkwartier. In deze zone zijn geen ruimtelijke ontwikkelingen toegestaan die de veiligheid voor de scheepvaart op de rijksvaarweg in gevaar brengen."
     },
@@ -4953,10 +4953,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085115Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.310747Z"
       },
       "notes": "Stated in context of transformation vision for the period 2020-2030. This is a policy intention from the toelichting, not a binding regels clause."
     },
@@ -4994,10 +4994,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085127Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.310779Z"
       },
       "notes": "Referenced as a possibility ('de mogelijkheid biedt') mentioned in the Structuurvisie. This is about high-rise potential in the second line along the northern IJ waterfront. Not a binding constraint from the regels, but contextual information about what the broader vision allows."
     },
@@ -5036,10 +5036,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085142Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.310808Z"
       },
       "notes": "This is a city-wide policy value from the Omgevingsvisie, not a binding constraint specific to the Draka site. It provides context for understanding the Hamerkwartier's classification as 'hoogstedelijke buurt'. The text states highrise up to circa 70m is possible in Noord, Nieuw-West, and Zuidoost."
     },
@@ -5075,10 +5075,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085157Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.310835Z"
       },
       "notes": "Height limit stated in context of IJ waterfront location and long streets; extracted from toelichting discussing urban vision, not binding regels."
     },
@@ -5116,10 +5116,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085192Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.310970Z"
       },
       "notes": "Part of Amsterdam Woonagenda 2025 policy. For transformation projects (herontwikkeling), the percentage is 30% social housing instead."
     },
@@ -5156,10 +5156,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085208Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.311004Z"
       },
       "notes": "Part of Amsterdam Woonagenda 2025 policy. Middeldure refers to both rental and purchase housing with mid-range pricing."
     },
@@ -5196,10 +5196,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085222Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.311034Z"
       },
       "notes": "Part of Amsterdam Woonagenda 2025 policy. Dure refers to both rental and purchase housing in the high price segment."
     },
@@ -5237,10 +5237,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085234Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.311067Z"
       },
       "notes": "Alternative percentage for transformation projects. Social housing must be provided by a housing corporation. The page explicitly states this policy will be adopted for Hamerkwartier."
     },
@@ -5278,10 +5278,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085246Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.311099Z"
       },
       "notes": "Alternative percentage for transformation projects. The page explicitly states this policy will be adopted for Hamerkwartier."
     },
@@ -5319,10 +5319,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085259Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'use_mix'",
+        "timestamp": "2026-05-19T08:45:10.311125Z"
       },
       "notes": "Alternative percentage for transformation projects. The page explicitly states this policy will be adopted for Hamerkwartier."
     },
@@ -5360,10 +5360,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085271Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.311151Z"
       },
       "notes": "Applies to middeldure huurwoningen. Stated in the context of preventing units smaller than 40m2 GO (gebruiksoppervlak)."
     },
@@ -5399,10 +5399,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085408Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.311338Z"
       },
       "notes": "This is a broader Hamerkwartier target, not specific to the Draka-terrein parcel. The page states that the Draka bestemmingsplan contributes 9,000 m2 BVO toward the 50,000 m2 ambition."
     },
@@ -5438,10 +5438,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.085424Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.311370Z"
       },
       "notes": "The office space (kantoor) realized under this bestemmingsplan. Described in context of the broader Hamerkwartier office ambition."
     },
@@ -5479,10 +5479,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086073Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.312984Z"
       },
       "notes": "Buildings circa 60m high may be visible from 2 km away but have negligible impact on existing cityscape. Buildings should not appear higher than average surrounding buildings when viewed from the UNESCO world heritage area."
     },
@@ -5518,10 +5518,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086097Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313163Z"
       },
       "notes": "According to Structuurvisie 2040, Hamerkwartier is designated as a search area for high-rise accents and a search area for a solitary building up to 146 meters. This is informative (toelichting), not binding regulation."
     },
@@ -5560,10 +5560,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086115Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313194Z"
       },
       "notes": "Structuurvisie 2040 encourages high-rise between 30 and 60 meters in the expanded city center (centrumgebied). This appears to be a general guideline for the area."
     },
@@ -5601,10 +5601,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086128Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313237Z"
       },
       "notes": "Omgevingsvisie Amsterdam 2050 states that along the IJ and in Haven-Stad, high-rise up to circa 70 meters is possible. The word 'circa' indicates this is approximate."
     },
@@ -5642,10 +5642,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086143Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313276Z"
       },
       "notes": "Refers to broader Amsterdam policy for Nieuw-West and Zuidoost, used as context for Hamerkwartier. The 'circa' qualifier introduces uncertainty."
     },
@@ -5681,10 +5681,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086156Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313313Z"
       },
       "notes": "This establishes a search zone for solitary towers exceeding 60 m around the Johan van Hasseltkanaal."
     },
@@ -5722,10 +5722,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086168Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313344Z"
       },
       "notes": "The Investeringsnota allows high-rise accents up to 70 m under conditions, aligned with draft Omgevingsvisie 2050."
     },
@@ -5761,10 +5761,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086183Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313375Z"
       },
       "notes": "The established projectnota identifies a search zone up to 140 m at the kaap location. However, the HER reduces and narrows this zone."
     },
@@ -5800,10 +5800,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086197Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313405Z"
       },
       "notes": "The HER reduces the projectnota search zone from 140 m to 120 m and narrows it to focus on the kaap at the Johan van Hasseltkanaal. Proposes a cluster of three accents between 80 and 120 m instead of a single solitary tower."
     },
@@ -5839,10 +5839,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086210Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313443Z"
       },
       "notes": "The HER proposes a cluster of three accents ranging from 80 to 120 m rather than a single solitary tower."
     },
@@ -5881,10 +5881,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086222Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313477Z"
       },
       "notes": "The supervision team aims for variation in building heights around 60 meters per development, to avoid dense sight lines and ensure variety in high-rise alignments. Deviations from standard setback rules are possible if quality criteria are demonstrably met, subject to supervision team approval."
     },
@@ -5920,10 +5920,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086247Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313542Z"
       },
       "notes": "This is a procedural threshold rather than a maximum height limit. Buildings over 30 m require a High-Rise Effect Report (HER) assessing impact on cityscape, UNESCO world heritage areas, sunlight, and wind effects."
     },
@@ -5959,10 +5959,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086261Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313574Z"
       },
       "notes": "This is described in the context of HAC-advies discussing circa 25 blokken with towers of 45-60 m and specifically mentioning towers in clustervorm up to 120 m around the Johan van Hasseltkom. This is a toelichting page, so confidence is capped at 0.85."
     },
@@ -6003,10 +6003,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086275Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313605Z"
       },
       "notes": "This describes the height of approximately 25 blocks on basement with towers. This is from toelichting discussing the HAC-advies and overall building heights."
     },
@@ -6044,10 +6044,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086416Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313947Z"
       },
       "notes": "Height above ground level (maaiveld) for the lowest dwellings in the Exclusiva development across the canal. Context for sunlight analysis on facades."
     },
@@ -6083,10 +6083,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086431Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.313984Z"
       },
       "notes": "One of two high-rise accents mentioned in the landschappelijke inpassing section. Described as 'hoogbouwaccenten van maximaal 51 en 70 meter mogelijk'. This is stated in the toelichting, which is informative rather than binding."
     },
@@ -6122,10 +6122,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.086446Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.314015Z"
       },
       "notes": "The second of two high-rise accents mentioned in the landschappelijke inpassing section. Described as 'hoogbouwaccenten van maximaal 51 en 70 meter mogelijk'. This is stated in the toelichting, which is informative rather than binding."
     },
@@ -6161,10 +6161,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087144Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.315982Z"
       },
       "notes": "Guideline distance from plot boundary of a category 3.1 company to facades of noise-sensitive functions in mixed-use area. This is context about the surrounding area's existing zoning rules, not a direct constraint on the Draka site itself."
     },
@@ -6200,10 +6200,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087157Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.316011Z"
       },
       "notes": "Guideline distance for category 4.1 companies. GVB Veren (ferry service) is category 4.1 and directly adjacent to the plan area. The page notes that existing housing is already situated closer than this guideline distance."
     },
@@ -6239,10 +6239,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087234Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.316122Z"
       },
       "notes": "Planned housing will always be situated at a shorter distance from mixed-use functions (commercial and primary school) than from these functions, and the planned development is situated at more than 20 meters from surrounding residential buildings."
     },
@@ -6278,10 +6278,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087432Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.316788Z"
       },
       "notes": "Amsterdam hanteert een afstandscriterium waarbij geen nieuwe gevoelige bestemmingen mogen worden gerealiseerd in de eerste lijnsbebouwing binnen 50 meter van de rand van drukke binnenstedelijke wegen. Dit is strenger dan het landelijke besluit."
     },
@@ -6320,10 +6320,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087709Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.317401Z"
       },
       "notes": "Deze belemmeringenstrook geldt voor buisleidingen conform het Besluit externe veiligheid Buisleidingen (Bevb). De waarde is een range van 4 of 5 meter."
     },
@@ -6359,10 +6359,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087753Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.317500Z"
       },
       "notes": "Dit is een vrijwaringszone conform Besluit algemene regels ruimtelijke ordening (Barro). Het IJ valt in CEMT-klasse VIb. De zone heeft als doel de doorvaart van schepen te bevorderen en zichtlijnen te behouden."
     },
@@ -6397,10 +6397,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087790Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.317574Z"
       },
       "notes": "The plan area is located at a distance greater than 200 meters from the railway line."
     },
@@ -6437,10 +6437,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087924Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'setback'",
+        "timestamp": "2026-05-19T08:45:10.317767Z"
       },
       "notes": "Het IJ valt in CEMT-klasse VIb conform Barro (Besluit algemene regels ruimtelijke ordening). This is a nautical safety setback from the waterway boundary line."
     },
@@ -6478,10 +6478,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087951Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.317821Z"
       },
       "notes": "One of two high-rise accents permitted in the plan. Conditional on the building being 'rank' (slender). Can be increased to 51 m under certain conditions specified in the regels."
     },
@@ -6519,10 +6519,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087964Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.317850Z"
       },
       "notes": "Second high-rise accent permitted in the plan. Conditional on the building being 'rank' (slender). Can be increased to 70 m under certain conditions specified in the regels."
     },
@@ -6560,10 +6560,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087977Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.317976Z"
       },
       "notes": "Increased height from 45 m base. Only permitted when the extra height adequately contributes to urban design and spatial quality, e.g. by achieving higher floor heights or collective spaces for residents."
     },
@@ -6601,10 +6601,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.087990Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318006Z"
       },
       "notes": "Increased height from 60 m base. Only permitted when the extra height adequately contributes to urban design and spatial quality, e.g. by achieving higher floor heights or collective spaces for residents."
     },
@@ -6640,10 +6640,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088005Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318031Z"
       },
       "notes": "The toelichting explains that building above 146 m is in principle not permitted, and a declaration of no objection would need to be requested. However, the current bestemmingsplan does not permit building higher than 70 m, so this LIB constraint does not form a limiting factor for the transformation. This is an informative constraint from the toelichting, not a binding regels clause."
     },
@@ -6679,10 +6679,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088018Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318076Z"
       },
       "notes": "Stated in toelichting as the limiting height in the current bestemmingsplan, which is lower than the LIB outer horizontal surface constraint of 146 m. This means the LIB constraint does not form a barrier to the transformation."
     },
@@ -6719,10 +6719,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088030Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318107Z"
       },
       "notes": "The TAR radar surfaces (TAR1 and TAR4) pass between 71 and 78 meters above NAP over the Hamerkwartier. Since the bestemmingsplan does not permit building above 71 meters, radar advisory from ILT is not required and disturbance can be ruled out in advance."
     },
@@ -6758,10 +6758,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088045Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318133Z"
       },
       "notes": "This is stated in the toelichting as a conclusion from noise analysis (LIB = Luchthavenbesluit/geluidbelasting). The toelichting states that up to 71 meters there are no obstructions to plan implementation, and that no building higher than 71 meters will be realized within the Draka terrein."
     },
@@ -6801,10 +6801,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088057Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318158Z"
       },
       "notes": "The sentence is incomplete on this page; it reads 'Voor de hoogbouwaccenten geldt dat een maximale bouwhoogte van 40, 45 en' and appears to continue on the next page. This extraction captures the 40 m value mentioned."
     },
@@ -6844,10 +6844,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088069Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318188Z"
       },
       "notes": "The sentence is incomplete on this page; it reads 'Voor de hoogbouwaccenten geldt dat een maximale bouwhoogte van 40, 45 en' and appears to continue on the next page. This extraction captures the 45 m value mentioned."
     },
@@ -6882,10 +6882,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088081Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318216Z"
       },
       "notes": "Part of a set of height limits for different areas. Text indicates 'de maximale bouwhoogte respectievelijk 21 of 30,5 meter' with one exception at 60m and one special building at 70m."
     },
@@ -6920,10 +6920,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088093Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318242Z"
       },
       "notes": "Alternative height limit for different areas within the plan. Text indicates 'respectievelijk 21 of 30,5 meter'."
     },
@@ -6958,10 +6958,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088105Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318271Z"
       },
       "notes": "General maximum for the plan area, with specific exceptions."
     },
@@ -6996,10 +6996,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088123Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318296Z"
       },
       "notes": "Exceptional height allowance for a single building within the plan area."
     },
@@ -7034,10 +7034,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088135Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318320Z"
       },
       "notes": "The plinth must be 8 meters high. This height also applies to entrances and foyers of residential buildings. Within the plinth, initially one building layer is allowed with a partial mezzanine floor. For residential function, two building layers are allowed in the plinth, but the exterior appearance must look like a high plinth."
     },
@@ -7072,10 +7072,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088147Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.318345Z"
       },
       "notes": "Maximum gross floor area for social facilities (maatschappelijke voorzieningen), which must exclusively focus on education and childcare."
     },
@@ -7110,10 +7110,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088161Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'bvo_limit'",
+        "timestamp": "2026-05-19T08:45:10.318377Z"
       },
       "notes": "Minimum area for the school component of the social facilities."
     },
@@ -7148,10 +7148,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088199Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318454Z"
       },
       "notes": "Buildings exceeding 20 meters in height trigger a conditional obligation to submit a wind hindrance and solar access study before construction is allowed."
     },
@@ -7187,10 +7187,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088213Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318481Z"
       },
       "notes": "Base maximum building height before deviations. Can be increased to 50m or 70m under specific conditions via omgevingsvergunning."
     },
@@ -7230,10 +7230,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088226Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318508Z"
       },
       "notes": "Requires omgevingsvergunning. Must demonstrate contribution to urban quality per Investeringsnota part B."
     },
@@ -7273,10 +7273,10 @@
         "source": "imro_plannen_v4",
         "authoritative_value": null,
         "authoritative_unit": null,
-        "agreement": "not_attempted",
-        "tolerance_used": null,
-        "notes": "IMRO API unreachable: IMRO API returned HTTP 401 on plan",
-        "timestamp": "2026-05-17T14:14:37.088241Z"
+        "agreement": "unverifiable",
+        "tolerance_used": 0.05,
+        "notes": "Historic plan: spatial sub-resources empty, teksten fallback found no matching value for category 'height'",
+        "timestamp": "2026-05-19T08:45:10.318534Z"
       },
       "notes": "Requires omgevingsvergunning. Must demonstrate contribution to urban quality per Investeringsnota part B."
     }

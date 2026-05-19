@@ -2,7 +2,7 @@
 
 **Status:** PROTOTYPE OUTPUT, NOT VERIFIED
 **Plan ID:** NL.IMRO.0363.N2102BPGST-VG01 (IMRO API cross-validation unavailable — see Data sources)
-**Generated:** 2026-05-18T14:00:09+00:00
+**Generated:** 2026-05-19T08:45:11+00:00
 **Location:** Amsterdam, Hamerkwartier
 
 ## How to consume this output
@@ -543,12 +543,13 @@ Full zone-constraint mapping in `zone_programme_summary.json`. Zones with 0 matc
 - **Reconciliation overrides (2):** regels clauses corrected the verbeelding's spatial-proximity reading. See `reconciliation_report.json`.
 - **55 numerical constraints with confidence < 0.80:** review before relying on them. Listed with the ❗ marker under the relevant category above.
 - **41 narrative constraints with confidence < 0.80.**
+- **396 constraints unverifiable against IMRO API:** API was contacted but field could not be matched.
 
 ## Data sources used
 
 - ✓ Document extraction: 396 numerical, 552 narrative constraints across 3 PDFs (237 pages total).
 - ✓ Vector geometry: 35 polygons from kaveltekening, scale 1:1000 (1 plot, 11 bouwvlakken, 23 constraint zones).
-- ✗ IMRO API cross-validation: 0 agreed, 0 disagreed, 0 unverifiable, 396 not attempted (API unavailable).
+- ✗ IMRO API cross-validation: 0 agreed, 0 disagreed, 396 unverifiable.
 - ✓ PDOK BAG: 1000 buildings within 1000 m (year built 1888–2022).
 - ✗ 3D BAG: not available — 2D context only for massing visualisation.
 - ✓ CBS demographics (buurt BU0363NL03): pop 4075, 2135 households, avg household size 1.9, median age 39.4.

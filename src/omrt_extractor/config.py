@@ -45,6 +45,25 @@ class Settings(BaseSettings):
         validation_alias="STELSELCATALOGUS_API_KEY",
     )
 
+    # DSO API keys
+    dso_general_api_key: str = Field(
+        default="",
+        description="General DSO API key for Stelselcatalogus and other DSO services.",
+        validation_alias="DSO_GENERAL_API_KEY",
+    )
+    dso_rp_api_key: str = Field(
+        default="",
+        description="API key for DSO Ruimtelijke Plannen v4 API (cross-validation).",
+        validation_alias="DSO_RP_API_KEY",
+    )
+
+    # DSO base URLs
+    dso_rp_base_url: str = Field(
+        default="https://ruimte.omgevingswet.overheid.nl/ruimtelijke-plannen/api/opvragen/v4",
+        description="Base URL for the Ruimtelijke Plannen v4 API.",
+        validation_alias="DSO_RP_BASE_URL",
+    )
+
     # Models
     extraction_model: str = "claude-sonnet-4-5"
     inference_model: str = "claude-opus-4-7"

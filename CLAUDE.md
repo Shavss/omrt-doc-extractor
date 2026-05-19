@@ -4,7 +4,7 @@ Read this file first in every Claude Code session.
 
 ## What we're building
 
-A prototype that turns Dutch project document PDFs into validated, structured design inputs for Grasshopper. Schema-centric architecture, layered guardrails for failure honesty, generalises to unseen packets. See `docs/architecture.md` for the design rationale and `PROJECT_PLAN.md` for the working plan.
+A prototype that turns Dutch project document PDFs into validated, structured design inputs for Grasshopper. Schema-centric architecture, layered guardrails for failure honesty, generalises to unseen packets. See `docs/architecture.md`.
 
 ## Hard rules
 

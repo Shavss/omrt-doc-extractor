@@ -56,8 +56,8 @@ omrt run data/inputs/draka/
 streamlit run viewer/streamlit_app.py
 ```
 
-Estimated time for a full run: **60–90 minutes** (depending on document length).
-Estimated API cost: **€1.50–3.00**.
+Estimated time for a full run: **60–120 minutes** (depending on document length).
+Estimated API cost: **€10–15**.
 
 ---
 

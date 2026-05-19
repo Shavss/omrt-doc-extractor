@@ -209,7 +209,6 @@ This populates `grasshopper/examples/<project_name>/approach_1_pdf/` with the sa
 
 ```
 .
-├── PROJECT_PLAN.md              # Working plan with time estimates
 ├── CLAUDE.md                    # Agreement for Claude Code sessions
 ├── pyproject.toml               # Dependencies and tool config
 ├── src/omrt_extractor/          # The package (see module docstrings)

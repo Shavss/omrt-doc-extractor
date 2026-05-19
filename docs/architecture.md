@@ -1,32 +1,30 @@
 # Architecture
 
-This document describes the architecture of the OMRT document extraction prototype: a pipeline that turns Dutch project document bundles (bestemmingsplan regels, toelichting, kaveltekening) into a validated, structured Parametric Framework that a Grasshopper engineer can consume.
+This document describes the architecture of the document extraction prototype. It is a pipeline that turns Dutch project document bundles (bestemmingsplan regels, toelichting, kaveltekening) into a validated, structured Parametric Framework that a Grasshopper engineer can consume.
 
-It is the entry point for understanding the system. For the field-by-field schema specification see `schema_reference.md`. For the working plan with time estimates and stage-by-stage prompts see `PROJECT_PLAN.md` at the repository root.
+It is the entry point for understanding the system. For the field-by-field schema specification see `schema_reference.md`.
 
-## What this prototype does and does not do
+## What this prototype does
 
-It does: parse a project document bundle, extract a structured framework with provenance and confidence on every value, cross-validate against the authoritative Dutch IMRO API where a plan ID exists, enrich with geo context from open Dutch APIs, infer a programme proposal with evidence-cited reasoning, and present everything for human review before Grasshopper handoff.
-
-It does not: optimise designs, run parametric sweeps, score variants against KPIs, decide on its own to ship a framework, or replace the project manager's judgment. It is a structured-input pipeline, not a design system. The two example massings it produces are illustrative outputs to show that the inputs translate to geometry.
+It parses a project document bundle, extract a structured framework with provenance and confidence on every value, cross-validate against the authoritative Dutch IMRO API where a plan ID exists, enrich with geo context from open Dutch APIs, infer a programme proposal with evidence-cited reasoning, and present everything for human review before Grasshopper handoff.
 
 ## Design principles
 
 Two principles drive every architectural decision.
 
-**Schema-as-product.** A single Pydantic schema (`schemas.py`) is the contract every other module depends on. The schema is the only thing that must be excellent on day one; everything else can be improved iteratively without breaking the contract. The schema's top-level shape mirrors the OMRT Run system (Objective, Constraints, Variables, KPIs) so the prototype's output drops into the existing parametric pipeline without re-mapping.
+**Schema-as-product.** A single Pydantic schema (`schemas.py`) is the contract every other module depends on. The schema is the only thing that must be excellent from start. Everything else can be improved iteratively without breaking the contract. The schema's top-level shape mirrors the OMRT Run system (Objective, Constraints, Variables, KPIs) so the prototype's output drops into the existing parametric pipeline without re-mapping.
 
 **Failure honesty.** A bad number in a parametric framework propagates through every downstream design decision. The architecture assumes errors will happen and is built so they surface visibly. Every extracted value carries provenance (which document, which page, what verbatim text) and confidence (a score and a list of reasons). The output is never authoritative until a human has marked it `reviewed`.
 
 ## Data flow
 
-The pipeline is a directed acyclic flow with seven primary stages plus an archive feedback loop. The architecture diagram in `PROJECT_PLAN.md` shows this visually; the description below is the prose equivalent.
+The pipeline is a directed acyclic flow with seven primary stages.
 
 A project enters as a folder of PDFs in `data/inputs/<project_name>/`. Per-page preprocessing renders each page to a 200 DPI image and extracts its text layer, producing paired image-and-text per page. Multimodal extraction then runs the page pairs through a PydanticAI agent (Claude Sonnet 4.5) that returns a partial framework with provenance and confidence on every value. Per-page partials merge into a project-level framework. Critical fields (heights, setbacks, parking) get an independent second pass with an open-question prompt; disagreements between passes are flagged, not silently averaged.
 
 In parallel, vector geometry parsing reads the kaveltekening PDF: discover the scale factor dynamically, extract every vector path, classify text labels by IMRO convention (caps for bestemmingen, parentheses for function aanduidingen, brackets for bouwaanduidingen), associate labels with polygons by proximity. Generic fallback to `manual_input_required` if the PDF is raster-only or the scale cannot be derived.
 
-Geo enrichment queries the project centroid against PDOK BAG (2D buildings), the 3D BAG API (LoD 1.2 buildings within 500 m, for the massing context), CBS (buurt demographics), and OSM Overpass (transit, amenities). Each API contributes to the GeoContext; failures are recorded explicitly so downstream code knows what is missing.
+Geo enrichment queries the project centroid against PDOK BAG (2D buildings), the 3D BAG API (LoD 1.2 buildings within 1000 m, for the massing context), CBS (buurt demographics), and OSM Overpass (transit, amenities). Each API contributes to the GeoContext; failures are recorded explicitly so downstream code knows what is missing.
 
 The extraction, geometry, and geo data assemble into a populated `ParametricFramework` Pydantic object. The IMRO API cross-validation layer then runs: if the project's plan ID matches the IMRO pattern, every NumericalConstraint is compared against the authoritative value from the Ruimtelijke Plannen API within a 5% tolerance. Disagreement is recorded on the constraint's `cross_validation` field; the value's confidence is reduced and a flag is added. Projects without a plan ID record `agreement='not_attempted'` and continue unchanged.
 
@@ -52,9 +50,7 @@ The fifth layer is universal sanity bounds. A 3000 m residential height is impos
 
 The sixth layer is the human review surface. The Streamlit viewer surfaces every flag for PM attention before the framework can be marked reviewed.
 
-The seventh layer is the "never authoritative" gate. Until a human marks a project as reviewed, the viewer banner and the JSON output header both say "PROTOTYPE OUTPUT, NOT VERIFIED."
-
-How this catches the 32m/23m case: dual-pass often catches it because the corrupted number does not appear elsewhere; cross-document validation usually catches it because the toelichting references the same number; the IMRO API cross-validation almost always catches it because the API holds the canonical uncorrupted plan. The deliberately corrupted Draka demo in `docs/corruption_demo.md` (produced in Stage 7b of the build) demonstrates this end-to-end.
+How this catches the 32m/23m case: dual-pass often catches it because the corrupted number does not appear elsewhere; cross-document validation usually catches it because the toelichting references the same number; the IMRO API cross-validation almost always catches it because the API holds the canonical uncorrupted plan.
 
 The system cannot guarantee zero errors. It can guarantee that errors are visible.
 
@@ -62,7 +58,7 @@ The system cannot guarantee zero errors. It can guarantee that errors are visibl
 
 The prototype must work on any incoming project document bundle, not only Draka. The architecture achieves this without hardcoding municipality-specific values anywhere.
 
-Discovery over hardcoding. The PDF scale factor is read from the PDF Measure dictionary or derived from "Schaal 1:NNNN" text, never hardcoded. IMRO codes are classified by pattern (caps, parentheses, brackets, dubbelbestemming prefixes), never by enumerated value. Glossary terms are seeded from the national Stelselcatalogus and consulted at extraction time, never baked into Python code.
+Discovery over hardcoding. The PDF scale factor is read from the PDF Measure dictionary or derived from "Schaal 1:NNNN" text, never hardcoded. IMRO codes are classified by pattern (caps, parentheses, brackets, dubbelbestemming prefixes), never by enumerated value. Glossary terms are seeded from the national Stelselcatalogus and consulted at extraction time. (in the end only 5 glossary terms were extracted, the rest is human wiritten.)
 
 Coordinate-driven enrichment. Geographic context is derived from the project centroid using national APIs (PDOK, 3D BAG, CBS, OSM) that cover all of the Netherlands uniformly. Switching from Amsterdam to Utrecht requires no code changes.
 
@@ -78,11 +74,11 @@ The one part that is fully wired on day one is the glossary. The Stelselcatalogu
 
 The parts that are typed stubs awaiting more projects: few-shot retrieval (find the K most similar past projects and inject their verified extractions as examples in the prompt), historical sanity bounds (replace universal bounds with municipality and zone-specific distributions), and programme inference grounding (cite "what was built in similar contexts" rather than relying on the LLM's training data).
 
-The critical design rule: only projects with `verification_status='reviewed'` feed the layer. Garbage in stays out.
+The critical design rule: only projects with `verification_status='reviewed'` feed the layer. 
 
 ## Models and external services
 
-**LLMs.** Claude Sonnet 4.5 for multimodal extraction (Stage 2) and dual-pass critical-fields verification. Claude Opus 4.7 for programme inference (Stage 5). All access goes through the PydanticAI framework so swapping models requires changing one string. Ollama with Gemma 3 is used for local prompt iteration during development, never for final extraction.
+**LLMs.** Claude Sonnet 4.5 for multimodal extraction (Stage 2) and dual-pass critical-fields verification. Claude Opus 4.7 for programme inference (Stage 5). 
 
 **Dutch open APIs.** The Ruimtelijke Plannen API v4 (`imro_plannen_v4`) is the authoritative source for pre-2024 bestemmingsplannen and powers the cross-validation layer. The Stelselcatalogus (`stelselcatalogus`) seeds the glossary. PDOK BAG (`pdok_bag`), the 3D BAG API (`pdok_3d_bag`), CBS Open Data (`cbs_demographics`), and OSM Overpass (`osm_overpass`) provide geographic enrichment. All are free with fair-use policies. All responses are cached under `data/cache/` so reruns are cheap.
 

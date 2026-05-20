@@ -31,9 +31,7 @@ from omrt_extractor.schemas import (
 HEIGHT_MATCH_TOLERANCE_M = 0.5
 
 
-ReconciliationAction = Literal[
-    "inferred", "matched", "corrected", "unmatched", "skipped_non_base"
-]
+ReconciliationAction = Literal["inferred", "matched", "corrected", "unmatched", "skipped_non_base"]
 
 
 # Tokens that flag a condition as a permit-gated upward deviation: the
@@ -87,9 +85,7 @@ def _is_permit_gated_deviation(condition: str | None) -> bool:
     c = condition.lower()
     if any(tok in c for tok in _PERMIT_DEVIATION_TOKENS):
         return True
-    if any(tok in c for tok in _STIPULATION_TOKENS):
-        return False
-    return True
+    return not any(tok in c for tok in _STIPULATION_TOKENS)
 
 
 class ReconciliationFinding(BaseModel):
@@ -126,10 +122,7 @@ def _normalise_label(s: str) -> str:
 
 def _polygon_labels(p: LabeledPolygon) -> set[str]:
     """All aanduiding labels carried by a polygon, normalised."""
-    return {
-        _normalise_label(s)
-        for s in (*p.bouwaanduidingen, *p.function_aanduidingen)
-    }
+    return {_normalise_label(s) for s in (*p.bouwaanduidingen, *p.function_aanduidingen)}
 
 
 def _pick_winner(
@@ -190,9 +183,7 @@ def reconcile_heights(
         and isinstance(c.value, (int, float))
     ]
     height_constraints = [c for c in all_height_max if is_base_height_constraint(c)]
-    skipped_non_base_ids = sorted(
-        c.id for c in all_height_max if not is_base_height_constraint(c)
-    )
+    skipped_non_base_ids = sorted(c.id for c in all_height_max if not is_base_height_constraint(c))
 
     findings: list[ReconciliationFinding] = []
     # winners[(poly_idx, label)] = chosen constraint
@@ -214,9 +205,7 @@ def reconcile_heights(
 
         winner = _pick_winner(candidates)
 
-        matched_poly_indices = [
-            i for i, lbls in enumerate(poly_labels) if label in lbls
-        ]
+        matched_poly_indices = [i for i, lbls in enumerate(poly_labels) if label in lbls]
 
         if not matched_poly_indices:
             existing = unmatched_winners.get(label)

@@ -53,7 +53,6 @@ from omrt_extractor.schemas import (
     SourceType,
 )
 
-
 # ---------------------------------------------------------------------
 # Constraint discovery
 # Read structural inputs from the framework. Never hardcode numbers.
@@ -104,7 +103,7 @@ def _label_tokens(bouwvlak: GeometricConstraint) -> set[str]:
     prefix = "bouwvlak"
     raw = bouwvlak.name.lower()
     if raw.startswith(prefix):
-        raw = raw[len(prefix):].strip()
+        raw = raw[len(prefix) :].strip()
     tokens: set[str] = set()
     for piece in raw.split(","):
         t = piece.strip().strip("[]()").replace("-", "_").replace(" ", "_")
@@ -154,9 +153,12 @@ def _resolve_height(
             candidates,
             key=lambda c: (c.confidence.score, c.condition is None, -float(_scalar(c.value) or 0)),
         )
-        return float(_scalar(winner.value)), winner, "regels"
+        return float(_scalar(winner.value) or 0), winner, "regels"
 
-    if bouwvlak.extrusion_height_m is not None and bouwvlak.extrusion_height_m >= _MIN_BUILDING_MASS_M:
+    if (
+        bouwvlak.extrusion_height_m is not None
+        and bouwvlak.extrusion_height_m >= _MIN_BUILDING_MASS_M
+    ):
         return float(bouwvlak.extrusion_height_m), None, "verbeelding"
 
     logger.warning(
@@ -343,9 +345,7 @@ def generate_example_massings(
                 geometry_file="massings/variant_a_maximum_envelope.compas.json",
                 uses_unverified_inputs=True,
                 mesh_polygons=[],
-                provenance=Provenance(
-                    source_type=SourceType.INFERRED, inferred_from=[]
-                ),
+                provenance=Provenance(source_type=SourceType.INFERRED, inferred_from=[]),
             ),
             Massing(
                 id="variant_b_compliant_with_setbacks",
@@ -358,9 +358,7 @@ def generate_example_massings(
                 geometry_file="massings/variant_b_compliant_with_setbacks.compas.json",
                 uses_unverified_inputs=True,
                 mesh_polygons=[],
-                provenance=Provenance(
-                    source_type=SourceType.INFERRED, inferred_from=[]
-                ),
+                provenance=Provenance(source_type=SourceType.INFERRED, inferred_from=[]),
             ),
         ]
 
@@ -376,7 +374,9 @@ def generate_example_massings(
     a_unverified = False
 
     excluded_unresolved: list[str] = []
-    height_resolutions: list[tuple[GeometricConstraint, float, NumericalConstraint | None, HeightSource]] = []
+    height_resolutions: list[
+        tuple[GeometricConstraint, float, NumericalConstraint | None, HeightSource]
+    ] = []
 
     for bv in bouwvlakken:
         max_h, max_rule, source = _resolve_height(framework, bv)
@@ -389,11 +389,7 @@ def generate_example_massings(
             continue
         height_resolutions.append((bv, max_h, max_rule, source))
         a_parts.append(_extrude_to_mesh(ring, base_z, base_z + max_h))
-        via = (
-            f"regels ({max_rule.id})"
-            if source == "regels" and max_rule
-            else source
-        )
+        via = f"regels ({max_rule.id})" if source == "regels" and max_rule else source
         logger.info(
             "Variant A: bouwvlak '{}' ({}) → {:.1f} m via {}",
             bv.id,
@@ -461,11 +457,7 @@ def generate_example_massings(
         if len(ring) < 3:
             continue
 
-        applies_setback = (
-            threshold_h is not None
-            and setback_d is not None
-            and max_h > threshold_h
-        )
+        applies_setback = threshold_h is not None and setback_d is not None and max_h > threshold_h
 
         if not applies_setback:
             b_parts.append(_extrude_to_mesh(ring, base_z, base_z + max_h))
@@ -486,6 +478,7 @@ def generate_example_massings(
             continue
 
         # Lower volume: full footprint up to threshold height
+        assert threshold_h is not None and setback_d is not None  # narrowed by applies_setback
         b_parts.append(_extrude_to_mesh(ring, base_z, base_z + threshold_h))
         # Upper volume: inset footprint by setback distance, from threshold to max
         shrunk = ShapelyPolygon(ring).buffer(-setback_d)
@@ -499,9 +492,7 @@ def generate_example_massings(
             if upper_ring and upper_ring[0] == upper_ring[-1]:
                 upper_ring = upper_ring[:-1]
             if len(upper_ring) >= 3:
-                b_parts.append(
-                    _extrude_to_mesh(upper_ring, base_z + threshold_h, base_z + max_h)
-                )
+                b_parts.append(_extrude_to_mesh(upper_ring, base_z + threshold_h, base_z + max_h))
 
         driven_by: list[str] = []
         if max_rule:
@@ -553,8 +544,7 @@ def generate_example_massings(
         name="Compliant with setbacks",
         rationale=(
             "Same envelope as variant A, with stepped upper volumes where "
-            "setback rules above a threshold height apply. "
-            + rationale_b_bits[0]
+            "setback rules above a threshold height apply. " + rationale_b_bits[0]
         ),
         moves=b_moves,
         geometry_file="massings/variant_b_compliant_with_setbacks.compas.json",

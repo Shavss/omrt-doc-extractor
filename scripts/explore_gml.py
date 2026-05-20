@@ -9,11 +9,13 @@ Usage:
 """
 
 from __future__ import annotations
+
 import os
 import sys
 from pathlib import Path
-from dotenv import load_dotenv
+
 import httpx
+from dotenv import load_dotenv
 from lxml import etree
 
 load_dotenv(Path(__file__).parent.parent / ".env")
@@ -29,6 +31,7 @@ GML_CACHE = Path("data/cache/NL.IMRO.0363.N2102BPGST-VG01.gml")
 # ---------------------------------------------------------------------
 # Fetch
 # ---------------------------------------------------------------------
+
 
 def fetch_gml() -> bytes:
     if GML_CACHE.exists():
@@ -61,9 +64,11 @@ def fetch_gml() -> bytes:
     print(r.text[:300])
     sys.exit(1)
 
+
 # ---------------------------------------------------------------------
 # Parse
 # ---------------------------------------------------------------------
+
 
 def parse_gml(raw: bytes):
     root = etree.fromstring(raw)
@@ -75,7 +80,7 @@ def parse_gml(raw: bytes):
             continue
         if el.nsmap:
             for prefix, uri in el.nsmap.items():
-                print(f"  {str(prefix):<15s} {uri}")
+                print(f"  {prefix!s:<15s} {uri}")
             break
 
     # ---- Top-level tag counts ----
@@ -155,7 +160,9 @@ def parse_gml(raw: bytes):
         if not isinstance(el.tag, str):
             continue
         if etree.QName(el.tag).localname == "waarde":
-            parent_local = etree.QName(el.getparent().tag).localname if el.getparent() is not None else "?"
+            parent_local = (
+                etree.QName(el.getparent().tag).localname if el.getparent() is not None else "?"
+            )
             grandparent = el.getparent().getparent() if el.getparent() is not None else None
             gp_local = etree.QName(grandparent.tag).localname if grandparent is not None else "?"
             print(f"  {gp_local} > {parent_local} > waarde = {el.text!r}")

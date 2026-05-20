@@ -132,10 +132,10 @@ def _fetch_pdok_bag(
 ) -> dict[str, Any] | None:
     cached = _read_cache(cache_dir, API_PDOK_BAG)
     if cached is not None:
-        return cached
+        return dict(cached)
     bbox = (rd[0] - radius_m, rd[1] - radius_m, rd[0] + radius_m, rd[1] + radius_m)
     url = f"{PDOK_BAG_BASE}/collections/pand/items"
-    params = {
+    params: dict[str, str | int] = {
         "bbox": f"{bbox[0]},{bbox[1]},{bbox[2]},{bbox[3]}",
         "bbox-crs": CRS_URI_RD,
         "crs": CRS_URI_RD,
@@ -151,7 +151,7 @@ def _fetch_pdok_bag(
         logger.warning(f"PDOK BAG returned HTTP {r.status_code}")
         return None
     try:
-        payload = r.json()
+        payload: dict[str, Any] = r.json()
     except ValueError:
         logger.warning("PDOK BAG returned non-JSON response")
         return None
@@ -166,7 +166,8 @@ def _summarise_bag(payload: dict[str, Any], radius_m: int) -> NearbyBuildingsSna
     and oorspronkelijk_bouwjaar. It does NOT carry gebruiksdoel or
     height (those live on verblijfsobject and 3D BAG respectively).
     """
-    features = payload.get("features") if isinstance(payload.get("features"), list) else []
+    raw_features = payload.get("features")
+    features: list[Any] = list(raw_features) if isinstance(raw_features, list) else []
 
     years: list[int] = []
     for feat in features:
@@ -212,7 +213,7 @@ def _fetch_buurt_for_point(
     if cached is None:
         bbox = (rd[0] - 1, rd[1] - 1, rd[0] + 1, rd[1] + 1)
         url = f"{PDOK_WIJKENBUURTEN_BASE}/collections/buurten/items"
-        params = {
+        params: dict[str, str | int] = {
             "bbox": f"{bbox[0]},{bbox[1]},{bbox[2]},{bbox[3]}",
             "bbox-crs": CRS_URI_RD,
             "crs": CRS_URI_RD,
@@ -254,6 +255,7 @@ def _summarise_buurt(buurt_code: str, props: dict[str, Any]) -> NeighbourhoodDem
       ..._25_tot_45_jaar, ..._45_tot_65_jaar, ..._65_jaar_en_ouder
       (no raw median_age field in the 2025 dataset).
     """
+
     def _num(*keys: str) -> float | None:
         for k in keys:
             v = props.get(k)
@@ -328,7 +330,7 @@ def _fetch_osm(
 ) -> dict[str, Any] | None:
     cached = _read_cache(cache_dir, API_OSM)
     if cached is not None:
-        return cached
+        return dict(cached)
     query = _overpass_query(wgs, radius_m)
     try:
         r = client.post(
@@ -344,7 +346,7 @@ def _fetch_osm(
         logger.warning(f"Overpass returned HTTP {r.status_code}")
         return None
     try:
-        payload = r.json()
+        payload: dict[str, Any] = r.json()
     except ValueError:
         logger.warning("Overpass returned non-JSON")
         return None
@@ -590,9 +592,7 @@ def _iter_3d_bag_buildings(payload: dict[str, Any]) -> list[dict[str, Any]]:
     return out
 
 
-def _summarise_3d_bag(
-    payload: dict[str, Any], radius_m: int
-) -> NearbyBuildingsSnapshot:
+def _summarise_3d_bag(payload: dict[str, Any], radius_m: int) -> NearbyBuildingsSnapshot:
     """Aggregate 3D BAG attributes into a NearbyBuildingsSnapshot."""
     buildings = _iter_3d_bag_buildings(payload)
 
@@ -693,7 +693,7 @@ def enrich_3d_bag(
         if payload is None:
             bbox = (rd[0] - radius_m, rd[1] - radius_m, rd[0] + radius_m, rd[1] + radius_m)
             url = f"{BAG_3D_BASE}/collections/pand/items"
-            params = {
+            params: dict[str, str | int] = {
                 "bbox": f"{bbox[0]},{bbox[1]},{bbox[2]},{bbox[3]}",
                 # 3DBAG API is not OGC-compliant — no bbox-crs or crs params accepted.
                 # bbox must be in EPSG:28992 (RD New) X,Y. Only supported CRS is EPSG:7415.

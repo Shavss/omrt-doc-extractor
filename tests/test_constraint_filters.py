@@ -56,9 +56,7 @@ def test_max_height_sba1_is_base() -> None:
 
 
 def test_avg_height_sba1_is_base() -> None:
-    assert is_base_height_constraint(
-        _c("avg_height_sba1", "Gemiddelde bouwhoogte sba-1")
-    )
+    assert is_base_height_constraint(_c("avg_height_sba1", "Gemiddelde bouwhoogte sba-1"))
 
 
 def test_hamerblok_base_height_is_base() -> None:

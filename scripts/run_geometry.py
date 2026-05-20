@@ -76,9 +76,7 @@ def main() -> None:
     print(f"Parsing : {pdf_path}", file=sys.stderr)
     result = parse_kaveltekening(pdf_path)
 
-    out_path.write_text(
-        json.dumps(result.model_dump(mode="json"), indent=2, ensure_ascii=False)
-    )
+    out_path.write_text(json.dumps(result.model_dump(mode="json"), indent=2, ensure_ascii=False))
     print(f"Written : {out_path}\n", file=sys.stderr)
 
     # Summary to stderr so you can sanity-check without opening the file.
@@ -107,8 +105,7 @@ def main() -> None:
         for z in result.constraint_zones:
             codes = z.dubbelbestemmingen + z.function_aanduidingen + z.bestemming_codes
             print(
-                f"  [{', '.join(codes) or 'unlabelled':35s}]"
-                f"  {z.area_m2:8.0f} m2",
+                f"  [{', '.join(codes) or 'unlabelled':35s}]  {z.area_m2:8.0f} m2",
                 file=sys.stderr,
             )
 

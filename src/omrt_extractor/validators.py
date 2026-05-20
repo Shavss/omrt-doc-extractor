@@ -32,10 +32,10 @@ from omrt_extractor.schemas import NumericalConstraint, ParametricFramework
 # implausible for ANY construction project, not just Dutch ones. The
 # point is to catch order-of-magnitude errors, not to flag unusual but
 # valid values. Unusualness is the Confidence layer's job.
-HEIGHT_BOUNDS_M = (0.5, 250.0)            # fences ≥0.5 m, no building tops Burj at 250 m
-SETBACK_BOUNDS_M = (0.0, 500.0)           # 500 m setback only on extreme zoning
+HEIGHT_BOUNDS_M = (0.5, 250.0)  # fences ≥0.5 m, no building tops Burj at 250 m
+SETBACK_BOUNDS_M = (0.0, 500.0)  # 500 m setback only on extreme zoning
 PARKING_PER_DWELLING_BOUNDS = (0.0, 5.0)  # >5 cars per home is implausible
-FSI_FAR_BOUNDS = (0.0, 10.0)              # FSI >10 is Hong Kong tower territory
+FSI_FAR_BOUNDS = (0.0, 10.0)  # FSI >10 is Hong Kong tower territory
 BVO_LIMIT_BOUNDS_M2 = (1.0, 5_000_000.0)  # rules can bind tiny utility blocks; 5M m² caps projects
 
 CATEGORY_BOUNDS: dict[str, tuple[float, float]] = {
@@ -53,7 +53,7 @@ _PARKING_BOUND_UNITS = {"per_dwelling", "per_100m2_bvo"}
 
 # Programme consistency tolerances
 _USE_SPLIT_TOLERANCE = 0.01  # ±1% of target_total_gfa_m2
-_UNIT_MIX_TOLERANCE = 0.05   # ±0.05 around sum=1.0
+_UNIT_MIX_TOLERANCE = 0.05  # ±0.05 around sum=1.0
 _DWELLING_SIZE_AVG_M2 = 80.0  # rough avg used only as a sanity cross-check
 _DWELLING_SIZE_TOLERANCE = 0.5  # ±50% — generous; this is a sanity check, not a spec
 
@@ -155,10 +155,7 @@ def check_sanity_bounds(framework: ParametricFramework) -> list[ValidationFindin
             # counts, scooter spaces). The per-dwelling bound only fits
             # per_dwelling / per_100m2_bvo norms.
             continue
-        if isinstance(c.value, tuple):
-            values = [float(v) for v in c.value]
-        else:
-            values = [float(c.value)]
+        values = [float(v) for v in c.value] if isinstance(c.value, tuple) else [float(c.value)]
         for v in values:
             finding = _check_value(c, v, bound)
             if finding is not None:

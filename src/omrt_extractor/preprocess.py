@@ -26,7 +26,7 @@ Stage 1 of the build plan.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 from loguru import logger
 
@@ -41,7 +41,7 @@ from .schemas import (
 )
 
 
-def _classify_document_type(filename: str) -> str:
+def _classify_document_type(filename: str) -> Literal["regels", "toelichting", "kaveltekening", "other"]:
     """Coarse routing hint from filename only.
 
     Filename heuristics are unreliable across municipalities, so this is
@@ -66,7 +66,7 @@ def _page_artifact_paths(pdf_cache_dir: Path, page_number: int) -> tuple[Path, P
 
 
 def _render_and_extract(
-    pdf: "pymupdf.Document",
+    pdf: pymupdf.Document,
     page_index: int,
     image_path: Path,
     text_path: Path,
@@ -78,7 +78,7 @@ def _render_and_extract(
     pixmap.save(image_path)
     text = page.get_text("text")
     text_path.write_text(text, encoding="utf-8")
-    return text
+    return str(text)
 
 
 def preprocess_project(input_dir: Path, cache_dir: Path) -> ProjectPreprocessed:

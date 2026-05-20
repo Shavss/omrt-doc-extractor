@@ -76,9 +76,7 @@ def _summarise_constraints(framework: ParametricFramework) -> str:
                     )
                 elif c.cross_validation.agreement == "agreement":
                     cv_note = " [IMRO confirmed]"
-            value_str = (
-                f"{c.value[0]}–{c.value[1]}" if isinstance(c.value, tuple) else str(c.value)
-            )
+            value_str = f"{c.value[0]}–{c.value[1]}" if isinstance(c.value, tuple) else str(c.value)
             condition_str = f" (condition: {c.condition})" if c.condition else ""
             applies_str = f" [applies_to: {', '.join(c.applies_to)}]" if c.applies_to else ""
             prov_str = ""
@@ -100,15 +98,15 @@ def _summarise_constraints(framework: ParametricFramework) -> str:
     ]
     if toelichting_passages:
         lines.append("\n## Urban Design Intentions (toelichting)")
-        for c in toelichting_passages[:8]:
-            prov = f"{c.provenance.document} p.{c.provenance.page}"
-            lines.append(f"- [{c.id}] {c.statement} (source: {prov})")
+        for nc in toelichting_passages[:8]:
+            prov = f"{nc.provenance.document} p.{nc.provenance.page}"
+            lines.append(f"- [{nc.id}] {nc.statement} (source: {prov})")
 
-    all_narrative = [c for c in framework.constraints.narrative if c not in toelichting_passages]
+    all_narrative = [nc for nc in framework.constraints.narrative if nc not in toelichting_passages]
     if all_narrative:
         lines.append("\n## Other Narrative Constraints")
-        for c in all_narrative[:6]:
-            lines.append(f"- [{c.id}] {c.statement}")
+        for nc in all_narrative[:6]:
+            lines.append(f"- [{nc.id}] {nc.statement}")
 
     return "\n".join(lines)
 
@@ -163,8 +161,7 @@ def _summarise_geo_context(geo: GeoContext | None) -> str:
     if geo.nearby_amenities:
         top_amenities = sorted(geo.nearby_amenities.items(), key=lambda x: -x[1])[:8]
         lines.append(
-            "\n## Nearby Amenities (OSM): "
-            + ", ".join(f"{k}: {v}" for k, v in top_amenities)
+            "\n## Nearby Amenities (OSM): " + ", ".join(f"{k}: {v}" for k, v in top_amenities)
         )
 
     if geo.data_sources_failed:
@@ -343,21 +340,18 @@ def _call_llm_for_programme(prompt: str) -> dict[str, Any]:
         messages=[{"role": "user", "content": prompt}],
     )
 
-    raw_text = message.content[0].text.strip()
+    first_block = message.content[0]
+    raw_text = first_block.text.strip() if hasattr(first_block, "text") else ""
 
     if raw_text.startswith("```"):
         lines = raw_text.split("\n")
-        raw_text = "\n".join(
-            line for line in lines if not line.strip().startswith("```")
-        ).strip()
+        raw_text = "\n".join(line for line in lines if not line.strip().startswith("```")).strip()
 
     try:
-        return json.loads(raw_text)
+        return dict(json.loads(raw_text))
     except json.JSONDecodeError as exc:
         logger.error(f"LLM returned non-JSON response: {raw_text[:500]}")
-        raise ValueError(
-            f"LLM did not return valid JSON for programme inference: {exc}"
-        ) from exc
+        raise ValueError(f"LLM did not return valid JSON for programme inference: {exc}") from exc
 
 
 # ---------------------------------------------------------------------------
@@ -379,28 +373,27 @@ def _fallback_programme(
     logger.warning(f"Using fallback programme inference: {reason}")
 
     bvo_constraints = [
-        c for c in framework.constraints.numerical
-        if c.category in ("bvo_limit", "fsi_far")
+        c for c in framework.constraints.numerical if c.category in ("bvo_limit", "fsi_far")
     ]
 
     # Prefer site-total constraints over sub-category caps
     total_bvo = [
-        c for c in bvo_constraints
+        c
+        for c in bvo_constraints
         if any(k in c.id.lower() for k in ("total", "draka", "plangebied", "totaal"))
     ]
     if total_bvo:
         bvo_constraints = total_bvo
     elif bvo_constraints:
         # Fall back to the largest value to avoid picking up tiny subcategory caps
-        bvo_constraints = [max(
-            bvo_constraints,
-            key=lambda c: (c.value[1] if isinstance(c.value, tuple) else c.value),
-        )]
+        bvo_constraints = [
+            max(
+                bvo_constraints,
+                key=lambda c: c.value[1] if isinstance(c.value, tuple) else c.value,
+            )
+        ]
 
-    height_constraints = [
-        c for c in framework.constraints.numerical
-        if c.category == "height"
-    ]
+    height_constraints = [c for c in framework.constraints.numerical if c.category == "height"]
 
     if bvo_constraints:
         first_bvo = bvo_constraints[0]
@@ -413,13 +406,11 @@ def _fallback_programme(
     else:
         total_gfa = 0.0
         gfa_rationale = (
-            "designer judgment: no BVO constraint found — value set to 0, "
-            "requires designer input"
+            "designer judgment: no BVO constraint found — value set to 0, requires designer input"
         )
 
     inferred_from = (
-        [c.id for c in bvo_constraints[:2]]
-        + [c.id for c in height_constraints[:2]]
+        [c.id for c in bvo_constraints[:2]] + [c.id for c in height_constraints[:2]]
     ) or ["objective"]
 
     inferred_prov = Provenance(
@@ -445,9 +436,7 @@ def _fallback_programme(
             social_m2=total_gfa * 0.05,
             other_m2=0.0,
             normalised_from_pct=False,
-            rationale=(
-                "designer judgment: fallback 70/15/10/5 split — requires designer input"
-            ),
+            rationale=("designer judgment: fallback 70/15/10/5 split — requires designer input"),
             provenance=inferred_prov,
             confidence=Confidence(
                 score=0.2,
@@ -579,6 +568,7 @@ def _fallback_programme(
         ),
     )
 
+
 # ---------------------------------------------------------------------------
 # Pre-parse normaliser: remap LLM JSON to the exact Pydantic schema shape
 # ---------------------------------------------------------------------------
@@ -615,8 +605,14 @@ _SIZE_BAND_ALIASES: dict[str, str] = {
 def _strip_extra_provenance_fields(prov: dict[str, Any]) -> dict[str, Any]:
     """Remove any field not in the Provenance schema."""
     allowed = {
-        "source_type", "document", "page", "quoted_text",
-        "api_name", "inferred_from", "entered_by", "timestamp",
+        "source_type",
+        "document",
+        "page",
+        "quoted_text",
+        "api_name",
+        "inferred_from",
+        "entered_by",
+        "timestamp",
     }
     return {k: v for k, v in prov.items() if k in allowed}
 
@@ -790,6 +786,7 @@ def _normalise_llm_json(data: dict[str, Any], total_gfa: float | None = None) ->
 
     return data
 
+
 # ---------------------------------------------------------------------------
 # JSON -> ProgrammeProposal with graceful validation
 # ---------------------------------------------------------------------------
@@ -814,7 +811,7 @@ def _parse_programme_response(
 
     try:
         data = _normalise_llm_json(data)
-    except Exception as norm_exc:  # noqa: BLE001
+    except Exception as norm_exc:
         logger.warning(f"Normaliser raised unexpectedly: {norm_exc}. Proceeding anyway.")
 
     logger.debug(f"Normalised LLM JSON:\n{json.dumps(data, indent=2, default=str)}")
@@ -873,6 +870,7 @@ def _parse_programme_response(
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
+
 
 def _reasoning_trace_text(step: ReasoningStep | str) -> str:
     """Extract searchable text from a reasoning step regardless of type."""
@@ -935,15 +933,14 @@ def infer_programme(
         logger.error(f"Programme inference failed: {exc}")
         return _fallback_programme(framework, geo_context, str(exc))
 
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         logger.error(f"Unexpected error during programme inference: {exc}")
         return _fallback_programme(framework, geo_context, f"unexpected error: {exc}")
 
     # ── post-parse quality checks (warnings only, never raise) ────────────
 
     cites_toelichting = any(
-        "toelichting" in _reasoning_trace_text(step).lower()
-        for step in proposal.reasoning_trace
+        "toelichting" in _reasoning_trace_text(step).lower() for step in proposal.reasoning_trace
     )
     if not cites_toelichting:
         logger.warning(
@@ -969,8 +966,7 @@ def infer_programme(
         )
 
     if proposal.confidence.score > 0.7 and any(
-        "requires_designer_input" in u.confidence.flags
-        for u in proposal.unit_mix
+        "requires_designer_input" in u.confidence.flags for u in proposal.unit_mix
     ):
         logger.warning(
             "Overall confidence >0.7 but some unit_mix entries are flagged "

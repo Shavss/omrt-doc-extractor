@@ -9,7 +9,6 @@ do not require an active streamlit script context.
 from __future__ import annotations
 
 import sys
-import types
 from typing import Any
 from unittest.mock import MagicMock
 
@@ -20,6 +19,7 @@ import pytest
 def stub_streamlit(monkeypatch: pytest.MonkeyPatch) -> MagicMock:
     """Replace streamlit with a permissive mock for the duration of the test."""
     stub = MagicMock(name="streamlit")
+
     # st.columns(n) -> list of context-manager-capable mocks
     def _columns(n: int | list[int]) -> list[MagicMock]:
         count = n if isinstance(n, int) else len(n)

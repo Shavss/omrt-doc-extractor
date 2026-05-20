@@ -76,27 +76,43 @@ _NAAM_TO_CATEGORY: list[tuple[str, ConstraintCategory]] = [
 # Generic Dutch planning text patterns for teksten fallback extraction.
 # These match the standard PRBP2012 phrasing used in virtually all
 # bestemmingsplannen regardless of municipality.
-_TEKSTEN_PATTERNS: list[tuple[re.Pattern, ConstraintCategory, bool]] = [
+_TEKSTEN_PATTERNS: list[tuple[re.Pattern[str], ConstraintCategory, bool]] = [
     # BVO maxima: "niet meer dan X m2", "maximaal X m2", "ten hoogste X m2"
-    (re.compile(
-        r"(?:niet meer dan|maximaal|ten hoogste)\s+([\d.,]+)\s*m\s*2",
-        re.IGNORECASE,
-    ), "bvo_limit", True),
+    (
+        re.compile(
+            r"(?:niet meer dan|maximaal|ten hoogste)\s+([\d.,]+)\s*m\s*2",
+            re.IGNORECASE,
+        ),
+        "bvo_limit",
+        True,
+    ),
     # BVO minima: "minimaal X m2", "ten minste X m2"
-    (re.compile(
-        r"(?:minimaal|ten minste)\s+([\d.,]+)\s*m\s*2",
-        re.IGNORECASE,
-    ), "bvo_limit", False),
+    (
+        re.compile(
+            r"(?:minimaal|ten minste)\s+([\d.,]+)\s*m\s*2",
+            re.IGNORECASE,
+        ),
+        "bvo_limit",
+        False,
+    ),
     # Height maxima: "ten hoogste X m" or "maximaal X m" where X is 3-200
-    (re.compile(
-        r"(?:ten hoogste|maximaal)\s+([\d.,]+)\s*m\b",
-        re.IGNORECASE,
-    ), "height", True),
+    (
+        re.compile(
+            r"(?:ten hoogste|maximaal)\s+([\d.,]+)\s*m\b",
+            re.IGNORECASE,
+        ),
+        "height",
+        True,
+    ),
     # Height minima: "ten minste X m" where X is 3-200
-    (re.compile(
-        r"ten minste\s+([\d.,]+)\s*m\b",
-        re.IGNORECASE,
-    ), "height", False),
+    (
+        re.compile(
+            r"ten minste\s+([\d.,]+)\s*m\b",
+            re.IGNORECASE,
+        ),
+        "height",
+        False,
+    ),
 ]
 
 
@@ -130,7 +146,7 @@ def _cache_path_for(plan_id: str, suffix: str = "") -> Path:
     return d / name
 
 
-def _read_cache(plan_id: str, suffix: str = "") -> dict[str, Any] | None:
+def _read_cache(plan_id: str, suffix: str = "") -> Any:
     path = _cache_path_for(plan_id, suffix)
     if not path.is_file():
         return None
@@ -140,7 +156,7 @@ def _read_cache(plan_id: str, suffix: str = "") -> dict[str, Any] | None:
         return None
 
 
-def _write_cache(plan_id: str, payload: dict[str, Any], suffix: str = "") -> None:
+def _write_cache(plan_id: str, payload: Any, suffix: str = "") -> None:
     try:
         _cache_path_for(plan_id, suffix).write_text(json.dumps(payload))
     except (OSError, TypeError) as exc:
@@ -152,9 +168,7 @@ def _write_cache(plan_id: str, payload: dict[str, Any], suffix: str = "") -> Non
 # ---------------------------------------------------------------------
 
 
-def _fetch_imro(
-    plan_id: str, client: httpx.Client
-) -> tuple[dict[str, Any] | None, str | None]:
+def _fetch_imro(plan_id: str, client: httpx.Client) -> tuple[dict[str, Any] | None, str | None]:
     """Fetch the plan record, bestemmingsvlakken, and maatvoeringen.
 
     For historic plans (isHistorisch=True), the spatial sub-resources
@@ -275,7 +289,7 @@ def _fetch_tekst_node(url: str, client: httpx.Client) -> dict[str, Any] | None:
             timeout=20.0,
         )
         if r.status_code == 200:
-            return r.json()
+            return dict(r.json())
     except httpx.HTTPError:
         pass
     return None
@@ -283,7 +297,7 @@ def _fetch_tekst_node(url: str, client: httpx.Client) -> dict[str, Any] | None:
 
 def _parse_authoritative_from_teksten(
     plan_id: str,
-    heeft_onderdelen: list[dict],
+    heeft_onderdelen: list[dict[str, Any]],
     client: httpx.Client,
 ) -> list[_AuthoritativeValue]:
     """Extract authoritative values from the plan's teksten tree.
@@ -296,9 +310,10 @@ def _parse_authoritative_from_teksten(
     phrasing used in all Dutch bestemmingsplannen.
     """
     # Check teksten cache first
+    raw_values: list[dict[str, Any]] = []
     cached = _read_cache(plan_id, "_teksten")
     if cached is not None:
-        raw_values = cached
+        raw_values = list(cached)
     else:
         # Find the regels teksten root from heeftOnderdelen
         regels_href = None
@@ -327,7 +342,6 @@ def _parse_authoritative_from_teksten(
         )
 
         # Fetch each artikel and collect inhoud text
-        raw_values: list[dict] = []
         for child in children:
             href = child.get("href")
             if not href:
@@ -337,11 +351,13 @@ def _parse_authoritative_from_teksten(
                 continue
             inhoud = node.get("inhoud")
             if inhoud:
-                raw_values.append({
-                    "id": node.get("id", ""),
-                    "titel": node.get("titel", ""),
-                    "text": _strip_xhtml(inhoud),
-                })
+                raw_values.append(
+                    {
+                        "id": node.get("id", ""),
+                        "titel": node.get("titel", ""),
+                        "text": _strip_xhtml(inhoud),
+                    }
+                )
 
         _write_cache(plan_id, raw_values, "_teksten")
 
@@ -350,7 +366,7 @@ def _parse_authoritative_from_teksten(
     for artikel in raw_values:
         text = artikel.get("text", "")
         titel = artikel.get("titel", "")
-        for pattern, category, is_maximum in _TEKSTEN_PATTERNS:
+        for pattern, category, _is_maximum in _TEKSTEN_PATTERNS:
             for match in pattern.finditer(text):
                 raw = match.group(1)
                 value = _parse_value(raw)
@@ -362,14 +378,16 @@ def _parse_authoritative_from_teksten(
                 if category == "bvo_limit" and not (10.0 <= value <= 5_000_000.0):
                     continue
                 unit = "m2" if category == "bvo_limit" else "m"
-                out.append(_AuthoritativeValue(
-                    category=category,
-                    value=value,
-                    unit=unit,
-                    applies_to_codes=[],
-                    raw_naam=f"{titel} ({match.group(0).strip()[:60]})",
-                    source="teksten",
-                ))
+                out.append(
+                    _AuthoritativeValue(
+                        category=category,
+                        value=value,
+                        unit=unit,
+                        applies_to_codes=[],
+                        raw_naam=f"{titel} ({match.group(0).strip()[:60]})",
+                        source="teksten",
+                    )
+                )
 
     logger.info(
         "Teksten fallback: found {} authoritative values from {} artikelen for plan {}.",
@@ -608,8 +626,7 @@ def cross_validate_imro(
     if not plan_id or not IMRO_PLAN_ID_PATTERN.match(plan_id):
         logger.info("No IMRO plan ID on project; skipping IMRO cross-validation")
         updated = [
-            _not_attempted_constraint(c, "No IMRO plan ID on this project")
-            for c in constraints
+            _not_attempted_constraint(c, "No IMRO plan ID on this project") for c in constraints
         ]
         return _replace_numerical(framework, updated)
 
@@ -647,9 +664,7 @@ def cross_validate_imro(
             owned_client2 = client is None
             http2 = client or httpx.Client()
             try:
-                candidates = _parse_authoritative_from_teksten(
-                    plan_id, heeft_onderdelen, http2
-                )
+                candidates = _parse_authoritative_from_teksten(plan_id, heeft_onderdelen, http2)
             finally:
                 if owned_client2:
                     http2.close()
@@ -662,7 +677,7 @@ def cross_validate_imro(
         validation_source,
     )
 
-    updated: list[NumericalConstraint] = []
+    updated_constraints: list[NumericalConstraint] = []
     for c in constraints:
         match = _match(c, candidates)
         if match is None:
@@ -683,7 +698,7 @@ def cross_validate_imro(
                 tolerance_used=tolerance,
                 notes=note,
             )
-            updated.append(_with_cross_validation(c, cv, extra_flag=None, score_delta=0.0))
+            updated_constraints.append(_with_cross_validation(c, cv, extra_flag=None, score_delta=0.0))
             continue
 
         extracted_scalar = _scalar(c.value, c.is_maximum)
@@ -691,10 +706,14 @@ def cross_validate_imro(
         agrees = _within_tolerance(extracted_scalar, auth_scalar, tolerance)
 
         source_note = (
-            f"Matched via teksten fallback on '{match.raw_naam}'"
-            if match.source == "teksten"
-            else f"Matched on IMRO maatvoering '{match.raw_naam}'"
-        ) if match.raw_naam else None
+            (
+                f"Matched via teksten fallback on '{match.raw_naam}'"
+                if match.source == "teksten"
+                else f"Matched on IMRO maatvoering '{match.raw_naam}'"
+            )
+            if match.raw_naam
+            else None
+        )
 
         cv = CrossValidation(
             source=API_IMRO,
@@ -706,9 +725,9 @@ def cross_validate_imro(
         )
         flag = "imro_api_agreement" if agrees else "imro_api_disagreement"
         delta = 0.0 if agrees else -0.3
-        updated.append(_with_cross_validation(c, cv, extra_flag=flag, score_delta=delta))
+        updated_constraints.append(_with_cross_validation(c, cv, extra_flag=flag, score_delta=delta))
 
-    return _replace_numerical(framework, updated)
+    return _replace_numerical(framework, updated_constraints)
 
 
 def _replace_numerical(

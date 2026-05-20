@@ -14,7 +14,6 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "data" / "outputs" / "draka"
 GML_PARAMS = OUT_DIR / "approach_gml" / "draka_gml_parameters.json"
@@ -54,12 +53,8 @@ def build() -> dict[str, Any]:
                 "polygon_wgs84": z.get("polygon_wgs84"),
                 "rules": {
                     "allows_wonen": eff.get("allows_wonen"),
-                    "productive_required_first_m2": eff.get(
-                        "productive_required_first_m2"
-                    ),
-                    "horeca_dvg_cultuur_max_m2": eff.get(
-                        "horeca_dienstverlening_cultuur_max_m2"
-                    ),
+                    "productive_required_first_m2": eff.get("productive_required_first_m2"),
+                    "horeca_dvg_cultuur_max_m2": eff.get("horeca_dienstverlening_cultuur_max_m2"),
                     "floor_plate_cap_exempt": eff.get("floor_plate_cap_exempt"),
                     "setback_trigger_m": eff.get("setback_trigger_m"),
                     "setback_depth_m": eff.get("setback_depth_m"),
@@ -178,8 +173,7 @@ def main() -> None:
     intent = build()
     TARGET.write_text(json.dumps(intent, indent=2, default=str))
     print(f"Wrote {TARGET}")
-    print(f"  zones={intent['stats']['approach_2_zones']}, "
-          f"size={TARGET.stat().st_size} bytes")
+    print(f"  zones={intent['stats']['approach_2_zones']}, size={TARGET.stat().st_size} bytes")
 
 
 if __name__ == "__main__":

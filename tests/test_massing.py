@@ -11,8 +11,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
 from omrt_extractor.massing import generate_example_massings
 from omrt_extractor.schemas import (
     CRS,

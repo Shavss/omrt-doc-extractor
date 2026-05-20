@@ -429,6 +429,7 @@ ConstraintCategory = Literal[
     "other",
 ]
 
+
 class ReasoningStep(BaseModel):
     """A single step in the programme reasoning trace."""
 
@@ -448,7 +449,6 @@ class ReasoningStep(BaseModel):
     )
 
 
-    
 class NumericalConstraint(BaseModel):
     """A single numerical rule extracted from the documents.
 
@@ -869,6 +869,7 @@ class UseSplit(BaseModel):
     provenance: Provenance
     confidence: Confidence
 
+
 class ProgrammeProposal(BaseModel):
     """The inferred developer programme.
 
@@ -1126,14 +1127,14 @@ class ParametricFramework(BaseModel):
             if c.id in seen:
                 collisions.append(c.id)
             seen.add(c.id)
-        for c in self.constraints.geometric:
-            if c.id in seen:
-                collisions.append(c.id)
-            seen.add(c.id)
-        for c in self.constraints.narrative:
-            if c.id in seen:
-                collisions.append(c.id)
-            seen.add(c.id)
+        for gc in self.constraints.geometric:
+            if gc.id in seen:
+                collisions.append(gc.id)
+            seen.add(gc.id)
+        for nc in self.constraints.narrative:
+            if nc.id in seen:
+                collisions.append(nc.id)
+            seen.add(nc.id)
         for v in self.variables.items:
             if v.id in seen:
                 collisions.append(v.id)
@@ -1168,10 +1169,10 @@ def validate_cross_references(framework: ParametricFramework) -> list[str]:
     valid_ids: set[str] = set()
     for c in framework.constraints.numerical:
         valid_ids.add(c.id)
-    for c in framework.constraints.geometric:
-        valid_ids.add(c.id)
-    for c in framework.constraints.narrative:
-        valid_ids.add(c.id)
+    for gc in framework.constraints.geometric:
+        valid_ids.add(gc.id)
+    for nc in framework.constraints.narrative:
+        valid_ids.add(nc.id)
     for v in framework.variables.items:
         valid_ids.add(v.id)
     for k in framework.kpis.items:
@@ -1189,15 +1190,15 @@ def validate_cross_references(framework: ParametricFramework) -> list[str]:
             if not is_programme_ref(ref) and ref not in valid_ids:
                 errors.append(f"NumericalConstraint '{c.id}' references missing ID '{ref}'")
 
-    for c in framework.constraints.geometric:
-        for ref in c.associated_rules:
+    for gc in framework.constraints.geometric:
+        for ref in gc.associated_rules:
             if ref not in valid_ids:
-                errors.append(f"GeometricConstraint '{c.id}' references missing rule '{ref}'")
+                errors.append(f"GeometricConstraint '{gc.id}' references missing rule '{ref}'")
 
-    for c in framework.constraints.narrative:
-        for ref in c.applies_to:
+    for nc in framework.constraints.narrative:
+        for ref in nc.applies_to:
             if not is_programme_ref(ref) and ref not in valid_ids:
-                errors.append(f"NarrativeConstraint '{c.id}' references missing ID '{ref}'")
+                errors.append(f"NarrativeConstraint '{nc.id}' references missing ID '{ref}'")
 
     for v in framework.variables.items:
         for ref in v.applies_to:
@@ -1356,4 +1357,3 @@ class ProjectPreprocessed(BaseModel):
         default_factory=list,
         description="One entry per PDF discovered in the input directory.",
     )
-

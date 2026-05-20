@@ -30,7 +30,7 @@ from __future__ import annotations
 import asyncio
 import json
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
 from loguru import logger
 from pydantic import BaseModel, ConfigDict, Field
@@ -81,9 +81,9 @@ class ExtractionResult(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     per_page: list[PageExtraction] = Field(default_factory=list)
-    numerical_constraints: list = Field(default_factory=list)
-    geometric_constraints: list = Field(default_factory=list)
-    narrative_constraints: list = Field(default_factory=list)
+    numerical_constraints: list[Any] = Field(default_factory=list)
+    geometric_constraints: list[Any] = Field(default_factory=list)
+    narrative_constraints: list[Any] = Field(default_factory=list)
     programme_hints: list[str] = Field(default_factory=list)
     urban_intent_passages: list[str] = Field(default_factory=list)
     plan_ids_found: list[str] = Field(default_factory=list)
@@ -222,7 +222,7 @@ def build_extraction_agent(model_name: str | None = None) -> Agent:
     instructions = _load_prompt("extraction.md") + _load_glossary_block()
     return Agent(
         model=model,
-        output_type=PartialFrameworkExtraction,
+        output_type=PartialFrameworkExtraction,  # type: ignore[arg-type]
         instructions=instructions,
         output_retries=2,
     )
@@ -238,7 +238,7 @@ def build_critical_fields_agent(model_name: str | None = None) -> Agent:
     instructions = _load_prompt("critical_fields.md") + _load_glossary_block()
     return Agent(
         model=model,
-        output_type=CriticalFieldsExtraction,
+        output_type=CriticalFieldsExtraction,  # type: ignore[arg-type]
         instructions=instructions,
         output_retries=2,
     )
@@ -266,7 +266,9 @@ def _load_checkpoint(document_filename: str, page_number: int) -> PageExtraction
         try:
             return PageExtraction.model_validate_json(path.read_text(encoding="utf-8"))
         except Exception as exc:
-            logger.warning(f"Corrupt checkpoint for {document_filename} p{page_number}, ignoring: {exc}")
+            logger.warning(
+                f"Corrupt checkpoint for {document_filename} p{page_number}, ignoring: {exc}"
+            )
             path.unlink(missing_ok=True)
     return None
 
@@ -281,7 +283,7 @@ def _save_checkpoint(entry: PageExtraction) -> None:
 async def extract_page(
     image_path: Path,
     text: str,
-    page_meta: dict,
+    page_meta: dict[str, Any],
     agent: Agent | None = None,
 ) -> PartialFrameworkExtraction:
     """Run the extraction agent over a single (image, text, meta) page.
@@ -291,7 +293,7 @@ async def extract_page(
     """
     agent = agent or build_extraction_agent()
     image_bytes = _read_image_bytes(image_path)
-    user_message = [
+    user_message: list[str | BinaryContent] = [
         (
             f"Document: {page_meta['document_filename']}\n"
             f"Page: {page_meta['page_number']}\n"
@@ -303,7 +305,7 @@ async def extract_page(
         f"Text layer extracted from this page:\n\n{text or '(empty text layer)'}",
     ]
     result = await agent.run(user_message)
-    return result.output
+    return result.output  # type: ignore[return-value]
 
 
 async def _extract_one_page_safe(
@@ -357,6 +359,7 @@ async def _extract_one_page_safe(
             else:
                 logger.warning(f"Extraction failed for {doc.filename} p{page.page_number}: {exc}")
                 return (doc.filename, page.page_number, str(exc))
+    return (doc.filename, page.page_number, "max_retries_exhausted")
 
 
 def merge_partials(per_page: list[PageExtraction]) -> ExtractionResult:
@@ -416,7 +419,9 @@ async def extract_project(
     agent = agent or build_extraction_agent()
     semaphore = asyncio.Semaphore(max_concurrency)
 
-    async def _runner(doc: PreprocessedDocument, page: PreprocessedPage):
+    async def _runner(
+        doc: PreprocessedDocument, page: PreprocessedPage
+    ) -> PageExtraction | tuple[str, int, str]:
         async with semaphore:
             return await _extract_one_page_safe(doc, page, agent)
 
@@ -466,9 +471,7 @@ async def retry_failed_pages(
     further. The checkpoint cache is bypassed (failed pages have no
     checkpoint by design).
     """
-    existing = ExtractionResult.model_validate_json(
-        framework_path.read_text(encoding="utf-8")
-    )
+    existing = ExtractionResult.model_validate_json(framework_path.read_text(encoding="utf-8"))
     errors = list(existing.pages_with_extraction_errors)
     if not errors:
         logger.info(f"No pages_with_extraction_errors in {framework_path}, nothing to retry")
@@ -544,7 +547,7 @@ async def extract_critical_fields_dual_pass(
     """
     agent = agent or build_critical_fields_agent()
 
-    user_parts: list = [
+    user_parts: list[str | BinaryContent] = [
         "Project document set follows. Answer every open question in your instructions "
         "using only this source material. Quote verbatim. Surface conflicts, do not resolve them."
     ]
@@ -566,4 +569,4 @@ async def extract_critical_fields_dual_pass(
 
     logger.info(f"Dual-pass critical fields over {page_count} page(s)")
     result = await agent.run(user_parts)
-    return result.output
+    return result.output  # type: ignore[return-value]

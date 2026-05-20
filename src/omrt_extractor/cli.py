@@ -25,7 +25,7 @@ from __future__ import annotations
 import asyncio
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal, cast
 
 import typer
 from loguru import logger
@@ -77,7 +77,7 @@ def _run_extraction(input_dir: Path, cache_dir: Path, out_path: Path) -> dict[st
     return data
 
 
-def _run_geo(framework, out_path: Path) -> dict[str, Any]:
+def _run_geo(framework: Any, out_path: Path) -> dict[str, Any]:
     from omrt_extractor.enrich import enrich_3d_bag, enrich_geo
 
     geo = enrich_geo(framework.metadata.location)
@@ -85,14 +85,14 @@ def _run_geo(framework, out_path: Path) -> dict[str, Any]:
         snap = enrich_3d_bag(framework.metadata.location)
         if snap.has_3d_bag_data:
             geo = geo.model_copy(update={"nearby_buildings": snap})
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         logger.warning("3D BAG enrichment failed: {}", exc)
     data = geo.model_dump(mode="json")
     _write_json(out_path, data)
     return data
 
 
-def _run_cross_validate(framework, out_path: Path) -> dict[str, Any]:
+def _run_cross_validate(framework: Any, out_path: Path) -> dict[str, Any]:
     from omrt_extractor.cross_validate import cross_validate_imro
 
     cv_framework = cross_validate_imro(framework)
@@ -108,7 +108,7 @@ def _run_cross_validate(framework, out_path: Path) -> dict[str, Any]:
     return by_id
 
 
-def _run_programme(framework, geo_context, out_path: Path) -> dict[str, Any]:
+def _run_programme(framework: Any, geo_context: Any, out_path: Path) -> dict[str, Any]:
     from omrt_extractor.infer import infer_programme
 
     proposal = infer_programme(framework, geo_context=geo_context)
@@ -122,7 +122,7 @@ def _run_programme(framework, geo_context, out_path: Path) -> dict[str, Any]:
 # =====================================================================
 
 
-_SOURCE_DOC_TYPE_FROM_FILENAME = {
+_SOURCE_DOC_TYPE_FROM_FILENAME: dict[str, str] = {
     "regels": "regels",
     "toelichting": "toelichting",
     "kaveltekening": "verbeelding",
@@ -131,7 +131,7 @@ _SOURCE_DOC_TYPE_FROM_FILENAME = {
 }
 
 
-def _build_source_documents(input_dir: Path) -> list:
+def _build_source_documents(input_dir: Path) -> list[Any]:
     """Scan the input dir for PDFs and build SourceDocument metadata.
 
     Computes SHA-256 of each PDF's bytes and reads page_count via pymupdf.
@@ -145,7 +145,7 @@ def _build_source_documents(input_dir: Path) -> list:
 
     from omrt_extractor.schemas import SourceDocument
 
-    docs: list = []
+    docs: list[Any] = []
     for pdf_path in sorted(input_dir.iterdir()):
         if pdf_path.suffix.lower() != ".pdf":
             continue
@@ -161,7 +161,10 @@ def _build_source_documents(input_dir: Path) -> list:
         docs.append(
             SourceDocument(
                 filename=pdf_path.name,
-                document_type=doc_type,
+                document_type=cast(
+                    Literal["regels", "toelichting", "verbeelding", "permit", "programme_brief", "other"],
+                    doc_type,
+                ),
                 page_count=page_count,
                 sha256=sha,
             )
@@ -169,9 +172,9 @@ def _build_source_documents(input_dir: Path) -> list:
     return docs
 
 
-def _dedup_by_id(items: list[dict]) -> list[dict]:
+def _dedup_by_id(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     seen: set[str] = set()
-    out: list[dict] = []
+    out: list[dict[str, Any]] = []
     for item in items:
         if item["id"] in seen:
             continue
@@ -182,11 +185,11 @@ def _dedup_by_id(items: list[dict]) -> list[dict]:
 
 def _assemble_framework(
     project_name: str,
-    extraction: dict,
-    programme_data: dict,
-    geo_data: dict | None,
-    source_documents: list | None = None,
-):
+    extraction: dict[str, Any],
+    programme_data: dict[str, Any],
+    geo_data: dict[str, Any] | None,
+    source_documents: list[Any] | None = None,
+) -> Any:
     """Build a ParametricFramework from cached stage outputs.
 
     Logic lifted from the legacy run_pipeline.py stitcher.
@@ -224,9 +227,7 @@ def _assemble_framework(
     ]
 
     passages = extraction.get("urban_intent_passages", [])
-    urban_intent = (
-        " ".join(passages[:3]) if passages else "No urban intent passages extracted."
-    )
+    urban_intent = " ".join(passages[:3]) if passages else "No urban intent passages extracted."
     objective = Objective(
         statement=f"Inferred design goal for {project_name}.",
         urban_intent=urban_intent,
@@ -264,9 +265,7 @@ def _assemble_framework(
     return ParametricFramework(
         metadata=metadata,
         objective=objective,
-        constraints=Constraints(
-            numerical=numerical, geometric=geometric, narrative=narrative
-        ),
+        constraints=Constraints(numerical=numerical, geometric=geometric, narrative=narrative),
         variables=Variables(),
         kpis=KPIs(),
         programme=programme,
@@ -274,7 +273,7 @@ def _assemble_framework(
     )
 
 
-def _apply_cross_validation(framework, cv_by_id: dict[str, Any]):
+def _apply_cross_validation(framework: Any, cv_by_id: dict[str, Any]) -> Any:
     """Re-attach cached cross_validation entries onto numerical constraints."""
     from omrt_extractor.schemas import CrossValidation, ParametricFramework
 
@@ -308,7 +307,7 @@ def run(
     skip_cross_validate: bool = typer.Option(False, "--skip-cross-validate"),
 ) -> None:
     """Run the pipeline on a project input directory."""
-    from omrt_extractor.geometry import Geometry, merge_geometry_into_framework, parse_kaveltekening
+    from omrt_extractor.geometry import merge_geometry_into_framework, parse_kaveltekening
     from omrt_extractor.massing import generate_example_massings
     from omrt_extractor.output import write_grasshopper_handoff
     from omrt_extractor.reconcile import reconcile_heights
@@ -424,12 +423,11 @@ def run(
         programme_data = _load_json(paths["programme"])
         cached.append("programme")
     else:
-        from omrt_extractor.schemas import GeoContext
-
         # For inference we need a framework with constraints + geo. Stub
         # programme is fine here because infer_programme returns a fresh one.
         from omrt_extractor.schemas import (
             Confidence,
+            GeoContext,
             ProgrammeProposal,
             Provenance,
             SourceType,
@@ -504,9 +502,7 @@ def run(
     # ---------- Cheap chain ----------
     kavel = _find_pdf(in_dir, ("kaveltekening", "verbeelding", "plankaart"))
     if kavel is None:
-        typer.echo(
-            f"No kaveltekening/verbeelding/plankaart PDF found in {in_dir}", err=True
-        )
+        typer.echo(f"No kaveltekening/verbeelding/plankaart PDF found in {in_dir}", err=True)
         raise typer.Exit(code=2)
 
     logger.info("Parsing geometry from {}", kavel.name)
@@ -524,7 +520,7 @@ def run(
         framework = merge_geometry_into_framework(framework, geometry_obj)
         fresh.append("merge")
 
-    from omrt_extractor.enrich_zones import enrich_zones, write_zone_summary, print_zone_table
+    from omrt_extractor.enrich_zones import enrich_zones, print_zone_table, write_zone_summary
 
     framework, zone_summaries = enrich_zones(framework)
     zone_summary_path = out_dir / "zone_programme_summary.json"

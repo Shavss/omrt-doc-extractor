@@ -18,10 +18,6 @@ quoted source text, document filename, page number, and confidence
 reasons. A "mark as verified" button promotes the framework to
 verification_status='reviewed' and writes the JSON back in place.
 
-A side-by-side diff view compares two framework.json files (typically
-two passes of dual-pass extraction) and lists numerical constraints
-that disagree by ID.
-
 Stage 6 of the build plan.
 """
 
@@ -35,7 +31,6 @@ from typing import Any
 
 import plotly.graph_objects as go
 import streamlit as st
-
 
 REVIEW_THRESHOLD = 0.85
 COLOURS = {
@@ -139,9 +134,9 @@ def render_constraint_card(c: dict[str, Any], framework_reviewed: bool) -> None:
         f"""
         <div style="border-left:6px solid {colour};padding:6px 10px;margin:6px 0;
                     background:rgba(127,127,127,0.05);border-radius:4px;">
-          <strong>{c['name']}</strong>
-          <code>{c['id']}</code><br/>
-          <span style="font-size:1.1em;">{format_value(c['value'], c['unit'])}</span>
+          <strong>{c["name"]}</strong>
+          <code>{c["id"]}</code><br/>
+          <span style="font-size:1.1em;">{format_value(c["value"], c["unit"])}</span>
           &nbsp; <span style="color:{colour};">●</span>
           confidence {score:.2f}
         </div>
@@ -209,6 +204,7 @@ def _emphasise_geo_citations(text: str) -> str:
     """Italicise tokens in evidence text that point at geo data sources."""
     if not text:
         return ""
+
     # Bracketed citations like [cbs_demographics: ...] or [pdok_bag: ...]
     def repl_bracket(m: re.Match[str]) -> str:
         inner = m.group(1)
@@ -266,10 +262,7 @@ def _unit_mix_heatmap(unit_mix: list[dict[str, Any]]) -> go.Figure:
         frac = float(item.get("fraction_of_total_dwellings") or 0.0)
         z[i][j] = frac
         rng = item.get("target_count_range") or [None, None]
-        text[i][j] = (
-            f"{_fmt(rng[0])}–{_fmt(rng[1])}"
-            if rng[0] is not None else ""
-        )
+        text[i][j] = f"{_fmt(rng[0])}–{_fmt(rng[1])}" if rng[0] is not None else ""
     fig = go.Figure(
         data=go.Heatmap(
             z=z,
@@ -297,9 +290,7 @@ def _tenure_donut(unit_mix: list[dict[str, Any]]) -> go.Figure:
         t = item.get("tenure")
         if not t:
             continue
-        tally[t] = tally.get(t, 0.0) + float(
-            item.get("fraction_of_total_dwellings") or 0.0
-        )
+        tally[t] = tally.get(t, 0.0) + float(item.get("fraction_of_total_dwellings") or 0.0)
     labels = list(tally.keys())
     values = [tally[k] for k in labels]
     fig = go.Figure(
@@ -337,12 +328,14 @@ def render_programme_panel(programme: dict[str, Any]) -> None:
     conf = (programme.get("confidence") or {}).get("score")
     prov = programme.get("provenance") or {}
     inferred_from = prov.get("inferred_from") or []
-    constraint_citations = [c for c in inferred_from if not any(
-        tok in c.lower() for tok in GEO_SOURCE_TOKENS
-    )]
+    constraint_citations = [
+        c for c in inferred_from if not any(tok in c.lower() for tok in GEO_SOURCE_TOKENS)
+    ]
     st.caption(
         f"Confidence: {conf:.2f}, anchored in {len(constraint_citations)} "
-        f"explicit constraint citations." if conf is not None else ""
+        f"explicit constraint citations."
+        if conf is not None
+        else ""
     )
 
     left, right = st.columns(2)
@@ -471,11 +464,11 @@ def render_neighbourhood_panel(geo: dict[str, Any]) -> None:
             )
             dom = nb.get("dominant_uses") or []
             if dom:
-                bar_items = {
-                    str(d): 1 for d in dom[:5]
-                } if isinstance(dom[0], str) else {
-                    str(d.get("use", "?")): int(d.get("count", 0)) for d in dom[:5]
-                }
+                bar_items = (
+                    {str(d): 1 for d in dom[:5]}
+                    if isinstance(dom[0], str)
+                    else {str(d.get("use", "?")): int(d.get("count", 0)) for d in dom[:5]}
+                )
                 st.plotly_chart(
                     _h_bar(bar_items, "Dominant uses", USE_COLOURS["residential"]),
                     use_container_width=True,
@@ -577,24 +570,13 @@ def render_neighbourhood_panel(geo: dict[str, Any]) -> None:
     chunks = []
     for src in all_sources:
         if src in used:
-            chunks.append(
-                f"<span style='color:{COLOURS['green']};'>✓</span> "
-                f"<code>{src}</code>"
-            )
+            chunks.append(f"<span style='color:{COLOURS['green']};'>✓</span> <code>{src}</code>")
         elif src in failed:
-            chunks.append(
-                f"<span style='color:{COLOURS['red']};'>✗</span> "
-                f"<code>{src}</code>"
-            )
+            chunks.append(f"<span style='color:{COLOURS['red']};'>✗</span> <code>{src}</code>")
         else:
-            chunks.append(
-                f"<span style='color:{COLOURS['grey']};'>•</span> "
-                f"<code>{src}</code>"
-            )
+            chunks.append(f"<span style='color:{COLOURS['grey']};'>•</span> <code>{src}</code>")
     st.markdown(
-        "<div style='margin-top:8px;font-size:0.9em;'>Sources: "
-        + " · ".join(chunks)
-        + "</div>",
+        "<div style='margin-top:8px;font-size:0.9em;'>Sources: " + " · ".join(chunks) + "</div>",
         unsafe_allow_html=True,
     )
 
@@ -609,10 +591,7 @@ def render_zones_panel(zone_summaries: list[dict[str, Any]]) -> None:
     regels confirmation, red when nothing matched.
     """
     if not zone_summaries:
-        st.info(
-            "Zone programme summary not found. Re-run the pipeline to "
-            "generate it."
-        )
+        st.info("Zone programme summary not found. Re-run the pipeline to generate it.")
         return
 
     st.markdown("## Zones")
@@ -643,10 +622,7 @@ def render_zones_panel(zone_summaries: list[dict[str, Any]]) -> None:
                 "Height (m)": z.get("height_m"),
                 "Source": z.get("height_source") or "—",
                 "Rules": z.get("rule_count", 0),
-                "Categories": ", ".join(
-                    sorted((z.get("rules_by_category") or {}).keys())
-                )
-                or "—",
+                "Categories": ", ".join(sorted((z.get("rules_by_category") or {}).keys())) or "—",
             }
         )
 
@@ -659,9 +635,7 @@ def render_zones_panel(zone_summaries: list[dict[str, Any]]) -> None:
     )
     st.dataframe(styled, use_container_width=True, hide_index=True)
 
-    zone_names = [
-        z.get("zone_name") or z.get("zone_id") or "?" for z in zone_summaries
-    ]
+    zone_names = [z.get("zone_name") or z.get("zone_id") or "?" for z in zone_summaries]
     selected = st.selectbox("Inspect zone", zone_names, key="zone_inspect")
     z = zone_summaries[zone_names.index(selected)]
 
@@ -672,9 +646,7 @@ def render_zones_panel(zone_summaries: list[dict[str, Any]]) -> None:
             st.write(f"**Acoustic overlays:** {', '.join(overlays)}")
         h = z.get("height_m")
         h_txt = f"{h} m" if h is not None else "—"
-        st.write(
-            f"**Height:** {h_txt} (source: {z.get('height_source') or '—'})"
-        )
+        st.write(f"**Height:** {h_txt} (source: {z.get('height_source') or '—'})")
         rule_count = z.get("rule_count", 0)
         if rule_count == 0:
             st.warning(
@@ -725,10 +697,10 @@ def page_review(
     status = meta.get("verification_status", "extracted")
     reviewed = status == "reviewed"
 
-    header_banner = (
-        payload.get("header", {}).get("banner")
-        or ("Human-reviewed output. Verified by reviewer." if reviewed
-            else "PROTOTYPE OUTPUT, NOT VERIFIED")
+    header_banner = payload.get("header", {}).get("banner") or (
+        "Human-reviewed output. Verified by reviewer."
+        if reviewed
+        else "PROTOTYPE OUTPUT, NOT VERIFIED"
     )
     banner_colour = COLOURS["green"] if reviewed else COLOURS["red"]
     st.markdown(
@@ -745,18 +717,15 @@ def page_review(
         f"plan_id: {loc.get('plan_id') or 'none'} · status: {status}"
     )
 
-    if not reviewed:
-        if st.button("Mark as verified", type="primary"):
-            meta["verification_status"] = "reviewed"
-            if "header" in payload:
-                payload["header"]["verification_status"] = "reviewed"
-                payload["header"]["banner"] = (
-                    "Human-reviewed output. Verified by reviewer."
-                )
-                payload["header"]["reviewed_at"] = datetime.now(UTC).isoformat()
-            save_payload(payload_path, payload)
-            st.success("Marked as reviewed. Reload to refresh.")
-            st.rerun()
+    if not reviewed and st.button("Mark as verified", type="primary"):
+        meta["verification_status"] = "reviewed"
+        if "header" in payload:
+            payload["header"]["verification_status"] = "reviewed"
+            payload["header"]["banner"] = "Human-reviewed output. Verified by reviewer."
+            payload["header"]["reviewed_at"] = datetime.now(UTC).isoformat()
+        save_payload(payload_path, payload)
+        st.success("Marked as reviewed. Reload to refresh.")
+        st.rerun()
 
     st.markdown("---")
 
@@ -776,9 +745,7 @@ def page_review(
         mcols = st.columns(min(len(massings), 2))
         for idx, m in enumerate(massings[:2]):
             with mcols[idx]:
-                _render_massing(
-                    m, constraints_by_id_for_massings, palette[idx % len(palette)]
-                )
+                _render_massing(m, constraints_by_id_for_massings, palette[idx % len(palette)])
         st.markdown("---")
 
     # --- Programme proposal ---
@@ -787,16 +754,14 @@ def page_review(
     if programme_path and programme_path.exists():
         try:
             programme_loaded = load_payload(programme_path)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             st.warning(f"Could not load programme file {programme_path}: {exc}")
     programme_data = programme_loaded or programme_inline
     if programme_data:
         render_programme_panel(programme_data)
     else:
         st.markdown("## Programme proposal")
-        st.info(
-            "No programme proposal found. Run programme inference (Stage 5) to populate."
-        )
+        st.info("No programme proposal found. Run programme inference (Stage 5) to populate.")
     st.markdown("---")
 
     # --- Neighbourhood context ---
@@ -804,7 +769,7 @@ def page_review(
         try:
             geo_data = load_payload(geo_path)
             render_neighbourhood_panel(geo_data)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             st.warning(f"Could not load geo_context file {geo_path}: {exc}")
     else:
         st.markdown("## Neighbourhood context")
@@ -816,8 +781,7 @@ def page_review(
     numerical = constraints.get("numerical", [])
 
     disagreements = [
-        c for c in numerical
-        if (c.get("cross_validation") or {}).get("agreement") == "disagreement"
+        c for c in numerical if (c.get("cross_validation") or {}).get("agreement") == "disagreement"
     ]
     if disagreements:
         st.markdown("### IMRO API disagreements")
@@ -841,16 +805,13 @@ def page_review(
             loaded = json.loads(zone_summary_path.read_text())
             if isinstance(loaded, list):
                 zone_summary = loaded
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             st.warning(f"Could not load {zone_summary_path}: {exc}")
     if zone_summary is not None:
         render_zones_panel(zone_summary)
     else:
         st.markdown("## Zones")
-        st.info(
-            "Zone programme summary not found. Re-run the pipeline to "
-            "generate it."
-        )
+        st.info("Zone programme summary not found. Re-run the pipeline to generate it.")
     st.markdown("---")
 
     st.markdown("### Geometric constraints")
@@ -1009,11 +970,11 @@ def _match_marker(a: Any, b: Any) -> str:
     return "✗"
 
 
-def _render_pair_row(
-    field: str, a: Any, b: Any, unit: str = ""
-) -> dict[str, Any]:
+def _render_pair_row(field: str, a: Any, b: Any, unit: str = "") -> dict[str, Any]:
+    def fmt(v: Any) -> str:
+        return "—" if v is None else (f"{v:,.0f}" if isinstance(v, (int, float)) else str(v))
+
     mark = _match_marker(a, b)
-    fmt = lambda v: "—" if v is None else (f"{v:,.0f}" if isinstance(v, (int, float)) else str(v))
     return {
         "Field": field,
         "Approach 1 (PDF)": f"{fmt(a)} {unit}".strip() if a is not None else "—",
@@ -1054,17 +1015,34 @@ def _prism_mesh3d(
     j: list[int] = []
     k: list[int] = []
     for a in range(1, n - 1):
-        i.append(0); j.append(a); k.append(a + 1)
+        i.append(0)
+        j.append(a)
+        k.append(a + 1)
     for a in range(1, n - 1):
-        i.append(n); j.append(n + a + 1); k.append(n + a)
+        i.append(n)
+        j.append(n + a + 1)
+        k.append(n + a)
     for a in range(n):
         b = (a + 1) % n
-        i.append(a); j.append(b); k.append(n + b)
-        i.append(a); j.append(n + b); k.append(n + a)
+        i.append(a)
+        j.append(b)
+        k.append(n + b)
+        i.append(a)
+        j.append(n + b)
+        k.append(n + a)
     return go.Mesh3d(
-        x=xs, y=ys, z=zs, i=i, j=j, k=k,
-        color=colour, opacity=0.6, flatshading=True,
-        name=name, hovertext=name, hoverinfo="text",
+        x=xs,
+        y=ys,
+        z=zs,
+        i=i,
+        j=j,
+        k=k,
+        color=colour,
+        opacity=0.6,
+        flatshading=True,
+        name=name,
+        hovertext=name,
+        hoverinfo="text",
     )
 
 
@@ -1094,26 +1072,41 @@ def _flat_polygon_trace(
     j: list[int] = []
     k: list[int] = []
     for a in range(1, n - 1):
-        i.append(0); j.append(a); k.append(a + 1)
+        i.append(0)
+        j.append(a)
+        k.append(a + 1)
     mesh = go.Mesh3d(
-        x=xs, y=ys, z=zs, i=i, j=j, k=k,
-        color=fill_colour, opacity=opacity, flatshading=True,
-        name=name, hovertext=name, hoverinfo="text", showlegend=True,
+        x=xs,
+        y=ys,
+        z=zs,
+        i=i,
+        j=j,
+        k=k,
+        color=fill_colour,
+        opacity=opacity,
+        flatshading=True,
+        name=name,
+        hovertext=name,
+        hoverinfo="text",
+        showlegend=True,
     )
     outline = go.Scatter3d(
-        x=xs + [xs[0]], y=ys + [ys[0]], z=zs + [zs[0]],
+        x=[*xs, xs[0]],
+        y=[*ys, ys[0]],
+        z=[*zs, zs[0]],
         mode="lines",
         line=dict(color=line_colour, width=3),
-        name=name, showlegend=False, hoverinfo="skip",
+        name=name,
+        showlegend=False,
+        hoverinfo="skip",
     )
     return [mesh, outline]
 
 
-def _wgs_to_local_m(
-    polygon_wgs: list[list[float]], lat0: float, lon0: float
-) -> list[list[float]]:
+def _wgs_to_local_m(polygon_wgs: list[list[float]], lat0: float, lon0: float) -> list[list[float]]:
     """Equirectangular approximation, OK at site scale (<2 km)."""
     import math
+
     cos_lat = math.cos(math.radians(lat0))
     out = []
     for p in polygon_wgs:
@@ -1148,8 +1141,14 @@ def _render_gml_3d(
     ox = (min(xs_all) + max(xs_all)) / 2
     oy = (min(ys_all) + max(ys_all)) / 2
     palette = [
-        "#4e79a7", "#f28e2b", "#e15759", "#76b7b2",
-        "#59a14f", "#edc948", "#b07aa1", "#ff9da7",
+        "#4e79a7",
+        "#f28e2b",
+        "#e15759",
+        "#76b7b2",
+        "#59a14f",
+        "#edc948",
+        "#b07aa1",
+        "#ff9da7",
     ]
     traces: list[Any] = []
     for idx, z in enumerate(zones):
@@ -1181,7 +1180,7 @@ def _render_gml_3d(
         "vrijwaringszone - vaarweg": "#1f77b4",
     }
     seen_nb_legend: set[str] = set()
-    for nb in (no_build or []):
+    for nb in no_build or []:
         poly = nb.get("polygon_rd")
         naam = nb.get("naam") or "no_build"
         colour = NO_BUILD_COLOURS.get(naam, "#999999")
@@ -1190,8 +1189,13 @@ def _render_gml_3d(
         show_in_legend = naam not in seen_nb_legend
         seen_nb_legend.add(naam)
         sub = _flat_polygon_trace(
-            poly, (ox, oy), z=0.05, fill_colour=colour,
-            line_colour=colour, name=label, opacity=0.55,
+            poly,
+            (ox, oy),
+            z=0.05,
+            fill_colour=colour,
+            line_colour=colour,
+            name=label,
+            opacity=0.55,
         )
         for t in sub:
             if hasattr(t, "showlegend"):
@@ -1215,8 +1219,12 @@ def _render_gml_3d(
             "vrijwaringszone - vaarweg": "#1f77b4",
             "geluidzone - industrie": "#e15759",
         }
-        z_levels = {"Waarde - Archeologie": -0.3, "overige zone - 2": -0.2,
-                    "vrijwaringszone - vaarweg": -0.4, "geluidzone - industrie": -0.5}
+        z_levels = {
+            "Waarde - Archeologie": -0.3,
+            "overige zone - 2": -0.2,
+            "vrijwaringszone - vaarweg": -0.4,
+            "geluidzone - industrie": -0.5,
+        }
         for ov in overlays:
             poly_wgs = ov.get("polygon_wgs84")
             if not poly_wgs:
@@ -1230,8 +1238,13 @@ def _render_gml_3d(
             label = f"overlay: {naam}"
             # Pass through as already-localised polygon (origin 0,0).
             sub = _flat_polygon_trace(
-                anchored, (0.0, 0.0), z=z, fill_colour=colour,
-                line_colour=colour, name=label, opacity=0.3,
+                anchored,
+                (0.0, 0.0),
+                z=z,
+                fill_colour=colour,
+                line_colour=colour,
+                name=label,
+                opacity=0.3,
             )
             traces.extend(sub)
 
@@ -1292,7 +1305,7 @@ def page_approach_gml(
     if gml_parameters_path.exists():
         try:
             gml_params_early = load_payload(gml_parameters_path)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             st.warning(f"Could not load {gml_parameters_path}: {exc}")
     _render_gml_3d(
         zones,
@@ -1308,7 +1321,7 @@ def page_approach_gml(
     height_rows: list[dict[str, Any]] = []
     agree_within_1 = 0
     total_matched = 0
-    for bv, z, shared in matches:
+    for bv, z, _shared in matches:
         pdf_h = bv.get("height_m") if bv else None
         gml_h = z.get("max_height_m") if z else None
         if pdf_h is not None and gml_h is not None:
@@ -1416,7 +1429,7 @@ def page_approach_gml(
     st.markdown("### D. Validation — Approach 1 vs Approach 2")
     st.markdown(
         f"""<div style="background:#eef;padding:10px;border-radius:4px;
-        border-left:4px solid {COLOURS['amber']};margin:6px 0;">
+        border-left:4px solid {COLOURS["amber"]};margin:6px 0;">
         <b>Approach 1:</b> LLM extraction from PDF regels + kaveltekening drawing.<br>
         <b>Approach 2:</b> Authoritative GML geometry + DSO teksten API values
         (rules hardcoded for prototype, would be API-derived in production).
@@ -1518,17 +1531,13 @@ def page_approach_gml(
     zone_rows: list[dict[str, Any]] = []
     matched_zone_count = 0
     zone_agree = 0
-    for bv, z, shared in matches:
+    for bv, z, _shared in matches:
         if not (bv and z):
             continue
         matched_zone_count += 1
         pdf_h = bv.get("height_m")
         gml_h = z.get("max_height_m")
-        delta = (
-            None
-            if pdf_h is None or gml_h is None
-            else round(float(pdf_h) - float(gml_h), 2)
-        )
+        delta = None if pdf_h is None or gml_h is None else round(float(pdf_h) - float(gml_h), 2)
         if delta is not None and abs(delta) <= 1.0:
             zone_agree += 1
         zone_rows.append(
@@ -1549,16 +1558,18 @@ def page_approach_gml(
             d = row["Delta"]
             return [_height_row_colour(None if d is None else float(d))] * len(row)
 
-        st.dataframe(df_z.style.apply(_zone_style, axis=1), use_container_width=True, hide_index=True)
+        st.dataframe(
+            df_z.style.apply(_zone_style, axis=1), use_container_width=True, hide_index=True
+        )
 
     # Site rules from framework.json
     plint = _find_constraint(numerical, ("min_plint_height", "plint_min", "hamerblok_plint"))
     setback_trig = _find_constraint(numerical, ("setback_above_21m_general",))
-    setback_dep = _find_constraint(numerical, ("setback_above_21m_general", "setback_above_30_5m_sba3"))
-    bvo_21_50 = _find_constraint(numerical, ("max_bvo_per_floor_high_rise_21_50m",))
-    bvo_50p = _find_constraint(
-        numerical, ("max_bvo_per_floor_high_rise_above_50m",)
+    setback_dep = _find_constraint(
+        numerical, ("setback_above_21m_general", "setback_above_30_5m_sba3")
     )
+    bvo_21_50 = _find_constraint(numerical, ("max_bvo_per_floor_high_rise_21_50m",))
+    bvo_50p = _find_constraint(numerical, ("max_bvo_per_floor_high_rise_above_50m",))
 
     rule_rows = [
         _render_pair_row(
@@ -1604,9 +1615,7 @@ def page_approach_gml(
     )
 
 
-def _mesh3d_from_triangles(
-    triangles: list[list[list[float]]], colour: str
-) -> go.Mesh3d | None:
+def _mesh3d_from_triangles(triangles: list[list[list[float]]], colour: str) -> go.Mesh3d | None:
     """Build a plotly Mesh3d trace from an inline triangle list."""
     if not triangles:
         return None
@@ -1702,64 +1711,13 @@ def page_massings(payload_path: Path) -> None:
         st.info("No massings on this framework. Run massing.generate_example_massings.")
         return
 
-    constraints_by_id = {
-        c["id"]: c for c in fw.get("constraints", {}).get("numerical", [])
-    }
+    constraints_by_id = {c["id"]: c for c in fw.get("constraints", {}).get("numerical", [])}
     palette = ["#4e79a7", "#f28e2b"]
 
     cols = st.columns(min(len(massings), 2))
     for idx, massing in enumerate(massings[:2]):
         with cols[idx]:
             _render_massing(massing, constraints_by_id, palette[idx % len(palette)])
-
-
-def page_diff(path_a: Path, path_b: Path) -> None:
-    fw_a = framework_body(load_payload(path_a))
-    fw_b = framework_body(load_payload(path_b))
-
-    by_id_a = {c["id"]: c for c in fw_a.get("constraints", {}).get("numerical", [])}
-    by_id_b = {c["id"]: c for c in fw_b.get("constraints", {}).get("numerical", [])}
-
-    all_ids = sorted(set(by_id_a) | set(by_id_b))
-
-    diffs: list[tuple[str, dict[str, Any] | None, dict[str, Any] | None]] = []
-    for cid in all_ids:
-        a = by_id_a.get(cid)
-        b = by_id_b.get(cid)
-        if a is None or b is None or a.get("value") != b.get("value"):
-            diffs.append((cid, a, b))
-
-    st.caption(f"{len(diffs)} differences across {len(all_ids)} constraints.")
-
-    for cid, a, b in diffs:
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown(f"**Pass A** · `{cid}`")
-            if a is None:
-                st.write("_missing_")
-            else:
-                st.write(format_value(a["value"], a["unit"]))
-                st.caption(
-                    f"conf {a.get('confidence', {}).get('score', 0):.2f} · "
-                    f"{a.get('provenance', {}).get('document')} "
-                    f"p.{a.get('provenance', {}).get('page')}"
-                )
-                if a.get("provenance", {}).get("quoted_text"):
-                    st.markdown(f"> {a['provenance']['quoted_text']}")
-        with col2:
-            st.markdown(f"**Pass B** · `{cid}`")
-            if b is None:
-                st.write("_missing_")
-            else:
-                st.write(format_value(b["value"], b["unit"]))
-                st.caption(
-                    f"conf {b.get('confidence', {}).get('score', 0):.2f} · "
-                    f"{b.get('provenance', {}).get('document')} "
-                    f"p.{b.get('provenance', {}).get('page')}"
-                )
-                if b.get("provenance", {}).get("quoted_text"):
-                    st.markdown(f"> {b['provenance']['quoted_text']}")
-        st.markdown("---")
 
 
 # ---------------------------------------------------------------------------
@@ -1772,9 +1730,7 @@ def main() -> None:
     st.title("OMRT framework viewer")
     st.caption("Safety-net review surface. Not a dashboard.")
 
-    mode = st.sidebar.radio(
-        "Mode", ["Review", "Massings", "Diff two passes", "Approach 2 — GML"]
-    )
+    mode = st.sidebar.radio("Mode", ["Review", "Massings", "Approach 2 — GML"])
 
     if mode == "Review":
         path_str = st.sidebar.text_input(
@@ -1842,13 +1798,6 @@ def main() -> None:
             programme_path=prog_path,
             gml_parameters_path=gml_params_path,
         )
-    else:
-        path_a = Path(st.sidebar.text_input("Pass A path", "data/outputs/draka/pass_a.json"))
-        path_b = Path(st.sidebar.text_input("Pass B path", "data/outputs/draka/pass_b.json"))
-        if not path_a.exists() or not path_b.exists():
-            st.warning("Provide two existing framework.json paths.")
-            return
-        page_diff(path_a, path_b)
 
 
 if __name__ == "__main__":

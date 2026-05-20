@@ -30,7 +30,6 @@ from pydantic import ValidationError
 
 from omrt_extractor.schemas import ParametricFramework
 
-
 REQUIRED_SUMMARY_HEADERS = [
     "## How to consume this output",
     "## Numerical constraints",
@@ -76,13 +75,20 @@ def check_framework(output_dir: Path) -> list[tuple[bool, str]]:
     try:
         framework = ParametricFramework.model_validate(payload)
     except ValidationError as exc:
-        results.append(_fail("framework.schema", f"ParametricFramework validation failed: {exc.error_count()} errors"))
+        results.append(
+            _fail(
+                "framework.schema",
+                f"ParametricFramework validation failed: {exc.error_count()} errors",
+            )
+        )
         return results
     results.append(_ok("framework.schema"))
 
     height_constraints = [c for c in framework.constraints.numerical if c.category == "height"]
     if not height_constraints:
-        results.append(_fail("framework.height_constraint", "no numerical constraint with category='height'"))
+        results.append(
+            _fail("framework.height_constraint", "no numerical constraint with category='height'")
+        )
     else:
         results.append(_ok("framework.height_constraint"))
 

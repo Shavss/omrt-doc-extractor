@@ -199,9 +199,7 @@ def serialise_framework(
         if entry is not None:
             entry["geometry_geojson"] = feature
             entry["geometry_compas"] = compas_block
-        geometries_out.append(
-            {"id": geom.id, "geojson": feature, "compas": compas_block}
-        )
+        geometries_out.append({"id": geom.id, "geojson": feature, "compas": compas_block})
 
     payload: dict[str, Any] = {
         "header": _build_header(framework),
@@ -216,7 +214,7 @@ def serialise_framework(
 def body_geom_lookup(body: dict[str, Any], geom_id: str) -> dict[str, Any] | None:
     for entry in body.get("constraints", {}).get("geometric", []):
         if entry.get("id") == geom_id:
-            return entry
+            return dict(entry)
     return None
 
 
@@ -301,9 +299,7 @@ def _constraint_line(c: Any, indent: str = "- ") -> list[str]:
     if c.condition:
         out.append(f"  - condition: {c.condition}")
     if c.provenance.document:
-        out.append(
-            f"  - source: {c.provenance.document} p.{c.provenance.page}"
-        )
+        out.append(f"  - source: {c.provenance.document} p.{c.provenance.page}")
     return out
 
 
@@ -354,9 +350,7 @@ def render_summary(
         else:
             cv_note = "no cross-validation attempted"
         lines.append(f"**Plan ID:** {plan_id} ({cv_note})")
-    lines.append(
-        f"**Generated:** {datetime.now(UTC).isoformat(timespec='seconds')}"
-    )
+    lines.append(f"**Generated:** {datetime.now(UTC).isoformat(timespec='seconds')}")
     municipality = fw.metadata.location.municipality
     neighbourhood = fw.metadata.location.neighbourhood
     loc = municipality + (f", {neighbourhood}" if neighbourhood else "")
@@ -398,9 +392,7 @@ def render_summary(
         "   only need the envelope-binding rules and want to skip the audit\n"
         "   tail (noise, sustainability, etc.)."
     )
-    lines.append(
-        "5. `summary.md` (this file) — start here. Then read `framework.json`."
-    )
+    lines.append("5. `summary.md` (this file) — start here. Then read `framework.json`.")
     lines.append("")
     lines.append(
         "Every value in `framework.json` carries `provenance` (document, page,\n"
@@ -436,14 +428,11 @@ def render_summary(
     lines.append("## Programme proposal (from inference, see programme.json)")
     lines.append("")
     gfa_range = (
-        f" ({p.target_total_gfa_m2_range[0]:,.0f}–"
-        f"{p.target_total_gfa_m2_range[1]:,.0f} m²)"
+        f" ({p.target_total_gfa_m2_range[0]:,.0f}–{p.target_total_gfa_m2_range[1]:,.0f} m²)"
         if p.target_total_gfa_m2_range
         else ""
     )
-    lines.append(
-        f"- **Target total GFA:** {p.target_total_gfa_m2:,.0f} m²{gfa_range}"
-    )
+    lines.append(f"- **Target total GFA:** {p.target_total_gfa_m2:,.0f} m²{gfa_range}")
 
     use_split_fields = [
         ("residential", p.use_split.residential_m2),
@@ -457,21 +446,17 @@ def render_summary(
     split_total = sum(v for _, v in use_split_fields) or 1.0
     nonzero = [(label, v) for label, v in use_split_fields if v > 0]
     parts = " | ".join(
-        f"{label} {v:,.0f} m² ({v / split_total * 100:.0f}%)"
-        for label, v in nonzero
+        f"{label} {v:,.0f} m² ({v / split_total * 100:.0f}%)" for label, v in nonzero
     )
     lines.append(f"- **Use split:** {parts}")
 
     if p.target_dwelling_count is not None:
         dw_range = (
-            f" ({p.total_dwelling_count_range[0]}–"
-            f"{p.total_dwelling_count_range[1]})"
+            f" ({p.total_dwelling_count_range[0]}–{p.total_dwelling_count_range[1]})"
             if p.total_dwelling_count_range
             else ""
         )
-        lines.append(
-            f"- **Dwelling count target:** {p.target_dwelling_count}{dw_range}"
-        )
+        lines.append(f"- **Dwelling count target:** {p.target_dwelling_count}{dw_range}")
     if p.parking_demand is not None:
         lines.append(f"- **Parking demand:** {p.parking_demand:g} spaces")
 
@@ -481,21 +466,17 @@ def render_summary(
         by_tenure: dict[str, float] = defaultdict(float)
         for slice_ in p.unit_mix:
             by_tenure[slice_.tenure] += slice_.fraction_of_total_dwellings
-        tenure_parts = " | ".join(
-            f"{t} {f * 100:.0f}%" for t, f in sorted(by_tenure.items())
-        )
+        tenure_parts = " | ".join(f"{t} {f * 100:.0f}%" for t, f in sorted(by_tenure.items()))
         lines.append(f"- **Tenure split:** {tenure_parts}")
         lines.append("- **Unit mix:**")
         for slice_ in p.unit_mix:
             cnt = (
-                f" ({slice_.target_count_range[0]}–"
-                f"{slice_.target_count_range[1]} dwellings)"
+                f" ({slice_.target_count_range[0]}–{slice_.target_count_range[1]} dwellings)"
                 if slice_.target_count_range
                 else ""
             )
             sz = (
-                f", {slice_.target_size_m2_range[0]:g}–"
-                f"{slice_.target_size_m2_range[1]:g} m²"
+                f", {slice_.target_size_m2_range[0]:g}–{slice_.target_size_m2_range[1]:g} m²"
                 if slice_.target_size_m2_range
                 else ""
             )
@@ -523,7 +504,7 @@ def render_summary(
     # --------------------------------------------------------------
     lines.append("## Numerical constraints (top binding values)")
     lines.append("")
-    by_cat: dict[str, list] = {}
+    by_cat: dict[str, list[Any]] = {}
     for c in fw.constraints.numerical:
         by_cat.setdefault(c.category, []).append(c)
 
@@ -551,9 +532,7 @@ def render_summary(
         items = by_cat.get(cat_key)
         if not items:
             continue
-        items.sort(
-            key=lambda c: (-c.confidence.score, -_value_magnitude(c))
-        )
+        items.sort(key=lambda c: (-c.confidence.score, -_value_magnitude(c)))
         shown = items[:15]
         lines.append(f"### {label} ({len(items)} total, showing top {len(shown)})")
         lines.append("")
@@ -582,8 +561,8 @@ def render_summary(
     for g in fw.constraints.geometric:
         by_feature[g.feature_type] = by_feature.get(g.feature_type, 0) + 1
     lines.append("Polygon counts by feature type:")
-    for feature_type, n in sorted(by_feature.items(), key=lambda kv: -kv[1]):
-        lines.append(f"- {feature_type}: {n}")
+    for feature_type, feat_count in sorted(by_feature.items(), key=lambda kv: -kv[1]):
+        lines.append(f"- {feature_type}: {feat_count}")
     lines.append("")
 
     if parsed_geometry:
@@ -591,9 +570,7 @@ def render_summary(
         src_pdf = parsed_geometry.get("source_pdf")
         src_pdf_name = Path(src_pdf).name if src_pdf else None
         plot_poly = parsed_geometry.get("plot_polygon") or []
-        plot_dims = (
-            _bbox_dims(plot_poly) if isinstance(plot_poly, list) else None
-        )
+        plot_dims = _bbox_dims(plot_poly) if isinstance(plot_poly, list) else None
         lines.append("Source drawing:")
         if src_pdf_name:
             lines.append(f"- File: {src_pdf_name}")
@@ -601,8 +578,7 @@ def render_summary(
             lines.append(f"- Scale: 1:{int(scale_d)}")
         if plot_dims:
             lines.append(
-                f"- Plot bounding box: {plot_dims[0]:.0f} m × "
-                f"{plot_dims[1]:.0f} m (RD New)"
+                f"- Plot bounding box: {plot_dims[0]:.0f} m × {plot_dims[1]:.0f} m (RD New)"
             )
         lines.append("")
     lines.append(
@@ -617,12 +593,8 @@ def render_summary(
     if zone_programme_summary:
         lines.append("## Zone programme summary")
         lines.append("")
-        lines.append(
-            "| Zone | Height | Source | Codes | Matched rules | Key constraints |"
-        )
-        lines.append(
-            "|------|--------|--------|-------|---------------|-----------------|"
-        )
+        lines.append("| Zone | Height | Source | Codes | Matched rules | Key constraints |")
+        lines.append("|------|--------|--------|-------|---------------|-----------------|")
         for z in zone_programme_summary:
             h = z.get("height_m")
             h_txt = f"{h:g}m" if isinstance(h, int | float) else "—"
@@ -631,8 +603,7 @@ def render_summary(
             rule_count = z.get("rule_count", 0)
             height_rules = (z.get("rules_by_category") or {}).get("height", [])
             keys = [
-                f"{r.get('name', r.get('id', '?'))}="
-                f"{r.get('value')}{r.get('unit') or ''}"
+                f"{r.get('name', r.get('id', '?'))}={r.get('value')}{r.get('unit') or ''}"
                 for r in height_rules[:2]
             ]
             if len(height_rules) > 2:
@@ -640,8 +611,7 @@ def render_summary(
             key_txt = ", ".join(keys) or "—"
             zone_name = z.get("zone_name") or z.get("zone_id") or "?"
             lines.append(
-                f"| {zone_name} | {h_txt} | {source} | {codes} | "
-                f"{rule_count} | {key_txt} |"
+                f"| {zone_name} | {h_txt} | {source} | {codes} | {rule_count} | {key_txt} |"
             )
         lines.append("")
         lines.append(
@@ -663,14 +633,12 @@ def render_summary(
     )[:10]
     for n in narratives:
         lines.append(
-            f"- **{n.statement}** (`{n.id}`, {n.category}) — "
-            f"confidence {n.confidence.score:.2f}"
+            f"- **{n.statement}** (`{n.id}`, {n.category}) — confidence {n.confidence.score:.2f}"
         )
         if n.provenance.quoted_text:
             quote = n.provenance.quoted_text.strip()
             lines.append(
-                f'  > "{quote}" — {n.provenance.document or "unknown"}'
-                f" p.{n.provenance.page or '?'}"
+                f'  > "{quote}" — {n.provenance.document or "unknown"} p.{n.provenance.page or "?"}'
             )
     if len(fw.constraints.narrative) > 10:
         lines.append(
@@ -684,16 +652,8 @@ def render_summary(
     # --------------------------------------------------------------
     lines.append("## Flagged ambiguities")
     lines.append("")
-    low_conf_num = [
-        c
-        for c in fw.constraints.numerical
-        if c.confidence.score < 0.80
-    ]
-    low_conf_narr = [
-        c
-        for c in fw.constraints.narrative
-        if c.confidence.score < 0.80
-    ]
+    low_conf_num = [c for c in fw.constraints.numerical if c.confidence.score < 0.80]
+    low_conf_narr = [c for c in fw.constraints.narrative if c.confidence.score < 0.80]
     disagreements = [
         c
         for c in fw.constraints.numerical
@@ -706,9 +666,7 @@ def render_summary(
     ]
     extraction_errors: list[Any] = []
     if extraction_raw:
-        extraction_errors = list(
-            extraction_raw.get("pages_with_extraction_errors") or []
-        )
+        extraction_errors = list(extraction_raw.get("pages_with_extraction_errors") or [])
 
     reconciliation_actions: dict[str, int] = {}
     if reconciliation_report:
@@ -724,10 +682,9 @@ def render_summary(
             "Listed under the relevant numerical-constraint entries."
         )
         for c in disagreements[:5]:
-            auth = c.cross_validation.authoritative_value
+            auth = c.cross_validation.authoritative_value if c.cross_validation else None
             lines.append(
-                f"  - `{c.id}`: extracted {_format_value(c.value, c.unit)}, "
-                f"authoritative {auth}"
+                f"  - `{c.id}`: extracted {_format_value(c.value, c.unit)}, authoritative {auth}"
             )
 
     if reconciliation_actions.get("corrected"):
@@ -745,10 +702,7 @@ def render_summary(
             "with the ❗ marker under the relevant category above."
         )
     if low_conf_narr:
-        lines.append(
-            f"- **{len(low_conf_narr)} narrative constraints with "
-            "confidence < 0.80.**"
-        )
+        lines.append(f"- **{len(low_conf_narr)} narrative constraints with confidence < 0.80.**")
     if unverifiable:
         lines.append(
             f"- **{len(unverifiable)} constraints unverifiable against "
@@ -807,8 +761,7 @@ def render_summary(
         )
     elif parsed_geometry:
         lines.append(
-            f"- ✗ Vector geometry: parsing failed "
-            f"({parsed_geometry.get('reason', 'unknown')})."
+            f"- ✗ Vector geometry: parsing failed ({parsed_geometry.get('reason', 'unknown')})."
         )
 
     # Cross-validation summary
@@ -822,14 +775,10 @@ def render_summary(
     cv_not_attempted = sum(
         1
         for c in fw.constraints.numerical
-        if c.cross_validation
-        and c.cross_validation.agreement == "not_attempted"
+        if c.cross_validation and c.cross_validation.agreement == "not_attempted"
     )
     cv_marker = "✓" if cv_agree or cv_disagree else "✗"
-    cv_summary = (
-        f"{cv_agree} agreed, {cv_disagree} disagreed, "
-        f"{cv_unverif} unverifiable"
-    )
+    cv_summary = f"{cv_agree} agreed, {cv_disagree} disagreed, {cv_unverif} unverifiable"
     if cv_not_attempted:
         cv_summary += f", {cv_not_attempted} not attempted (API unavailable)"
     lines.append(f"- {cv_marker} IMRO API cross-validation: {cv_summary}.")
@@ -910,7 +859,10 @@ def render_summary(
             ),
             (
                 "unmatched",
-                ("regels clause with no matching polygon", "regels clauses with no matching polygon"),
+                (
+                    "regels clause with no matching polygon",
+                    "regels clauses with no matching polygon",
+                ),
                 "non-bouwvlak labels or permit-gated deviations",
             ),
             (
@@ -920,10 +872,10 @@ def render_summary(
             ),
         ]
         for key, (sing, plur), explainer in action_descriptions:
-            n = counts.get(key, 0)
-            if n:
-                label = sing if n == 1 else plur
-                lines.append(f"- {n} {label} ({explainer}).")
+            action_count = counts.get(key, 0)
+            if action_count:
+                label = sing if action_count == 1 else plur
+                lines.append(f"- {action_count} {label} ({explainer}).")
         lines.append("")
         lines.append("See `reconciliation_report.json` for per-polygon details.")
         lines.append("")
@@ -976,15 +928,15 @@ def render_summary(
     lines.append("**What to trust most:**")
     lines.append("")
     lines.append(
-        "- `source_type: \"document\"` with `confidence ≥ 0.85` — verbatim "
+        '- `source_type: "document"` with `confidence ≥ 0.85` — verbatim '
         "from regels or toelichting and above the review threshold."
     )
     lines.append(
-        "- `cross_validation.agreement == \"agreement\"` — additionally "
+        '- `cross_validation.agreement == "agreement"` — additionally '
         "confirmed by the IMRO authoritative API."
     )
     lines.append(
-        "- Bouwvlak heights with `height_reconciled_from == \"regels\"` — "
+        '- Bouwvlak heights with `height_reconciled_from == "regels"` — '
         "the regels clause is the canonical source; verbeelding-only values "
         "may reflect drawing-association errors."
     )
@@ -992,17 +944,16 @@ def render_summary(
     lines.append("**What to treat with care:**")
     lines.append("")
     lines.append(
-        "- `source_type: \"inferred\"` — derived by LLM reasoning. The "
+        '- `source_type: "inferred"` — derived by LLM reasoning. The '
         "entire `programme` block is inferred; treat numbers as the "
         "model's best estimate, not a brief."
     )
     lines.append(
-        "- Any constraint flagged ❗ above (confidence below "
-        f"{CONFIDENCE_REVIEW_THRESHOLD:.2f})."
+        f"- Any constraint flagged ❗ above (confidence below {CONFIDENCE_REVIEW_THRESHOLD:.2f})."
     )
     lines.append(
         "- Bouwvlak heights with `height_reconciled_from == "
-        "\"verbeelding_uncorrected\"` — drawing value with no regels "
+        '"verbeelding_uncorrected"` — drawing value with no regels '
         "clause to confirm."
     )
     lines.append("")
@@ -1020,9 +971,7 @@ def render_summary(
 # ---------------------------------------------------------------------------
 
 
-def write_grasshopper_handoff(
-    framework: ParametricFramework, output_dir: Path
-) -> Path:
+def write_grasshopper_handoff(framework: ParametricFramework, output_dir: Path) -> Path:
     """Write framework.json, geometry/*.compas, summary.md under output_dir.
 
     Returns the path to framework.json.
@@ -1042,9 +991,7 @@ def write_grasshopper_handoff(
         zone_programme_summary if isinstance(zone_programme_summary, list) else None
     )
 
-    payload = serialise_framework(
-        framework, zone_programme_summary=zone_programme_summary
-    )
+    payload = serialise_framework(framework, zone_programme_summary=zone_programme_summary)
 
     for entry in payload["geometries"]:
         path = geom_dir / f"{entry['id']}.compas"

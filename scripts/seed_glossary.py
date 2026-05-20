@@ -44,9 +44,11 @@ from loguru import logger
 # Make schemas importable regardless of how the script is invoked.
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from omrt_extractor.schemas import GlossaryTerm
 # At the top of seed_glossary.py, after the imports
 from dotenv import load_dotenv
+
+from omrt_extractor.schemas import GlossaryTerm
+
 load_dotenv()  # loads .env from the current working directory
 # ---------------------------------------------------------------------------
 # Configuration
@@ -356,6 +358,7 @@ def seed_from_fallback(warn: bool = True) -> list[GlossaryTerm]:
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+
 
 def write_glossary(terms: list[GlossaryTerm]) -> None:
     """Write the glossary to disk, sorted by term for stable diffs."""

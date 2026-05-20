@@ -94,7 +94,7 @@ def union_polygon_rd(el) -> list[tuple[float, float]] | None:
         hull = merged.convex_hull
         if hull.geom_type == "Polygon":
             return [(x, y) for x, y in hull.exterior.coords]
-    except Exception:  # noqa: BLE001
+    except Exception:
         pass
     return rings[0]
 
@@ -144,12 +144,14 @@ def extract_bouwvlakken(root) -> list[dict]:
         if coords is None:
             continue
         poly = Polygon(coords)
-        out.append({
-            "gml_id": el.get(f"{GML}id", ""),
-            "bestemmingsvlak_href": get_href(el, "bestemmingsvlak"),
-            "polygon_rd": coords,
-            "shapely": _clean(poly),
-        })
+        out.append(
+            {
+                "gml_id": el.get(f"{GML}id", ""),
+                "bestemmingsvlak_href": get_href(el, "bestemmingsvlak"),
+                "polygon_rd": coords,
+                "shapely": _clean(poly),
+            }
+        )
     return out
 
 
@@ -175,10 +177,12 @@ def extract_maatvoeringen(root) -> list[dict]:
         if "bouwhoogte" not in waarde_type.lower():
             continue
 
-        out.append({
-            "height_m": height,
-            "point": Point(xy[0], xy[1]),
-        })
+        out.append(
+            {
+                "height_m": height,
+                "point": Point(xy[0], xy[1]),
+            }
+        )
     return out
 
 
@@ -186,12 +190,14 @@ def extract_functieaanduidingen(root) -> list[dict]:
     out = []
     for el in root.iter(f"{IMRO}Functieaanduiding"):
         naam = get_text(el, "naam")
-        out.append({
-            "gml_id": el.get(f"{GML}id", ""),
-            "bestemmingsvlak_href": get_href(el, "bestemmingsvlak"),
-            "naam": naam,
-            "sgd_code": sgd_code_from_naam(naam),
-        })
+        out.append(
+            {
+                "gml_id": el.get(f"{GML}id", ""),
+                "bestemmingsvlak_href": get_href(el, "bestemmingsvlak"),
+                "naam": naam,
+                "sgd_code": sgd_code_from_naam(naam),
+            }
+        )
     return out
 
 
@@ -201,13 +207,15 @@ def extract_bouwaanduidingen(root) -> list[dict]:
         naam = get_text(el, "naam")
         coords = first_polygon_rd(el)
         poly = Polygon(coords) if coords else None
-        out.append({
-            "gml_id": el.get(f"{GML}id", ""),
-            "naam": naam,
-            "code": normalise_sba(naam),
-            "is_acoustic": "dove gevel" in naam.lower(),
-            "shapely": _clean(poly) if poly is not None else None,
-        })
+        out.append(
+            {
+                "gml_id": el.get(f"{GML}id", ""),
+                "naam": naam,
+                "code": normalise_sba(naam),
+                "is_acoustic": "dove gevel" in naam.lower(),
+                "shapely": _clean(poly) if poly is not None else None,
+            }
+        )
     return out
 
 
@@ -215,11 +223,13 @@ def extract_enkelbestemmingen(root) -> list[dict]:
     out = []
     for el in root.iter(f"{IMRO}Enkelbestemming"):
         coords = first_polygon_rd(el)
-        out.append({
-            "gml_id": el.get(f"{GML}id", ""),
-            "naam": get_text(el, "naam"),
-            "polygon_rd": coords,
-        })
+        out.append(
+            {
+                "gml_id": el.get(f"{GML}id", ""),
+                "naam": get_text(el, "naam"),
+                "polygon_rd": coords,
+            }
+        )
     return out
 
 
@@ -258,23 +268,27 @@ def assemble_framework(root) -> dict:
     no_build = []
     for eb in extract_enkelbestemmingen(root):
         if eb["naam"] in ("Groen", "Verkeer") and eb["polygon_rd"]:
-            no_build.append({
-                "type": "enkelbestemming",
-                "naam": eb["naam"],
-                "polygon_rd": [[round(x, 3), round(y, 3)] for x, y in eb["polygon_rd"]],
-                "polygon_wgs84": to_wgs84(eb["polygon_rd"]),
-            })
+            no_build.append(
+                {
+                    "type": "enkelbestemming",
+                    "naam": eb["naam"],
+                    "polygon_rd": [[round(x, 3), round(y, 3)] for x, y in eb["polygon_rd"]],
+                    "polygon_wgs84": to_wgs84(eb["polygon_rd"]),
+                }
+            )
     for el in root.iter(f"{IMRO}Gebiedsaanduiding"):
         naam = get_text(el, "naam")
         if "vrijwaringszone" in naam.lower() and "vaarweg" in naam.lower():
             coords = first_polygon_rd(el)
             if coords:
-                no_build.append({
-                    "type": "gebiedsaanduiding",
-                    "naam": naam,
-                    "polygon_rd": [[round(x, 3), round(y, 3)] for x, y in coords],
-                    "polygon_wgs84": to_wgs84(coords),
-                })
+                no_build.append(
+                    {
+                        "type": "gebiedsaanduiding",
+                        "naam": naam,
+                        "polygon_rd": [[round(x, 3), round(y, 3)] for x, y in coords],
+                        "polygon_wgs84": to_wgs84(coords),
+                    }
+                )
 
     # zone framework
     zones = []
@@ -292,7 +306,8 @@ def assemble_framework(root) -> dict:
 
         # functieaanduidingen linked by shared bestemmingsvlak href
         linked_fa = [
-            f for f in functies
+            f
+            for f in functies
             if f["bestemmingsvlak_href"] == bv["bestemmingsvlak_href"] and f["sgd_code"]
         ]
         sgd_code = linked_fa[0]["sgd_code"] if linked_fa else ""
@@ -315,24 +330,30 @@ def assemble_framework(root) -> dict:
                     sba_codes.append(ba["code"])
 
         overlaps_wra = any(poly.intersects(p) and poly.intersection(p).area > 0 for p in wra_polys)
-        overlaps_geluid = any(poly.intersects(p) and poly.intersection(p).area > 0 for p in geluid_polys)
+        overlaps_geluid = any(
+            poly.intersects(p) and poly.intersection(p).area > 0 for p in geluid_polys
+        )
 
-        zones.append({
-            "zone_index": idx,
-            "bouwvlak_id": short_id(bv["gml_id"]),
-            "bestemmingsvlak_id": short_id(bv["bestemmingsvlak_href"]),
-            "sgd_code": sgd_code,
-            "sgd_full_name": sgd_full,
-            "max_height_m": max_h,
-            "all_heights_m": sorted(heights),
-            "footprint_area_m2": round(poly.area, 2),
-            "sba_codes": sorted(sba_codes),
-            "acoustic_overlays": sorted(acoustic),
-            "overlaps_wra": overlaps_wra,
-            "overlaps_geluidzone": overlaps_geluid,
-            "polygon_rd": [[round(x, 3), round(y, 3)] for x, y in bv["polygon_rd"]],
-            "polygon_wgs84": [[round(lon, 8), round(lat, 8)] for lon, lat in to_wgs84(bv["polygon_rd"])],
-        })
+        zones.append(
+            {
+                "zone_index": idx,
+                "bouwvlak_id": short_id(bv["gml_id"]),
+                "bestemmingsvlak_id": short_id(bv["bestemmingsvlak_href"]),
+                "sgd_code": sgd_code,
+                "sgd_full_name": sgd_full,
+                "max_height_m": max_h,
+                "all_heights_m": sorted(heights),
+                "footprint_area_m2": round(poly.area, 2),
+                "sba_codes": sorted(sba_codes),
+                "acoustic_overlays": sorted(acoustic),
+                "overlaps_wra": overlaps_wra,
+                "overlaps_geluidzone": overlaps_geluid,
+                "polygon_rd": [[round(x, 3), round(y, 3)] for x, y in bv["polygon_rd"]],
+                "polygon_wgs84": [
+                    [round(lon, 8), round(lat, 8)] for lon, lat in to_wgs84(bv["polygon_rd"])
+                ],
+            }
+        )
 
     return {
         "plan_id": "NL.IMRO.0363.N2102BPGST-VG01",
@@ -347,7 +368,9 @@ def assemble_framework(root) -> dict:
 
 def print_summary(framework: dict) -> None:
     print()
-    print(f"{'zone':>4} | {'sgd':>6} | {'h_max':>6} | {'area_m2':>9} | sba_codes              | acoustic_overlays")
+    print(
+        f"{'zone':>4} | {'sgd':>6} | {'h_max':>6} | {'area_m2':>9} | sba_codes              | acoustic_overlays"
+    )
     print("-" * 100)
     for z in framework["zones"]:
         h = f"{z['max_height_m']:.1f}" if z["max_height_m"] is not None else "  -  "

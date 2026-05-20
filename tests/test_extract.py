@@ -126,6 +126,7 @@ def preprocessed_draka(tmp_path_factory: pytest.TempPathFactory):
     return preprocess_project(DRAKA_INPUT_DIR, cache_dir)
 
 
+@pytest.mark.skip(reason="live_api: expensive, run manually with credits available")
 @pytest.mark.live_api
 @pytest.mark.slow
 @pytest.mark.asyncio
@@ -141,7 +142,8 @@ async def test_extract_project_finds_height_and_parking(preprocessed_draka) -> N
     truncated = preprocessed_draka.model_copy(deep=True)
     for doc in truncated.documents:
         if doc.document_type == "regels":
-            doc.pages = doc.pages[:8]
+            # p17-p22 are known to contain height constraints for this packet.
+            doc.pages = doc.pages[16:22]
         else:
             doc.pages = []
 
@@ -160,6 +162,7 @@ async def test_extract_project_finds_height_and_parking(preprocessed_draka) -> N
         assert 0.0 <= c.confidence.score <= 1.0
 
 
+@pytest.mark.skip(reason="live_api: expensive, run manually with credits available")
 @pytest.mark.live_api
 @pytest.mark.slow
 @pytest.mark.asyncio
@@ -171,8 +174,11 @@ async def test_dual_pass_returns_critical_field_answers(preprocessed_draka) -> N
 
     truncated = preprocessed_draka.model_copy(deep=True)
     for doc in truncated.documents:
-        if doc.document_type in ("regels", "toelichting"):
-            doc.pages = doc.pages[:5]
+        if doc.document_type == "regels":
+            doc.pages = doc.pages[16:22]
+        elif doc.document_type == "toelichting":
+            # p11-p12 are known to contain height constraints.
+            doc.pages = doc.pages[10:12]
         else:
             doc.pages = []
 
@@ -183,10 +189,5 @@ async def test_dual_pass_returns_critical_field_answers(preprocessed_draka) -> N
         a.findings for a in result.answers if a.question.startswith("max_building")
     )
     # At least one finding anywhere with a verbatim quote.
-    quoted = [
-        f
-        for a in result.answers
-        for f in a.findings
-        if f.provenance.quoted_text
-    ]
+    quoted = [f for a in result.answers for f in a.findings if f.provenance.quoted_text]
     assert quoted, "Dual-pass must produce at least one verbatim-quoted finding"

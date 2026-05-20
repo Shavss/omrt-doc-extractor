@@ -38,7 +38,10 @@ OUTPUTS = ROOT / "data" / "outputs"
 TEST_OUTPUT = ROOT / "data" / "test_output"
 
 MIGRATIONS: list[tuple[Path, Path]] = [
-    (OUTPUTS / "draka" / "draka_framework_single_pass.json", OUTPUTS / "draka" / "extraction_raw.json"),
+    (
+        OUTPUTS / "draka" / "draka_framework_single_pass.json",
+        OUTPUTS / "draka" / "extraction_raw.json",
+    ),
     (OUTPUTS / "draka" / "draka_geometry.json", OUTPUTS / "draka" / "geometry.json"),
     (OUTPUTS / "draka" / "draka_programme.json", OUTPUTS / "draka" / "programme.json"),
     (OUTPUTS / "draka_framework_single_pass.json", OUTPUTS / "draka" / "extraction_raw.json"),

@@ -109,9 +109,7 @@ def _framework(
             ],
             tool_version="0.0.0",
         ),
-        objective=Objective(
-            statement="x", urban_intent="x", provenance=prov, confidence=conf
-        ),
+        objective=Objective(statement="x", urban_intent="x", provenance=prov, confidence=conf),
         constraints=Constraints(numerical=constraints),
         variables=Variables(),
         kpis=KPIs(),
@@ -283,9 +281,7 @@ def test_unit_mix_fraction_near_one_warning() -> None:
         confidence=conf,
     )
     # Fractions sum to 1.07 — outside ±0.05, below ±0.15 → warning
-    prog = _programme(
-        target_gfa=1000.0, use_split=split, unit_fractions=[0.5, 0.57]
-    )
+    prog = _programme(target_gfa=1000.0, use_split=split, unit_fractions=[0.5, 0.57])
     fw = _framework([], programme=prog)
     findings = check_programme_sanity(fw)
     unit_mix = [f for f in findings if f.category == "unit_mix_fraction"]
@@ -312,7 +308,7 @@ def test_programme_internally_consistent_no_findings() -> None:
         target_gfa=1000.0,
         use_split=split,
         unit_fractions=[0.6, 0.4],
-        dwelling_count=12,  # 12 × 80 ≈ 960, within ±50% of 1000
+        dwelling_count=12,  # 12 x 80 ≈ 960, within ±50% of 1000
     )
     fw = _framework([], programme=prog)
     assert check_programme_sanity(fw) == []

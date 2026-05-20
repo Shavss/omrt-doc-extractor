@@ -63,9 +63,7 @@ async def extract_table_pages(
     input_dir: Path = DRAKA_INPUT_DIR,
 ) -> dict:
     """Run table-aware re-extraction over each target, merge into the framework."""
-    framework = ExtractionResult.model_validate_json(
-        framework_path.read_text(encoding="utf-8")
-    )
+    framework = ExtractionResult.model_validate_json(framework_path.read_text(encoding="utf-8"))
     preprocessed = preprocess_project(input_dir, settings.cache_dir)
     agent = build_extraction_agent()
 
@@ -83,9 +81,7 @@ async def extract_table_pages(
             new_errors.append((filename, page_number, msg))
             continue
 
-        augmented_text = (
-            (page.text or "(empty text layer)") + "\n\n" + TABLE_INSTRUCTION
-        )
+        augmented_text = (page.text or "(empty text layer)") + "\n\n" + TABLE_INSTRUCTION
         try:
             partial = await extract_page(
                 page.image_path,

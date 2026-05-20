@@ -63,7 +63,7 @@ def _zone_codes(geom: GeometricConstraint) -> set[str]:
 
     name = geom.name or ""
     if name.lower().startswith("bouwvlak"):
-        remainder = name[len("bouwvlak"):].strip()
+        remainder = name[len("bouwvlak") :].strip()
         for part in re.split(r"[,\s]+", remainder):
             normalised = _normalise_code(part)
             if normalised:
@@ -115,14 +115,14 @@ def _constraints_for_zone(
     linked_ids = set(zone.associated_rules)
 
     matched_numerical = [
-        c for c in numerical
-        if c.id in linked_ids
-        or any(_normalise_code(a) in zone_codes for a in c.applies_to)
+        c
+        for c in numerical
+        if c.id in linked_ids or any(_normalise_code(a) in zone_codes for a in c.applies_to)
     ]
     matched_narrative = [
-        c for c in narrative
-        if c.id in linked_ids
-        or any(_normalise_code(a) in zone_codes for a in c.applies_to)
+        c
+        for c in narrative
+        if c.id in linked_ids or any(_normalise_code(a) in zone_codes for a in c.applies_to)
     ]
 
     return matched_numerical, matched_narrative
@@ -140,26 +140,29 @@ def _build_zone_summary(
     """
     zone_codes = _zone_codes(zone)
 
-    by_category: dict[str, list[dict]] = {}
+    by_category: dict[str, list[dict[str, Any]]] = {}
     for c in numerical:
         cat = c.category
         if cat not in by_category:
             by_category[cat] = []
         v = c.value
-        by_category[cat].append({
-            "id": c.id,
-            "name": c.name,
-            "value": list(v) if isinstance(v, tuple) else v,
-            "unit": c.unit,
-            "is_maximum": c.is_maximum,
-            "condition": c.condition,
-            "confidence": c.confidence.score,
-            "source": f"{c.provenance.document} p.{c.provenance.page}" if c.provenance.document else "inferred",
-        })
+        by_category[cat].append(
+            {
+                "id": c.id,
+                "name": c.name,
+                "value": list(v) if isinstance(v, tuple) else v,
+                "unit": c.unit,
+                "is_maximum": c.is_maximum,
+                "condition": c.condition,
+                "confidence": c.confidence.score,
+                "source": f"{c.provenance.document} p.{c.provenance.page}"
+                if c.provenance.document
+                else "inferred",
+            }
+        )
 
     narrative_summaries = [
-        {"id": c.id, "statement": c.statement, "category": c.category}
-        for c in narrative
+        {"id": c.id, "statement": c.statement, "category": c.category} for c in narrative
     ]
 
     overlays = _acoustic_overlays(zone)
@@ -176,7 +179,7 @@ def _build_zone_summary(
     }
 
 
-def enrich_zones(framework: ParametricFramework) -> tuple[ParametricFramework, list[dict]]:
+def enrich_zones(framework: ParametricFramework) -> tuple[ParametricFramework, list[dict[str, Any]]]:
     """Enrich each bouwvlak GeometricConstraint with its matched programme rules.
 
     Matches extracted NumericalConstraints and NarrativeConstraints to
@@ -188,10 +191,7 @@ def enrich_zones(framework: ParametricFramework) -> tuple[ParametricFramework, l
         zone_summaries is a list of dicts, one per bouwvlak, suitable for
         writing to data/outputs/<project>/zone_programme_summary.json
     """
-    bouwvlakken = [
-        g for g in framework.constraints.geometric
-        if g.feature_type == "bouwvlak"
-    ]
+    bouwvlakken = [g for g in framework.constraints.geometric if g.feature_type == "bouwvlak"]
 
     if not bouwvlakken:
         logger.warning("No bouwvlak geometric constraints found; nothing to enrich.")
@@ -200,7 +200,7 @@ def enrich_zones(framework: ParametricFramework) -> tuple[ParametricFramework, l
     numerical = framework.constraints.numerical
     narrative = framework.constraints.narrative
 
-    zone_summaries: list[dict] = []
+    zone_summaries: list[dict[str, Any]] = []
     enriched_notes: dict[str, str] = {}
 
     for zone in bouwvlakken:
@@ -212,10 +212,8 @@ def enrich_zones(framework: ParametricFramework) -> tuple[ParametricFramework, l
             cats = sorted(summary["rules_by_category"].keys())
             rule_count = summary["rule_count"]
             enriched_notes[zone.id] = (
-                (zone.notes or "")
-                + f" | programme_rules: {rule_count} constraints"
-                  f" across categories {cats}"
-            )
+                zone.notes or ""
+            ) + f" | programme_rules: {rule_count} constraints across categories {cats}"
             logger.info(
                 "Zone '{}': matched {} numerical + {} narrative constraints",
                 zone.name,
@@ -242,8 +240,8 @@ def enrich_zones(framework: ParametricFramework) -> tuple[ParametricFramework, l
 
 
 def write_zone_summary(
-    zone_summaries: list[dict],
-    output_path,
+    zone_summaries: list[dict[str, Any]],
+    output_path: Path | str,
 ) -> None:
     """Write zone summaries to JSON for the Grasshopper engineer and PM."""
     p = Path(output_path)
@@ -252,18 +250,18 @@ def write_zone_summary(
     logger.info("Zone programme summary written to {}", p)
 
 
-def print_zone_table(zone_summaries: list[dict]) -> None:
+def print_zone_table(zone_summaries: list[dict[str, Any]]) -> None:
     """Print a human-readable zone summary table to stdout."""
-    print(f"\n{'='*80}")
+    print(f"\n{'=' * 80}")
     print("ZONE PROGRAMME SUMMARY (from extracted constraints)")
-    print(f"{'='*80}\n")
+    print(f"{'=' * 80}\n")
     print(f"  {'Zone':<35s}  {'Height':>7}  {'Rules':>5}  Categories")
-    print(f"  {'-'*35}  {'-'*7}  {'-'*5}  {'-'*20}")
+    print(f"  {'-' * 35}  {'-' * 7}  {'-' * 5}  {'-' * 20}")
 
     for z in zone_summaries:
-        h = f"{z['height_m']}m" if z['height_m'] else "?"
-        cats = ", ".join(sorted(z['rules_by_category'].keys())) or "none"
-        codes = " ".join(z['zone_codes'][:3])
+        h = f"{z['height_m']}m" if z["height_m"] else "?"
+        cats = ", ".join(sorted(z["rules_by_category"].keys())) or "none"
+        codes = " ".join(z["zone_codes"][:3])
         print(f"  {codes:<35s}  {h:>7}  {z['rule_count']:>5}  {cats}")
 
     print()

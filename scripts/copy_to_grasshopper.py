@@ -20,7 +20,6 @@ from pathlib import Path
 
 from loguru import logger
 
-
 APPROACH_1_FILES = ["framework.json", "massing_inputs.json", "geometry.json"]
 APPROACH_1_DIRS = ["geometry", "massings"]
 

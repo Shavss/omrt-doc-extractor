@@ -87,9 +87,9 @@ def _buurt_response() -> dict:
 
 
 def _mock_buurt_ok() -> None:
-    respx.get(
-        f"{enrich_mod.PDOK_WIJKENBUURTEN_BASE}/collections/buurten/items"
-    ).mock(return_value=httpx.Response(200, json=_buurt_response()))
+    respx.get(f"{enrich_mod.PDOK_WIJKENBUURTEN_BASE}/collections/buurten/items").mock(
+        return_value=httpx.Response(200, json=_buurt_response())
+    )
 
 
 def _3d_bag_response() -> dict:
@@ -200,13 +200,11 @@ def test_enrich_geo_bag_down_continues() -> None:
     respx.get(f"{enrich_mod.PDOK_BAG_BASE}/collections/pand/items").mock(
         return_value=httpx.Response(503)
     )
-    respx.post(enrich_mod.OVERPASS_URL).mock(
-        return_value=httpx.Response(200, json=_osm_response())
-    )
+    respx.post(enrich_mod.OVERPASS_URL).mock(return_value=httpx.Response(200, json=_osm_response()))
     # Buurten also down — CBS should fail gracefully.
-    respx.get(
-        f"{enrich_mod.PDOK_WIJKENBUURTEN_BASE}/collections/buurten/items"
-    ).mock(return_value=httpx.Response(503))
+    respx.get(f"{enrich_mod.PDOK_WIJKENBUURTEN_BASE}/collections/buurten/items").mock(
+        return_value=httpx.Response(503)
+    )
     _mock_3d_bag_down()
 
     ctx = enrich_geo(RD_CENTROID, radius_m=500, crs=CRS.RD_NEW)
@@ -227,9 +225,9 @@ def test_enrich_geo_all_apis_down() -> None:
         side_effect=httpx.ConnectError("boom")
     )
     respx.post(enrich_mod.OVERPASS_URL).mock(side_effect=httpx.ConnectError("boom"))
-    respx.get(
-        f"{enrich_mod.PDOK_WIJKENBUURTEN_BASE}/collections/buurten/items"
-    ).mock(side_effect=httpx.ConnectError("boom"))
+    respx.get(f"{enrich_mod.PDOK_WIJKENBUURTEN_BASE}/collections/buurten/items").mock(
+        side_effect=httpx.ConnectError("boom")
+    )
     _mock_3d_bag_down()
 
     ctx = enrich_geo(WGS_CENTROID, radius_m=500, crs=CRS.WGS84)
@@ -246,9 +244,7 @@ def test_enrich_geo_accepts_project_location() -> None:
     respx.get(f"{enrich_mod.PDOK_BAG_BASE}/collections/pand/items").mock(
         return_value=httpx.Response(200, json=_bag_response())
     )
-    respx.post(enrich_mod.OVERPASS_URL).mock(
-        return_value=httpx.Response(200, json=_osm_response())
-    )
+    respx.post(enrich_mod.OVERPASS_URL).mock(return_value=httpx.Response(200, json=_osm_response()))
     _mock_buurt_ok()
     _mock_3d_bag_ok()
 
@@ -269,9 +265,7 @@ def test_cache_hit_skips_network() -> None:
     route = respx.get(f"{enrich_mod.PDOK_BAG_BASE}/collections/pand/items").mock(
         return_value=httpx.Response(200, json=_bag_response())
     )
-    respx.post(enrich_mod.OVERPASS_URL).mock(
-        return_value=httpx.Response(200, json=_osm_response())
-    )
+    respx.post(enrich_mod.OVERPASS_URL).mock(return_value=httpx.Response(200, json=_osm_response()))
     _mock_buurt_ok()
     _mock_3d_bag_ok()
 
@@ -335,7 +329,9 @@ def test_enrich_3d_bag_empty_response_marks_no_data() -> None:
 
 
 @respx.mock
-def test_enrich_3d_bag_writes_cityjson_cache(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_enrich_3d_bag_writes_cityjson_cache(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     monkeypatch.setattr(enrich_mod.settings, "project_root", tmp_path, raising=False)
     respx.get(f"{enrich_mod.BAG_3D_BASE}/collections/pand/items").mock(
         return_value=httpx.Response(200, json=_3d_bag_response())

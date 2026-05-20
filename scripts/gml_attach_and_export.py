@@ -21,7 +21,7 @@ Usage:
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from lxml import etree
@@ -204,14 +204,13 @@ SITE_CONSTRAINTS: dict = {
 
 # Reverse maps from short code → full naam, for matching framework codes.
 _SBA_BY_CODE = {v["sba_code"]: k for k, v in SBA_MODIFIERS.items()}
-_DVG_BY_CODE = {
-    f"sba-dvg{k.rsplit(' ', 1)[-1]}": k for k in DVG_THRESHOLDS
-}
+_DVG_BY_CODE = {f"sba-dvg{k.rsplit(' ', 1)[-1]}": k for k in DVG_THRESHOLDS}
 
 
 # ---------------------------------------------------------------------
 # Part A: rule attachment
 # ---------------------------------------------------------------------
+
 
 def attach_rules_to_zone(zone: dict) -> dict:
     out = dict(zone)
@@ -256,8 +255,12 @@ def attach_rules_to_zone(zone: dict) -> dict:
         "setback_depth_m": setback_depth,
         "floor_plate_cap_exempt": floor_plate_exempt,
         "allows_wonen": sgd_rule["allows_wonen"] if sgd_rule else None,
-        "productive_required_first_m2": sgd_rule["productive_required_first_m2"] if sgd_rule else None,
-        "horeca_dienstverlening_cultuur_max_m2": sgd_rule["horeca_dienstverlening_cultuur_max_m2"] if sgd_rule else None,
+        "productive_required_first_m2": sgd_rule["productive_required_first_m2"]
+        if sgd_rule
+        else None,
+        "horeca_dienstverlening_cultuur_max_m2": sgd_rule["horeca_dienstverlening_cultuur_max_m2"]
+        if sgd_rule
+        else None,
         "dvg_thresholds_m": [d["threshold_m"] for d in dvg_rules],
     }
     return out
@@ -266,6 +269,7 @@ def attach_rules_to_zone(zone: dict) -> dict:
 # ---------------------------------------------------------------------
 # Overlay polygons from GML (for parameters JSON)
 # ---------------------------------------------------------------------
+
 
 def parse_poslist(text: str) -> list[tuple[float, float]]:
     nums = [float(x) for x in text.strip().split()]
@@ -286,18 +290,25 @@ def _to_wgs84(rd: list[tuple[float, float]]) -> list[list[float]]:
 
 def extract_overlay_zones(root) -> list[dict]:
     out = []
-    for tag, kind in [("Dubbelbestemming", "dubbelbestemming"), ("Gebiedsaanduiding", "gebiedsaanduiding")]:
+    for tag, kind in [
+        ("Dubbelbestemming", "dubbelbestemming"),
+        ("Gebiedsaanduiding", "gebiedsaanduiding"),
+    ]:
         for el in root.iter(f"{IMRO}{tag}"):
             naam_el = el.find(f"{IMRO}naam")
             naam = naam_el.text.strip() if naam_el is not None and naam_el.text else ""
             coords = _first_poly(el)
             if not coords:
                 continue
-            out.append({
-                "type": kind,
-                "naam": naam,
-                "polygon_wgs84": [[round(lon, 8), round(lat, 8)] for lon, lat in _to_wgs84(coords)],
-            })
+            out.append(
+                {
+                    "type": kind,
+                    "naam": naam,
+                    "polygon_wgs84": [
+                        [round(lon, 8), round(lat, 8)] for lon, lat in _to_wgs84(coords)
+                    ],
+                }
+            )
     return out
 
 
@@ -305,44 +316,51 @@ def extract_overlay_zones(root) -> list[dict]:
 # Part C: GeoJSON
 # ---------------------------------------------------------------------
 
+
 def build_geojson(framework: dict) -> dict:
     features = []
 
     # site boundary
     if framework.get("site_boundary_wgs84"):
-        features.append({
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [framework["site_boundary_wgs84"]],
-            },
-            "properties": {
-                "object_type": "site_boundary",
-                "plan_id": framework.get("plan_id"),
-            },
-        })
+        features.append(
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [framework["site_boundary_wgs84"]],
+                },
+                "properties": {
+                    "object_type": "site_boundary",
+                    "plan_id": framework.get("plan_id"),
+                },
+            }
+        )
 
     # bouwvlakken
     for z in framework["zones"]:
         props = {k: v for k, v in z.items() if k not in ("polygon_rd", "polygon_wgs84")}
         props["object_type"] = "bouwvlak"
-        features.append({
-            "type": "Feature",
-            "geometry": {"type": "Polygon", "coordinates": [z["polygon_wgs84"]]},
-            "properties": props,
-        })
+        features.append(
+            {
+                "type": "Feature",
+                "geometry": {"type": "Polygon", "coordinates": [z["polygon_wgs84"]]},
+                "properties": props,
+            }
+        )
 
     # no-build zones
     for nb in framework.get("no_build_zones", []):
-        features.append({
-            "type": "Feature",
-            "geometry": {"type": "Polygon", "coordinates": [nb["polygon_wgs84"]]},
-            "properties": {
-                "object_type": "no_build",
-                "sub_type": nb["type"],
-                "naam": nb["naam"],
-            },
-        })
+        features.append(
+            {
+                "type": "Feature",
+                "geometry": {"type": "Polygon", "coordinates": [nb["polygon_wgs84"]]},
+                "properties": {
+                    "object_type": "no_build",
+                    "sub_type": nb["type"],
+                    "naam": nb["naam"],
+                },
+            }
+        )
 
     return {"type": "FeatureCollection", "features": features}
 
@@ -350,6 +368,7 @@ def build_geojson(framework: dict) -> dict:
 # ---------------------------------------------------------------------
 # Part D: OBJ export
 # ---------------------------------------------------------------------
+
 
 def _safe_group(name: str) -> str:
     return name.replace(" ", "_").replace("/", "_") or "zone"
@@ -363,9 +382,11 @@ def build_obj(framework: dict) -> str:
     else:
         cx = cy = 0.0
 
-    lines = ["# Draka bouwvlakken extruded to max_height_m",
-             "# Coordinates in metres, localised to site centroid",
-             f"# Origin (RD): {cx:.3f} {cy:.3f}"]
+    lines = [
+        "# Draka bouwvlakken extruded to max_height_m",
+        "# Coordinates in metres, localised to site centroid",
+        f"# Origin (RD): {cx:.3f} {cy:.3f}",
+    ]
     vi = 1  # OBJ vertex index (1-based)
 
     def emit_extrusion(group: str, poly_rd: list[list[float]], height: float):
@@ -427,6 +448,7 @@ def build_obj(framework: dict) -> str:
 # Main
 # ---------------------------------------------------------------------
 
+
 def main() -> None:
     framework = json.loads(FRAMEWORK_IN.read_text())
 
@@ -449,7 +471,7 @@ def main() -> None:
         "plan_id": framework.get("plan_id"),
         "approach": "gml_authoritative",
         "prototype_note": "Programme rules hardcoded from regels for demo. Heights and geometry from GML.",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "crs_rd": framework.get("crs_rd"),
         "crs_wgs84": framework.get("crs_wgs84"),
         "site_boundary_rd": framework.get("site_boundary_rd"),
@@ -473,7 +495,9 @@ def main() -> None:
 
     # quick summary
     print()
-    print(f"{'zone':>4} | {'sgd':>6} | {'h':>5} | wonen | prod_req | hdc_max | floor_exempt | setback")
+    print(
+        f"{'zone':>4} | {'sgd':>6} | {'h':>5} | wonen | prod_req | hdc_max | floor_exempt | setback"
+    )
     print("-" * 90)
     for z in framework["zones"]:
         eff = z["effective"]
@@ -481,10 +505,10 @@ def main() -> None:
             f"{z['zone_index']:>4} | "
             f"{z['sgd_code'] or '-':>6} | "
             f"{(z['max_height_m'] or 0):>5.1f} | "
-            f"{str(eff['allows_wonen']):>5} | "
-            f"{str(eff['productive_required_first_m2']):>8} | "
-            f"{str(eff['horeca_dienstverlening_cultuur_max_m2']):>7} | "
-            f"{str(eff['floor_plate_cap_exempt']):>12} | "
+            f"{eff['allows_wonen']!s:>5} | "
+            f"{eff['productive_required_first_m2']!s:>8} | "
+            f"{eff['horeca_dienstverlening_cultuur_max_m2']!s:>7} | "
+            f"{eff['floor_plate_cap_exempt']!s:>12} | "
             f"{eff['setback_trigger_m']}m/{eff['setback_depth_m']}m"
         )
 

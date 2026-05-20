@@ -16,7 +16,6 @@ from __future__ import annotations
 
 from omrt_extractor.schemas import NumericalConstraint
 
-
 # Name/id substrings that universally identify non-base height rules:
 # additive deviations or heights for peripheral built elements that don't
 # define the building mass envelope.
@@ -85,7 +84,4 @@ def is_base_height_constraint(constraint: NumericalConstraint) -> bool:
         return False
 
     condition = (constraint.condition or "").lower()
-    if any(token in condition for token in _ADDITIVE_DEVIATION_TOKENS):
-        return False
-
-    return True
+    return not any(token in condition for token in _ADDITIVE_DEVIATION_TOKENS)

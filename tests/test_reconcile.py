@@ -81,9 +81,7 @@ def _framework(constraints: list[NumericalConstraint]) -> ParametricFramework:
             ],
             tool_version="0.0.0",
         ),
-        objective=Objective(
-            statement="x", urban_intent="x", provenance=prov, confidence=conf
-        ),
+        objective=Objective(statement="x", urban_intent="x", provenance=prov, confidence=conf),
         constraints=Constraints(numerical=constraints),
         variables=Variables(),
         kpis=KPIs(),
@@ -301,10 +299,10 @@ def test_height_reconciled_from_tracking() -> None:
         confidence=_conf(),
     )
     polys = [
-        _polygon("sba-1", height_m=None),        # inferred -> regels
-        _polygon("sba-1", height_m=45.2),        # matched  -> verbeelding
-        _polygon("sba-1", height_m=60.0),        # corrected-> regels
-        _polygon("sba-2", height_m=30.5),        # no matching constraint
+        _polygon("sba-1", height_m=None),  # inferred -> regels
+        _polygon("sba-1", height_m=45.2),  # matched  -> verbeelding
+        _polygon("sba-1", height_m=60.0),  # corrected-> regels
+        _polygon("sba-2", height_m=30.5),  # no matching constraint
     ]
     fw = _framework([constraint])
     geo = _geometry(polys)

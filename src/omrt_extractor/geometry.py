@@ -46,7 +46,7 @@ from __future__ import annotations
 import math
 import re
 from pathlib import Path
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Any, Literal
 
 from loguru import logger
 from pydantic import BaseModel, ConfigDict, Field
@@ -54,6 +54,8 @@ from shapely.geometry import Point, Polygon
 
 if TYPE_CHECKING:
     import pymupdf
+
+    from omrt_extractor.schemas import NumericalConstraint, ParametricFramework
 
 # 1 PDF point = 1/72 inch = 25.4/72 mm.
 MM_PER_POINT = 25.4 / 72.0  # ~0.35278 mm/pt
@@ -319,9 +321,7 @@ def _polygons_from_drawings(
             if op == "m":  # moveto: (op, point)
                 target = _flip((item[1].x, item[1].y))
                 if current:
-                    dist = math.hypot(
-                        target[0] - current[-1][0], target[1] - current[-1][1]
-                    )
+                    dist = math.hypot(target[0] - current[-1][0], target[1] - current[-1][1])
                     if dist > _MOVETO_GAP_THRESHOLD:
                         _flush(current)
                         current = [target]
@@ -438,7 +438,7 @@ def _extract_labels(
 # =====================================================================
 
 
-def _distinct_corners(seq, threshold: float) -> int:
+def _distinct_corners(seq: list[tuple[float, float]], threshold: float) -> int:
     """Count corners no two of which are within ``threshold`` metres.
 
     Greedy single-link: walks the input and adds each point as a new
@@ -449,9 +449,7 @@ def _distinct_corners(seq, threshold: float) -> int:
     """
     centers: list[tuple[float, float]] = []
     for p in seq:
-        if any(
-            math.hypot(p[0] - c[0], p[1] - c[1]) < threshold for c in centers
-        ):
+        if any(math.hypot(p[0] - c[0], p[1] - c[1]) < threshold for c in centers):
             continue
         centers.append(p)
     return len(centers)
@@ -481,7 +479,10 @@ def _scaled_polygon(
 
     deduped: list[tuple[float, float]] = []
     for p in pts:
-        if deduped and math.hypot(p[0] - deduped[-1][0], p[1] - deduped[-1][1]) < AUTO_CLOSE_THRESHOLD_M:
+        if (
+            deduped
+            and math.hypot(p[0] - deduped[-1][0], p[1] - deduped[-1][1]) < AUTO_CLOSE_THRESHOLD_M
+        ):
             continue
         deduped.append(p)
     # Restore explicit closure if the collapse swallowed the closing vertex.
@@ -515,8 +516,6 @@ def _scaled_polygon(
         return None, original_unique, final_unique
 
 
-
-
 # Annotation diamonds: 4-corner shape (5 vertices incl. closure) under
 # 100 m^2. Identified by shape alone so the label-association step can
 # avoid handing IMRO codes to them.
@@ -527,7 +526,7 @@ _DIAMOND_MAX_AREA_M2 = 100.0
 def _is_diamond_shape(poly: Polygon) -> bool:
     if len(poly.exterior.coords) != _DIAMOND_VERTEX_COUNT:
         return False
-    return poly.area <= _DIAMOND_MAX_AREA_M2
+    return bool(poly.area <= _DIAMOND_MAX_AREA_M2)
 
 
 def _associate_labels(
@@ -666,16 +665,11 @@ def _assign_heights_to_bouwvlakken(
 
     for marker_poly, h in height_markers:
         centroid = marker_poly.centroid
-        containing = [
-            i for i, p in enumerate(bv_polys) if p is not None and p.contains(centroid)
-        ]
+        containing = [i for i, p in enumerate(bv_polys) if p is not None and p.contains(centroid)]
         if containing:
             idx = min(containing, key=lambda i: bv_polys[i].area)  # type: ignore[union-attr]
         else:
-            distances = [
-                p.distance(centroid) if p is not None else float("inf")
-                for p in bv_polys
-            ]
+            distances = [p.distance(centroid) if p is not None else float("inf") for p in bv_polys]
             if not distances:
                 continue
             idx = min(range(len(distances)), key=lambda i: distances[i])
@@ -713,7 +707,7 @@ def _pick_drawing_page(doc: pymupdf.Document) -> int:
 # =====================================================================
 
 
-def _is_dvg_only(lp: "LabeledPolygon") -> bool:
+def _is_dvg_only(lp: LabeledPolygon) -> bool:
     """True when every bouwaanduiding on this polygon is a dove-gevel overlay.
 
     Identified purely by the IMRO naming convention: the standard Dutch
@@ -736,10 +730,7 @@ def _is_dvg_only(lp: "LabeledPolygon") -> bool:
         return False
     if lp.bestemming_codes or lp.function_aanduidingen:
         return False
-    return all(
-        code.lower().startswith("sba-dvg")
-        for code in lp.bouwaanduidingen
-    )
+    return all(code.lower().startswith("sba-dvg") for code in lp.bouwaanduidingen)
 
 
 # =====================================================================
@@ -929,9 +920,7 @@ def parse_kaveltekening(pdf_path: Path | str) -> Geometry:
                 range(len(real_entries)),
                 key=lambda i: real_entries[i][1].area_m2,
             )
-        plot_polygon = (
-            real_entries[plot_idx][1].coordinates if plot_idx is not None else None
-        )
+        plot_polygon = real_entries[plot_idx][1].coordinates if plot_idx is not None else None
 
         bouwvlakken: list[LabeledPolygon] = []
         constraint_zones: list[LabeledPolygon] = []
@@ -996,21 +985,20 @@ def _slugify_code(code: str) -> str:
 
 
 def _build_associated_rules(
-    codes: list[str], framework_numerical: list  # list[NumericalConstraint]
+    codes: list[str],
+    framework_numerical: list[NumericalConstraint],
 ) -> list[str]:
     """Find NumericalConstraint IDs whose applies_to references any of these codes."""
     slugs = {_slugify_code(c) for c in codes}
     return [
-        c.id
-        for c in framework_numerical
-        if any(_slugify_code(a) in slugs for a in c.applies_to)
+        c.id for c in framework_numerical if any(_slugify_code(a) in slugs for a in c.applies_to)
     ]
 
 
 def merge_geometry_into_framework(
-    framework,  # ParametricFramework
-    geometry: "Geometry | dict",
-):
+    framework: ParametricFramework,
+    geometry: Geometry | dict[str, Any],
+) -> ParametricFramework:
     """Return a new ParametricFramework with bouwvlakken/zones added as GeometricConstraints.
 
     Inputs:
@@ -1039,17 +1027,13 @@ def merge_geometry_into_framework(
     from omrt_extractor.schemas import (
         CRS,
         Confidence,
-        Constraints,
         GeometricConstraint,
         ParametricFramework,
         Provenance,
         SourceType,
     )
 
-    if isinstance(geometry, dict):
-        geo = Geometry.model_validate(geometry)
-    else:
-        geo = geometry
+    geo = Geometry.model_validate(geometry) if isinstance(geometry, dict) else geometry
 
     if geo.status != "ok":
         logger.warning(
@@ -1078,7 +1062,7 @@ def merge_geometry_into_framework(
 
     def _close_ring(coords: list[list[float]]) -> list[list[float]]:
         if len(coords) >= 1 and coords[0] != coords[-1]:
-            return coords + [coords[0]]
+            return [*coords, coords[0]]
         return coords
 
     def _next_id(used: set[str], stem: str) -> str:
@@ -1122,11 +1106,7 @@ def merge_geometry_into_framework(
     for lp in geo.bouwvlakken:
         bid = _next_id(used_ids, "bouwvlak")
         used_ids.add(bid)
-        codes = (
-            lp.bouwaanduidingen
-            + lp.function_aanduidingen
-            + lp.bestemming_codes
-        )
+        codes = lp.bouwaanduidingen + lp.function_aanduidingen + lp.bestemming_codes
         rules = _build_associated_rules(codes, framework.constraints.numerical)
         label = ", ".join(codes) if codes else "(no label)"
         new_geoms.append(
@@ -1142,13 +1122,13 @@ def merge_geometry_into_framework(
                 provenance=base_prov,
                 confidence=base_conf,
                 notes=(
-                    f"raw_labels={lp.raw_labels}; height_m={lp.height_m}; "
-                    f"area_m2={lp.area_m2:.0f}"
+                    f"raw_labels={lp.raw_labels}; height_m={lp.height_m}; area_m2={lp.area_m2:.0f}"
                 ),
             )
         )
 
     for lp in geo.constraint_zones:
+        ft: Literal["dvg_overlay", "no_build_zone", "other"]
         if _is_dvg_only(lp):
             ft = "dvg_overlay"
         elif lp.dubbelbestemmingen:
@@ -1157,11 +1137,7 @@ def merge_geometry_into_framework(
             ft = "other"
         zid = _next_id(used_ids, ft)
         used_ids.add(zid)
-        codes = (
-            lp.dubbelbestemmingen
-            + lp.function_aanduidingen
-            + lp.bestemming_codes
-        )
+        codes = lp.dubbelbestemmingen + lp.function_aanduidingen + lp.bestemming_codes
         rules = _build_associated_rules(codes, framework.constraints.numerical)
         label = ", ".join(codes) if codes else "(no label)"
         new_geoms.append(
@@ -1179,8 +1155,7 @@ def merge_geometry_into_framework(
         )
 
     logger.info(
-        "Merging {} geometric features into framework "
-        "({} bouwvlakken, {} zones, plot={})",
+        "Merging {} geometric features into framework ({} bouwvlakken, {} zones, plot={})",
         len(new_geoms),
         len(geo.bouwvlakken),
         len(geo.constraint_zones),
@@ -1190,7 +1165,5 @@ def merge_geometry_into_framework(
     # Build a new framework via dump/validate so the model_validators re-fire
     # (in particular the ID uniqueness check).
     payload = framework.model_dump(mode="json")
-    payload["constraints"]["geometric"].extend(
-        [g.model_dump(mode="json") for g in new_geoms]
-    )
+    payload["constraints"]["geometric"].extend([g.model_dump(mode="json") for g in new_geoms])
     return ParametricFramework.model_validate(payload)

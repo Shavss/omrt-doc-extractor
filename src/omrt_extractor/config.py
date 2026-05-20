@@ -65,7 +65,7 @@ class Settings(BaseSettings):
     )
 
     # Models
-    extraction_model: str = "claude-sonnet-4-5"
+    extraction_model: str = "claude-sonnet-4-6"
     inference_model: str = "claude-opus-4-7"
 
     # Confidence threshold for viewer highlighting; flagged below this value.

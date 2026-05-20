@@ -1,0 +1,91 @@
+{
+  "nearby_buildings": {
+    "radius_m": 2000.0,
+    "count": 1000,
+    "dominant_uses": [],
+    "typical_heights_m": null,
+    "typical_year_built": [
+      1823,
+      9999
+    ],
+    "has_3d_bag_data": false
+  },
+  "demographics": {
+    "buurt_code": "BU03621104",
+    "population": 230,
+    "household_count": 165,
+    "average_household_size": 1.3,
+    "median_age": null
+  },
+  "transit": {
+    "nearest_tram_m": 309.3848501615085,
+    "nearest_metro_m": null,
+    "nearest_train_m": null,
+    "nearest_bus_m": 248.96637093391342
+  },
+  "nearby_amenities": {
+    "shop_supermarket": 8,
+    "shop_bicycle": 5,
+    "shop_doityourself": 3,
+    "school": 10,
+    "shop_mall": 1,
+    "shop_alcohol": 3,
+    "shop_car_repair": 8,
+    "shop_greengrocer": 3,
+    "shop_sports": 2,
+    "shop_seafood": 3,
+    "kindergarten": 4,
+    "shop_bakery": 3,
+    "shop_yes": 2,
+    "shop_newsagent": 2,
+    "shop_car": 1,
+    "shop_garden_centre": 2,
+    "shop_hardware": 2,
+    "shop_storage_rental": 3,
+    "shop_hairdresser": 14,
+    "shop_clothes": 4,
+    "shop_bed": 1,
+    "shop_trade": 1,
+    "shop_interior_decoration": 2,
+    "shop_second_hand": 4,
+    "shop_beauty": 5,
+    "shop_kitchen": 2,
+    "shop_hearing_aids": 1,
+    "shop_furniture": 11,
+    "shop_window_frame": 1,
+    "shop_bathroom_furnishing": 2,
+    "shop_butcher": 5,
+    "shop_convenience": 3,
+    "shop_charity": 1,
+    "shop_pastry": 1,
+    "shop_florist": 4,
+    "shop_deli": 3,
+    "shop_optician": 3,
+    "shop_appliance": 1,
+    "shop_tobacco": 1,
+    "shop_pet": 1,
+    "shop_funeral_directors": 1,
+    "shop_chemist": 4,
+    "shop_electronics_repair": 1,
+    "shop_vacant": 1,
+    "shop_books": 1,
+    "shop_tyres": 1,
+    "playground": 100,
+    "shop_tailor": 2,
+    "shop_cheese": 1,
+    "shop_beverages": 1,
+    "shop_medical_supply": 1,
+    "shop_toys": 1,
+    "shop_variety_store": 1,
+    "shop_dry_cleaning": 1,
+    "park": 19
+  },
+  "data_sources_used": [
+    "pdok_bag",
+    "cbs_demographics",
+    "osm_overpass"
+  ],
+  "data_sources_failed": [
+    "pdok_3d_bag"
+  ]
+}

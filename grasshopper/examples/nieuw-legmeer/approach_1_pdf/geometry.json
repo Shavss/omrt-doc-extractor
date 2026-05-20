@@ -1,0 +1,14 @@
+{
+  "status": "manual_input_required",
+  "reason": "Could not derive scale: no Measure dictionary on the page and no 'Schaal 1:N' text found. Manual scale entry required.",
+  "source_pdf": "/Users/kacperti/Documents/GitHub/omrt-doc-extractor/data/inputs/nieuw-legmeer/Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer-verbeelding.pdf",
+  "source_page": 36,
+  "scale_status": "unknown",
+  "scale_denominator": null,
+  "meters_per_unit": null,
+  "plot_polygon": null,
+  "bouwvlakken": [],
+  "constraint_zones": [],
+  "degenerate_polygons_excluded": 0,
+  "legitimate_triangles_kept": 0
+}

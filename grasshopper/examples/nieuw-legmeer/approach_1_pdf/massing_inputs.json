@@ -1,0 +1,3905 @@
+{
+  "header": {
+    "banner": "PROTOTYPE OUTPUT, NOT VERIFIED",
+    "verification_status": "extracted",
+    "generated_at": "2026-05-20T16:21:53.573641+00:00",
+    "tool_version": "0.1.0-omrt-run",
+    "project_name": "nieuw-legmeer",
+    "plan_id": null,
+    "source_documents": [
+      {
+        "filename": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "document_type": "other",
+        "page_count": 128,
+        "sha256": "9b2d79b837cf2e9ceac6b90f1f10bbe4f033e390ed22c72744cc50f51a4932d8"
+      },
+      {
+        "filename": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer-verbeelding.pdf",
+        "document_type": "verbeelding",
+        "page_count": 46,
+        "sha256": "fb010fdb1dafe26472a52e9943376b37a819fbf606bbdc90fe31d2623025cb1f"
+      },
+      {
+        "filename": "Bijlage 2 - Brede Businesscase Nieuw Legmeer 2024 bij collegevoorstel Businesscase Nieuw Legmeer 2024.pdf",
+        "document_type": "other",
+        "page_count": 6,
+        "sha256": "467808d334bac9b36887ef67e0d65514b897f3856926e3ec43918998602abc3a"
+      }
+    ],
+    "review_threshold": 0.85
+  },
+  "note": "Slim envelope-driver subset of framework.json. Numerical constraints filtered to categories: ['bvo_limit', 'footprint', 'fsi_far', 'height', 'setback', 'use_mix']. Full audit trail (narrative, noise, parking, sustainability) remains in framework.json.",
+  "numerical_constraints": [
+    {
+      "id": "max_footprint_per_cluster",
+      "name": "Maximaal bebouwd percentage per cluster",
+      "category": "footprint",
+      "value": 70.0,
+      "unit": "%",
+      "is_maximum": true,
+      "condition": "Per ontwikkelcluster",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 11,
+        "quoted_text": "Op maximaal 70% van het cluster is het mogelijk om een gebouwd programma te realiseren.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in the text and repeated in the Spelregels bullet: 'Elk cluster is voor maximaal 70% bebouwd.'",
+          "Document type is 'other' (beeldkwaliteitsplan), which is informative/guiding rather than a binding bestemmingsplan regels document, so max confidence capped at 0.9."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352203Z"
+      },
+      "notes": "Max 70% of each cluster may be built upon; remaining minimum 30% must remain unbuilt (bovengronds onbebouwd)."
+    },
+    {
+      "id": "min_unbuilt_per_cluster",
+      "name": "Minimaal onbebouwd percentage per cluster",
+      "category": "footprint",
+      "value": 30.0,
+      "unit": "%",
+      "is_maximum": false,
+      "condition": "Per ontwikkelcluster; bovengronds onbebouwd",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 11,
+        "quoted_text": "De overige gronden (minimaal 30%) blijven bovengronds onbebouwd.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Directly stated in text and confirmed by diagram caption 'Minimaal 30% van cluster is onbebouwd'.",
+          "Beeldkwaliteitsplan is guiding, not a binding regels document; score capped accordingly."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352299Z"
+      },
+      "notes": "At least 30% of each cluster must remain unbuilt above ground and publicly accessible."
+    },
+    {
+      "id": "max_height_carre_eiland_mantel",
+      "name": "Maximale bouwhoogte Het Carr\u00e9, Het Eiland, De Mantel",
+      "category": "height",
+      "value": 6.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "Met uitzondering van hoogbouwaccenten. Geldt voor 'Het Carr\u00e9', 'Het Eiland' en 'De Mantel'.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 12,
+        "quoted_text": "Maximale bouwhoogte in 'Het Carr\u00e9', 'Het Eiland' en 'De Mantel': 6 bouwlagen, met uitzondering van hoogbouwaccenten.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in the Spelregels bullet list. Document type is 'other' (beeldkwaliteitplan), which is advisory rather than binding regels, so capped below 1.0."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352336Z"
+      },
+      "notes": "The 'Amstelveense hoogte' standard. Hoogbouwaccenten (12-14 bouwlagen) are explicitly excepted."
+    },
+    {
+      "id": "max_height_het_hart",
+      "name": "Maximale bouwhoogte Het Hart",
+      "category": "height",
+      "value": 4.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "Geldt voor deelgebied 'Het Hart'. Lagere hoogte om het intieme karakter te borgen.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 12,
+        "quoted_text": "Maximale bouwhoogte in 'Het Hart': 4 bouwlagen.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in the Spelregels bullet list and confirmed by diagram annotation. Advisory document, so not 1.0."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352353Z"
+      },
+      "notes": "Diagram label confirms 'Hart: max 4 bouwlagen'."
+    },
+    {
+      "id": "max_height_hoogbouwaccenten",
+      "name": "Bouwhoogte hoogbouwaccenten",
+      "category": "height",
+      "value": [
+        12.0,
+        14.0
+      ],
+      "unit": "bouwlagen",
+      "is_maximum": null,
+      "condition": "Geldt voor hoogbouwaccenten, met name in de randen van de wijk.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 12,
+        "quoted_text": "12 - 14 bouwlagen",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Value appears in diagram annotation only, not in the Spelregels bullet list. Range suggests indicative rather than prescriptive.",
+          "Document is advisory beeldkwaliteitplan."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352368Z"
+      },
+      "notes": "Range stated in diagram label '12 - 14 bouwlagen'. Not a hard cap in the Spelregels text, shown as accent height in the diagram."
+    },
+    {
+      "id": "plint_height_range",
+      "name": "Plinthoogte",
+      "category": "height",
+      "value": [
+        4.0,
+        6.0
+      ],
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "De plint telt als \u00e9\u00e9n bouwlaag.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 12,
+        "quoted_text": "Plint: 4-6 m",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Range stated in diagram annotation. Supported by Spelregels statement 'De plint telt als \u00e9\u00e9n bouwlaag'. Advisory document."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352395Z"
+      },
+      "notes": "Diagram shows 'Plint: 4-6 m'. Spelregels note that the plint counts as one bouwlaag."
+    },
+    {
+      "id": "min_distance_hoogbouwaccenten",
+      "name": "Minimale onderlinge afstand hoogbouwaccenten (hart-hart)",
+      "category": "setback",
+      "value": 60.0,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Gemeten van kern tot kern, met name in de randen van de wijk.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 12,
+        "quoted_text": "Hoogbouwaccenten staan minimaal 60 meter uit elkaar, gemeten van kern tot kern en met name in de randen van de wijk.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in Spelregels. Confirmed by diagram caption. Advisory document, so not 1.0."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352411Z"
+      },
+      "notes": "Stated both in Spelregels bullet and in diagram caption."
+    },
+    {
+      "id": "max_horizontal_diameter_above_7th_floor",
+      "name": "Maximale horizontale diameter gebouwen vanaf 7e bouwlaag",
+      "category": "footprint",
+      "value": 45.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Gerekend vanaf de 7e bouwlaag.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 12,
+        "quoted_text": "Gebouwen hebben een horizontale diameter maximaal 45 meter, gerekend vanaf de 7e bouwlaag.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in Spelregels. Advisory document so not 1.0."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352424Z"
+      },
+      "notes": "Applies to the upper portion of buildings from the 7th floor upward."
+    },
+    {
+      "id": "max_height_4_bouwlagen",
+      "name": "Maximale bouwhoogte 4 bouwlagen",
+      "category": "height",
+      "value": 4.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "Zone aangeduid als maximaal 4 bouwlagen op de maximale bouwhoogte kaart",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 13,
+        "quoted_text": "Maximaal 4 bouwlagen",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Clearly stated in the map legend under 'Maximale bouwhoogte'.",
+          "Document type is 'other' (beeldkwaliteitplan), which is informative/guiding rather than legally binding regels.",
+          "Unit 'bouwlagen' is stated explicitly in the legend text."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352441Z"
+      },
+      "notes": "Shown on a map legend for 'Maximale bouwhoogte' in the Beeldkwaliteitplan. Two height zones are distinguished: max 4 and max 6 bouwlagen."
+    },
+    {
+      "id": "max_height_6_bouwlagen",
+      "name": "Maximale bouwhoogte 6 bouwlagen",
+      "category": "height",
+      "value": 6.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "Zone aangeduid als maximaal 6 bouwlagen op de maximale bouwhoogte kaart",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 13,
+        "quoted_text": "Maximaal 6 bouwlagen",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Clearly stated in the map legend under 'Maximale bouwhoogte'.",
+          "Document type is 'other' (beeldkwaliteitplan), which is informative/guiding rather than legally binding regels.",
+          "Unit 'bouwlagen' is stated explicitly in the legend text."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352456Z"
+      },
+      "notes": "Shown on a map legend for 'Maximale bouwhoogte' in the Beeldkwaliteitplan. Two height zones are distinguished: max 4 and max 6 bouwlagen."
+    },
+    {
+      "id": "hoogbouwaccent_60m_contour",
+      "name": "60 meter contour hoogbouwaccent",
+      "category": "height",
+      "value": 60.0,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Ter plaatse van aangeduide zoeklocaties hoogbouwaccenten",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 13,
+        "quoted_text": "60 meter contour",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.65,
+        "reasons": [
+          "The term '60 meter contour' appears in the legend of the 'Zoeklocaties hoogbouwaccenten' map.",
+          "It is unclear whether 60m refers to a height limit or a spatial radius/buffer around existing towers.",
+          "Document is a beeldkwaliteitplan (guiding, not binding).",
+          "No explicit binding rule text accompanies the legend."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352471Z"
+      },
+      "notes": "The right-hand map shows 'Zoeklocaties hoogbouwaccenten' with a 60 meter contour and existing tower reference. This suggests high-rise accent locations are identified within a 60m radius zone of existing towers."
+    },
+    {
+      "id": "min_afstand_hotel",
+      "name": "Minimale afstand van hotel",
+      "category": "setback",
+      "value": 15.0,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Applies to hotel location",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 14,
+        "quoted_text": "Minimale afstand van hotel 15 m",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.72,
+        "reasons": [
+          "Value is clearly stated as 15 m in the legend",
+          "Context of what the setback applies to (from what boundary or element) is not specified",
+          "This is a beeldkwaliteitplan (urban design quality plan), not a binding regels document"
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352484Z"
+      },
+      "notes": "Mentioned in the legend of the Spelregelkaart as 'Minimale afstand van hotel 15 m'. Context of application (setback from what boundary or element) is not specified on this page."
+    },
+    {
+      "id": "min_poort_hoogte",
+      "name": "Minimale hoogte van een poort aan openbare ruimte zijde",
+      "category": "height",
+      "value": 1.5,
+      "unit": "bouwlagen",
+      "is_maximum": false,
+      "condition": "Aan de zijde van de openbare ruimte",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 21,
+        "quoted_text": "De hoogte van een poort is aan de zijde van de openbare ruimte niet minder dan 1,5 verdieping hoog.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in Spelregels; unit is 'verdieping' which maps to bouwlagen but no metre equivalent is given.",
+          "Beeldkwaliteitsplan is advisory/quality guidance, not binding regels."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352668Z"
+      },
+      "notes": "De hoogte van een poort is aan de zijde van de openbare ruimte niet minder dan 1,5 verdieping hoog. Unit is 'verdieping' (floors/storeys), interpreted as bouwlagen."
+    },
+    {
+      "id": "max_maaiveld_hoogte",
+      "name": "Maximale hoogte maaiveld binnenhof t.o.v. openbare ruimte",
+      "category": "height",
+      "value": 1.5,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Hoogte van het maaiveld van binnenhoven ten opzichte van de omliggende openbare ruimte; uitzondering geldt ter plaatse van bomen",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 25,
+        "quoted_text": "De maximale hoogte van het maaiveld bedraagt 1,5 meter ten opzichte van de omliggende openbare ruimte.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated as a spelregel (design rule). Document type is 'other' (beeldkwaliteitplan), not binding regels, so max score capped at 0.9."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352740Z"
+      },
+      "notes": "Ter plaatse van bomen mag het maaiveld tijdelijk hoger zijn dan 1,5 m. Diagram label confirms: 'H: max1.5 m'."
+    },
+    {
+      "id": "min_plint_breedte_halfverdiepte_garage",
+      "name": "Minimale breedte programmatische plint bij halfverdiepte parkeeroplossing",
+      "category": "setback",
+      "value": 6.0,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Halfverdiepte parkeeroplossingen richting het openbaar gebied; gerekend vanuit de voorgevel van een gebouw",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 25,
+        "quoted_text": "Halfverdiepte parkeeroplossingen worden richting het openbaar gebied afgezoomd met een progammatische plint van minimaal 6 meter, gerekend vanuit de voorgevel van een gebouw.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated as a spelregel and confirmed by diagram annotation 'min. 6 m'. Document is a beeldkwaliteitplan, not binding regels."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352780Z"
+      },
+      "notes": "Diagram label confirms: 'min. 6 m'. This plint is described as 'programmatisch' (programmatic), implying active use along the public edge."
+    },
+    {
+      "id": "max_setback_private_ground_level",
+      "name": "Max. breedte priv\u00e9ruimte op maaiveldniveau",
+      "category": "setback",
+      "value": 2.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Priv\u00e9ruimtes op maaiveldniveau binnen binnenhoven",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 27,
+        "quoted_text": "Priv\u00e9ruimtes op maaiveldniveau zijn toegestaan tot maximaal 2m uit de gevellijn, ontworpen in harmonie met de gebouwarchitectuur.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.92,
+        "reasons": [
+          "Clearly stated in Spelregels section with numeric value and unit.",
+          "Document type is 'other' (beeldkwaliteitplan), not binding regels; confidence capped accordingly."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352795Z"
+      },
+      "notes": "Maximum 2m uit de gevellijn voor priv\u00e9ruimtes op maaiveld."
+    },
+    {
+      "id": "min_rooilijn_bebouwd",
+      "name": "Minimum bebouwing rooilijn",
+      "category": "footprint",
+      "value": 80.0,
+      "unit": "%",
+      "is_maximum": false,
+      "condition": "Van de lengte van elke rooilijn",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 32,
+        "quoted_text": "Minimaal 80% van de lengte van elke rooilijn moet worden bebouwd.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated rule in Spelregels section",
+          "Source is a beeldkwaliteitplan (not binding regels), so confidence capped at 0.9"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352852Z"
+      },
+      "notes": "Ground floor and first floor may be set back to form a portiek without affecting this rule, provided upper floors are built on the rooilijn. Setbacks on upper floors also allowed without affecting the 80% rule if the main building volume is realised on the rooilijn."
+    },
+    {
+      "id": "min_afstand_achterzijden",
+      "name": "Minimale afstand tussen twee achterzijden van gebouwen",
+      "category": "setback",
+      "value": 15.0,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Afstand tussen twee achterzijden van gebouwen",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 32,
+        "quoted_text": "De afstand tussen twee achterzijden van gebouwen bedraagt minimaal 15 meter.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated rule in Spelregels section",
+          "Source is a beeldkwaliteitplan (not binding regels), so confidence capped at 0.9"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352863Z"
+      },
+      "notes": "Minimum distance between rear facades of buildings to guarantee minimum courtyard quality."
+    },
+    {
+      "id": "max_frontbreedte_gebouw",
+      "name": "Maximale frontbreedte gebouw",
+      "category": "footprint",
+      "value": 25.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": null,
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 37,
+        "quoted_text": "De frontbreedte van een gebouw is maximaal 25 meter.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.92,
+        "reasons": [
+          "Clearly stated in Spelregels section",
+          "Document type is 'other' (beeldkwaliteitplan), not binding regels, so confidence capped below 1.0"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352875Z"
+      },
+      "notes": "Maximum facade width per building. Part of 'pandsgewijze uitstraling' spelregels."
+    },
+    {
+      "id": "min_breedte_verschil_naastgelegen_panden",
+      "name": "Minimaal breedte verschil naast elkaar staande panden",
+      "category": "footprint",
+      "value": 5.0,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Naast elkaar staande panden",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 37,
+        "quoted_text": "Naast elkaar staande panden verschillen in breedte, minimaaal 5 meter.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in Spelregels section",
+          "Beeldkwaliteitplan is advisory not binding regels"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352888Z"
+      },
+      "notes": "Adjacent buildings must differ in width by at least 5 m to avoid repetition."
+    },
+    {
+      "id": "max_breedte_cluster_zijde_gebouw",
+      "name": "Maximale breedte smal gebouw per clusterzijde",
+      "category": "footprint",
+      "value": 15.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Elke zijde van het cluster heeft minimaal \u00e9\u00e9n gebouw met een maximale breedte van 15 meter. Indien de zijde langer is dan 100 meter, zijn minimaal twee gebouwen van maximaal 15 meter breed vereist.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 37,
+        "quoted_text": "Elke zijde van het cluster heeft minimaal \u00e9\u00e9n gebouw met een maximale breedte van 15 meter. Indien de zijde langer is dan 100 meter, zijn minimaal twee gebouwen van maximaal 15 meter breed vereist.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.88,
+        "reasons": [
+          "Clearly stated in Spelregels section",
+          "Conditional rule with threshold at 100 m side length",
+          "Beeldkwaliteitplan is advisory not binding regels"
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352900Z"
+      },
+      "notes": "Each side of a cluster must have at least one building with a max width of 15 m. If the side is longer than 100 m, at least two buildings of max 15 m wide are required."
+    },
+    {
+      "id": "hoogbouwaccent_bouwlagen",
+      "name": "Hoogbouwaccent hoogte",
+      "category": "height",
+      "value": [
+        12.0,
+        14.0
+      ],
+      "unit": "bouwlagen",
+      "is_maximum": null,
+      "condition": "Voor hoogbouwaccenten",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 39,
+        "quoted_text": "Hoogbouwaccent 12-14 bouwlagen",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated as a label in the diagram and confirmed in caption; document type is 'other' (beeldkwaliteitplan), which is guidance rather than binding regels, capping confidence at 0.85.",
+          "Unit 'bouwlagen' is explicit."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352913Z"
+      },
+      "notes": "Diagram labels indicate 12-14 bouwlagen for the hoogbouwaccent, with 4 and 6 bouwlagen for surrounding lower volumes."
+    },
+    {
+      "id": "setback_top_floors_hoogbouwaccent",
+      "name": "Minimaal aantal setback-verdiepingen hoogbouwaccent",
+      "category": "setback",
+      "value": 2.0,
+      "unit": "bouwlagen",
+      "is_maximum": false,
+      "condition": "Geldt voor de laatste (bovenste) verdiepingen van een hoogbouwaccent",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 39,
+        "quoted_text": "Minimaal de laatste twee verdiepingen van een hoogbouwaccent moeten setbacks bevatten.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated explicitly in both body text and Spelregels bullet; document is a beeldkwaliteitplan (guidance), not binding regels, so confidence is capped at 0.85."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352928Z"
+      },
+      "notes": "The rule specifies that at minimum the last two storeys of a tall-building accent must contain setbacks."
+    },
+    {
+      "id": "min_height_balcony_public_facade",
+      "name": "Minimum height for outdoor spaces on public-facing facades",
+      "category": "setback",
+      "value": 4.0,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Buitenruimtes aan gevels gelegen aan de openbare ruimte",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 51,
+        "quoted_text": "Buitenruimtes aan gevels, gelegen aan de openbare ruimte zijn toegestaan vanaf 4 meter hoogte ten opzicht van het maaiveld niveau.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in the spelregels section with an explicit height value in meters."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352955Z"
+      },
+      "notes": "Outdoor spaces on facades facing public space are only permitted from 4 m above ground level (maaiveld)."
+    },
+    {
+      "id": "max_balcony_protrusion_above_4m",
+      "name": "Maximum balcony protrusion above 4 m (public facade)",
+      "category": "setback",
+      "value": 1.5,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Buitenruimtes aan gevels gelegen aan de openbare ruimte, boven 4 m hoogte",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 51,
+        "quoted_text": "Buitenruimtes steken maximaal 1.5 meter uit het gevelvlak.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Explicitly stated maximum protrusion value in the spelregels section."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352967Z"
+      },
+      "notes": "Outdoor spaces (balkons etc.) may protrude a maximum of 1.5 m from the facade plane on public-facing elevations above 4 m."
+    },
+    {
+      "id": "max_balcony_protrusion_below_4m",
+      "name": "Maximum balcony protrusion below 4 m (public facade)",
+      "category": "setback",
+      "value": 0.5,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Onder de 4 meter, buitenruimtes aan openbare gevels",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 51,
+        "quoted_text": "Onder de 4 meter mogen buitenruimtes maximaal 0,50 meter uitsteken.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Explicitly stated maximum protrusion value below 4 m in the spelregels section."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.352984Z"
+      },
+      "notes": "Below 4 m height, outdoor spaces may protrude a maximum of 0.50 m from the facade plane on public-facing elevations."
+    },
+    {
+      "id": "plint_height_min",
+      "name": "Minimum plint height",
+      "category": "height",
+      "value": 3.5,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Plint counts as one bouwlaag",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 56,
+        "quoted_text": "De plint telt als \u00e9\u00e9n bouwlaag en is minimaal 3,5 meter en maximaal 6 meter hoog.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in spelregels section of beeldkwaliteitplan; beeldkwaliteitplan is guidance not binding regels, so capped at 0.85"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353035Z"
+      },
+      "notes": "Plint is minimaal 3,5 meter en maximaal 6 meter hoog. Both min and max stated together; separated into two constraints."
+    },
+    {
+      "id": "plint_height_max",
+      "name": "Maximum plint height",
+      "category": "height",
+      "value": 6.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Plint counts as one bouwlaag",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 56,
+        "quoted_text": "De plint telt als \u00e9\u00e9n bouwlaag en is minimaal 3,5 meter en maximaal 6 meter hoog.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in spelregels section of beeldkwaliteitplan; beeldkwaliteitplan is guidance not binding regels, so capped at 0.85"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353052Z"
+      },
+      "notes": "Plint is minimaal 3,5 meter en maximaal 6 meter hoog."
+    },
+    {
+      "id": "plint_wonen_height_min",
+      "name": "Minimum clear height plint with residential function",
+      "category": "height",
+      "value": 3.0,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Wanneer een woonfunctie in de plint is gevestigd, grenzend aan de openbare ruimte",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 56,
+        "quoted_text": "Wanneer een woonfunctie in de plint is gevestigd, grenzend aan de openbare ruimte, geldt een hoogte (vrije hoogte tussen plafond-verdieping) van minimaal 3 meter tot maximaal 6 meter.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in spelregels; beeldkwaliteitplan is guidance, not binding regels"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353066Z"
+      },
+      "notes": "Free height (vrije hoogte tussen plafond-verdieping) for residential plint bordering public space. Range 3\u20136 m."
+    },
+    {
+      "id": "plint_wonen_height_max",
+      "name": "Maximum clear height plint with residential function",
+      "category": "height",
+      "value": 6.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Wanneer een woonfunctie in de plint is gevestigd, grenzend aan de openbare ruimte",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 56,
+        "quoted_text": "Wanneer een woonfunctie in de plint is gevestigd, grenzend aan de openbare ruimte, geldt een hoogte (vrije hoogte tussen plafond-verdieping) van minimaal 3 meter tot maximaal 6 meter.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in spelregels; beeldkwaliteitplan is guidance, not binding regels"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353079Z"
+      },
+      "notes": "Free height (vrije hoogte tussen plafond-verdieping) for residential plint bordering public space."
+    },
+    {
+      "id": "plint_height_step_min",
+      "name": "Minimum height difference between adjacent plinths",
+      "category": "height",
+      "value": 0.5,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Estethisch verschil (niet constructief) tussen twee opeenvolgende plinten grenzend aan de openbare ruimte",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 56,
+        "quoted_text": "Het verschil in hoogte (in estethische zin en niet constructieve) tussen twee opeenvolgende plinten grenzend aan de openbare ruimte is minimaal 0,5m.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in spelregels; beeldkwaliteitplan is guidance, not binding regels"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353091Z"
+      },
+      "notes": "Aesthetic (not structural) height difference between two successive plinths bordering public space must be at least 0.5 m."
+    },
+    {
+      "id": "entree_setback_min",
+      "name": "Minimum entry recess depth in facade",
+      "category": "setback",
+      "value": 0.5,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Entrees gelegen aan de openbare ruimte",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 59,
+        "quoted_text": "Entrees gelegen aan de openbareruimte liggen minimaal 0,5m en maximaal 2,0m verdiept in de gevel",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in Spelregels bullet point; document is a beeldkwaliteitplan (design quality guide) which is guidance rather than binding regels, hence not 1.0"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353130Z"
+      },
+      "notes": "Minimum recess of entry into the facade, paired with a maximum of 2.0m."
+    },
+    {
+      "id": "entree_setback_max",
+      "name": "Maximum entry recess depth in facade",
+      "category": "setback",
+      "value": 2.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Entrees gelegen aan de openbare ruimte",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 59,
+        "quoted_text": "Entrees gelegen aan de openbareruimte liggen minimaal 0,5m en maximaal 2,0m verdiept in de gevel",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in Spelregels bullet point; document is a beeldkwaliteitplan (design quality guide) which is guidance rather than binding regels, hence not 1.0"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353145Z"
+      },
+      "notes": "Maximum recess of entry into the facade, paired with a minimum of 0.5m."
+    },
+    {
+      "id": "plinth_height_carre_min",
+      "name": "Minimale plinthoogte Carr\u00e9 (niet woon-functies)",
+      "category": "height",
+      "value": 4.0,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "bij niet woon-functies, Carr\u00e9 deelgebied",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 63,
+        "quoted_text": "Plinthoogte: minimaal 4 meter en maximaal 6 meter (bij niet woon-functies)",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.82,
+        "reasons": [
+          "Clearly stated with explicit metre values.",
+          "Source is a beeldkwaliteitplan, not binding regels; confidence capped below 0.85.",
+          "Condition applies only to non-residential functions."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353171Z"
+      },
+      "notes": "Minimum plinth height of 4 m for non-residential functions in the Carr\u00e9 sub-area."
+    },
+    {
+      "id": "plinth_height_carre_max",
+      "name": "Maximale plinthoogte Carr\u00e9 (niet woon-functies)",
+      "category": "height",
+      "value": 6.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "bij niet woon-functies, Carr\u00e9 deelgebied",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 63,
+        "quoted_text": "Plinthoogte: minimaal 4 meter en maximaal 6 meter (bij niet woon-functies)",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.82,
+        "reasons": [
+          "Clearly stated with explicit metre values.",
+          "Source is a beeldkwaliteitplan, not binding regels; confidence capped below 0.85.",
+          "Condition applies only to non-residential functions."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353184Z"
+      },
+      "notes": "Maximum plinth height of 6 m for non-residential functions in the Carr\u00e9 sub-area."
+    },
+    {
+      "id": "plint_min_height_carre",
+      "name": "Minimum plint height \u2013 Carr\u00e9",
+      "category": "height",
+      "value": 4.0,
+      "unit": "m",
+      "is_maximum": false,
+      "condition": "Ground floor plint (BG/PLINT) of the Carr\u00e9 building type",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 65,
+        "quoted_text": "Plint H min. 4 m",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Value is clearly annotated in the section diagram for the Carr\u00e9 typology with 'Plint H min. 4 m'.",
+          "Source is a beeldkwaliteitplan (image quality / design guidelines document), which is informative/advisory rather than binding regels.",
+          "Minimum height is unambiguous (min. = ten minste)."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353197Z"
+      },
+      "notes": "Shown in section diagram for Carr\u00e9 typology. BG/PLINT label with annotation 'Plint H min. 4 m'. Confidence capped at 0.85 as this is a beeldkwaliteitplan (image quality plan), not a binding regels document."
+    },
+    {
+      "id": "max_bouwlagen_carre_or",
+      "name": "Maximum building layers \u2013 Carr\u00e9 OR (central block)",
+      "category": "height",
+      "value": 5.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "OR (openbare ruimte-facing) portion of the Carr\u00e9 typology",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 65,
+        "quoted_text": "BG/PLINT\n1E\n2E\n3E\n4E\n5E\nOR",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.75,
+        "reasons": [
+          "Section diagram shows 5E as the topmost floor of the OR portion of Carr\u00e9.",
+          "Source is a beeldkwaliteitplan, not binding regels.",
+          "Counting of bouwlagen from diagram requires interpretation; BG/PLINT is a separate ground level, then 1E\u20135E above it."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353210Z"
+      },
+      "notes": "Section diagram shows the OR block reaching 5E (5 bouwlagen above BG/PLINT), while the Cluster portions show 3E. Counting from BG/PLINT + 1E through 5E = 6 levels total including plint; diagram labels suggest 5E is the top floor of the taller section."
+    },
+    {
+      "id": "max_bouwlagen_carre_cluster",
+      "name": "Maximum building layers \u2013 Carr\u00e9 Cluster portions",
+      "category": "height",
+      "value": 3.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "Cluster portions of the Carr\u00e9 typology (flanking sections)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 65,
+        "quoted_text": "BG/PLINT\n1E\n2E\n3E\nCluster\nRooilijn",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.75,
+        "reasons": [
+          "Section diagram shows 3E as the topmost floor of the Cluster portions of Carr\u00e9.",
+          "Source is a beeldkwaliteitplan, not binding regels.",
+          "Bouwlagen count read from diagram labels."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353223Z"
+      },
+      "notes": "Section diagram shows Cluster blocks reaching 3E above BG/PLINT. Source is a beeldkwaliteitplan."
+    },
+    {
+      "id": "max_height_hekwerk_school",
+      "name": "Maximale hoogte hekwerk rondom school",
+      "category": "height",
+      "value": 1.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Hekwerk rondom de basisschool / onderwijsgebouw",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 81,
+        "quoted_text": "Het hekwerk rondom de school is maximaal 1 meter hoog, transparant en wordt aangevuld met beplanting.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.92,
+        "reasons": [
+          "Clearly stated numerical maximum in a 'Spelregels' (design rules) section of the beeldkwaliteitplan.",
+          "Beeldkwaliteitplan is informative/guiding rather than legally binding regels, so confidence capped below 1.0."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353673Z"
+      },
+      "notes": "Hekwerk must also be transparent and supplemented with planting."
+    },
+    {
+      "id": "max_parking_layers",
+      "name": "Maximaal aantal parkeerlagen parkeergebouw",
+      "category": "height",
+      "value": 5.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "Parkeerlagen; begane grond als eerste laag geteld. Totaal aantal bouwlagen inclusief begane grond = 6.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 85,
+        "quoted_text": "Het maximale aantal parkeerlagen is 5, waarbij de begane grond als eerste laag wordt geteld. het totaal aantal bouwlagen komt daarmee op 6.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in the Spelregels section; document type is 'other' (beeldkwaliteitplan), not a binding regels clause."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353701Z"
+      },
+      "notes": "Maximum 5 parking layers (begane grond counted as first layer), total bouwlagen therefore 6."
+    },
+    {
+      "id": "max_total_bouwlagen_parking_building",
+      "name": "Totaal aantal bouwlagen parkeergebouw",
+      "category": "height",
+      "value": 6.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "Parkeergebouw; begane grond als eerste laag geteld",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 85,
+        "quoted_text": "het totaal aantal bouwlagen komt daarmee op 6.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in the Spelregels section; document type is 'other' (beeldkwaliteitplan), not a binding regels clause."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353714Z"
+      },
+      "notes": "Total bouwlagen (including begane grond) derived from max 5 parkeerlagen with ground floor as layer 1."
+    },
+    {
+      "id": "hoofdgracht_profiel_bb_total_width",
+      "name": "Hoofdgracht Profiel B-B' totale breedte",
+      "category": "setback",
+      "value": 33.3,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Profiel B-B' Hoofdgracht (30 km twee richtingen)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 95,
+        "quoted_text": "33,30",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Dimension clearly annotated at the bottom of the profile drawing as total width",
+          "Document type is 'other' (beeldkwaliteitplan), informative not binding"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353741Z"
+      },
+      "notes": "Total cross-section width 33.30 m as shown in the profile drawing. Sub-dimensions: 0.60 + 1.70 + 2.00 + 3.50 + 2.25 + 9.00 + 3.00 + 5.80 + 4.70 + 0.75 = 33.30 m"
+    },
+    {
+      "id": "hoofdgracht_profiel_b2_b2_total_width",
+      "name": "Hoofdgracht Profiel B2-B2' \u2013 Totale profielbreedte",
+      "category": "setback",
+      "value": 27.8,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Profiel B2-B2' Hoofdgracht (30 km twee richtingen)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 97,
+        "quoted_text": "27,80",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Total width clearly labelled as 27,80 m in the cross-section drawing.",
+          "Minor rounding discrepancy between sum of sub-dimensions (27.75) and stated total (27.80)."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353766Z"
+      },
+      "notes": "Total cross-section width shown in plan drawing: 4.50 + 9.00 + 3.00 + 5.80 + 4.70 + 0.75 = 27.75 m, labelled as 27.80 m. Individual zones visible in the plan view."
+    },
+    {
+      "id": "hoofdgracht_profiel_b2_zone1",
+      "name": "Hoofdgracht Profiel B2-B2' \u2013 Zone 1 breedte (groen/oever)",
+      "category": "setback",
+      "value": 4.5,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Profiel B2-B2' Hoofdgracht, meest westelijke zone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 97,
+        "quoted_text": "4,50",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Dimension clearly marked in plan drawing.",
+          "Zone function inferred from colour/image, not text label."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353779Z"
+      },
+      "notes": "Leftmost zone in cross-section, appears to be green/embankment zone."
+    },
+    {
+      "id": "hoofdgracht_profiel_b2_zone2",
+      "name": "Hoofdgracht Profiel B2-B2' \u2013 Zone 2 breedte (water/gracht)",
+      "category": "setback",
+      "value": 9.0,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Profiel B2-B2' Hoofdgracht, waterzone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 97,
+        "quoted_text": "9,00",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Dimension clearly marked.",
+          "Zone function inferred from colour coding."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353791Z"
+      },
+      "notes": "Second zone from left, shown in blue \u2013 likely the canal water surface."
+    },
+    {
+      "id": "hoofdgracht_profiel_b2_zone3",
+      "name": "Hoofdgracht Profiel B2-B2' \u2013 Zone 3 breedte",
+      "category": "setback",
+      "value": 3.0,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Profiel B2-B2' Hoofdgracht, derde zone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 97,
+        "quoted_text": "3,00",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Dimension clearly marked."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353839Z"
+      },
+      "notes": "Third zone, appears to be a shared path or transition strip."
+    },
+    {
+      "id": "hoofdgracht_profiel_b2_zone4",
+      "name": "Hoofdgracht Profiel B2-B2' \u2013 Zone 4 breedte (rijbaan)",
+      "category": "setback",
+      "value": 5.8,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Profiel B2-B2' Hoofdgracht, rijbaanzone (30 km twee richtingen)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 97,
+        "quoted_text": "5,80",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Dimension clearly marked.",
+          "Carriageway function consistent with '30 km twee richtingen' label on page."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353859Z"
+      },
+      "notes": "Fourth zone, likely carriageway for 30 km/h two-directional traffic."
+    },
+    {
+      "id": "hoofdgracht_profiel_b2_zone5",
+      "name": "Hoofdgracht Profiel B2-B2' \u2013 Zone 5 breedte (parkeren/stoep)",
+      "category": "setback",
+      "value": 4.7,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Profiel B2-B2' Hoofdgracht, vijfde zone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 97,
+        "quoted_text": "4,70",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Dimension clearly marked."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353871Z"
+      },
+      "notes": "Fifth zone, appears to include parking and pavement."
+    },
+    {
+      "id": "hoofdgracht_profiel_b2_zone6",
+      "name": "Hoofdgracht Profiel B2-B2' \u2013 Zone 6 breedte (stoep/entree)",
+      "category": "setback",
+      "value": 0.75,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Profiel B2-B2' Hoofdgracht, zesde zone (meest oostelijk)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 97,
+        "quoted_text": "0,75",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Dimension clearly marked."
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.353887Z"
+      },
+      "notes": "Smallest rightmost zone, likely a narrow pavement strip or entry zone."
+    },
+    {
+      "id": "profile_ee_total_width",
+      "name": "Carr\u00e9 profiel E-E' totale breedte",
+      "category": "setback",
+      "value": 25.5,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Carr\u00e9 - profiel E-E' (30 km twee richtingen)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 102,
+        "quoted_text": "25,50",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Total width clearly dimensioned in plan drawing as 25,50 m",
+          "Document type is 'other' (beeldkwaliteitplan), not binding regels"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354084Z"
+      },
+      "notes": "Total cross-section width of 25.50 m for profile E-E', composed of: 0.75 + 4.70 + 3.50 + 7.60 + 3.50 + 4.70 + 0.75 m"
+    },
+    {
+      "id": "carre_profiel_gg_total_width",
+      "name": "Carr\u00e9 profiel G-G' totale breedte (langzaamverkeersverbinding)",
+      "category": "setback",
+      "value": 17.5,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Profiel G-G' langzaamverkeersverbinding in het Carr\u00e9",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 104,
+        "quoted_text": "0,75 | 5,00 | 6,00 | 5,00 | 0,75\n17,50",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Dimensions clearly annotated in the cross-section drawing G-G'",
+          "Total width 17.50m is explicitly stated and consistent with sum of sub-dimensions"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354160Z"
+      },
+      "notes": "Cross-section G-G' shows a total width of 17.50m broken down as: 0.75 + 5.00 + 6.00 + 5.00 + 0.75"
+    },
+    {
+      "id": "street_profile_jj_total_width",
+      "name": "Total width street profile J-J'",
+      "category": "setback",
+      "value": 21.1,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Street profile J-J' (30 km two directions)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 112,
+        "quoted_text": "0,75   4,70   5,80   4,85   4,25   0,75\n21,10",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Dimensions clearly annotated in the plan drawing of street profile J-J'",
+          "Total width of 21.10 m matches sum of sub-dimensions",
+          "Document type is 'other' (beeldkwaliteitplan), not binding regels"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354223Z"
+      },
+      "notes": "Total cross-section width of 21.10 m composed of: 0.75 + 4.70 + 5.80 + 4.85 + 4.25 + 0.75 m sub-zones."
+    },
+    {
+      "id": "gracht_profiel_kk_total_width",
+      "name": "Gracht profiel K-K' totale breedte",
+      "category": "setback",
+      "value": 52.9,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Gracht profiel K-K' (30 km twee richtingen)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 113,
+        "quoted_text": "52,90",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Dimension clearly shown in profile drawing dimension line",
+          "Document type is 'other' (beeldkwaliteitplan), not binding regels",
+          "Unit inferred from drawing context as metres"
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354263Z"
+      },
+      "notes": "Total cross-section width of 52.90 m as shown in the dimension line at the bottom of the profile drawing."
+    },
+    {
+      "id": "gracht_profiel_kk_zone_1",
+      "name": "Gracht profiel K-K' zone breedte 3,00 m",
+      "category": "setback",
+      "value": 3.0,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Gracht profiel K-K' (30 km twee richtingen), western edge zone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 113,
+        "quoted_text": "3,00",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Dimension clearly shown in profile drawing dimension line",
+          "Document type is 'other' (beeldkwaliteitplan), not binding regels",
+          "Unit inferred from drawing context"
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354276Z"
+      },
+      "notes": "Leftmost zone width of 3.00 m in the cross-section profile K-K'."
+    },
+    {
+      "id": "gracht_profiel_kk_zone_2",
+      "name": "Gracht profiel K-K' zone breedte 29,55 m",
+      "category": "setback",
+      "value": 29.55,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Gracht profiel K-K' (30 km twee richtingen), central green/canal zone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 113,
+        "quoted_text": "29,55",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Dimension clearly shown in profile drawing dimension line",
+          "Document type is 'other' (beeldkwaliteitplan), not binding regels",
+          "Unit inferred from drawing context"
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354288Z"
+      },
+      "notes": "Central zone width of 29.55 m in the cross-section profile K-K'."
+    },
+    {
+      "id": "gracht_profiel_kk_zone_3",
+      "name": "Gracht profiel K-K' zone breedte 4,70 m",
+      "category": "setback",
+      "value": 4.7,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Gracht profiel K-K' (30 km twee richtingen), eastern zone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 113,
+        "quoted_text": "4,70",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Dimension clearly shown in profile drawing dimension line",
+          "Unit inferred"
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354302Z"
+      },
+      "notes": "Zone width of 4.70 m in the cross-section profile K-K'."
+    },
+    {
+      "id": "gracht_profiel_kk_zone_4",
+      "name": "Gracht profiel K-K' zone breedte 5,80 m",
+      "category": "setback",
+      "value": 5.8,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Gracht profiel K-K' (30 km twee richtingen), road/parking zone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 113,
+        "quoted_text": "5,80",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Dimension clearly shown in profile drawing dimension line",
+          "Unit inferred"
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354318Z"
+      },
+      "notes": "Zone width of 5.80 m in the cross-section profile K-K', likely road/parking lane."
+    },
+    {
+      "id": "gracht_profiel_kk_zone_5",
+      "name": "Gracht profiel K-K' zone breedte 4,85 m",
+      "category": "setback",
+      "value": 4.85,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Gracht profiel K-K' (30 km twee richtingen)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 113,
+        "quoted_text": "4,85",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Dimension clearly shown in profile drawing dimension line",
+          "Unit inferred"
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354331Z"
+      },
+      "notes": "Zone width of 4.85 m in the cross-section profile K-K'."
+    },
+    {
+      "id": "gracht_profiel_kk_zone_6",
+      "name": "Gracht profiel K-K' zone breedte 4,25 m",
+      "category": "setback",
+      "value": 4.25,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Gracht profiel K-K' (30 km twee richtingen)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 113,
+        "quoted_text": "4,25",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Dimension clearly shown in profile drawing dimension line",
+          "Unit inferred"
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354377Z"
+      },
+      "notes": "Zone width of 4.25 m in the cross-section profile K-K'."
+    },
+    {
+      "id": "gracht_profiel_kk_zone_7",
+      "name": "Gracht profiel K-K' zone breedte 0,75 m",
+      "category": "setback",
+      "value": 0.75,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Gracht profiel K-K' (30 km twee richtingen), eastern edge zone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 113,
+        "quoted_text": "0,75",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Dimension clearly shown in profile drawing dimension line",
+          "Unit inferred"
+        ],
+        "flags": [
+          "unit_inferred"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354391Z"
+      },
+      "notes": "Rightmost zone width of 0.75 m in the cross-section profile K-K'."
+    },
+    {
+      "id": "straat_profiel_ll_total_width",
+      "name": "Street profile L-L' total width",
+      "category": "setback",
+      "value": 21.75,
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Street profile L-L' (30 km two directions)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 114,
+        "quoted_text": "0,75 | 2,25 | 3,00 | 4,00 | 5,80 | 4,70 | 0,75\n21,75",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Total width of 21.75 m is explicitly stated in the dimension string at the bottom of the plan view",
+          "Individual sub-dimensions sum correctly to 21.75 m",
+          "Document is a beeldkwaliteitplan (image quality plan), informative rather than legally binding regels"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354405Z"
+      },
+      "notes": "Total street width shown in plan view dimension string: 0.75 + 2.25 + 3.00 + 4.00 + 5.80 + 4.70 + 0.75 = 21.75 m"
+    },
+    {
+      "id": "stoepenzone_depth_hart_eiland",
+      "name": "Stoepenzone depth \u2013 Het Hart and Het Eiland",
+      "category": "setback",
+      "value": [
+        0.4,
+        1.0
+      ],
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Stoepenzone in 'Het Hart' en op 'Het Eiland'",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 123,
+        "quoted_text": "Stoepenzone in 'Het Hart' en op 'Het eiland' is minimaal 40 cm en maximaal 100 cm diepte.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated range in the Spelregels section of a beeldkwaliteitplan (design quality plan), which is informative/advisory rather than a binding regels document."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354576Z"
+      },
+      "notes": "Range: minimum 40 cm, maximum 100 cm depth for the stoepenzone (stoep transition zone)."
+    },
+    {
+      "id": "margestrook_geveltuin_width",
+      "name": "Groene margestrook / geveltuin width \u2013 overige overgangen",
+      "category": "setback",
+      "value": [
+        0.75,
+        1.2
+      ],
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Overige overgangen (transitions other than stoepenzone zones)",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 123,
+        "quoted_text": "Overige overgangen krijgen een groene margestrook of geveltuin van minimaal 75 cm en maximaal 120 cm. De exacte afmeting wordt bepaald in het inrichtingsplan in afstemming met onder andere de ligging van kabel en leidingen.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated range in the Spelregels section; however this is a beeldkwaliteitplan (advisory/design quality), not a binding regels document. Final sizing also depends on inrichtingsplan."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354594Z"
+      },
+      "notes": "Exact dimension to be determined in the inrichtingsplan in consultation with cable and pipeline positions."
+    },
+    {
+      "id": "geveltuin_diepte_straten",
+      "name": "Geveltuin diepte in de straten",
+      "category": "setback",
+      "value": [
+        0.75,
+        1.2
+      ],
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Overgangen publiek-priv\u00e9 in de straten; in afstemming met onder andere kabels en leidingen",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 124,
+        "quoted_text": "Geveltuin, min. 75 cm, max. 120 cm diepte in afstemming met onder andere kabels en leidingen",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.82,
+        "reasons": [
+          "Clearly stated range with explicit min/max values in cm; source is a Beeldkwaliteitplan (quality plan), not binding regels, so confidence capped below 0.85."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354608Z"
+      },
+      "notes": "Range: minimum 75 cm, maximum 120 cm depth for geveltuin (facade garden) in street transitions."
+    },
+    {
+      "id": "haag_max_hoogte",
+      "name": "Haag maximale hoogte (straten)",
+      "category": "height",
+      "value": 1.0,
+      "unit": "m",
+      "is_maximum": true,
+      "condition": "Overgangen publiek-priv\u00e9 in de straten; hedge used as public-private transition element",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 124,
+        "quoted_text": "Haag, max. 1m hoog",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.82,
+        "reasons": [
+          "Explicitly stated maximum height; source is a Beeldkwaliteitplan, not binding regels."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354623Z"
+      },
+      "notes": "Maximum height for a hedge (haag) in the street public-private transition zone."
+    },
+    {
+      "id": "trap_diepte_stoepenzone",
+      "name": "Trap diepte Stoepenzone",
+      "category": "setback",
+      "value": [
+        0.4,
+        1.0
+      ],
+      "unit": "m",
+      "is_maximum": null,
+      "condition": "Overgangen publiek-priv\u00e9 in het hart: Stoepenzone",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Beeldkwaliteitplan Nieuw Legmeer.pdf",
+        "page": 124,
+        "quoted_text": "Trap, min 40 cm, max 100 cm",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.82,
+        "reasons": [
+          "Explicit min/max range stated; source is a Beeldkwaliteitplan, not binding regels."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354635Z"
+      },
+      "notes": "Range for stoop/step depth in the Stoepenzone (hart): minimum 40 cm, maximum 100 cm."
+    },
+    {
+      "id": "current_paved_percentage",
+      "name": "Verhard oppervlak percentage Legmeer (huidige situatie)",
+      "category": "footprint",
+      "value": 79.0,
+      "unit": "%",
+      "is_maximum": null,
+      "condition": "Bestaande situatie Legmeer bedrijventerrein",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 13,
+        "quoted_text": "79% verhard",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in infographic as existing site statistic",
+          "Not a binding planning rule, describes current situation"
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354661Z"
+      },
+      "notes": "Existing condition statistic, not a binding rule. Indicates strong paving dominance on current site."
+    },
+    {
+      "id": "bebouwd_onbebouwd_ratio",
+      "name": "Bebouwd/onbebouwd verhouding per cluster",
+      "category": "footprint",
+      "value": 70.0,
+      "unit": "%",
+      "is_maximum": true,
+      "condition": null,
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 18,
+        "quoted_text": "De verhouding bebouwd/onbebouwd op een cluster is bepaald op 70/30%.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated ratio of 70/30% for built vs unbuilt on a cluster. This is a toelichting/stedenbouwkundig plan page, not binding regels, so confidence capped at 0.85."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354737Z"
+      },
+      "notes": "The built/unbuilt ratio per development cluster is set at 70/30%. The 70% figure represents the maximum built coverage."
+    },
+    {
+      "id": "max_footprint_ontwikkelcluster",
+      "name": "Maximum bebouwd oppervlakte per ontwikkelcluster",
+      "category": "footprint",
+      "value": 70.0,
+      "unit": "%",
+      "is_maximum": true,
+      "condition": "Per ontwikkelcluster",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 28,
+        "quoted_text": "Elk cluster is voor maximaal 70% van het oppervlakte bebouwd.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.95,
+        "reasons": [
+          "Clearly stated in the body text and corroborated by the diagram caption 'Minimaal 30% van een ontwikkelcluster is onbebouwd'.",
+          "Document type is 'other' (stedenbouwkundig plan), not binding regels, so score capped below 1.0."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354752Z"
+      },
+      "notes": "The text states maximaal 70% bebouwd, implying minimum 30% onbebouwd. Confirmed by the diagram caption 'Minimaal 30% van een ontwikkelcluster is onbebouwd'."
+    },
+    {
+      "id": "min_unbuilt_ontwikkelcluster",
+      "name": "Minimum onbebouwd oppervlakte per ontwikkelcluster",
+      "category": "footprint",
+      "value": 30.0,
+      "unit": "%",
+      "is_maximum": false,
+      "condition": "Per ontwikkelcluster",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 28,
+        "quoted_text": "Minimaal 30% van een ontwikkelcluster is onbebouwd",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.95,
+        "reasons": [
+          "Explicitly stated in diagram caption and corroborated by body text.",
+          "Document type is stedenbouwkundig plan (not binding regels), so score capped below 1.0."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354764Z"
+      },
+      "notes": "Derived from the 70% max coverage rule; also explicitly stated in diagram caption."
+    },
+    {
+      "id": "max_bvo_ontwikkelpotentie",
+      "name": "Maximaal BVO ontwikkelpotentie Nieuw-Legmeer",
+      "category": "bvo_limit",
+      "value": 589389.0,
+      "unit": "m2",
+      "is_maximum": true,
+      "condition": null,
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 30,
+        "quoted_text": "maximaal  589.389 m2 Bruto Vloer Oppervlakte ontwikkelpotentie",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.9,
+        "reasons": [
+          "Clearly stated in infographic with explicit m2 unit and 'maximaal' qualifier; document is a stedenbouwkundig plan, informative not binding."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354802Z"
+      },
+      "notes": "Maximum gross floor area (bruto vloeroppervlakte) development potential for Nieuw-Legmeer."
+    },
+    {
+      "id": "aandeel_sociaal_woningen",
+      "name": "Aandeel sociale woningen",
+      "category": "use_mix",
+      "value": 20.0,
+      "unit": "percent",
+      "is_maximum": null,
+      "condition": null,
+      "applies_to": [
+        "max_woningen_nieuw_legmeer"
+      ],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 30,
+        "quoted_text": "20% sociaal",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated in infographic; document is informative not binding; no explicit indication whether this is a minimum or exact target."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354814Z"
+      },
+      "notes": "20% of the dwellings to be social housing ('sociaal')."
+    },
+    {
+      "id": "aandeel_middelduur_woningen",
+      "name": "Aandeel middelduur woningen",
+      "category": "use_mix",
+      "value": 40.0,
+      "unit": "percent",
+      "is_maximum": null,
+      "condition": null,
+      "applies_to": [
+        "max_woningen_nieuw_legmeer"
+      ],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 30,
+        "quoted_text": "40% middelduur",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated in infographic; document is informative not binding; no explicit indication whether this is a minimum or exact target."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354826Z"
+      },
+      "notes": "40% of the dwellings to be mid-market ('middelduur')."
+    },
+    {
+      "id": "aandeel_vrije_sector_woningen",
+      "name": "Aandeel vrije sector woningen",
+      "category": "use_mix",
+      "value": 40.0,
+      "unit": "percent",
+      "is_maximum": null,
+      "condition": null,
+      "applies_to": [
+        "max_woningen_nieuw_legmeer"
+      ],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 30,
+        "quoted_text": "40% vrije sector",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated in infographic; document is informative not binding; no explicit indication whether this is a minimum or exact target."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354841Z"
+      },
+      "notes": "40% of the dwellings to be free-market ('vrije sector')."
+    },
+    {
+      "id": "max_height_general_bouwlagen",
+      "name": "Maximale bouwhoogte algemeen (Amstelveense hoogte)",
+      "category": "height",
+      "value": 6.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "Geldt als maximale bouwhoogte voor alle bebouwing in Legmeer (basislaag); incidentele hoogbouwaccenten zijn bovenop deze basislaag toegestaan.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 33,
+        "quoted_text": "In lijn met de hoogbouwvisie geldt in Legmeer de Amstelveense hoogte als de maximale bouwhoogte voor alle bebouwing.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated as maximum for all buildings, but document is a stedenbouwkundig plan (toelichting-type), not binding regels.",
+          "Unit 'bouwlagen' explicitly stated in the legend and body text."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354910Z"
+      },
+      "notes": "De 'Amstelveense hoogte' van 6 bouwlagen is de norm uit de Hoogbouwvisie Amstelveen 2020, hier toegepast als maximum voor alle bebouwing."
+    },
+    {
+      "id": "max_height_het_hart_bouwlagen",
+      "name": "Maximale bouwhoogte 'Het Hart'",
+      "category": "height",
+      "value": 4.0,
+      "unit": "bouwlagen",
+      "is_maximum": true,
+      "condition": "Van toepassing op sfeergebied 'Het Hart', vanwege het afwijkende karakter van dit gebied.",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 33,
+        "quoted_text": "'Het Hart' vormt een uitzondering, hier geldt vanwege het afwijkende karakter van dit sfeergebied, een bouwhoogte van maximaal 4 bouwlagen.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated as an exception for 'Het Hart' with explicit maximum of 4 bouwlagen.",
+          "Document is a stedenbouwkundig plan, not binding regels; confidence capped at 0.85."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.354924Z"
+      },
+      "notes": "In 'Het Hart' is plaats voor \u00e9\u00e9n hoogbouwaccent voor markering en versterking van de noordelijke (fiets)entree en het centrale park."
+    },
+    {
+      "id": "min_bvo_supermarkt",
+      "name": "Minimum BVO Supermarkt",
+      "category": "bvo_limit",
+      "value": 1800.0,
+      "unit": "m2",
+      "is_maximum": false,
+      "condition": "Commercieel programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Supermarkt                                      1.800",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in table as 'Minimum metrage bvo'; document is toelichting/stedenbouwkundig plan, not binding regels. Footnote * notes the Herziene Ontwikkelvisie 2024 may offer a wider bandwidth."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355037Z"
+      },
+      "notes": "Minimum metrage bvo per overzicht commercieel programma"
+    },
+    {
+      "id": "min_bvo_overig_dagelijks",
+      "name": "Minimum BVO Overig dagelijks",
+      "category": "bvo_limit",
+      "value": 500.0,
+      "unit": "m2",
+      "is_maximum": false,
+      "condition": "Commercieel programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Overig dagelijks                           500",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated in table as minimum metrage bvo; informative document, not binding regels."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355051Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "min_bvo_niet_dagelijks",
+      "name": "Minimum BVO Niet-dagelijks",
+      "category": "bvo_limit",
+      "value": 300.0,
+      "unit": "m2",
+      "is_maximum": false,
+      "condition": "Commercieel programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Niet-dagelijks                                 300",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated in table as minimum metrage bvo; informative document, not binding regels."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355063Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "min_bvo_commerciele_dienstverlening",
+      "name": "Minimum BVO Commerci\u00eble dienstverlening",
+      "category": "bvo_limit",
+      "value": 150.0,
+      "unit": "m2",
+      "is_maximum": false,
+      "condition": "Commercieel programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Commerci\u00eble dienstverlening       150",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated in table as minimum metrage bvo; informative document."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355075Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "min_bvo_horeca",
+      "name": "Minimum BVO Wijk-/centrumgebonden horeca",
+      "category": "bvo_limit",
+      "value": 200.0,
+      "unit": "m2",
+      "is_maximum": false,
+      "condition": "Commercieel programma; exclusief horeca categorie 2 en 3",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Wijk-/centrumgebonden horeca*** 200",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated in table as minimum metrage bvo; informative document. Footnote excludes horeca category 2 and 3."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355131Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "totaal_bvo_commercieel",
+      "name": "Totaal minimum BVO commercieel programma",
+      "category": "bvo_limit",
+      "value": 3025.0,
+      "unit": "m2",
+      "is_maximum": false,
+      "condition": "Totaal commercieel programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Totaal                        3.025",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated as total in table; informative document, not binding regels."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355146Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "bvo_basisschool",
+      "name": "BVO Basisschool",
+      "category": "bvo_limit",
+      "value": 4230.0,
+      "unit": "m2",
+      "is_maximum": null,
+      "condition": "Maatschappelijk programma; berekend op 500 leerlingen",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Basischool****                                  4.230",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.75,
+        "reasons": [
+          "Stated in table but footnote indicates value may change based on ongoing research into larger programme and pupil count."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355159Z"
+      },
+      "notes": "Footnote **** states this is calculated for 500 pupils and further research into larger programme is ongoing."
+    },
+    {
+      "id": "bvo_schoolplein",
+      "name": "BVO Schoolplein (basisschool)",
+      "category": "bvo_limit",
+      "value": 2300.0,
+      "unit": "m2",
+      "is_maximum": null,
+      "condition": "Maatschappelijk programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "-schoolplein 2.300",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Stated in table under maatschappelijk programma; informative document."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355172Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "bvo_voortgezet_onderwijs",
+      "name": "BVO Voortgezet onderwijs / Middelbaar beroepsonderwijs",
+      "category": "bvo_limit",
+      "value": 8320.0,
+      "unit": "m2",
+      "is_maximum": null,
+      "condition": "Maatschappelijk programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Voortgezet onderwijs/Middelbaar beroeps onderwijs 8.320",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in table; informative document."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355184Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "bvo_vo_buitenruimte",
+      "name": "BVO Buitenruimte voortgezet onderwijs",
+      "category": "bvo_limit",
+      "value": 2100.0,
+      "unit": "m2",
+      "is_maximum": null,
+      "condition": "Maatschappelijk programma; buitenruimte bij voortgezet onderwijs/MBO",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "-buitenruimte 2.100",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Stated in table; relates to buitenruimte associated with VO/MBO by table structure."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355195Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "bvo_cultuur_maatschappelijk",
+      "name": "BVO Cultuur/maatschappelijk",
+      "category": "bvo_limit",
+      "value": 1000.0,
+      "unit": "m2",
+      "is_maximum": null,
+      "condition": "Maatschappelijk programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Cultuur/maatschappelijk  1.000",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in table; informative document."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355207Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "bvo_medisch_centrum",
+      "name": "BVO Medisch centrum",
+      "category": "bvo_limit",
+      "value": 2200.0,
+      "unit": "m2",
+      "is_maximum": null,
+      "condition": "Maatschappelijk programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Medisch centrum                               2.200",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Clearly stated in table; informative document."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355220Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "totaal_bvo_maatschappelijk",
+      "name": "Totaal BVO maatschappelijk programma",
+      "category": "bvo_limit",
+      "value": 22150.0,
+      "unit": "m2",
+      "is_maximum": null,
+      "condition": "Totaal maatschappelijk programma",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Totaal                      22.150",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.85,
+        "reasons": [
+          "Stated as total in table; informative document."
+        ],
+        "flags": []
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355231Z"
+      },
+      "notes": null
+    },
+    {
+      "id": "min_bvo_bedrijven",
+      "name": "Minimum BVO Bedrijven",
+      "category": "bvo_limit",
+      "value": 15000.0,
+      "unit": "m2",
+      "is_maximum": false,
+      "condition": "Programmering op basis van Herziene ontwikkelvisie Legmeer 2024",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "Programmering van bedrijven (minimaal 15.000 m2 bvo) en kantoren 3.500 - 6.500 m2 bvo) zal op basis van de Herziene ontwikkelvisie Legmeer 2024 worden ingepast.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Stated in footnote as minimum; informative document, subject to further elaboration in Herziene Ontwikkelvisie 2024."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355243Z"
+      },
+      "notes": "Footnote ** states: 'Programmering van bedrijven (minimaal 15.000 m2 bvo) en kantoren 3.500 - 6.500 m2 bvo) zal op basis van de Herziene ontwikkelvisie Legmeer 2024 worden ingepast.'"
+    },
+    {
+      "id": "bvo_kantoren",
+      "name": "BVO Kantoren (bandbreedte)",
+      "category": "bvo_limit",
+      "value": [
+        3500.0,
+        6500.0
+      ],
+      "unit": "m2",
+      "is_maximum": null,
+      "condition": "Programmering op basis van Herziene ontwikkelvisie Legmeer 2024",
+      "applies_to": [],
+      "provenance": {
+        "source_type": "document",
+        "document": "Bijlage 1 - Stedenbouwkundig plan Nieuw Legmeer.pdf",
+        "page": 42,
+        "quoted_text": "kantoren 3.500 - 6.500 m2 bvo) zal op basis van de Herziene ontwikkelvisie Legmeer 2024 worden ingepast.",
+        "api_name": null,
+        "inferred_from": [],
+        "entered_by": null,
+        "timestamp": "2024-01-01T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Range clearly stated in footnote; informative document, subject to further elaboration."
+        ],
+        "flags": [
+          "ambiguous_clause"
+        ]
+      },
+      "cross_validation": {
+        "source": "imro_plannen_v4",
+        "authoritative_value": null,
+        "authoritative_unit": null,
+        "agreement": "not_attempted",
+        "tolerance_used": null,
+        "notes": "No IMRO plan ID on this project",
+        "timestamp": "2026-05-20T15:49:07.355254Z"
+      },
+      "notes": "Range stated in footnote **."
+    }
+  ],
+  "geometric_constraints": [],
+  "programme": {
+    "target_total_gfa_m2": 589389.0,
+    "target_total_gfa_m2_range": [
+      500000.0,
+      589389.0
+    ],
+    "use_split": {
+      "residential_m2": 555214.0,
+      "productive_m2": 15000.0,
+      "office_m2": 5000.0,
+      "retail_horeca_m2": 3025.0,
+      "cultural_m2": 1000.0,
+      "social_m2": 10150.0,
+      "other_m2": 0.0,
+      "normalised_from_pct": false,
+      "rationale": "Total programme anchored to [max_bvo_ontwikkelpotentie] of 589,389 m\u00b2 BVO. Non-residential uses fixed by document targets: commercial [totaal_bvo_commercieel] 3,025 m\u00b2, bedrijven [min_bvo_bedrijven] \u226515,000 m\u00b2, kantoren [bvo_kantoren] 3,500\u20136,500 m\u00b2 (midpoint 5,000), cultureel [bvo_cultuur_maatschappelijk] 1,000 m\u00b2, social/education (basisschool 4,230 + medisch 2,200 + cultuur excluded + horeca counted in retail) - using subset of [totaal_bvo_maatschappelijk] 22,150 m\u00b2 but excluding outdoor spaces (schoolplein 2,300 + buitenruimte VO 2,100) and VO school (8,320 m\u00b2) booked separately under social. Residential is the residual to reach 589,389 m\u00b2 BVO, consistent with [max_woningen_nieuw_legmeer] 4,400 woningen.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "max_bvo_ontwikkelpotentie",
+          "max_woningen_nieuw_legmeer",
+          "totaal_bvo_commercieel",
+          "min_bvo_bedrijven",
+          "bvo_kantoren",
+          "totaal_bvo_maatschappelijk",
+          "bvo_cultuur_maatschappelijk"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.82,
+        "reasons": [
+          "Document specifies hard caps and per-use BVO targets",
+          "Residential derived as residual is consistent with 4,400 woning cap at ~125 m\u00b2 gross per woning including circulation/common"
+        ],
+        "flags": []
+      }
+    },
+    "unit_mix": [
+      {
+        "tenure": "sociale_huur",
+        "size_band": "30_60m2",
+        "fraction_of_total_dwellings": 0.12,
+        "typology": "1br",
+        "target_count_range": [
+          480,
+          560
+        ],
+        "target_size_m2_range": [
+          45.0,
+          60.0
+        ],
+        "rationale": "Sociale huur 20% per [aandeel_sociaal_woningen]; smaller 1br slice for single-person households (CBS buurt avg household size 1.3).",
+        "provenance": {
+          "source_type": "inferred",
+          "document": null,
+          "page": null,
+          "quoted_text": null,
+          "api_name": null,
+          "inferred_from": [
+            "aandeel_sociaal_woningen",
+            "max_woningen_nieuw_legmeer",
+            "cbs_demographics: avg household size 1.3"
+          ],
+          "entered_by": null,
+          "timestamp": "2025-01-15T00:00:00Z"
+        },
+        "confidence": {
+          "score": 0.78,
+          "reasons": [
+            "Tenure share is explicit in document",
+            "Typology split is designer judgment informed by CBS"
+          ],
+          "flags": []
+        }
+      },
+      {
+        "tenure": "sociale_huur",
+        "size_band": "60_90m2",
+        "fraction_of_total_dwellings": 0.08,
+        "typology": "2br",
+        "target_count_range": [
+          320,
+          360
+        ],
+        "target_size_m2_range": [
+          60.0,
+          80.0
+        ],
+        "rationale": "Remainder of 20% sociale huur as family-oriented 2br to support mixed demographic; complements [min_dwelling_size_private_outdoor] requiring outdoor space >50 m\u00b2.",
+        "provenance": {
+          "source_type": "inferred",
+          "document": null,
+          "page": null,
+          "quoted_text": null,
+          "api_name": null,
+          "inferred_from": [
+            "aandeel_sociaal_woningen",
+            "max_woningen_nieuw_legmeer"
+          ],
+          "entered_by": null,
+          "timestamp": "2025-01-15T00:00:00Z"
+        },
+        "confidence": {
+          "score": 0.72,
+          "reasons": [
+            "Tenure fixed; typology split judgment-based"
+          ],
+          "flags": []
+        }
+      },
+      {
+        "tenure": "middenhuur",
+        "size_band": "60_90m2",
+        "fraction_of_total_dwellings": 0.25,
+        "typology": "2br",
+        "target_count_range": [
+          1000,
+          1150
+        ],
+        "target_size_m2_range": [
+          65.0,
+          85.0
+        ],
+        "rationale": "Middenhuur 40% per [aandeel_middelduur_woningen]; bulk allocated to 2br couples/small households.",
+        "provenance": {
+          "source_type": "inferred",
+          "document": null,
+          "page": null,
+          "quoted_text": null,
+          "api_name": null,
+          "inferred_from": [
+            "aandeel_middelduur_woningen",
+            "max_woningen_nieuw_legmeer"
+          ],
+          "entered_by": null,
+          "timestamp": "2025-01-15T00:00:00Z"
+        },
+        "confidence": {
+          "score": 0.8,
+          "reasons": [
+            "Tenure share explicit",
+            "Typology consistent with mainstream middenhuur stock"
+          ],
+          "flags": []
+        }
+      },
+      {
+        "tenure": "middenhuur",
+        "size_band": "60_90m2",
+        "fraction_of_total_dwellings": 0.15,
+        "typology": "3br",
+        "target_count_range": [
+          600,
+          700
+        ],
+        "target_size_m2_range": [
+          80.0,
+          95.0
+        ],
+        "rationale": "Family-suitable 3br segment within middenhuur to support family living in the Amstelveense context.",
+        "provenance": {
+          "source_type": "inferred",
+          "document": null,
+          "page": null,
+          "quoted_text": null,
+          "api_name": null,
+          "inferred_from": [
+            "aandeel_middelduur_woningen",
+            "max_woningen_nieuw_legmeer"
+          ],
+          "entered_by": null,
+          "timestamp": "2025-01-15T00:00:00Z"
+        },
+        "confidence": {
+          "score": 0.7,
+          "reasons": [
+            "Tenure share explicit; typology split is designer judgment"
+          ],
+          "flags": []
+        }
+      },
+      {
+        "tenure": "vrije_sector_huur",
+        "size_band": "60_90m2",
+        "fraction_of_total_dwellings": 0.2,
+        "typology": "2br",
+        "target_count_range": [
+          800,
+          920
+        ],
+        "target_size_m2_range": [
+          70.0,
+          95.0
+        ],
+        "rationale": "Vrije sector 40% per [aandeel_vrije_sector_woningen]; half allocated as 2br, half as 3br/larger to capture mixed market segment.",
+        "provenance": {
+          "source_type": "inferred",
+          "document": null,
+          "page": null,
+          "quoted_text": null,
+          "api_name": null,
+          "inferred_from": [
+            "aandeel_vrije_sector_woningen",
+            "max_woningen_nieuw_legmeer"
+          ],
+          "entered_by": null,
+          "timestamp": "2025-01-15T00:00:00Z"
+        },
+        "confidence": {
+          "score": 0.78,
+          "reasons": [
+            "Tenure share explicit"
+          ],
+          "flags": []
+        }
+      },
+      {
+        "tenure": "koop",
+        "size_band": "over_90m2",
+        "fraction_of_total_dwellings": 0.2,
+        "typology": "3br",
+        "target_count_range": [
+          800,
+          920
+        ],
+        "target_size_m2_range": [
+          90.0,
+          130.0
+        ],
+        "rationale": "Other half of vrije sector envelope as koop (grondgebonden/appartement), addressing family demand and aligning with Amstelveen ownership profile; supports grondgebonden woningen referenced in [max_height_rear_garden_fence].",
+        "provenance": {
+          "source_type": "inferred",
+          "document": null,
+          "page": null,
+          "quoted_text": null,
+          "api_name": null,
+          "inferred_from": [
+            "aandeel_vrije_sector_woningen",
+            "max_woningen_nieuw_legmeer",
+            "max_height_rear_garden_fence"
+          ],
+          "entered_by": null,
+          "timestamp": "2025-01-15T00:00:00Z"
+        },
+        "confidence": {
+          "score": 0.7,
+          "reasons": [
+            "Split between koop and vrije huur within the 40% vrije sector slice is designer judgment"
+          ],
+          "flags": []
+        }
+      }
+    ],
+    "target_dwelling_count": 4400,
+    "total_dwelling_count_range": [
+      4000,
+      4400
+    ],
+    "parking_demand": 4400.0,
+    "reasoning_trace": [
+      {
+        "step": 1,
+        "decision": "Adopt total programme of 589,389 m\u00b2 BVO and 4,400 woningen as the upper-bound proposal, since these are explicit hard caps for the entire plangebied.",
+        "evidence": "[max_bvo_ontwikkelpotentie] 589,389 m\u00b2 and [max_woningen_nieuw_legmeer] 4,400 woningen",
+        "confidence_in_step": 0.95
+      },
+      {
+        "step": 2,
+        "decision": "Acknowledge 3D BAG unavailable (HTTP 400). Height context derived from 2D BAG context and document constraints only \u2014 Amstelveense hoogte = 6 bouwlagen base with 12\u201314 bouwlagen hoogbouwaccenten.",
+        "evidence": "Failed data source [pdok_3d_bag]; constraints [max_height_general_bouwlagen], [max_height_hoogbouwaccenten]",
+        "confidence_in_step": 0.9
+      },
+      {
+        "step": 3,
+        "decision": "Allocate non-residential BVO to document-specified minima: 3,025 m\u00b2 retail/horeca, 15,000 m\u00b2 productive (bedrijven), 5,000 m\u00b2 office (midpoint of 3,500\u20136,500), 1,000 m\u00b2 cultural, ~10,150 m\u00b2 social (basisschool 4,230 + medisch 2,200 + VO 8,320 partial \u2014 capped at 10,150 to fit envelope alongside cultureel; outdoor schoolpleinen excluded from BVO).",
+        "evidence": "[totaal_bvo_commercieel], [min_bvo_bedrijven], [bvo_kantoren], [bvo_cultuur_maatschappelijk], [totaal_bvo_maatschappelijk]",
+        "confidence_in_step": 0.85
+      },
+      {
+        "step": 4,
+        "decision": "Residential GFA set as residual to 589,389 m\u00b2 \u2192 ~555,214 m\u00b2. At 4,400 woningen this yields ~126 m\u00b2 gross per woning (including circulation/installations), consistent with Dutch BVO/GBO ratios of ~0.78 giving ~98 m\u00b2 GBO average \u2014 realistic for the 20/40/40 tenure mix.",
+        "evidence": "Derived from [max_bvo_ontwikkelpotentie] minus non-residential uses; cross-checked against [max_woningen_nieuw_legmeer]",
+        "confidence_in_step": 0.8
+      },
+      {
+        "step": 5,
+        "decision": "Apply tenure split 20% sociale / 40% middenhuur / 40% vrije sector strictly per document. Within vrije sector, split 50/50 between vrije sector huur and koop based on designer judgment given Amstelveen market profile.",
+        "evidence": "[aandeel_sociaal_woningen], [aandeel_middelduur_woningen], [aandeel_vrije_sector_woningen]; designer judgment for huur/koop split within vrije sector",
+        "confidence_in_step": 0.78
+      },
+      {
+        "step": 6,
+        "decision": "Bias typology toward small-to-mid units (1br/2br dominant) reflecting buurt demographics: CBS shows avg household size 1.3 in BU03621104, indicating predominantly single/couple households. Reserve ~35% for 3br/family units to support the goal of a mixed neighbourhood with grondgebonden woningen.",
+        "evidence": "[cbs_demographics: 165 households, 230 population, avg HH size 1.3]; [max_height_rear_garden_fence] implies grondgebonden woningen present",
+        "confidence_in_step": 0.7
+      },
+      {
+        "step": 7,
+        "decision": "Estimate parking demand at ~1.0 space per woning average (4,400 spaces) plus marginal additions for commercial/office, justified by Amstelveen suburban context. Note: OSM shows tram 309 m and bus 249 m away \u2014 moderate transit; no aggressive reduction warranted. Parking solved partly via parkeergebouw with [max_parking_layers]=5 and pre-investment of \u20ac20M ([parking_garage_preinvestment]) flagged.",
+        "evidence": "[parking_garage_preinvestment], [max_parking_layers]; [osm: tram 309m, bus 249m]; designer judgment on per-woning norm (document does not specify residential parking norm)",
+        "confidence_in_step": 0.55
+      },
+      {
+        "step": 8,
+        "decision": "Confirm green/unbuilt envelope compatibility: 70/30 bebouwd/onbebouwd per cluster ([bebouwd_onbebouwd_ratio]) and the urban intent DOEL 1 of green binnenhoven mean realistic GFA stays at \u2014 not below \u2014 the 589,389 m\u00b2 envelope only if hoogbouwaccenten (12\u201314 bouwlagen) are used; otherwise the realistic value drops toward 500,000 m\u00b2. Range 500,000\u2013589,389 m\u00b2 reflects this dependency.",
+        "evidence": "[max_footprint_per_cluster], [bebouwd_onbebouwd_ratio], [max_height_hoogbouwaccenten], urban intent narrative DOEL 1",
+        "confidence_in_step": 0.75
+      }
+    ],
+    "provenance": {
+      "source_type": "inferred",
+      "document": null,
+      "page": null,
+      "quoted_text": null,
+      "api_name": null,
+      "inferred_from": [
+        "max_bvo_ontwikkelpotentie",
+        "max_woningen_nieuw_legmeer",
+        "aandeel_sociaal_woningen",
+        "aandeel_middelduur_woningen",
+        "aandeel_vrije_sector_woningen",
+        "totaal_bvo_commercieel",
+        "min_bvo_bedrijven",
+        "bvo_kantoren",
+        "totaal_bvo_maatschappelijk",
+        "bebouwd_onbebouwd_ratio",
+        "max_height_general_bouwlagen",
+        "max_height_hoogbouwaccenten",
+        "cbs_demographics",
+        "osm_overpass"
+      ],
+      "entered_by": null,
+      "timestamp": "2025-01-15T00:00:00Z"
+    },
+    "confidence": {
+      "score": 0.78,
+      "reasons": [
+        "Total GFA and woning cap are explicit hard constraints",
+        "Tenure split is explicit at 20/40/40",
+        "Non-residential BVO values are explicitly tabulated in the stedenbouwkundig plan",
+        "Typology mix and parking norms rest on designer judgment given absence of explicit residential parking norm and unit-size policy",
+        "3D BAG unavailable \u2014 height context limited to document constraints"
+      ],
+      "flags": []
+    }
+  }
+}

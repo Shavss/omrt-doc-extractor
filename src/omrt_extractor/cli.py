@@ -36,6 +36,16 @@ app = typer.Typer(
     no_args_is_help=True,
 )
 
+# =====================================================================
+# Per-project centroid overrides
+# Add entries here when PDOK geocoding returns an incorrect or missing
+# centroid. Keys must match the input directory basename exactly.
+# =====================================================================
+
+_CENTROID_OVERRIDES: dict[str, tuple[float, float]] = {
+    "nieuw-legmeer": (52.28204632437235, 4.8372291972807),
+}
+
 
 # =====================================================================
 # Stage IO helpers
@@ -189,6 +199,7 @@ def _assemble_framework(
     programme_data: dict[str, Any],
     geo_data: dict[str, Any] | None,
     source_documents: list[Any] | None = None,
+    centroid_wgs84: tuple[float, float] | None = None,
 ) -> Any:
     """Build a ParametricFramework from cached stage outputs.
 
@@ -241,13 +252,15 @@ def _assemble_framework(
 
     municipalities = extraction.get("municipalities_found") or ["Amsterdam"]
     neighbourhoods = extraction.get("neighbourhoods_found") or []
+    location = ProjectLocation(
+        municipality=municipalities[0],
+        neighbourhood=neighbourhoods[0] if neighbourhoods else None,
+        plan_id=(extraction.get("plan_ids_found") or [None])[0],
+        centroid_wgs84=centroid_wgs84,
+    )
     metadata = ProjectMetadata(
         project_name=project_name,
-        location=ProjectLocation(
-            municipality=municipalities[0],
-            neighbourhood=neighbourhoods[0] if neighbourhoods else None,
-            plan_id=(extraction.get("plan_ids_found") or [None])[0],
-        ),
+        location=location,
         source_documents=source_documents
         or [
             SourceDocument(
@@ -336,6 +349,11 @@ def run(
 
     source_documents = _build_source_documents(in_dir)
 
+    # Resolve centroid override for this project (WGS84 lat, lng).
+    centroid_wgs84: tuple[float, float] | None = _CENTROID_OVERRIDES.get(project)
+    if centroid_wgs84 is not None:
+        logger.info("Using hardcoded centroid for {}: {}", project, centroid_wgs84)
+
     # ---------- Stage: extraction ----------
     if skip_extraction or (paths["extraction"].exists() and not force):
         if not paths["extraction"].exists():
@@ -407,6 +425,7 @@ def run(
             stub_programme.model_dump(mode="json"),
             None,
             source_documents=source_documents,
+            centroid_wgs84=centroid_wgs84,
         )
         logger.info("Running geo enrichment (expensive)…")
         geo_data = _run_geo(stub_framework, paths["geo"])
@@ -471,6 +490,7 @@ def run(
             stub_programme.model_dump(mode="json"),
             geo_data,
             source_documents=source_documents,
+            centroid_wgs84=centroid_wgs84,
         )
         geo_obj = GeoContext.model_validate(geo_data) if geo_data else None
         logger.info("Running programme inference (expensive)…")
@@ -484,6 +504,7 @@ def run(
         programme_data,
         geo_data,
         source_documents=source_documents,
+        centroid_wgs84=centroid_wgs84,
     )
 
     # ---------- Stage: IMRO cross-validation ----------

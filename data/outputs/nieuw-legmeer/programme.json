@@ -1,0 +1,352 @@
+{
+  "target_total_gfa_m2": 589389.0,
+  "target_total_gfa_m2_range": [
+    500000.0,
+    589389.0
+  ],
+  "use_split": {
+    "residential_m2": 555214.0,
+    "productive_m2": 15000.0,
+    "office_m2": 5000.0,
+    "retail_horeca_m2": 3025.0,
+    "cultural_m2": 1000.0,
+    "social_m2": 10150.0,
+    "other_m2": 0.0,
+    "normalised_from_pct": false,
+    "rationale": "Total programme anchored to [max_bvo_ontwikkelpotentie] of 589,389 m\u00b2 BVO. Non-residential uses fixed by document targets: commercial [totaal_bvo_commercieel] 3,025 m\u00b2, bedrijven [min_bvo_bedrijven] \u226515,000 m\u00b2, kantoren [bvo_kantoren] 3,500\u20136,500 m\u00b2 (midpoint 5,000), cultureel [bvo_cultuur_maatschappelijk] 1,000 m\u00b2, social/education (basisschool 4,230 + medisch 2,200 + cultuur excluded + horeca counted in retail) - using subset of [totaal_bvo_maatschappelijk] 22,150 m\u00b2 but excluding outdoor spaces (schoolplein 2,300 + buitenruimte VO 2,100) and VO school (8,320 m\u00b2) booked separately under social. Residential is the residual to reach 589,389 m\u00b2 BVO, consistent with [max_woningen_nieuw_legmeer] 4,400 woningen.",
+    "provenance": {
+      "source_type": "inferred",
+      "document": null,
+      "page": null,
+      "quoted_text": null,
+      "api_name": null,
+      "inferred_from": [
+        "max_bvo_ontwikkelpotentie",
+        "max_woningen_nieuw_legmeer",
+        "totaal_bvo_commercieel",
+        "min_bvo_bedrijven",
+        "bvo_kantoren",
+        "totaal_bvo_maatschappelijk",
+        "bvo_cultuur_maatschappelijk"
+      ],
+      "entered_by": null,
+      "timestamp": "2025-01-15T00:00:00Z"
+    },
+    "confidence": {
+      "score": 0.82,
+      "reasons": [
+        "Document specifies hard caps and per-use BVO targets",
+        "Residential derived as residual is consistent with 4,400 woning cap at ~125 m\u00b2 gross per woning including circulation/common"
+      ],
+      "flags": []
+    }
+  },
+  "unit_mix": [
+    {
+      "tenure": "sociale_huur",
+      "size_band": "30_60m2",
+      "fraction_of_total_dwellings": 0.12,
+      "typology": "1br",
+      "target_count_range": [
+        480,
+        560
+      ],
+      "target_size_m2_range": [
+        45.0,
+        60.0
+      ],
+      "rationale": "Sociale huur 20% per [aandeel_sociaal_woningen]; smaller 1br slice for single-person households (CBS buurt avg household size 1.3).",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "aandeel_sociaal_woningen",
+          "max_woningen_nieuw_legmeer",
+          "cbs_demographics: avg household size 1.3"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.78,
+        "reasons": [
+          "Tenure share is explicit in document",
+          "Typology split is designer judgment informed by CBS"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "sociale_huur",
+      "size_band": "60_90m2",
+      "fraction_of_total_dwellings": 0.08,
+      "typology": "2br",
+      "target_count_range": [
+        320,
+        360
+      ],
+      "target_size_m2_range": [
+        60.0,
+        80.0
+      ],
+      "rationale": "Remainder of 20% sociale huur as family-oriented 2br to support mixed demographic; complements [min_dwelling_size_private_outdoor] requiring outdoor space >50 m\u00b2.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "aandeel_sociaal_woningen",
+          "max_woningen_nieuw_legmeer"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.72,
+        "reasons": [
+          "Tenure fixed; typology split judgment-based"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "middenhuur",
+      "size_band": "60_90m2",
+      "fraction_of_total_dwellings": 0.25,
+      "typology": "2br",
+      "target_count_range": [
+        1000,
+        1150
+      ],
+      "target_size_m2_range": [
+        65.0,
+        85.0
+      ],
+      "rationale": "Middenhuur 40% per [aandeel_middelduur_woningen]; bulk allocated to 2br couples/small households.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "aandeel_middelduur_woningen",
+          "max_woningen_nieuw_legmeer"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.8,
+        "reasons": [
+          "Tenure share explicit",
+          "Typology consistent with mainstream middenhuur stock"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "middenhuur",
+      "size_band": "60_90m2",
+      "fraction_of_total_dwellings": 0.15,
+      "typology": "3br",
+      "target_count_range": [
+        600,
+        700
+      ],
+      "target_size_m2_range": [
+        80.0,
+        95.0
+      ],
+      "rationale": "Family-suitable 3br segment within middenhuur to support family living in the Amstelveense context.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "aandeel_middelduur_woningen",
+          "max_woningen_nieuw_legmeer"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.7,
+        "reasons": [
+          "Tenure share explicit; typology split is designer judgment"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "vrije_sector_huur",
+      "size_band": "60_90m2",
+      "fraction_of_total_dwellings": 0.2,
+      "typology": "2br",
+      "target_count_range": [
+        800,
+        920
+      ],
+      "target_size_m2_range": [
+        70.0,
+        95.0
+      ],
+      "rationale": "Vrije sector 40% per [aandeel_vrije_sector_woningen]; half allocated as 2br, half as 3br/larger to capture mixed market segment.",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "aandeel_vrije_sector_woningen",
+          "max_woningen_nieuw_legmeer"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.78,
+        "reasons": [
+          "Tenure share explicit"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "tenure": "koop",
+      "size_band": "over_90m2",
+      "fraction_of_total_dwellings": 0.2,
+      "typology": "3br",
+      "target_count_range": [
+        800,
+        920
+      ],
+      "target_size_m2_range": [
+        90.0,
+        130.0
+      ],
+      "rationale": "Other half of vrije sector envelope as koop (grondgebonden/appartement), addressing family demand and aligning with Amstelveen ownership profile; supports grondgebonden woningen referenced in [max_height_rear_garden_fence].",
+      "provenance": {
+        "source_type": "inferred",
+        "document": null,
+        "page": null,
+        "quoted_text": null,
+        "api_name": null,
+        "inferred_from": [
+          "aandeel_vrije_sector_woningen",
+          "max_woningen_nieuw_legmeer",
+          "max_height_rear_garden_fence"
+        ],
+        "entered_by": null,
+        "timestamp": "2025-01-15T00:00:00Z"
+      },
+      "confidence": {
+        "score": 0.7,
+        "reasons": [
+          "Split between koop and vrije huur within the 40% vrije sector slice is designer judgment"
+        ],
+        "flags": []
+      }
+    }
+  ],
+  "target_dwelling_count": 4400,
+  "total_dwelling_count_range": [
+    4000,
+    4400
+  ],
+  "parking_demand": 4400.0,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "decision": "Adopt total programme of 589,389 m\u00b2 BVO and 4,400 woningen as the upper-bound proposal, since these are explicit hard caps for the entire plangebied.",
+      "evidence": "[max_bvo_ontwikkelpotentie] 589,389 m\u00b2 and [max_woningen_nieuw_legmeer] 4,400 woningen",
+      "confidence_in_step": 0.95
+    },
+    {
+      "step": 2,
+      "decision": "Acknowledge 3D BAG unavailable (HTTP 400). Height context derived from 2D BAG context and document constraints only \u2014 Amstelveense hoogte = 6 bouwlagen base with 12\u201314 bouwlagen hoogbouwaccenten.",
+      "evidence": "Failed data source [pdok_3d_bag]; constraints [max_height_general_bouwlagen], [max_height_hoogbouwaccenten]",
+      "confidence_in_step": 0.9
+    },
+    {
+      "step": 3,
+      "decision": "Allocate non-residential BVO to document-specified minima: 3,025 m\u00b2 retail/horeca, 15,000 m\u00b2 productive (bedrijven), 5,000 m\u00b2 office (midpoint of 3,500\u20136,500), 1,000 m\u00b2 cultural, ~10,150 m\u00b2 social (basisschool 4,230 + medisch 2,200 + VO 8,320 partial \u2014 capped at 10,150 to fit envelope alongside cultureel; outdoor schoolpleinen excluded from BVO).",
+      "evidence": "[totaal_bvo_commercieel], [min_bvo_bedrijven], [bvo_kantoren], [bvo_cultuur_maatschappelijk], [totaal_bvo_maatschappelijk]",
+      "confidence_in_step": 0.85
+    },
+    {
+      "step": 4,
+      "decision": "Residential GFA set as residual to 589,389 m\u00b2 \u2192 ~555,214 m\u00b2. At 4,400 woningen this yields ~126 m\u00b2 gross per woning (including circulation/installations), consistent with Dutch BVO/GBO ratios of ~0.78 giving ~98 m\u00b2 GBO average \u2014 realistic for the 20/40/40 tenure mix.",
+      "evidence": "Derived from [max_bvo_ontwikkelpotentie] minus non-residential uses; cross-checked against [max_woningen_nieuw_legmeer]",
+      "confidence_in_step": 0.8
+    },
+    {
+      "step": 5,
+      "decision": "Apply tenure split 20% sociale / 40% middenhuur / 40% vrije sector strictly per document. Within vrije sector, split 50/50 between vrije sector huur and koop based on designer judgment given Amstelveen market profile.",
+      "evidence": "[aandeel_sociaal_woningen], [aandeel_middelduur_woningen], [aandeel_vrije_sector_woningen]; designer judgment for huur/koop split within vrije sector",
+      "confidence_in_step": 0.78
+    },
+    {
+      "step": 6,
+      "decision": "Bias typology toward small-to-mid units (1br/2br dominant) reflecting buurt demographics: CBS shows avg household size 1.3 in BU03621104, indicating predominantly single/couple households. Reserve ~35% for 3br/family units to support the goal of a mixed neighbourhood with grondgebonden woningen.",
+      "evidence": "[cbs_demographics: 165 households, 230 population, avg HH size 1.3]; [max_height_rear_garden_fence] implies grondgebonden woningen present",
+      "confidence_in_step": 0.7
+    },
+    {
+      "step": 7,
+      "decision": "Estimate parking demand at ~1.0 space per woning average (4,400 spaces) plus marginal additions for commercial/office, justified by Amstelveen suburban context. Note: OSM shows tram 309 m and bus 249 m away \u2014 moderate transit; no aggressive reduction warranted. Parking solved partly via parkeergebouw with [max_parking_layers]=5 and pre-investment of \u20ac20M ([parking_garage_preinvestment]) flagged.",
+      "evidence": "[parking_garage_preinvestment], [max_parking_layers]; [osm: tram 309m, bus 249m]; designer judgment on per-woning norm (document does not specify residential parking norm)",
+      "confidence_in_step": 0.55
+    },
+    {
+      "step": 8,
+      "decision": "Confirm green/unbuilt envelope compatibility: 70/30 bebouwd/onbebouwd per cluster ([bebouwd_onbebouwd_ratio]) and the urban intent DOEL 1 of green binnenhoven mean realistic GFA stays at \u2014 not below \u2014 the 589,389 m\u00b2 envelope only if hoogbouwaccenten (12\u201314 bouwlagen) are used; otherwise the realistic value drops toward 500,000 m\u00b2. Range 500,000\u2013589,389 m\u00b2 reflects this dependency.",
+      "evidence": "[max_footprint_per_cluster], [bebouwd_onbebouwd_ratio], [max_height_hoogbouwaccenten], urban intent narrative DOEL 1",
+      "confidence_in_step": 0.75
+    }
+  ],
+  "provenance": {
+    "source_type": "inferred",
+    "document": null,
+    "page": null,
+    "quoted_text": null,
+    "api_name": null,
+    "inferred_from": [
+      "max_bvo_ontwikkelpotentie",
+      "max_woningen_nieuw_legmeer",
+      "aandeel_sociaal_woningen",
+      "aandeel_middelduur_woningen",
+      "aandeel_vrije_sector_woningen",
+      "totaal_bvo_commercieel",
+      "min_bvo_bedrijven",
+      "bvo_kantoren",
+      "totaal_bvo_maatschappelijk",
+      "bebouwd_onbebouwd_ratio",
+      "max_height_general_bouwlagen",
+      "max_height_hoogbouwaccenten",
+      "cbs_demographics",
+      "osm_overpass"
+    ],
+    "entered_by": null,
+    "timestamp": "2025-01-15T00:00:00Z"
+  },
+  "confidence": {
+    "score": 0.78,
+    "reasons": [
+      "Total GFA and woning cap are explicit hard constraints",
+      "Tenure split is explicit at 20/40/40",
+      "Non-residential BVO values are explicitly tabulated in the stedenbouwkundig plan",
+      "Typology mix and parking norms rest on designer judgment given absence of explicit residential parking norm and unit-size policy",
+      "3D BAG unavailable \u2014 height context limited to document constraints"
+    ],
+    "flags": []
+  }
+}

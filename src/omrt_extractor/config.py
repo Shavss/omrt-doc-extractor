@@ -75,7 +75,7 @@ class Settings(BaseSettings):
     imro_cross_validation_tolerance: float = 0.05
 
     # Geo enrichment buffer radius in metres
-    geo_buffer_radius_m: int = 500
+    geo_buffer_radius_m: int = 2000
 
     # Render DPI for page preprocessing
     render_dpi: int = 200

@@ -1,0 +1,2788 @@
+{
+  "max_footprint_per_cluster": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352203Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_unbuilt_per_cluster": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352299Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_green_unbuilt_space": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352320Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "max_height_carre_eiland_mantel": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352336Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_height_het_hart": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352353Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_height_hoogbouwaccenten": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352368Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "plint_height_range": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352395Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_distance_hoogbouwaccenten": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352411Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_horizontal_diameter_above_7th_floor": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352424Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_height_4_bouwlagen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352441Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "max_height_6_bouwlagen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352456Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "hoogbouwaccent_60m_contour": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352471Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.65
+  },
+  "min_afstand_hotel": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352484Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.72
+  },
+  "min_entries_binnenhof": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352500Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_openings_per_cluster": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352514Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_spacing_opening_per_frontbreedte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352528Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_entrance_access_via_binnenhof": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352653Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_poort_hoogte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352668Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "min_bomen_eerste_orde_per_binnentuin": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352683Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_groeiruimte_boom_eerste_orde": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352698Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_aanplantdikte_boom": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352711Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_afstand_speelvoorziening_woning": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352725Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_maaiveld_hoogte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352740Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_gronddekking_parkeergarage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352752Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.88
+  },
+  "min_gronddekking_bomen_daktuin": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352766Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_plint_breedte_halfverdiepte_garage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352780Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_setback_private_ground_level": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352795Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "max_height_private_ground_level_screen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352810Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "max_height_rear_garden_fence": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352823Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "max_height_front_facade_fence": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352840Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "min_rooilijn_bebouwd": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352852Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_afstand_achterzijden": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352863Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_frontbreedte_gebouw": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352875Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "min_breedte_verschil_naastgelegen_panden": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352888Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_breedte_cluster_zijde_gebouw": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352900Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.88
+  },
+  "hoogbouwaccent_bouwlagen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352913Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "setback_top_floors_hoogbouwaccent": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352928Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_dwelling_size_private_outdoor": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352940Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_height_balcony_public_facade": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352955Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_balcony_protrusion_above_4m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352967Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_balcony_protrusion_below_4m": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352984Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_gebouwen_ontsluitingskern": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.352997Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_gebouwen_galerij": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353010Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_verdieping_galerij": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353023Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "plint_height_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353035Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plint_height_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353052Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plint_wonen_height_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353066Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plint_wonen_height_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353079Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plint_height_step_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353091Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plint_blind_max_length": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353103Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "plint_material_differentiation_bouwlagen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353118Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "entree_setback_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353130Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "entree_setback_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353145Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_building_width_gracht": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353158Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.82
+  },
+  "plinth_height_carre_min": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353171Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.82
+  },
+  "plinth_height_carre_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353184Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.82
+  },
+  "plint_min_height_carre": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353197Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_bouwlagen_carre_or": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353210Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_bouwlagen_carre_cluster": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353223Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_ramp_gradient_bike_storage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353236Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_blinde_gevel_breedte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353287Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "max_haakse_reclame_grootte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353304Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.9
+  },
+  "min_plaatsingshoogte_haakse_reclame": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353316Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "rainfall_damage_threshold_100yr": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353330Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "rainfall_vital_infra_250yr": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353342Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "water_retention_private_terrain_70mm": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353355Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "water_retention_availability_max_60hr": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353369Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_discharge_rate_private": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353382Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_discharge_to_open_water": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353395Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "water_depth_road_flooding": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353408Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "rainfall_resilience_90mm": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353421Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "min_insect_plants_daktuin": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353437Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "biodiversity_provisions_per_110m2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353449Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_bat_hang_surface_percent": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353461Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_bat_hang_surface_absolute": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353474Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_green_roof_lower_floors": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353486Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_green_roof_dakenlandschap": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353498Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_substrate_depth_green_roof": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353513Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "min_substrate_depth_parking_roof": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353526Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_pv_combination_green_roof": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353540Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_substrate_natuurdak": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353553Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.88
+  },
+  "min_substrate_intensief_dak": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353569Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "roof_energy_height_threshold": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353582Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "min_green_roofs_amstelveense_hoogte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353595Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "min_green_unbuild_space": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353607Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_green_cluster_oppervlak": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353621Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_green_roof_percentage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353636Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_green_roof_substrate_depth": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353649Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_parking_roof_substrate_depth": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353661Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_hekwerk_school": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353673Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "max_facade_length_parking_building": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353684Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_parking_layers": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353701Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "max_total_bouwlagen_parking_building": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353714Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "groene_oever_profiel_aa_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353728Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.75
+  },
+  "hoofdgracht_profiel_bb_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353741Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "hoofdgracht_profiel_bb_water_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353753Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.75
+  },
+  "hoofdgracht_profiel_b2_b2_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353766Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "hoofdgracht_profiel_b2_zone1": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353779Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "hoofdgracht_profiel_b2_zone2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353791Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "hoofdgracht_profiel_b2_zone3": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353839Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "hoofdgracht_profiel_b2_zone4": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353859Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "hoofdgracht_profiel_b2_zone5": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353871Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "hoofdgracht_profiel_b2_zone6": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353887Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "street_profile_cc_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.353899Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "street_profile_dd_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354009Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "street_profile_dd_zone_1": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354023Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "street_profile_dd_zone_2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354035Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "street_profile_dd_zone_3": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354047Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "street_profile_dd_zone_4": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354058Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "street_profile_dd_zone_5": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354072Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "profile_ee_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354084Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "profile_ee_central_zone_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354097Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "profile_ee_side_lane_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354111Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "profile_ee_parking_strip_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354124Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "profile_ee_edge_strip_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354135Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "carre_profiel_ff_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354147Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "carre_profiel_gg_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354160Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "gracht_profiel_hh_breedte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354174Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.9
+  },
+  "gracht_profiel_ii_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354187Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "gracht_profiel_ii_canal_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354199Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.88
+  },
+  "gracht_profiel_ii_cycle_lane_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354211Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.88
+  },
+  "street_profile_jj_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354223Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "gracht_profiel_kk_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354263Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "gracht_profiel_kk_zone_1": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354276Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.8
+  },
+  "gracht_profiel_kk_zone_2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354288Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.8
+  },
+  "gracht_profiel_kk_zone_3": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354302Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.8
+  },
+  "gracht_profiel_kk_zone_4": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354318Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.8
+  },
+  "gracht_profiel_kk_zone_5": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354331Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.8
+  },
+  "gracht_profiel_kk_zone_6": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354377Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.8
+  },
+  "gracht_profiel_kk_zone_7": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354391Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.8
+  },
+  "straat_profiel_ll_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354405Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "street_profile_mm_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354417Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "street_profile_mm_zone1_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354428Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "street_profile_mm_zone4_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354458Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "street_profile_mm_zone5_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354494Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.85
+  },
+  "street_profile_nn_total_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354513Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "street_profile_oo_width_total": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354526Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.92
+  },
+  "max_bridge_slope": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354539Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "min_bridge_clearance_height": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354552Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "min_bridge_clearance_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354564Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "stoepenzone_depth_hart_eiland": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354576Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "margestrook_geveltuin_width": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354594Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "geveltuin_diepte_straten": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354608Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.82
+  },
+  "haag_max_hoogte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354623Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.82
+  },
+  "trap_diepte_stoepenzone": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354635Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.82
+  },
+  "current_area_legmeer": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354648Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "current_paved_percentage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354661Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "current_green_percentage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354672Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "current_water_percentage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354725Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "bebouwd_onbebouwd_ratio": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354737Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_footprint_ontwikkelcluster": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354752Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "min_unbuilt_ontwikkelcluster": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354764Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "min_volle_grond_unbuilt_space": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354775Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_woningen_nieuw_legmeer": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354791Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "max_bvo_ontwikkelpotentie": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354802Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "aandeel_sociaal_woningen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354814Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "aandeel_middelduur_woningen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354826Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "aandeel_vrije_sector_woningen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354841Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "arbeidsplaatsen_nieuw_legmeer": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354853Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "min_groen_clusters": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354864Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "aandeel_water_openbaar_gebied": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354876Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "aandeel_groen_openbaar_gebied": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354887Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "totaal_aandeel_groen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354899Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_height_general_bouwlagen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354910Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_height_het_hart_bouwlagen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354924Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_doorvaarhoogte_bruggen": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354937Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "hoogteverschil_water_straatniveau": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354949Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "max_hellingpercentage_oever": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354962Z"
+    },
+    "confidence_flags": [
+      "unit_inferred"
+    ],
+    "confidence_score": 0.8
+  },
+  "waterpeil_1": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354974Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "waterpeil_2": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354987Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "wateroppervlak_huidig_percentage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.354999Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "wateroppervlak_nieuw_percentage": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355012Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "max_speed_legmeer": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355025Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "min_bvo_supermarkt": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355037Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "min_bvo_overig_dagelijks": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355051Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_bvo_niet_dagelijks": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355063Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_bvo_commerciele_dienstverlening": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355075Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_bvo_horeca": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355131Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "totaal_bvo_commercieel": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355146Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "bvo_basisschool": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355159Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "bvo_schoolplein": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355172Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "bvo_voortgezet_onderwijs": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355184Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "bvo_vo_buitenruimte": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355195Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "bvo_cultuur_maatschappelijk": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355207Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "bvo_medisch_centrum": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355220Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "totaal_bvo_maatschappelijk": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355231Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "min_bvo_bedrijven": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355243Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "bvo_kantoren": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355254Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.8
+  },
+  "businesscase_result_ncw_2024": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355269Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "risicoanalyse_bedrag": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355284Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "financieringsbehoefte_max": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355296Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "plankosten_krediet": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355308Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "grex_result_2042": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355528Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "investering_verplaatsing_werf": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355545Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.85
+  },
+  "investering_basisschool": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355558Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "investering_vo_school": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355572Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.9
+  },
+  "kosten_kruising_dreesweg": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355584Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "kosten_kruising_bovenkerkerweg_beneluxbaan": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355597Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.85
+  },
+  "intersection_cost_van_der_hooplaan": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355610Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.8
+  },
+  "parking_garage_preinvestment": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355623Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "warmtenet_total_investment": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355635Z"
+    },
+    "confidence_flags": [
+      "ambiguous_clause"
+    ],
+    "confidence_score": 0.75
+  },
+  "total_financing_need_base": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355647Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.78
+  },
+  "total_financing_nieuw_legmeer": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355659Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "annual_annuity_total": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355670Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "financing_charge_overig": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355681Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  },
+  "total_risk_profile": {
+    "cross_validation": {
+      "source": "imro_plannen_v4",
+      "authoritative_value": null,
+      "authoritative_unit": null,
+      "agreement": "not_attempted",
+      "tolerance_used": null,
+      "notes": "No IMRO plan ID on this project",
+      "timestamp": "2026-05-20T15:49:07.355752Z"
+    },
+    "confidence_flags": [],
+    "confidence_score": 0.95
+  }
+}

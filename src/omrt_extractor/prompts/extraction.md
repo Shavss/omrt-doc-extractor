@@ -55,6 +55,14 @@ You are populating fields of `PartialFrameworkExtraction`. Match what you see on
 - `density` for FSI, FAR
 - `gfa` for BVO totals
 - `noise` for geluidsbelasting limits
+- `footprint` for bebouwingspercentage, coverage ratio   
+
+Heights stated in **bouwlagen** (floors) are valid `height` constraints. Use unit
+`"bouwlagen"` and flag `"unit_inferred"` unless an explicit metre equivalent is given.
+Example: "maximaal 6 bouwlagen" → value=6.0, unit="bouwlagen".                    
+
+Percentages (e.g. "maximaal 70% bebouwd") are valid `footprint` constraints. Use
+unit="%".                                                                
 
 **`constraints.geometric`**: features that are intrinsically spatial. Use these `feature_type` values:
 - `plot_boundary` for kaveltekening plot outlines

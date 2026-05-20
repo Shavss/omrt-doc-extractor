@@ -52,7 +52,7 @@ data/cache/
 # which gets generated at Stage 7b
 data/inputs/draka_corrupted/
 data/inputs/draka/
-
+data/inputs/nieuw-legmeer/
 # Streamlit
 .streamlit/secrets.toml
 

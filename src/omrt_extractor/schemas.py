@@ -485,7 +485,7 @@ class NumericalConstraint(BaseModel):
     unit: str = Field(
         description=(
             "Unit of measure. Standard values: 'm', 'm2', 'per_dwelling', "
-            "'per_100m2_bvo', 'ratio', 'percent', 'dB'. New units are "
+            "'per_100m2_bvo', 'ratio', 'percent', 'bouwlagen', 'dB'. New units are "
             "acceptable when justified."
         )
     )

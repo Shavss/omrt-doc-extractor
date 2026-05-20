@@ -20,7 +20,7 @@ Two principles drive every architectural decision.
 
 The pipeline is a directed acyclic flow with seven primary stages.
 
-A project enters as a folder of PDFs in `data/inputs/<project_name>/`. Per-page preprocessing renders each page to a 200 DPI image and extracts its text layer, producing paired image-and-text per page. Multimodal extraction then runs the page pairs through a PydanticAI agent (Claude Sonnet 4.5) that returns a partial framework with provenance and confidence on every value. Per-page partials merge into a project-level framework. Critical fields (heights, setbacks, parking) get an independent second pass with an open-question prompt; disagreements between passes are flagged, not silently averaged.
+A project enters as a folder of PDFs in `data/inputs/<project_name>/`. Per-page preprocessing renders each page to a 200 DPI image and extracts its text layer, producing paired image-and-text per page. Multimodal extraction then runs the page pairs through a PydanticAI agent (Claude Sonnet 4.6) that returns a partial framework with provenance and confidence on every value. Per-page partials merge into a project-level framework. Critical fields (heights, setbacks, parking) get an independent second pass with an open-question prompt; disagreements between passes are flagged, not silently averaged.
 
 In parallel, vector geometry parsing reads the kaveltekening PDF: discover the scale factor dynamically, extract every vector path, classify text labels by IMRO convention (caps for bestemmingen, parentheses for function aanduidingen, brackets for bouwaanduidingen), associate labels with polygons by proximity. Generic fallback to `manual_input_required` if the PDF is raster-only or the scale cannot be derived.
 
@@ -78,7 +78,7 @@ The critical design rule: only projects with `verification_status='reviewed'` fe
 
 ## Models and external services
 
-**LLMs.** Claude Sonnet 4.5 for multimodal extraction (Stage 2) and dual-pass critical-fields verification. Claude Opus 4.7 for programme inference (Stage 5). 
+**LLMs.** Claude Sonnet 4.6 for multimodal extraction (Stage 2) and dual-pass critical-fields verification. Claude Opus 4.7 for programme inference (Stage 5). 
 
 **Dutch open APIs.** The Ruimtelijke Plannen API v4 (`imro_plannen_v4`) is the authoritative source for pre-2024 bestemmingsplannen and powers the cross-validation layer. The Stelselcatalogus (`stelselcatalogus`) seeds the glossary. PDOK BAG (`pdok_bag`), the 3D BAG API (`pdok_3d_bag`), CBS Open Data (`cbs_demographics`), and OSM Overpass (`osm_overpass`) provide geographic enrichment. All are free with fair-use policies. All responses are cached under `data/cache/` so reruns are cheap.
 
@@ -90,7 +90,7 @@ Notable exclusions and the reason for each: the Bbl (national building code) app
 src/omrt_extractor/
 ├── schemas.py           # Pydantic schema, the central contract
 ├── preprocess.py        # PDF rendering + text extraction
-├── extract.py           # Multimodal LLM extraction (Sonnet 4.5)
+├── extract.py           # Multimodal LLM extraction (Sonnet 4.6)
 ├── geometry.py          # CAD vector parsing from kaveltekening
 ├── enrich.py            # Geo APIs: PDOK, 3D BAG, CBS, OSM
 ├── cross_validate.py    # IMRO API cross-validation, Scenario 1 Layer 4b

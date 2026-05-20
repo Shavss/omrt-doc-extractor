@@ -2,7 +2,7 @@
   "header": {
     "banner": "PROTOTYPE OUTPUT, NOT VERIFIED",
     "verification_status": "extracted",
-    "generated_at": "2026-05-20T09:34:09.564041+00:00",
+    "generated_at": "2026-05-20T10:37:28.294569+00:00",
     "tool_version": "0.1.0-omrt-run",
     "project_name": "draka",
     "plan_id": "NL.IMRO.0363.N2102BPGST-VG01",
@@ -3219,7 +3219,7 @@
           "sha256": "154dcde7be01f4fe13609826f81ca784840b4f04c202d2c6cad17175f81fc753"
         }
       ],
-      "generated_at": "2026-05-20T09:34:08.953626Z",
+      "generated_at": "2026-05-20T10:37:27.737064Z",
       "tool_version": "0.1.0-omrt-run",
       "verification_status": "extracted"
     },
@@ -3236,7 +3236,7 @@
           "urban_intent_passages"
         ],
         "entered_by": null,
-        "timestamp": "2026-05-20T09:34:08.953572Z"
+        "timestamp": "2026-05-20T10:37:27.736996Z"
       },
       "confidence": {
         "score": 0.5,
@@ -19041,7 +19041,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19050,75 +19050,7 @@
             ],
             "flags": []
           },
-          "notes": null,
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "plot_boundary_01",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    0.0,
-                    0.0
-                  ],
-                  [
-                    0.0,
-                    419.9466752794053
-                  ],
-                  [
-                    593.9366580539279,
-                    419.9466752794053
-                  ],
-                  [
-                    593.9366580539279,
-                    0.0
-                  ],
-                  [
-                    0.0,
-                    0.0
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Plot boundary",
-              "feature_type": "plot_boundary",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  0.0,
-                  0.0,
-                  0.0
-                ],
-                [
-                  0.0,
-                  419.9466752794053,
-                  0.0
-                ],
-                [
-                  593.9366580539279,
-                  419.9466752794053,
-                  0.0
-                ],
-                [
-                  593.9366580539279,
-                  0.0,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": null
         },
         {
           "id": "bouwvlak_01",
@@ -19157,7 +19089,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19166,66 +19098,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['[sba-4]']; height_m=30.5; area_m2=187",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_01",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    195.02965460883246,
-                    137.79499138726126
-                  ],
-                  [
-                    151.00299224853515,
-                    129.58231438530814
-                  ],
-                  [
-                    149.47900043063692,
-                    137.79499138726126
-                  ],
-                  [
-                    195.02965460883246,
-                    137.79499138726126
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-4",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 30.5,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  195.02965460883246,
-                  137.79499138726126,
-                  0.0
-                ],
-                [
-                  151.00299224853515,
-                  129.58231438530814,
-                  0.0
-                ],
-                [
-                  149.47900043063692,
-                  137.79499138726126,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['[sba-4]']; height_m=30.5; area_m2=187"
         },
         {
           "id": "bouwvlak_02",
@@ -19267,7 +19140,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19276,69 +19149,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['[sba-1]']; height_m=45.0; area_m2=295 | programme_rules: 2 constraints across categories ['height']",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_02",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    89.19633204142252,
-                    196.55365719265407
-                  ],
-                  [
-                    139.31899397108288,
-                    196.55365719265407
-                  ],
-                  [
-                    141.52033462524412,
-                    184.78499569363063
-                  ],
-                  [
-                    89.19633204142252,
-                    196.55365719265407
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-1",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 45.0,
-              "associated_rules": [
-                "max_height_sba1_increased",
-                "avg_height_sba1"
-              ],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  89.19633204142252,
-                  196.55365719265407,
-                  0.0
-                ],
-                [
-                  139.31899397108288,
-                  196.55365719265407,
-                  0.0
-                ],
-                [
-                  141.52033462524412,
-                  184.78499569363063,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['[sba-1]']; height_m=45.0; area_m2=295 | programme_rules: 2 constraints across categories ['height']"
         },
         {
           "id": "bouwvlak_03",
@@ -19377,7 +19188,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19386,66 +19197,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['[sba-3]', '[sba-dvg2]']; height_m=30.5; area_m2=2074",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_03",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    236.38931783040363,
-                    226.86431783040362
-                  ],
-                  [
-                    297.77265116373695,
-                    226.86431783040362
-                  ],
-                  [
-                    310.38798794216575,
-                    159.30033247205944
-                  ],
-                  [
-                    236.38931783040363,
-                    226.86431783040362
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-3, sba-dvg2",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 30.5,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  236.38931783040363,
-                  226.86431783040362,
-                  0.0
-                ],
-                [
-                  297.77265116373695,
-                  226.86431783040362,
-                  0.0
-                ],
-                [
-                  310.38798794216575,
-                  159.30033247205944,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['[sba-3]', '[sba-dvg2]']; height_m=30.5; area_m2=2074"
         },
         {
           "id": "bouwvlak_04",
@@ -19487,7 +19239,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19496,69 +19248,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['[sba-2]', '[sba-dvg3]', '[sba-dvg5]']; height_m=60.0; area_m2=1302 | programme_rules: 2 constraints across categories ['height']",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_04",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    224.2396718343099,
-                    292.14233161078556
-                  ],
-                  [
-                    285.6229836357964,
-                    292.14233161078556
-                  ],
-                  [
-                    293.5393178304036,
-                    249.72433505588106
-                  ],
-                  [
-                    224.2396718343099,
-                    292.14233161078556
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-2, sba-dvg3, sba-dvg5",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 60.0,
-              "associated_rules": [
-                "max_height_sba2_increased",
-                "avg_height_sba2"
-              ],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  224.2396718343099,
-                  292.14233161078556,
-                  0.0
-                ],
-                [
-                  285.6229836357964,
-                  292.14233161078556,
-                  0.0
-                ],
-                [
-                  293.5393178304036,
-                  249.72433505588106,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['[sba-2]', '[sba-dvg3]', '[sba-dvg5]']; height_m=60.0; area_m2=1302 | programme_rules: 2 constraints across categories ['height']"
         },
         {
           "id": "bouwvlak_05",
@@ -19601,7 +19291,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19610,75 +19300,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['[sba-4]']; height_m=30.5; area_m2=1756",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_05",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    41.275,
-                    153.8816494411892
-                  ],
-                  [
-                    80.51799655490451,
-                    161.20531955295138
-                  ],
-                  [
-                    88.60366257561577,
-                    117.94066925048827
-                  ],
-                  [
-                    49.40299763149685,
-                    110.61699913872611
-                  ],
-                  [
-                    41.275,
-                    153.8816494411892
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-4",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 30.5,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  41.275,
-                  153.8816494411892,
-                  0.0
-                ],
-                [
-                  80.51799655490451,
-                  161.20531955295138,
-                  0.0
-                ],
-                [
-                  88.60366257561577,
-                  117.94066925048827,
-                  0.0
-                ],
-                [
-                  49.40299763149685,
-                  110.61699913872611,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['[sba-4]']; height_m=30.5; area_m2=1756"
         },
         {
           "id": "bouwvlak_06",
@@ -19721,7 +19343,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19730,75 +19352,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(sgd-7)', '[sba-4]']; height_m=30.5; area_m2=1605",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_06",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    103.33566063774956,
-                    120.69233161078557
-                  ],
-                  [
-                    95.24999999999999,
-                    163.95700344509547
-                  ],
-                  [
-                    131.10632773505316,
-                    170.6456563313802
-                  ],
-                  [
-                    139.19199913872612,
-                    127.3809844970703
-                  ],
-                  [
-                    103.33566063774956,
-                    120.69233161078557
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-4, sgd-7",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 30.5,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  103.33566063774956,
-                  120.69233161078557,
-                  0.0
-                ],
-                [
-                  95.24999999999999,
-                  163.95700344509547,
-                  0.0
-                ],
-                [
-                  131.10632773505316,
-                  170.6456563313802,
-                  0.0
-                ],
-                [
-                  139.19199913872612,
-                  127.3809844970703,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['(sgd-7)', '[sba-4]']; height_m=30.5; area_m2=1605"
         },
         {
           "id": "bouwvlak_07",
@@ -19844,7 +19398,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19853,78 +19407,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(sgd-4)', '[sba-2]']; height_m=60.0; area_m2=4831 | programme_rules: 2 constraints across categories ['height']",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_07",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    251.03665805392794,
-                    148.20899827745225
-                  ],
-                  [
-                    236.38931783040363,
-                    226.86431783040362
-                  ],
-                  [
-                    295.7406692504883,
-                    237.95565202501083
-                  ],
-                  [
-                    310.38798794216575,
-                    159.30033247205944
-                  ],
-                  [
-                    251.03665805392794,
-                    148.20899827745225
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-2, sgd-4",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 60.0,
-              "associated_rules": [
-                "max_height_sba2_increased",
-                "avg_height_sba2"
-              ],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  251.03665805392794,
-                  148.20899827745225,
-                  0.0
-                ],
-                [
-                  236.38931783040363,
-                  226.86431783040362,
-                  0.0
-                ],
-                [
-                  295.7406692504883,
-                  237.95565202501083,
-                  0.0
-                ],
-                [
-                  310.38798794216575,
-                  159.30033247205944,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['(sgd-4)', '[sba-2]']; height_m=60.0; area_m2=4831 | programme_rules: 2 constraints across categories ['height']"
         },
         {
           "id": "bouwvlak_08",
@@ -19967,7 +19450,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -19976,75 +19459,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['GD', '[sba-4]']; height_m=40.0; area_m2=1848",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_08",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    206.79833763970268,
-                    139.99632127549913
-                  ],
-                  [
-                    196.55365719265407,
-                    195.02965460883246
-                  ],
-                  [
-                    228.9809844970703,
-                    201.08333333333331
-                  ],
-                  [
-                    239.2679965549045,
-                    146.0076683892144
-                  ],
-                  [
-                    206.79833763970268,
-                    139.99632127549913
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-4, GD",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 40.0,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  206.79833763970268,
-                  139.99632127549913,
-                  0.0
-                ],
-                [
-                  196.55365719265407,
-                  195.02965460883246,
-                  0.0
-                ],
-                [
-                  228.9809844970703,
-                  201.08333333333331,
-                  0.0
-                ],
-                [
-                  239.2679965549045,
-                  146.0076683892144,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['GD', '[sba-4]']; height_m=40.0; area_m2=1848"
         },
         {
           "id": "bouwvlak_09",
@@ -20094,7 +19509,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20103,87 +19518,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(sgd-2)', '[sba-1]']; height_m=45.0; area_m2=5744 | programme_rules: 2 constraints across categories ['height']",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_09",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    194.3523273044162,
-                    206.84066925048828
-                  ],
-                  [
-                    220.89532385932074,
-                    211.79366149902341
-                  ],
-                  [
-                    204.681670973036,
-                    298.6616580539279
-                  ],
-                  [
-                    140.80066494411892,
-                    286.76600172254774
-                  ],
-                  [
-                    157.01432859632703,
-                    199.85565202501084
-                  ],
-                  [
-                    194.3523273044162,
-                    206.84066925048828
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-1, sgd-2",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 45.0,
-              "associated_rules": [
-                "max_height_sba1_increased",
-                "avg_height_sba1"
-              ],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  194.3523273044162,
-                  206.84066925048828,
-                  0.0
-                ],
-                [
-                  220.89532385932074,
-                  211.79366149902341,
-                  0.0
-                ],
-                [
-                  204.681670973036,
-                  298.6616580539279,
-                  0.0
-                ],
-                [
-                  140.80066494411892,
-                  286.76600172254774,
-                  0.0
-                ],
-                [
-                  157.01432859632703,
-                  199.85565202501084,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['(sgd-2)', '[sba-1]']; height_m=45.0; area_m2=5744 | programme_rules: 2 constraints across categories ['height']"
         },
         {
           "id": "bouwvlak_10",
@@ -20233,7 +19568,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20242,87 +19577,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(m)', '[sba-2]']; height_m=60.0; area_m2=4946 | programme_rules: 2 constraints across categories ['height']",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_10",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    139.31899397108288,
-                    196.55365719265407
-                  ],
-                  [
-                    123.10533031887478,
-                    283.46398535834413
-                  ],
-                  [
-                    74.67599741617838,
-                    274.44698621961805
-                  ],
-                  [
-                    93.09100172254773,
-                    175.7256649441189
-                  ],
-                  [
-                    141.52033462524412,
-                    184.78499569363063
-                  ],
-                  [
-                    139.31899397108288,
-                    196.55365719265407
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-2, m",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 60.0,
-              "associated_rules": [
-                "max_height_sba2_increased",
-                "avg_height_sba2"
-              ],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  139.31899397108288,
-                  196.55365719265407,
-                  0.0
-                ],
-                [
-                  123.10533031887478,
-                  283.46398535834413,
-                  0.0
-                ],
-                [
-                  74.67599741617838,
-                  274.44698621961805,
-                  0.0
-                ],
-                [
-                  93.09100172254773,
-                  175.7256649441189,
-                  0.0
-                ],
-                [
-                  141.52033462524412,
-                  184.78499569363063,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['(m)', '[sba-2]']; height_m=60.0; area_m2=4946 | programme_rules: 2 constraints across categories ['height']"
         },
         {
           "id": "bouwvlak_11",
@@ -20481,7 +19736,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20490,336 +19745,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(sgd-3)', '[sba-dvg1]', '[sba-dvg2]']; height_m=60.0; area_m2=4001",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "bouwvlak_11",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    222.37699483235676,
-                    301.9636528862847
-                  ],
-                  [
-                    223.73167097303602,
-                    302.21766408284503
-                  ],
-                  [
-                    225.04399397108287,
-                    302.47165374755855
-                  ],
-                  [
-                    226.35633850097653,
-                    302.76799655490447
-                  ],
-                  [
-                    227.710993109809,
-                    303.10664944118923
-                  ],
-                  [
-                    228.9809844970703,
-                    303.4453238593207
-                  ],
-                  [
-                    230.29332902696396,
-                    303.8263298882378
-                  ],
-                  [
-                    231.60565202501084,
-                    304.2073359171549
-                  ],
-                  [
-                    232.8756649441189,
-                    304.6306520250108
-                  ],
-                  [
-                    234.1456563313802,
-                    305.0963212754991
-                  ],
-                  [
-                    235.45800086127386,
-                    305.56199052598737
-                  ],
-                  [
-                    236.68566063774955,
-                    306.06999138726127
-                  ],
-                  [
-                    237.95565202501083,
-                    306.6203238593207
-                  ],
-                  [
-                    239.2256649441189,
-                    307.1706563313802
-                  ],
-                  [
-                    240.4533247205946,
-                    307.76332041422523
-                  ],
-                  [
-                    241.72333763970266,
-                    308.35598449707027
-                  ],
-                  [
-                    242.95099741617835,
-                    309.0333333333333
-                  ],
-                  [
-                    244.17865719265407,
-                    309.7106606377495
-                  ],
-                  [
-                    245.36398535834417,
-                    310.38798794216575
-                  ],
-                  [
-                    246.59166666666664,
-                    311.1076683892144
-                  ],
-                  [
-                    247.77699483235673,
-                    311.8696589152018
-                  ],
-                  [
-                    249.00465460883245,
-                    312.6316494411892
-                  ],
-                  [
-                    250.19000430636933,
-                    313.435993109809
-                  ],
-                  [
-                    251.37533247205943,
-                    314.2826683892144
-                  ],
-                  [
-                    252.51832902696395,
-                    315.129322136773
-                  ],
-                  [
-                    253.70365719265405,
-                    316.01832902696395
-                  ],
-                  [
-                    254.84665374755858,
-                    316.9496675279405
-                  ],
-                  [
-                    257.17499999999995,
-                    318.85465460883245
-                  ],
-                  [
-                    259.460993109809,
-                    320.88665805392793
-                  ],
-                  [
-                    261.7046546088324,
-                    323.0033247205946
-                  ],
-                  [
-                    285.6229836357964,
-                    292.14233161078556
-                  ],
-                  [
-                    293.5393178304036,
-                    249.72433505588106
-                  ],
-                  [
-                    234.1879879421658,
-                    238.67533247205944
-                  ],
-                  [
-                    222.37699483235676,
-                    301.9636528862847
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Bouwvlak sba-dvg1, sba-dvg2, sgd-3",
-              "feature_type": "bouwvlak",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": 60.0,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  222.37699483235676,
-                  301.9636528862847,
-                  0.0
-                ],
-                [
-                  223.73167097303602,
-                  302.21766408284503,
-                  0.0
-                ],
-                [
-                  225.04399397108287,
-                  302.47165374755855,
-                  0.0
-                ],
-                [
-                  226.35633850097653,
-                  302.76799655490447,
-                  0.0
-                ],
-                [
-                  227.710993109809,
-                  303.10664944118923,
-                  0.0
-                ],
-                [
-                  228.9809844970703,
-                  303.4453238593207,
-                  0.0
-                ],
-                [
-                  230.29332902696396,
-                  303.8263298882378,
-                  0.0
-                ],
-                [
-                  231.60565202501084,
-                  304.2073359171549,
-                  0.0
-                ],
-                [
-                  232.8756649441189,
-                  304.6306520250108,
-                  0.0
-                ],
-                [
-                  234.1456563313802,
-                  305.0963212754991,
-                  0.0
-                ],
-                [
-                  235.45800086127386,
-                  305.56199052598737,
-                  0.0
-                ],
-                [
-                  236.68566063774955,
-                  306.06999138726127,
-                  0.0
-                ],
-                [
-                  237.95565202501083,
-                  306.6203238593207,
-                  0.0
-                ],
-                [
-                  239.2256649441189,
-                  307.1706563313802,
-                  0.0
-                ],
-                [
-                  240.4533247205946,
-                  307.76332041422523,
-                  0.0
-                ],
-                [
-                  241.72333763970266,
-                  308.35598449707027,
-                  0.0
-                ],
-                [
-                  242.95099741617835,
-                  309.0333333333333,
-                  0.0
-                ],
-                [
-                  244.17865719265407,
-                  309.7106606377495,
-                  0.0
-                ],
-                [
-                  245.36398535834417,
-                  310.38798794216575,
-                  0.0
-                ],
-                [
-                  246.59166666666664,
-                  311.1076683892144,
-                  0.0
-                ],
-                [
-                  247.77699483235673,
-                  311.8696589152018,
-                  0.0
-                ],
-                [
-                  249.00465460883245,
-                  312.6316494411892,
-                  0.0
-                ],
-                [
-                  250.19000430636933,
-                  313.435993109809,
-                  0.0
-                ],
-                [
-                  251.37533247205943,
-                  314.2826683892144,
-                  0.0
-                ],
-                [
-                  252.51832902696395,
-                  315.129322136773,
-                  0.0
-                ],
-                [
-                  253.70365719265405,
-                  316.01832902696395,
-                  0.0
-                ],
-                [
-                  254.84665374755858,
-                  316.9496675279405,
-                  0.0
-                ],
-                [
-                  257.17499999999995,
-                  318.85465460883245,
-                  0.0
-                ],
-                [
-                  259.460993109809,
-                  320.88665805392793,
-                  0.0
-                ],
-                [
-                  261.7046546088324,
-                  323.0033247205946,
-                  0.0
-                ],
-                [
-                  285.6229836357964,
-                  292.14233161078556,
-                  0.0
-                ],
-                [
-                  293.5393178304036,
-                  249.72433505588106,
-                  0.0
-                ],
-                [
-                  234.1879879421658,
-                  238.67533247205944,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['(sgd-3)', '[sba-dvg1]', '[sba-dvg2]']; height_m=60.0; area_m2=4001"
         },
         {
           "id": "other_01",
@@ -20858,7 +19784,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20867,66 +19793,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['GD', '(sgd-9)']; area_m2=798",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_01",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    142.91733161078557,
-                    172.84698621961803
-                  ],
-                  [
-                    188.4679965549045,
-                    172.84698621961803
-                  ],
-                  [
-                    195.02965460883246,
-                    137.79499138726126
-                  ],
-                  [
-                    142.91733161078557,
-                    172.84698621961803
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone sgd-9, GD",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  142.91733161078557,
-                  172.84698621961803,
-                  0.0
-                ],
-                [
-                  188.4679965549045,
-                  172.84698621961803,
-                  0.0
-                ],
-                [
-                  195.02965460883246,
-                  137.79499138726126,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['GD', '(sgd-9)']; area_m2=798"
         },
         {
           "id": "other_02",
@@ -20965,7 +19832,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -20974,66 +19841,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['GD']; area_m2=679",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_02",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    95.24999999999999,
-                    163.95700344509547
-                  ],
-                  [
-                    132.37632988823785,
-                    163.95700344509547
-                  ],
-                  [
-                    139.19199913872612,
-                    127.3809844970703
-                  ],
-                  [
-                    95.24999999999999,
-                    163.95700344509547
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone GD",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  95.24999999999999,
-                  163.95700344509547,
-                  0.0
-                ],
-                [
-                  132.37632988823785,
-                  163.95700344509547,
-                  0.0
-                ],
-                [
-                  139.19199913872612,
-                  127.3809844970703,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['GD']; area_m2=679"
         },
         {
           "id": "other_03",
@@ -21072,7 +19880,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21081,66 +19889,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['V']; area_m2=489",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_03",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    205.9093307495117,
-                    292.14233161078556
-                  ],
-                  [
-                    234.1879879421658,
-                    238.67533247205944
-                  ],
-                  [
-                    215.89999999999998,
-                    238.67533247205944
-                  ],
-                  [
-                    205.9093307495117,
-                    292.14233161078556
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone V",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  205.9093307495117,
-                  292.14233161078556,
-                  0.0
-                ],
-                [
-                  234.1879879421658,
-                  238.67533247205944,
-                  0.0
-                ],
-                [
-                  215.89999999999998,
-                  238.67533247205944,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['V']; area_m2=489"
         },
         {
           "id": "dvg_overlay_01",
@@ -21179,7 +19928,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21188,66 +19937,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['[sba-dvg3]']; area_m2=1144",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "dvg_overlay_01",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    296.79900258382156,
-                    232.1136528862847
-                  ],
-                  [
-                    343.5773273044162,
-                    165.4809844970703
-                  ],
-                  [
-                    309.2449913872613,
-                    165.4809844970703
-                  ],
-                  [
-                    296.79900258382156,
-                    232.1136528862847
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone (no label)",
-              "feature_type": "dvg_overlay",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  296.79900258382156,
-                  232.1136528862847,
-                  0.0
-                ],
-                [
-                  343.5773273044162,
-                  165.4809844970703,
-                  0.0
-                ],
-                [
-                  309.2449913872613,
-                  165.4809844970703,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['[sba-dvg3]']; area_m2=1144"
         },
         {
           "id": "other_04",
@@ -21286,7 +19976,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21295,66 +19985,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['V']; area_m2=171",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_04",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    64.98166559007431,
-                    170.6456563313802
-                  ],
-                  [
-                    103.50499784681531,
-                    165.4809844970703
-                  ],
-                  [
-                    37.38033301035563,
-                    165.4809844970703
-                  ],
-                  [
-                    64.98166559007431,
-                    170.6456563313802
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone V",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  64.98166559007431,
-                  170.6456563313802,
-                  0.0
-                ],
-                [
-                  103.50499784681531,
-                  165.4809844970703,
-                  0.0
-                ],
-                [
-                  37.38033301035563,
-                  165.4809844970703,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['V']; area_m2=171"
         },
         {
           "id": "no_build_zone_01",
@@ -21393,7 +20024,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21402,66 +20033,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['WR-A']; area_m2=807",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "no_build_zone_01",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    195.02965460883246,
-                    137.79499138726126
-                  ],
-                  [
-                    347.5566494411892,
-                    129.58231438530814
-                  ],
-                  [
-                    151.00299224853515,
-                    129.58231438530814
-                  ],
-                  [
-                    195.02965460883246,
-                    137.79499138726126
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone WR-A",
-              "feature_type": "no_build_zone",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  195.02965460883246,
-                  137.79499138726126,
-                  0.0
-                ],
-                [
-                  347.5566494411892,
-                  129.58231438530814,
-                  0.0
-                ],
-                [
-                  151.00299224853515,
-                  129.58231438530814,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['WR-A']; area_m2=807"
         },
         {
           "id": "other_05",
@@ -21500,7 +20072,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21509,66 +20081,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['G']; area_m2=577",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_05",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    34.75566548241509,
-                    107.9076683892144
-                  ],
-                  [
-                    281.2626554701063,
-                    103.20866580539278
-                  ],
-                  [
-                    35.644666989644364,
-                    103.20866580539278
-                  ],
-                  [
-                    34.75566548241509,
-                    107.9076683892144
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone G",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  34.75566548241509,
-                  107.9076683892144,
-                  0.0
-                ],
-                [
-                  281.2626554701063,
-                  103.20866580539278,
-                  0.0
-                ],
-                [
-                  35.644666989644364,
-                  103.20866580539278,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['G']; area_m2=577"
         },
         {
           "id": "other_06",
@@ -21607,7 +20120,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21616,66 +20129,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['GD']; area_m2=226",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_06",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    123.10533031887478,
-                    283.46398535834413
-                  ],
-                  [
-                    124.79865934583874,
-                    274.44698621961805
-                  ],
-                  [
-                    74.67599741617838,
-                    274.44698621961805
-                  ],
-                  [
-                    123.10533031887478,
-                    283.46398535834413
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone GD",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  123.10533031887478,
-                  283.46398535834413,
-                  0.0
-                ],
-                [
-                  124.79865934583874,
-                  274.44698621961805,
-                  0.0
-                ],
-                [
-                  74.67599741617838,
-                  274.44698621961805,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['GD']; area_m2=226"
         },
         {
           "id": "other_07",
@@ -21714,7 +20168,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21723,66 +20177,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(sgd-1)']; area_m2=1952",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_07",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    74.67599741617838,
-                    274.44698621961805
-                  ],
-                  [
-                    139.31899397108288,
-                    196.55365719265407
-                  ],
-                  [
-                    89.19633204142252,
-                    196.55365719265407
-                  ],
-                  [
-                    74.67599741617838,
-                    274.44698621961805
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone sgd-1",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  74.67599741617838,
-                  274.44698621961805,
-                  0.0
-                ],
-                [
-                  139.31899397108288,
-                  196.55365719265407,
-                  0.0
-                ],
-                [
-                  89.19633204142252,
-                  196.55365719265407,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['(sgd-1)']; area_m2=1952"
         },
         {
           "id": "other_08",
@@ -21821,7 +20216,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21830,66 +20225,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['GD']; area_m2=393",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_08",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    204.681670973036,
-                    298.6616580539279
-                  ],
-                  [
-                    206.92533247205944,
-                    286.76600172254774
-                  ],
-                  [
-                    140.80066494411892,
-                    286.76600172254774
-                  ],
-                  [
-                    204.681670973036,
-                    298.6616580539279
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone GD",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  204.681670973036,
-                  298.6616580539279,
-                  0.0
-                ],
-                [
-                  206.92533247205944,
-                  286.76600172254774,
-                  0.0
-                ],
-                [
-                  140.80066494411892,
-                  286.76600172254774,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['GD']; area_m2=393"
         },
         {
           "id": "dvg_overlay_02",
@@ -21928,7 +20264,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -21937,66 +20273,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['[sba-dvg4]']; area_m2=2479",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "dvg_overlay_02",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    140.80066494411892,
-                    286.76600172254774
-                  ],
-                  [
-                    220.89532385932074,
-                    211.79366149902341
-                  ],
-                  [
-                    154.7706670973036,
-                    211.79366149902341
-                  ],
-                  [
-                    140.80066494411892,
-                    286.76600172254774
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone (no label)",
-              "feature_type": "dvg_overlay",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  140.80066494411892,
-                  286.76600172254774,
-                  0.0
-                ],
-                [
-                  220.89532385932074,
-                  211.79366149902341,
-                  0.0
-                ],
-                [
-                  154.7706670973036,
-                  211.79366149902341,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['[sba-dvg4]']; area_m2=2479"
         },
         {
           "id": "other_09",
@@ -22035,7 +20312,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22044,66 +20321,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['GD']; area_m2=340",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_09",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    295.7406692504883,
-                    237.95565202501083
-                  ],
-                  [
-                    297.77265116373695,
-                    226.86431783040362
-                  ],
-                  [
-                    236.38931783040363,
-                    226.86431783040362
-                  ],
-                  [
-                    295.7406692504883,
-                    237.95565202501083
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone GD",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  295.7406692504883,
-                  237.95565202501083,
-                  0.0
-                ],
-                [
-                  297.77265116373695,
-                  226.86431783040362,
-                  0.0
-                ],
-                [
-                  236.38931783040363,
-                  226.86431783040362,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['GD']; area_m2=340"
         },
         {
           "id": "other_10",
@@ -22142,7 +20360,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22151,66 +20369,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(sgd-5)']; area_m2=627",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_10",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    198.7126554701063,
-                    183.38798794216578
-                  ],
-                  [
-                    232.28300086127385,
-                    183.38798794216578
-                  ],
-                  [
-                    239.2679965549045,
-                    146.0076683892144
-                  ],
-                  [
-                    198.7126554701063,
-                    183.38798794216578
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone sgd-5",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  198.7126554701063,
-                  183.38798794216578,
-                  0.0
-                ],
-                [
-                  232.28300086127385,
-                  183.38798794216578,
-                  0.0
-                ],
-                [
-                  239.2679965549045,
-                  146.0076683892144,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['(sgd-5)']; area_m2=627"
         },
         {
           "id": "other_11",
@@ -22249,7 +20408,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22258,66 +20417,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['GD', '(sgd-8)']; area_m2=730",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_11",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    41.275,
-                    153.8816494411892
-                  ],
-                  [
-                    81.87266731262206,
-                    153.8816494411892
-                  ],
-                  [
-                    88.60366257561577,
-                    117.94066925048827
-                  ],
-                  [
-                    41.275,
-                    153.8816494411892
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone sgd-8, GD",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  41.275,
-                  153.8816494411892,
-                  0.0
-                ],
-                [
-                  81.87266731262206,
-                  153.8816494411892,
-                  0.0
-                ],
-                [
-                  88.60366257561577,
-                  117.94066925048827,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['GD', '(sgd-8)']; area_m2=730"
         },
         {
           "id": "other_12",
@@ -22356,7 +20456,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22365,66 +20465,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['V']; area_m2=251",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_12",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    186.94399397108288,
-                    181.18665805392794
-                  ],
-                  [
-                    199.13599310980902,
-                    181.18665805392794
-                  ],
-                  [
-                    206.79833763970268,
-                    139.99632127549913
-                  ],
-                  [
-                    186.94399397108288,
-                    181.18665805392794
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone V",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  186.94399397108288,
-                  181.18665805392794,
-                  0.0
-                ],
-                [
-                  199.13599310980902,
-                  181.18665805392794,
-                  0.0
-                ],
-                [
-                  206.79833763970268,
-                  139.99632127549913,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['V']; area_m2=251"
         },
         {
           "id": "other_13",
@@ -22463,7 +20504,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22472,66 +20513,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['GD']; area_m2=9",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_13",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    232.8756649441189,
-                    304.6306520250108
-                  ],
-                  [
-                    276.26733161078556,
-                    304.2073359171549
-                  ],
-                  [
-                    231.60565202501084,
-                    304.2073359171549
-                  ],
-                  [
-                    232.8756649441189,
-                    304.6306520250108
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone GD",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  232.8756649441189,
-                  304.6306520250108,
-                  0.0
-                ],
-                [
-                  276.26733161078556,
-                  304.2073359171549,
-                  0.0
-                ],
-                [
-                  231.60565202501084,
-                  304.2073359171549,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['GD']; area_m2=9"
         },
         {
           "id": "other_14",
@@ -22578,7 +20560,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22587,84 +20569,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['(sgd-6)']; area_m2=1975",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_14",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    151.00299224853515,
-                    129.58231438530814
-                  ],
-                  [
-                    195.02965460883246,
-                    137.79499138726126
-                  ],
-                  [
-                    186.94399397108288,
-                    181.18665805392794
-                  ],
-                  [
-                    179.4086658053928,
-                    179.78967183430987
-                  ],
-                  [
-                    142.91733161078557,
-                    172.84698621961803
-                  ],
-                  [
-                    151.00299224853515,
-                    129.58231438530814
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone sgd-6",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  151.00299224853515,
-                  129.58231438530814,
-                  0.0
-                ],
-                [
-                  195.02965460883246,
-                  137.79499138726126,
-                  0.0
-                ],
-                [
-                  186.94399397108288,
-                  181.18665805392794,
-                  0.0
-                ],
-                [
-                  179.4086658053928,
-                  179.78967183430987,
-                  0.0
-                ],
-                [
-                  142.91733161078557,
-                  172.84698621961803,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['(sgd-6)']; area_m2=1975"
         },
         {
           "id": "other_15",
@@ -22727,7 +20632,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -22736,120 +20641,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['G']; area_m2=1337",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_15",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    139.31899397108288,
-                    196.55365719265407
-                  ],
-                  [
-                    141.52033462524412,
-                    184.78499569363063
-                  ],
-                  [
-                    143.72166451348198,
-                    173.0163341946072
-                  ],
-                  [
-                    179.4086658053928,
-                    179.78967183430987
-                  ],
-                  [
-                    186.94399397108288,
-                    181.18665805392794
-                  ],
-                  [
-                    198.7126554701063,
-                    183.38798794216578
-                  ],
-                  [
-                    196.55365719265407,
-                    195.02965460883246
-                  ],
-                  [
-                    194.3523273044162,
-                    206.84066925048828
-                  ],
-                  [
-                    157.01432859632703,
-                    199.85565202501084
-                  ],
-                  [
-                    139.31899397108288,
-                    196.55365719265407
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone G",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  139.31899397108288,
-                  196.55365719265407,
-                  0.0
-                ],
-                [
-                  141.52033462524412,
-                  184.78499569363063,
-                  0.0
-                ],
-                [
-                  143.72166451348198,
-                  173.0163341946072,
-                  0.0
-                ],
-                [
-                  179.4086658053928,
-                  179.78967183430987,
-                  0.0
-                ],
-                [
-                  186.94399397108288,
-                  181.18665805392794,
-                  0.0
-                ],
-                [
-                  198.7126554701063,
-                  183.38798794216578,
-                  0.0
-                ],
-                [
-                  196.55365719265407,
-                  195.02965460883246,
-                  0.0
-                ],
-                [
-                  194.3523273044162,
-                  206.84066925048828,
-                  0.0
-                ],
-                [
-                  157.01432859632703,
-                  199.85565202501084,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['G']; area_m2=1337"
         },
         {
           "id": "other_16",
@@ -23108,7 +20900,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -23117,561 +20909,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['V']; area_m2=20266",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_16",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    318.51600172254774,
-                    232.1136528862847
-                  ],
-                  [
-                    303.31832902696397,
-                    271.65299224853516
-                  ],
-                  [
-                    300.6513298882378,
-                    277.621986219618
-                  ],
-                  [
-                    297.51866149902344,
-                    286.17333763970265
-                  ],
-                  [
-                    296.079322136773,
-                    286.55432213677295
-                  ],
-                  [
-                    294.13200344509545,
-                    298.8309844970703
-                  ],
-                  [
-                    260.30766838921437,
-                    341.29133419460715
-                  ],
-                  [
-                    252.13732299804684,
-                    333.0786571926541
-                  ],
-                  [
-                    249.8936614990234,
-                    330.9196589152018
-                  ],
-                  [
-                    247.5653367784288,
-                    328.84532385932073
-                  ],
-                  [
-                    245.15232730441622,
-                    326.89798363579644
-                  ],
-                  [
-                    242.61232299804686,
-                    325.0776597764757
-                  ],
-                  [
-                    240.0299870808919,
-                    323.3419991387261
-                  ],
-                  [
-                    237.32065633138018,
-                    321.8179965549045
-                  ],
-                  [
-                    234.52666236029728,
-                    320.37865719265403
-                  ],
-                  [
-                    231.6903367784288,
-                    319.1086658053928
-                  ],
-                  [
-                    228.81165805392794,
-                    317.96566925048825
-                  ],
-                  [
-                    225.84833763970266,
-                    316.9496675279405
-                  ],
-                  [
-                    222.84266408284503,
-                    316.10299224853514
-                  ],
-                  [
-                    219.7946589152018,
-                    315.4256649441189
-                  ],
-                  [
-                    57.19233161078559,
-                    284.9879879421658
-                  ],
-                  [
-                    60.53666343688964,
-                    266.9963212754991
-                  ],
-                  [
-                    66.63266300625271,
-                    234.39966752794052
-                  ],
-                  [
-                    69.59599956936306,
-                    218.39765116373695
-                  ],
-                  [
-                    72.6016623602973,
-                    202.81899397108288
-                  ],
-                  [
-                    78.40132988823784,
-                    173.14332902696395
-                  ],
-                  [
-                    24.383998277452253,
-                    163.02566494411892
-                  ],
-                  [
-                    26.5853335486518,
-                    151.42632988823783
-                  ],
-                  [
-                    34.75566548241509,
-                    107.9076683892144
-                  ],
-                  [
-                    49.40299763149685,
-                    110.61699913872611
-                  ],
-                  [
-                    41.275,
-                    153.8816494411892
-                  ],
-                  [
-                    80.51799655490451,
-                    161.20531955295138
-                  ],
-                  [
-                    88.60366257561577,
-                    117.94066925048827
-                  ],
-                  [
-                    103.33566063774956,
-                    120.69233161078557
-                  ],
-                  [
-                    95.24999999999999,
-                    163.95700344509547
-                  ],
-                  [
-                    131.10632773505316,
-                    170.6456563313802
-                  ],
-                  [
-                    139.19199913872612,
-                    127.3809844970703
-                  ],
-                  [
-                    151.00299224853515,
-                    129.58231438530814
-                  ],
-                  [
-                    142.91733161078557,
-                    172.84698621961803
-                  ],
-                  [
-                    143.72166451348198,
-                    173.0163341946072
-                  ],
-                  [
-                    141.52033462524412,
-                    184.78499569363063
-                  ],
-                  [
-                    93.09100172254773,
-                    175.7256649441189
-                  ],
-                  [
-                    74.67599741617838,
-                    274.44698621961805
-                  ],
-                  [
-                    123.10533031887478,
-                    283.46398535834413
-                  ],
-                  [
-                    139.31899397108288,
-                    196.55365719265407
-                  ],
-                  [
-                    157.01432859632703,
-                    199.85565202501084
-                  ],
-                  [
-                    140.80066494411892,
-                    286.76600172254774
-                  ],
-                  [
-                    204.681670973036,
-                    298.6616580539279
-                  ],
-                  [
-                    220.89532385932074,
-                    211.79366149902341
-                  ],
-                  [
-                    194.3523273044162,
-                    206.84066925048828
-                  ],
-                  [
-                    196.55365719265407,
-                    195.02965460883246
-                  ],
-                  [
-                    228.9809844970703,
-                    201.08333333333331
-                  ],
-                  [
-                    239.2679965549045,
-                    146.0076683892144
-                  ],
-                  [
-                    251.03665805392794,
-                    148.20899827745225
-                  ],
-                  [
-                    236.38931783040363,
-                    226.86431783040362
-                  ],
-                  [
-                    295.7406692504883,
-                    237.95565202501083
-                  ],
-                  [
-                    310.38798794216575,
-                    159.30033247205944
-                  ],
-                  [
-                    343.5773273044162,
-                    165.4809844970703
-                  ],
-                  [
-                    318.51600172254774,
-                    232.1136528862847
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone V",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  318.51600172254774,
-                  232.1136528862847,
-                  0.0
-                ],
-                [
-                  303.31832902696397,
-                  271.65299224853516,
-                  0.0
-                ],
-                [
-                  300.6513298882378,
-                  277.621986219618,
-                  0.0
-                ],
-                [
-                  297.51866149902344,
-                  286.17333763970265,
-                  0.0
-                ],
-                [
-                  296.079322136773,
-                  286.55432213677295,
-                  0.0
-                ],
-                [
-                  294.13200344509545,
-                  298.8309844970703,
-                  0.0
-                ],
-                [
-                  260.30766838921437,
-                  341.29133419460715,
-                  0.0
-                ],
-                [
-                  252.13732299804684,
-                  333.0786571926541,
-                  0.0
-                ],
-                [
-                  249.8936614990234,
-                  330.9196589152018,
-                  0.0
-                ],
-                [
-                  247.5653367784288,
-                  328.84532385932073,
-                  0.0
-                ],
-                [
-                  245.15232730441622,
-                  326.89798363579644,
-                  0.0
-                ],
-                [
-                  242.61232299804686,
-                  325.0776597764757,
-                  0.0
-                ],
-                [
-                  240.0299870808919,
-                  323.3419991387261,
-                  0.0
-                ],
-                [
-                  237.32065633138018,
-                  321.8179965549045,
-                  0.0
-                ],
-                [
-                  234.52666236029728,
-                  320.37865719265403,
-                  0.0
-                ],
-                [
-                  231.6903367784288,
-                  319.1086658053928,
-                  0.0
-                ],
-                [
-                  228.81165805392794,
-                  317.96566925048825,
-                  0.0
-                ],
-                [
-                  225.84833763970266,
-                  316.9496675279405,
-                  0.0
-                ],
-                [
-                  222.84266408284503,
-                  316.10299224853514,
-                  0.0
-                ],
-                [
-                  219.7946589152018,
-                  315.4256649441189,
-                  0.0
-                ],
-                [
-                  57.19233161078559,
-                  284.9879879421658,
-                  0.0
-                ],
-                [
-                  60.53666343688964,
-                  266.9963212754991,
-                  0.0
-                ],
-                [
-                  66.63266300625271,
-                  234.39966752794052,
-                  0.0
-                ],
-                [
-                  69.59599956936306,
-                  218.39765116373695,
-                  0.0
-                ],
-                [
-                  72.6016623602973,
-                  202.81899397108288,
-                  0.0
-                ],
-                [
-                  78.40132988823784,
-                  173.14332902696395,
-                  0.0
-                ],
-                [
-                  24.383998277452253,
-                  163.02566494411892,
-                  0.0
-                ],
-                [
-                  26.5853335486518,
-                  151.42632988823783,
-                  0.0
-                ],
-                [
-                  34.75566548241509,
-                  107.9076683892144,
-                  0.0
-                ],
-                [
-                  49.40299763149685,
-                  110.61699913872611,
-                  0.0
-                ],
-                [
-                  41.275,
-                  153.8816494411892,
-                  0.0
-                ],
-                [
-                  80.51799655490451,
-                  161.20531955295138,
-                  0.0
-                ],
-                [
-                  88.60366257561577,
-                  117.94066925048827,
-                  0.0
-                ],
-                [
-                  103.33566063774956,
-                  120.69233161078557,
-                  0.0
-                ],
-                [
-                  95.24999999999999,
-                  163.95700344509547,
-                  0.0
-                ],
-                [
-                  131.10632773505316,
-                  170.6456563313802,
-                  0.0
-                ],
-                [
-                  139.19199913872612,
-                  127.3809844970703,
-                  0.0
-                ],
-                [
-                  151.00299224853515,
-                  129.58231438530814,
-                  0.0
-                ],
-                [
-                  142.91733161078557,
-                  172.84698621961803,
-                  0.0
-                ],
-                [
-                  143.72166451348198,
-                  173.0163341946072,
-                  0.0
-                ],
-                [
-                  141.52033462524412,
-                  184.78499569363063,
-                  0.0
-                ],
-                [
-                  93.09100172254773,
-                  175.7256649441189,
-                  0.0
-                ],
-                [
-                  74.67599741617838,
-                  274.44698621961805,
-                  0.0
-                ],
-                [
-                  123.10533031887478,
-                  283.46398535834413,
-                  0.0
-                ],
-                [
-                  139.31899397108288,
-                  196.55365719265407,
-                  0.0
-                ],
-                [
-                  157.01432859632703,
-                  199.85565202501084,
-                  0.0
-                ],
-                [
-                  140.80066494411892,
-                  286.76600172254774,
-                  0.0
-                ],
-                [
-                  204.681670973036,
-                  298.6616580539279,
-                  0.0
-                ],
-                [
-                  220.89532385932074,
-                  211.79366149902341,
-                  0.0
-                ],
-                [
-                  194.3523273044162,
-                  206.84066925048828,
-                  0.0
-                ],
-                [
-                  196.55365719265407,
-                  195.02965460883246,
-                  0.0
-                ],
-                [
-                  228.9809844970703,
-                  201.08333333333331,
-                  0.0
-                ],
-                [
-                  239.2679965549045,
-                  146.0076683892144,
-                  0.0
-                ],
-                [
-                  251.03665805392794,
-                  148.20899827745225,
-                  0.0
-                ],
-                [
-                  236.38931783040363,
-                  226.86431783040362,
-                  0.0
-                ],
-                [
-                  295.7406692504883,
-                  237.95565202501083,
-                  0.0
-                ],
-                [
-                  310.38798794216575,
-                  159.30033247205944,
-                  0.0
-                ],
-                [
-                  343.5773273044162,
-                  165.4809844970703,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['V']; area_m2=20266"
         },
         {
           "id": "other_17",
@@ -23710,7 +20948,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -23719,66 +20957,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['GD']; area_m2=56",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_17",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    420.0313385009765,
-                    331.38532816569005
-                  ],
-                  [
-                    437.6419776068793,
-                    324.9929965549045
-                  ],
-                  [
-                    420.0313385009765,
-                    324.9929965549045
-                  ],
-                  [
-                    420.0313385009765,
-                    331.38532816569005
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone GD",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  420.0313385009765,
-                  331.38532816569005,
-                  0.0
-                ],
-                [
-                  437.6419776068793,
-                  324.9929965549045,
-                  0.0
-                ],
-                [
-                  420.0313385009765,
-                  324.9929965549045,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['GD']; area_m2=56"
         },
         {
           "id": "other_18",
@@ -23817,7 +20996,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -23826,66 +21005,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['V']; area_m2=57",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_18",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    420.0313385009765,
-                    313.3936614990234
-                  ],
-                  [
-                    437.6419776068793,
-                    306.9589982774522
-                  ],
-                  [
-                    420.0313385009765,
-                    306.9589982774522
-                  ],
-                  [
-                    420.0313385009765,
-                    313.3936614990234
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone V",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  420.0313385009765,
-                  313.3936614990234,
-                  0.0
-                ],
-                [
-                  437.6419776068793,
-                  306.9589982774522,
-                  0.0
-                ],
-                [
-                  420.0313385009765,
-                  306.9589982774522,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['V']; area_m2=57"
         },
         {
           "id": "no_build_zone_02",
@@ -23948,7 +21068,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -23957,120 +21077,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['WR-A']; area_m2=116",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "no_build_zone_02",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    419.9466752794053,
-                    289.8986701117621
-                  ],
-                  [
-                    419.9466752794053,
-                    296.3756649441189
-                  ],
-                  [
-                    420.0313385009765,
-                    293.2218307495117
-                  ],
-                  [
-                    420.1160017225477,
-                    290.0679965549045
-                  ],
-                  [
-                    420.1160017225477,
-                    296.2910017225477
-                  ],
-                  [
-                    420.1160017225477,
-                    296.3756649441189
-                  ],
-                  [
-                    419.9466752794053,
-                    296.4603281656901
-                  ],
-                  [
-                    437.72664082845046,
-                    296.4603281656901
-                  ],
-                  [
-                    437.72664082845046,
-                    289.8986701117621
-                  ],
-                  [
-                    419.9466752794053,
-                    289.8986701117621
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone WR-A",
-              "feature_type": "no_build_zone",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  419.9466752794053,
-                  289.8986701117621,
-                  0.0
-                ],
-                [
-                  419.9466752794053,
-                  296.3756649441189,
-                  0.0
-                ],
-                [
-                  420.0313385009765,
-                  293.2218307495117,
-                  0.0
-                ],
-                [
-                  420.1160017225477,
-                  290.0679965549045,
-                  0.0
-                ],
-                [
-                  420.1160017225477,
-                  296.2910017225477,
-                  0.0
-                ],
-                [
-                  420.1160017225477,
-                  296.3756649441189,
-                  0.0
-                ],
-                [
-                  419.9466752794053,
-                  296.4603281656901,
-                  0.0
-                ],
-                [
-                  437.72664082845046,
-                  296.4603281656901,
-                  0.0
-                ],
-                [
-                  437.72664082845046,
-                  289.8986701117621,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['WR-A']; area_m2=116"
         },
         {
           "id": "other_19",
@@ -24109,7 +21116,7 @@
             "api_name": null,
             "inferred_from": [],
             "entered_by": null,
-            "timestamp": "2026-05-20T09:34:09.511547Z"
+            "timestamp": "2026-05-20T10:37:28.250941Z"
           },
           "confidence": {
             "score": 0.9,
@@ -24118,66 +21125,7 @@
             ],
             "flags": []
           },
-          "notes": "raw_labels=['G']; area_m2=56",
-          "geometry_geojson": {
-            "type": "Feature",
-            "id": "other_19",
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": [
-                [
-                  [
-                    420.0313385009765,
-                    322.3683290269639
-                  ],
-                  [
-                    437.6419776068793,
-                    315.97599741617836
-                  ],
-                  [
-                    420.0313385009765,
-                    315.97599741617836
-                  ],
-                  [
-                    420.0313385009765,
-                    322.3683290269639
-                  ]
-                ]
-              ]
-            },
-            "properties": {
-              "name": "Zone G",
-              "feature_type": "other",
-              "lod": 0,
-              "elevation_m": null,
-              "extrusion_height_m": null,
-              "associated_rules": [],
-              "confidence_score": 0.9
-            }
-          },
-          "geometry_compas": {
-            "dtype": "compas.geometry/Polygon",
-            "value": {
-              "points": [
-                [
-                  420.0313385009765,
-                  322.3683290269639,
-                  0.0
-                ],
-                [
-                  437.6419776068793,
-                  315.97599741617836,
-                  0.0
-                ],
-                [
-                  420.0313385009765,
-                  315.97599741617836,
-                  0.0
-                ]
-              ]
-            },
-            "crs": "drawing_local"
-          }
+          "notes": "raw_labels=['G']; area_m2=56"
         }
       ],
       "narrative": [
@@ -42618,7 +39566,7 @@
             "avg_height_sba2"
           ],
           "entered_by": null,
-          "timestamp": "2026-05-20T09:34:09.544646Z"
+          "timestamp": "2026-05-20T10:37:28.275832Z"
         },
         "total_gfa_m2": null,
         "uses_unverified_inputs": true
@@ -52249,7 +49197,7 @@
             "min_setback_dakterras_techniek"
           ],
           "entered_by": null,
-          "timestamp": "2026-05-20T09:34:09.547641Z"
+          "timestamp": "2026-05-20T10:37:28.278842Z"
         },
         "total_gfa_m2": null,
         "uses_unverified_inputs": false

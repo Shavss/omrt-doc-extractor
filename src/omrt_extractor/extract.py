@@ -225,6 +225,8 @@ def build_extraction_agent(model_name: str | None = None) -> Agent:
         output_type=PartialFrameworkExtraction,  # type: ignore[arg-type]
         instructions=instructions,
         output_retries=2,
+        model_settings={"max_tokens": 8192},  # ← add this line
+
     )
 
 
@@ -241,6 +243,7 @@ def build_critical_fields_agent(model_name: str | None = None) -> Agent:
         output_type=CriticalFieldsExtraction,  # type: ignore[arg-type]
         instructions=instructions,
         output_retries=2,
+        model_settings={"max_tokens": 8192}, 
     )
 
 
